@@ -18,13 +18,12 @@ namespace UI
         private void Update()
         {
             if (!NetworkManager.Singleton || !NetworkManager.Singleton.IsConnectedClient)
-                return;
-            if (GameManager.Instance.State != GameManager.GameState.Waiting)
             {
-                enabled = false;
+                _textField.gameObject.SetActive(true);
+                _textField.text = "Not connected";
                 return;
             }
-            
+            _textField.gameObject.SetActive(GameManager.Instance.State == GameManager.GameState.Waiting);
             _textField.text = string.Format(PlayerCountText, GameManager.Instance.PlayerCount, GameManager.MaxPlayers);
         }
     }
