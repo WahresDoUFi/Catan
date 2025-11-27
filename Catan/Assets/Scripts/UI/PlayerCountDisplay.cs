@@ -17,7 +17,7 @@ namespace UI
 
         private void Update()
         {
-            if (NetworkManager.Singleton)
+            if (!NetworkManager.Singleton || !NetworkManager.Singleton.IsConnectedClient)
                 return;
             if (GameManager.Instance.State != GameManager.GameState.Waiting)
             {
