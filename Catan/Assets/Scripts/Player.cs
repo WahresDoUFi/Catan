@@ -8,6 +8,4 @@ public class Player : NetworkBehaviour
     private NetworkVariable<byte> _wheat = new(0);
     private NetworkVariable<byte> _brick = new(0);
     private NetworkVariable<byte> _sheep = new(0);
-    
-    
 }
