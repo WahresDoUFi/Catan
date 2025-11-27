@@ -45,6 +45,11 @@ public class GameManager : NetworkBehaviour
         return true;
     }
 
+    public void StartGame()
+    {
+        _gameState.Value = (byte)GameState.Preparing;
+    }
+    
     private void OnClientConnectionStatusChange(ulong clientId,
         ConnectionNotificationManager.ConnectionStatus connectionStatus)
     {
@@ -61,10 +66,5 @@ public class GameManager : NetworkBehaviour
                 }
             }
         }
-    }
-
-    private void StartGame()
-    {
-        _gameState.Value = (byte)GameState.Preparing;
     }
 }
