@@ -25,8 +25,8 @@ public class GameManager : NetworkBehaviour
     public int PlayerCount => _playerIds.Count;
     private readonly NetworkVariable<byte> _gameState = new();
     private readonly NetworkVariable<byte> _playerTurn = new();
-
     private readonly NetworkList<ulong> _playerIds = new();
+    private readonly NetworkVariable<bool> _hasThrownDice = new();
 
     private void Awake()
     {
@@ -42,7 +42,25 @@ public class GameManager : NetworkBehaviour
     {
         if (State == GameState.Waiting)
             return false;
-        return true;
+        return _playerIds.IndexOf(NetworkManager.Singleton.LocalClientId) == _playerTurn.Value;
+    }
+
+    public void FinishTurn()
+    {
+        FinishTurnRpc();
+    }
+
+    [Rpc(SendTo.Authority)]
+    private void FinishTurnRpc()
+    {
+        _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
+        _hasThrownDice.Value = false;
+    }
+
+    [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
+    private void DiceResultRpc(int diceOne, int diceTwo)
+    {
+        //  show dice roll animation whatever
     }
 
     public void StartGame()
