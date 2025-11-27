@@ -33,16 +33,9 @@ public class GameManager : NetworkBehaviour
         Instance = this;
     }
     
-
     public override void OnNetworkSpawn()
     {
-        if (NetworkManager.Singleton.IsClient)
-            return;
         ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
-        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
-        {
-            _playerIds.Add(clientId);
-        }
     }
 
     public bool IsMyTurn()
@@ -55,6 +48,8 @@ public class GameManager : NetworkBehaviour
     private void OnClientConnectionStatusChange(ulong clientId,
         ConnectionNotificationManager.ConnectionStatus connectionStatus)
     {
+        if (!NetworkManager.Singleton.IsHost)
+            return;
         if (connectionStatus == ConnectionNotificationManager.ConnectionStatus.Connected)
         {
             _playerIds.Add(clientId);
