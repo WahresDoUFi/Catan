@@ -26,6 +26,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private GameObject tilePrefab;
 
     [SerializeField] private Transform tileParent;
+    [SerializeField] private Transform corners;
+    [SerializeField] private Transform streets;
 
     [SerializeField] private float tileWidth = 20f;
     [SerializeField] private float tileHeight = 17.32051f;
@@ -114,12 +116,27 @@ public class MapGenerator : MonoBehaviour
         
         return positions;
     }
-    
+
     private Vector3 AxialToPosition(int q, int r, int s)
     {
         int ySum = r - s;
         float y = -ySum * 0.5f * tileHeight;
         float x = (q * (0.75f * tileWidth));
         return new Vector3(x, 0f, y);
+    }
+
+    private void OnDrawGizmos()
+    {
+        for (var i = 0; i < corners.childCount; i++)
+        {
+            Gizmos.DrawSphere(corners.GetChild(i).position, 1f);
+        }
+
+        Gizmos.color = Color.red;
+        for (var i = 0; i < streets.childCount; i++)
+        {
+            var street = streets.GetChild(i);
+            Gizmos.DrawLine(street.position + street.forward * 2, street.position - street.forward * 2f);
+        }
     }
 }
