@@ -7,6 +7,8 @@ public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance;
 
+    public const int MaxPlayers = 4;
+
     /// <summary>
     /// Waiting = waiting for players to connect
     /// Preparing = Start Phase where players place initial Settlements
@@ -20,6 +22,7 @@ public class GameManager : NetworkBehaviour
     }
 
     public GameState State => (GameState)_gameState.Value;
+    public int PlayerCount => _playerIds.Count;
     private readonly NetworkVariable<byte> _gameState = new();
     private readonly NetworkVariable<byte> _playerTurn = new();
 
@@ -36,9 +39,9 @@ public class GameManager : NetworkBehaviour
         if (NetworkManager.Singleton.IsClient)
             return;
         ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
-        for (var i = 0; i < NetworkManager.Singleton.ConnectedClientsIds.Count; i++)
+        foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
         {
-            _playerIds.Add(NetworkManager.Singleton.ConnectedClientsIds[i]);
+            _playerIds.Add(clientId);
         }
     }
 
