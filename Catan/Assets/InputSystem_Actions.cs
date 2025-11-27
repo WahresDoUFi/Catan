@@ -1099,6 +1099,15 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Overview"",
+                    ""type"": ""Button"",
+                    ""id"": ""3eb8e69e-c2e3-4fa7-8b37-a8433d8c2b03"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1121,6 +1130,17 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Zoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8d99745e-8abc-4012-bbbb-b8c39b8c9cd1"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Overview"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1217,6 +1237,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
         m_Camera_Move = m_Camera.FindAction("Move", throwIfNotFound: true);
         m_Camera_Zoom = m_Camera.FindAction("Zoom", throwIfNotFound: true);
+        m_Camera_Overview = m_Camera.FindAction("Overview", throwIfNotFound: true);
     }
 
     ~@InputSystem_Actions()
@@ -1680,6 +1701,7 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
     private List<ICameraActions> m_CameraActionsCallbackInterfaces = new List<ICameraActions>();
     private readonly InputAction m_Camera_Move;
     private readonly InputAction m_Camera_Zoom;
+    private readonly InputAction m_Camera_Overview;
     /// <summary>
     /// Provides access to input actions defined in input action map "Camera".
     /// </summary>
@@ -1699,6 +1721,10 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Camera/Zoom".
         /// </summary>
         public InputAction @Zoom => m_Wrapper.m_Camera_Zoom;
+        /// <summary>
+        /// Provides access to the underlying input action "Camera/Overview".
+        /// </summary>
+        public InputAction @Overview => m_Wrapper.m_Camera_Overview;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1731,6 +1757,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Zoom.started += instance.OnZoom;
             @Zoom.performed += instance.OnZoom;
             @Zoom.canceled += instance.OnZoom;
+            @Overview.started += instance.OnOverview;
+            @Overview.performed += instance.OnOverview;
+            @Overview.canceled += instance.OnOverview;
         }
 
         /// <summary>
@@ -1748,6 +1777,9 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
             @Zoom.started -= instance.OnZoom;
             @Zoom.performed -= instance.OnZoom;
             @Zoom.canceled -= instance.OnZoom;
+            @Overview.started -= instance.OnOverview;
+            @Overview.performed -= instance.OnOverview;
+            @Overview.canceled -= instance.OnOverview;
         }
 
         /// <summary>
@@ -2016,5 +2048,12 @@ public partial class @InputSystem_Actions: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnZoom(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Overview" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnOverview(InputAction.CallbackContext context);
     }
 }

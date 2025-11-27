@@ -4,6 +4,9 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
+    private static CameraController _instance;
+
+    public static bool IsOverview => Mathf.Approximately(_instance.transform.position.y, _instance.heightLimit.y);
 
     private InputSystem_Actions _inputs;
     
@@ -26,9 +29,14 @@ public class CameraController : MonoBehaviour
     private float _targetTilt;
     private float _targetRotation;
 
+    private Vector3 _overviewPosition;
+    private Vector3 _previousPosition;
+
     private void Awake()
     {
-        _targetPosition = transform.position;
+        _instance = this;
+        
+        _targetPosition = _overviewPosition = transform.position;
         _targetTilt = transform.eulerAngles.x;
         _targetRotation = transform.eulerAngles.y;
         _inputs = new InputSystem_Actions();
@@ -36,6 +44,7 @@ public class CameraController : MonoBehaviour
         
         _inputs.Camera.Move.performed += ctx => Move(ctx.ReadValue<Vector2>());
         _inputs.Camera.Zoom.performed += ctx => Zoom(ctx.ReadValue<Vector2>().y);
+        _inputs.Camera.Overview.performed += ctx => EnterOverviewPosition();
     }
 
     private void Update()
@@ -55,6 +64,7 @@ public class CameraController : MonoBehaviour
                 Vector3.ClampMagnitude(Vector3.ProjectOnPlane(_targetPosition, Vector3.up), maxDistance);
             clampedPosition.y = height;
             _targetPosition = clampedPosition;
+            _previousPosition = _targetPosition;
         } else if (Mouse.current.rightButton.isPressed)
         {
             float tilt = _targetTilt - input.y;
@@ -72,5 +82,11 @@ public class CameraController : MonoBehaviour
         var targetHeight = _targetPosition.y - input;
         targetHeight = Mathf.Clamp(targetHeight, heightLimit.x, heightLimit.y);
         _targetPosition.y = targetHeight;
+        _previousPosition = _targetPosition;
+    }
+
+    private void EnterOverviewPosition()
+    {
+        _targetPosition = _targetPosition == _overviewPosition ? _previousPosition : _overviewPosition;
     }
 }

@@ -10,11 +10,26 @@ namespace UI
         private void Start()
         {
             button.onClick.AddListener(GameManager.Instance.FinishTurn);
+            button.onClick.AddListener(ButtonClicked);
         }
 
         private void Update()
         {
-            button.gameObject.SetActive(GameManager.Instance.IsMyTurn());
+            if (!GameManager.Instance) return;
+            if (GameManager.Instance.IsMyTurn())
+            {
+                button.gameObject.SetActive(true);    
+            }
+            else
+            {
+                button.gameObject.SetActive(false);
+                button.interactable = true;
+            }
+        }
+
+        private void ButtonClicked()
+        {
+            button.interactable = false;
         }
     }
 }

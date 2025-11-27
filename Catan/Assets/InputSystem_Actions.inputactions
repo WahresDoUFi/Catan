@@ -1013,6 +1013,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Overview",
+                    "type": "Button",
+                    "id": "3eb8e69e-c2e3-4fa7-8b37-a8433d8c2b03",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1035,6 +1044,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d99745e-8abc-4012-bbbb-b8c39b8c9cd1",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Overview",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
