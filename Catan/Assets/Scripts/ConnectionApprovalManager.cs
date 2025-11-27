@@ -22,5 +22,6 @@ public class ConnectionApprovalManager : MonoBehaviour
         NetworkManager.ConnectionApprovalResponse response)
     {
         response.Approved = GameManager.Instance.PlayerCount < GameManager.MaxPlayers;
+        response.Approved &= GameManager.Instance.State == GameManager.GameState.Waiting;
     }
 }
