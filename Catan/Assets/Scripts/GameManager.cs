@@ -40,7 +40,7 @@ public class GameManager : NetworkBehaviour
 
     public bool IsMyTurn()
     {
-        if (State == GameState.Waiting)
+        if (State == GameState.Waiting || !NetworkManager.Singleton)
             return false;
         return _playerIds.IndexOf(NetworkManager.Singleton.LocalClientId) == _playerTurn.Value;
     }

@@ -27,7 +27,7 @@ namespace UI
         private void Update()
         {
             if (!NetworkManager.Singleton) return;
-            if (!NetworkManager.Singleton.IsConnectedClient)
+            if (!NetworkManager.Singleton.IsConnectedClient || GameManager.Instance.State != GameManager.GameState.Playing)
             {
                 ClearCards();
                 return;
