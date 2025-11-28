@@ -5,6 +5,7 @@ public class MapTile : NetworkBehaviour
 {
     private readonly NetworkVariable<bool> _discovered = new();
     private readonly NetworkVariable<int> _tileType = new(-1);
+    private readonly NetworkVariable<int> _number = new(-1);
     [SerializeField] private ParticleSystem fog;
     [SerializeField] private Transform tileParent;
     [SerializeField] private GameObject hiddenTile;
@@ -34,10 +35,17 @@ public class MapTile : NetworkBehaviour
         _tileType.Value = (int)tile;
     }
 
+    public void SetNumber(int number)
+    {
+        Debug.Log(number);
+        _number.Value = number;
+    }
+
     public void Discover()
     {
         _discovered.Value = true;
     }
+
     private void DiscoverStatusChanged(bool oldValue, bool newValue)
     {
         hiddenTile.SetActive(!newValue);
