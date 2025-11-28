@@ -20,8 +20,10 @@ public class MapGenerator : MonoBehaviour
 {
     private static readonly (int q, int r, int s)[] Directions =
     {
-        (-1, 0,1), (0,-1,1), (1,-1,0), (1,0,-1),(0,1,-1), (-1,1,0)
+        (-1, 0, 1), (0, -1, 1), (1, -1, 0), (1, 0, -1), (0, 1, -1), (-1, 1, 0)
     };
+
+    private static readonly List<int> TileNumbers = new() { 2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12 };
 
     [SerializeField] private GameObject tilePrefab;
 
@@ -59,17 +61,18 @@ public class MapGenerator : MonoBehaviour
         Shuffle(tiles);
         GenerateMap(tiles);
     }
-    
+
     private static void Shuffle<T>(IList<T> list)
     {
         int n = list.Count;
-        while (n > 1) {
+        while (n > 1)
+        {
             n--;
             int k = new Random().Next(n + 1);
             (list[k], list[n]) = (list[n], list[k]);
         }
     }
-    
+
     private void GenerateMap(Tile[] tiles)
     {
         var positions = GenerateTilePositions(tiles.Length);
@@ -78,7 +81,15 @@ public class MapGenerator : MonoBehaviour
             var tileObject = Instantiate(tilePrefab, positions[i], Quaternion.identity, tileParent);
             tileObject.GetComponent<NetworkObject>().Spawn();
             var tile = tileObject.GetComponent<MapTile>();
-            tile.SetType(tiles[i]);
+            var type = tiles[i];
+            tile.SetType(type);
+            if (type != Tile.Desert)
+            {
+                var randomNumber = new Random().Next(TileNumbers.Count);
+                tile.SetNumber(TileNumbers[randomNumber]);
+                TileNumbers.Remove(randomNumber);
+            }
+
             if (new Random().Next(0, 2) == 1)
                 tile.Discover();
         }
@@ -87,18 +98,16 @@ public class MapGenerator : MonoBehaviour
     private List<Vector3> GenerateTilePositions(int count)
     {
         var positions = new List<Vector3>();
-
         var currentPos = new Vector3Int(0, -1, -1);
-        
+
         positions.Add(Vector3.zero);
         count--;
 
         int sideCounter = 1;
-
         while (count > 0)
         {
             currentPos += new Vector3Int(0, 1, -1);
-            
+
             for (var side = 0; side < 6; side++)
             {
                 var (dq, dr, ds) = Directions[side];
@@ -111,9 +120,10 @@ public class MapGenerator : MonoBehaviour
                     positions.Add(AxialToPosition(currentPos.x, currentPos.y, currentPos.z));
                 }
             }
+
             sideCounter++;
         }
-        
+
         return positions;
     }
 
