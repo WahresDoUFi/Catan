@@ -20,16 +20,25 @@ public class SettlementEditor : Editor
 
         if (GUILayout.Button("Connect streets"))
         {
-            foreach (var targetObject in Selection.gameObjects)
+            for (var i = 0; i < Selection.gameObjects.Length; i++)
             {
-                if (targetObject.GetComponent<Settlement>() == null) continue;
+                var targetObject = Selection.gameObjects[i];
+                if (!targetObject.TryGetComponent(out Settlement settlement)) continue;
                 var streets = FindObjectsByType<Street>(FindObjectsSortMode.None).ToList();
-                streets.Sort((s1, s2) => Vector3.Distance(s1.transform.position, targetObject.transform.position).CompareTo(Vector3.Distance(s2.transform.position, targetObject.transform.position)));
+                streets.Sort((s1, s2) => Vector3.Distance(s1.transform.position, targetObject.transform.position)
+                    .CompareTo(Vector3.Distance(s2.transform.position, targetObject.transform.position)));
                 float closest = Vector3.Distance(streets[0].transform.position, targetObject.transform.position) +
                                 SMALL_OFFSET;
-            
-                targetObject.GetComponent<Settlement>().streets = streets.Where(street => Vector3.Distance(street.transform.position, targetObject.transform.position) < closest).ToArray();
+
+                var serializedSettlement = new SerializedObject(settlement);
+                var streetsProperty = serializedSettlement.FindProperty(nameof(settlement.streets));
+                streetsProperty.ClearArray();
+                serializedSettlement.ApplyModifiedProperties();
+                settlement.streets = streets.Where(street =>
+                    Vector3.Distance(street.transform.position, targetObject.transform.position) < closest).ToArray();
             }
+
+            serializedObject.ApplyModifiedProperties();
         }
 
         if (GUILayout.Button("Place Prefab"))

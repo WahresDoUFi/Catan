@@ -47,6 +47,10 @@ public class StreetEditor : Editor
                 if (targetObject.TryGetComponent(out Street street) == false)
                     continue;
 
+                var serializedStreet = new SerializedObject(street);
+                serializedStreet.FindProperty(nameof(street.connectedStreets)).ClearArray();
+                serializedObject.FindProperty(nameof(street.settlements)).ClearArray();
+                serializedObject.ApplyModifiedProperties();
                 var streets = FindObjectsByType<Street>(FindObjectsSortMode.None).ToList();
                 streets.Remove(street);
                 
@@ -59,6 +63,8 @@ public class StreetEditor : Editor
                 closest = Vector3.Distance(settlements[0].transform.position, street.transform.position) + SMALL_OFFSET;
                 street.settlements = settlements.Where(s => Vector3.Distance(s.transform.position, street.transform.position) <= closest).ToArray();
             }
+
+            serializedObject.ApplyModifiedProperties();
         }
 
         if (GUILayout.Button("Place Prefab"))

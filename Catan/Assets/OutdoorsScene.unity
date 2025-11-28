@@ -184,6 +184,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1982438143}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2038655910}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 629908021}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 239809587}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -234,6 +254,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 34724291}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &34724293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 34724291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &38692889
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -246,6 +277,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1974633313}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 750195929}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1819783193}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1118109707}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -296,6 +347,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 38692889}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &38692891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 38692889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &58852995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -348,6 +410,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 90545258}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 72168274}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 840321016}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -410,6 +488,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 915737552}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 183779666}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -432,6 +522,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (24)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 586954515}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1127611477}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 90545258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 840321016}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -482,6 +592,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 72168272}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &72168274 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 72168272}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &82369521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -534,6 +655,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 108807073}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1280832176}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1223939921}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -556,6 +693,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 907466769}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 72168274}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 840321016}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 250772218}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -606,6 +763,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 90545256}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &90545258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 90545256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!4 &102533052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
@@ -686,6 +854,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (54)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1280832176}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1223939921}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 521015041}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.5
@@ -736,6 +924,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 108807071}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &108807073 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 108807071}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &118974797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -748,6 +947,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (36)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 598385094}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1706178454}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.5
@@ -798,6 +1013,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 118974797}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &118974799 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 118974797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &157207112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1090,6 +1316,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 825424479}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1587834498}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1991995076}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1112,6 +1354,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2091283789}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 915737552}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1551262630}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.5
@@ -1162,6 +1424,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 183779664}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &183779666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 183779664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &224231105
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,6 +1447,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (44)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1551601783}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1516249858}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1621402525}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -1224,6 +1517,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 224231105}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &224231107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 224231105}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &239809585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1236,6 +1540,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1819783193}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 34724293}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1982438143}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1621402525}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -1286,6 +1610,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 239809585}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &239809587 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 239809585}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &242504126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1338,6 +1673,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1819783193}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 38692891}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1118109707}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1360,6 +1711,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (66)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1184944892}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1182182531}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 90545258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 907466769}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -1410,6 +1781,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 250772216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &250772218 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 250772216}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &257915415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1462,6 +1844,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2008693136}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1982438143}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 825424479}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1484,6 +1882,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 605032748}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1706178454}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 750195929}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 291004115}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -1534,6 +1952,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 259902266}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &259902268 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 259902266}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &265461753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1586,6 +2015,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 333050289}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1280832176}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1471171552}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1928,6 +2373,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 118974799}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 598385094}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1950,6 +2407,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 750195929}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1122994834}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 901860912}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 259902268}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -2000,6 +2477,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 291004113}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &291004115 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 291004113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &319928069
 GameObject:
   m_ObjectHideFlags: 0
@@ -2250,6 +2738,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1551262630}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1118030663}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2260,6 +2760,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 328571673}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &328571675 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 328571673}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &333050287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2272,6 +2783,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 899614037}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 889838613}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1471171552}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1280832176}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.5
@@ -2322,6 +2853,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 333050287}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &333050289 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 333050287}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &350814546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2374,6 +2916,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 34724293}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1982438143}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 239809587}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2436,6 +2994,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1721761435}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 413817204}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2458,6 +3028,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (59)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1635379060}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 413817204}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1127611477}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1471171552}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.5
@@ -2508,6 +3098,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 411272291}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &411272293 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 411272291}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &413817202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2520,6 +3121,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (58)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 411272293}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1635379060}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1721761435}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
@@ -2570,6 +3191,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 413817202}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &413817204 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 413817202}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &420623162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2622,6 +3254,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 250772218}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1184944892}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1182182531}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2644,6 +3292,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (42)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 610850284}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1118109707}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1551601783}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -2694,6 +3362,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 428234778}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &428234780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 428234778}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &432432459
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,6 +3471,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1330005935}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1992735578}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5955972833557196842}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1178717041}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -2842,6 +3541,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 444402464}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &444402466 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 444402464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &465211036
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2894,6 +3604,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 799985234}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 616772137}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1385706404}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2956,6 +3682,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 899614037}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 889838613}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 333050289}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3018,6 +3760,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 224231107}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1551601783}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3040,6 +3794,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (53)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1219666605}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 108807073}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1225915392}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.5
@@ -3090,6 +3864,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 521015039}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &521015041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 521015039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &581667772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3142,6 +3927,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 521015041}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1219666605}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1225915392}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3204,6 +4005,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 983606002}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1587834498}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3226,6 +4039,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1127611477}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1330005935}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1760790501}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 72168274}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -3276,6 +4109,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 586954513}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &586954515 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 586954513}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &598385092
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3288,6 +4132,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 118974799}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1122994834}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 915737552}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.5
@@ -3338,6 +4202,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 598385092}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &598385094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 598385092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &601706542
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,6 +4361,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (39)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 259902268}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1706178454}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 610850284}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -3536,6 +4431,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 605032746}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &605032748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 605032746}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &610850282
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3548,6 +4454,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (40)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1118109707}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 428234780}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 605032748}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -3598,6 +4524,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 610850282}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &610850284 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 610850282}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &616772135
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3610,6 +4547,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (70)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 799985234}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1118030663}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1385706404}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30
@@ -3660,6 +4617,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 616772135}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &616772137 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 616772135}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &629908019
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3672,6 +4640,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2038655910}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 34724293}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1760790501}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 889838613}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -3722,6 +4710,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 629908019}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &629908021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 629908019}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &640708647
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3774,6 +4773,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 291004115}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 750195929}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 259902268}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3836,6 +4851,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 605032748}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 610850284}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3898,6 +4925,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1385706404}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1184944892}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3960,6 +4999,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1118109707}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 610850284}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 428234780}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3982,6 +5037,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 291004115}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1974633313}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 38692891}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 259902268}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -4032,6 +5107,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 750195927}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &750195929 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 750195927}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &767216263
 GameObject:
   m_ObjectHideFlags: 0
@@ -4284,6 +5370,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 521015041}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 108807073}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4306,6 +5404,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (69)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 616772137}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1385706404}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2043562568}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 982592057}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -4356,6 +5474,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 799985232}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &799985234 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 799985232}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &825424477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4368,6 +5497,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (48)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1587834498}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1991995076}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1982438143}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2008693136}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.5
@@ -4418,6 +5567,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 825424477}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &825424479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 825424477}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &831493783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4470,6 +5630,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 239809587}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1819783193}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1621402525}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4532,6 +5708,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 411272293}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 413817204}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1635379060}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4554,6 +5746,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (62)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1106765715}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1918987332}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 90545258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 72168274}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -4604,6 +5816,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 840321014}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &840321016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 840321014}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &881002719
 GameObject:
   m_ObjectHideFlags: 0
@@ -4687,6 +5910,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1760790501}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 333050289}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 899614037}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 629908021}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -4737,6 +5980,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 889838611}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &889838613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 889838611}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &890920328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4789,6 +6043,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1182182531}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1876557565}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4851,6 +6117,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 982592057}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2043562568}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 799985234}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4872,6 +6154,10 @@ PrefabInstance:
     - target: {fileID: 578738986238355350, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_Name
       value: Street (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4923,6 +6209,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 899614035}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &899614037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 899614035}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &901860910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4935,6 +6232,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1212619798}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1122994834}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1992735578}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 291004115}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -4985,6 +6302,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 901860910}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &901860912 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 901860910}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &907466767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4997,6 +6325,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 90545258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1178717041}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2043562568}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 250772218}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -5047,6 +6395,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 907466767}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &907466769 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 907466767}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &915737550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5059,6 +6418,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (33)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1122994834}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 598385094}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 183779666}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.5
@@ -5109,6 +6488,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 915737550}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &915737552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 915737550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &954741897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5161,6 +6551,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 629908021}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2038655910}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 34724293}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5223,6 +6629,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 586954515}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1760790501}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1330005935}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5245,6 +6667,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2043562568}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2091283789}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1212619798}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 799985234}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -5295,6 +6737,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 982592055}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &982592057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 982592055}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &983606000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5307,6 +6760,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (50)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1587834498}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1225915392}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.5
@@ -5357,6 +6826,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 983606000}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &983606002 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 983606000}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1075949072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5409,6 +6889,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 915737552}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1122994834}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 598385094}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5462,6 +6958,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (61)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 840321016}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1918987332}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1635379060}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -5512,6 +7028,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1106765713}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1106765715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1106765713}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1118030661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5524,6 +7051,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (71)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 616772137}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1551262630}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.5
@@ -5574,6 +7117,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1118030661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1118030663 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1118030661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1118109705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5586,6 +7140,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 610850284}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 428234780}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1819783193}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 38692891}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -5636,6 +7210,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1118109705}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1118109707 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1118109705}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1122994832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5648,6 +7233,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (34)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 915737552}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 901860912}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 598385094}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 291004115}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30
@@ -5698,6 +7303,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1122994832}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1122994834 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1122994832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1125212024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5750,6 +7366,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1706178454}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 118974799}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5772,6 +7400,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1471171552}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 586954515}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 72168274}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 411272293}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -5822,6 +7470,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1127611475}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1127611477 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1127611475}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &1158503662
 GameObject:
   m_ObjectHideFlags: 0
@@ -6027,6 +7686,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1992735578}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 5955972833557196842}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 444402466}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6037,6 +7712,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1165192029}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1165192031 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1165192029}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1178717039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6049,6 +7735,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2043562568}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1330005935}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 444402466}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 907466769}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -6099,6 +7805,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1178717039}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1178717041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1178717039}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1182182529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6111,6 +7828,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (65)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1876557565}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1184944892}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 250772218}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -6161,6 +7898,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1182182529}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1182182531 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1182182529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1184926434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6213,6 +7961,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1223939921}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1721761435}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6235,6 +7995,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (67)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 250772218}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1385706404}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1182182531}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -6285,6 +8065,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1184944890}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1184944892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1184944890}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1192436799
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6337,6 +8128,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1212619798}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1992735578}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 901860912}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6359,6 +8166,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 901860912}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1992735578}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2091283789}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 982592057}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -6409,6 +8236,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1212619796}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1212619798 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1212619796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1219666603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6421,6 +8259,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (52)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 899614037}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 521015041}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2008693136}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1225915392}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
@@ -6471,6 +8329,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1219666603}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1219666605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1219666603}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1223939919
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6483,6 +8352,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (56)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1280832176}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 108807073}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1721761435}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.5
@@ -6533,6 +8422,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1223939919}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1223939921 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1223939919}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1225915390
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6545,6 +8445,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (51)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1219666605}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 983606002}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 521015041}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.5
@@ -6595,6 +8515,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1225915390}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1225915392 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1225915390}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1233204046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6647,6 +8578,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 72168274}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1127611477}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 586954515}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6709,6 +8656,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2091283789}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 183779666}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1551262630}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6719,6 +8682,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1255109145}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1255109147 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1255109145}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1 &1260427375
 GameObject:
   m_ObjectHideFlags: 0
@@ -6867,6 +8841,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (55)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1471171552}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1223939921}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 108807073}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 333050289}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
@@ -6917,6 +8911,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1280832174}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1280832176 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1280832174}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1330005933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6929,6 +8934,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 586954515}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 444402466}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1178717041}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1760790501}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6979,6 +9004,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1330005933}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1330005935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1330005933}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1385706402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6991,6 +9027,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (68)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1184944892}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 799985234}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 616772137}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.5
@@ -7041,6 +9097,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1385706402}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1385706404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1385706402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1435689732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7093,6 +9160,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1635379060}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1106765715}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7155,6 +9234,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1178717041}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2043562568}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 907466769}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7177,6 +9272,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1127611477}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1280832176}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 333050289}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 411272293}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.5
@@ -7227,6 +9342,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1471171550}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1471171552 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1471171550}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &1497910588
 GameObject:
   m_ObjectHideFlags: 0
@@ -7342,6 +9468,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (46)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1621402525}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1991995076}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 224231107}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -7392,6 +9538,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1516249856}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1516249858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1516249856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1517074104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7444,6 +9601,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 428234780}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1551601783}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7506,6 +9675,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2008693136}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1219666605}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 899614037}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7528,6 +9713,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (72)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 328571675}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1255109147}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1118030663}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2091283789}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 183779666}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 37.5
@@ -7578,6 +9791,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1551262628}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1551262630 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1551262628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1551601781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7590,6 +9814,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (43)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 224231107}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 428234780}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7640,6 +9880,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1551601781}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1551601783 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1551601781}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1554907481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7692,6 +9943,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1118030663}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 616772137}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7839,6 +10102,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 840321016}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1106765715}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1918987332}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7861,6 +10140,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (49)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 825424479}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 983606002}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1991995076}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -30
@@ -7911,6 +10210,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1587834496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1587834498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1587834496}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1621029521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7963,6 +10273,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1225915392}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 983606002}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7985,6 +10307,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (45)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1516249858}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 224231107}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1819783193}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 239809587}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -8035,6 +10377,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1621402523}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621402525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1621402523}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1625791132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8087,6 +10440,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1330005935}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 444402466}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1178717041}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8109,6 +10478,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (60)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 411272293}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 413817204}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1106765715}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.5
@@ -8159,6 +10548,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1635379058}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1635379060 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1635379058}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &1648940631
 GameObject:
   m_ObjectHideFlags: 0
@@ -8369,6 +10769,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1621402525}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1516249858}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 224231107}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8391,6 +10807,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (37)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 259902268}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 605032748}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 118974799}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30
@@ -8441,6 +10877,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1706178452}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1706178454 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1706178452}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1713341076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8493,6 +10940,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 889838613}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 629908021}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1760790501}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8515,6 +10978,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (57)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 413817204}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1223939921}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.5
@@ -8565,6 +11044,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1721761433}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721761435 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1721761433}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1731379864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8617,6 +11107,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 907466769}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 90545258}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 250772218}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8639,6 +11145,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 889838613}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 586954515}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1330005935}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 629908021}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -8689,6 +11215,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1760790499}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1760790501 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1760790499}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1808167256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8741,6 +11278,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1122994834}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 901860912}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 291004115}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8763,6 +11316,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 239809587}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 38692891}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1118109707}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1621402525}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8813,6 +11386,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1819783191}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1819783193 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1819783191}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &1823688464
 GameObject:
   m_ObjectHideFlags: 0
@@ -9075,6 +11659,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (64)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1182182531}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1918987332}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9125,6 +11725,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1876557563}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1876557565 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1876557563}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &1877112368
 GameObject:
   m_ObjectHideFlags: 0
@@ -9187,6 +11798,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (63)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1876557565}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1106765715}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 840321016}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -9237,6 +11868,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1918987330}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1918987332 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1918987330}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1946231749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9289,6 +11931,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1991995076}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1516249858}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9311,6 +11965,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 750195929}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2038655910}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 38692891}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 5955972833557196842}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -9361,6 +12035,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1974633311}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1974633313 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1974633311}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1982438141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9373,6 +12058,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 34724293}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2008693136}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 239809587}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 825424479}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15
@@ -9423,6 +12128,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1982438141}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1982438143 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1982438141}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1991995074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9435,6 +12151,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (47)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1516249858}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1587834498}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 825424479}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.5
@@ -9485,6 +12221,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1991995074}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1991995076 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1991995074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &1992735576
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9497,6 +12244,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1212619798}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 444402466}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5955972833557196842}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 901860912}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -9547,6 +12314,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 1992735576}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1992735578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 1992735576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &2008693134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9559,6 +12337,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1982438143}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1219666605}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 899614037}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 825424479}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.5
@@ -9609,6 +12407,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 2008693134}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2008693136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 2008693134}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1 &2013410473
 GameObject:
   m_ObjectHideFlags: 1
@@ -9715,6 +12524,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 982592057}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2091283789}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1212619798}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9737,6 +12562,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1974633313}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 34724293}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5955972833557196842}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 629908021}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9787,6 +12632,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 2038655908}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2038655910 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 2038655908}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &2043562566
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9799,6 +12655,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (28)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1178717041}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 982592057}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 907466769}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 799985234}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -9849,6 +12725,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 2043562566}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2043562568 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 2043562566}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &2047806885
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9901,6 +12788,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 38692891}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 750195929}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1974633313}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9963,6 +12866,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1918987332}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1876557565}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9985,6 +12900,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 982592057}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 183779666}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1212619798}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1551262630}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30
@@ -10035,6 +12970,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 2091283787}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2091283789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 2091283787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &2096627496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10087,6 +13033,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 259902268}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1706178454}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 605032748}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10149,6 +13111,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1471171552}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1127611477}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 411272293}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10171,6 +13149,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Street (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: settlements.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1165192031}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 6208801978864841408}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1974633313}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1992735578}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2038655910}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 444402466}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -10216,6 +13222,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+--- !u!114 &5955972833557196842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+  m_PrefabInstance: {fileID: 5955972833557196841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Street
 --- !u!1001 &6208801978864841407
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10268,11 +13285,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: streets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1974633313}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2038655910}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: 'streets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 5955972833557196842}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+--- !u!114 &6208801978864841408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 6208801978864841407}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
