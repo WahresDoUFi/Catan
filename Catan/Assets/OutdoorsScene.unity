@@ -2039,14 +2039,14 @@ MonoBehaviour:
   geometryType: 3
   meshRenderers: []
   timeMultiplier: 1
-  scriptInteractions: 1
+  scriptInteractions: 0
   cpuEvaluateRipples: 0
   customMaterial: {fileID: 0}
   startSmoothness: 0.95
   endSmoothness: 0.85
   smoothnessFadeStart: 100
   smoothnessFadeDistance: 500
-  tessellation: 1
+  tessellation: 0
   maxTessellationFactor: 3
   tessellationFactorFadeStart: 150
   tessellationFactorFadeRange: 1850
@@ -2103,7 +2103,7 @@ MonoBehaviour:
   ripplesCurrentMapInfluence: 1
   deformation: 0
   deformationRes: 512
-  foam: 1
+  foam: 0
   foamResolution: 512
   foamPersistenceMultiplier: 0.5
   foamCurrentInfluence: 0.6
@@ -2193,7 +2193,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1000, y: 1, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

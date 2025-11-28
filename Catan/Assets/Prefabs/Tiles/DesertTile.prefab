@@ -685,6 +685,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3854678236170495456}
     m_Modifications:
+    - target: {fileID: 1602149563307450554, guid: c0951f4935b904979a3e107f507d31d5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
     - target: {fileID: 5048936674019757058, guid: c0951f4935b904979a3e107f507d31d5, type: 3}
       propertyPath: m_Name
       value: basetile_desert

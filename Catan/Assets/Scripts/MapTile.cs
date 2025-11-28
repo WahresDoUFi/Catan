@@ -37,7 +37,6 @@ public class MapTile : NetworkBehaviour
 
     public void SetNumber(int number)
     {
-        Debug.Log(number);
         _number.Value = number;
     }
 
