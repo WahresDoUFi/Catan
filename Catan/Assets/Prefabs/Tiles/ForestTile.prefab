@@ -753,6 +753,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3807522240100062921, guid: 4b499d449c7334d9d9257458a0e2da30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4261109116520164382, guid: 4b499d449c7334d9d9257458a0e2da30, type: 3}
       propertyPath: m_Name
       value: basetile_forest
@@ -760,6 +764,10 @@ PrefabInstance:
     - target: {fileID: 6169006719220216279, guid: 4b499d449c7334d9d9257458a0e2da30, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7782012432228464224, guid: 4b499d449c7334d9d9257458a0e2da30, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

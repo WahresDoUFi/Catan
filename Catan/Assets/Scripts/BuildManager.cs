@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class BuildManager : MonoBehaviour
 {
+    public const float MaxCursorDistanceFromBuilding = 10f;
     public enum BuildType
     {
         Street,
@@ -73,6 +74,8 @@ public class BuildManager : MonoBehaviour
         var worldPoint = MouseWorldPosition();
         if (_buildType == BuildType.Street)
             HandleStreetPlacing(worldPoint);
+        else if (_buildType == BuildType.Settlement)
+            HandleSettlementPlacing(worldPoint);
     }
 
     private Vector3 MouseWorldPosition()
@@ -81,9 +84,18 @@ public class BuildManager : MonoBehaviour
         mousePos.z = _mainCam.transform.position.y;
         return _mainCam.ScreenToWorldPoint(mousePos);
     }
-
+    
     private void HandleStreetPlacing(Vector3 worldPoint)
     {
-        Street.GetClosestStreetTo(worldPoint).Preview = true;
+        var street = Street.GetClosestStreetTo(worldPoint);
+        if (street)
+            street.Preview = true;
+    }
+
+    private void HandleSettlementPlacing(Vector3 worldPoint)
+    {
+        var settlement = Settlement.GetClosestSettlementTo(worldPoint);
+        if (settlement)
+            settlement.Preview = true;
     }
 }

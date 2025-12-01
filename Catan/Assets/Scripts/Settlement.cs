@@ -23,13 +23,20 @@ public class Settlement : NetworkBehaviour
     [SerializeField] private Color unavailableColor;
     
     private Material _settlementPreviewMaterial;
+    
+    private void OnEnable()
+    {
+        AllSettlements.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        AllSettlements.Remove(this);
+    }
 
     private void Awake()
     {
-        AllSettlements.Add(this);
         _settlementPreviewMaterial = settlementPreview.GetComponent<Renderer>().material;
-        if (HasAuthority && !IsSpawned)
-            NetworkObject.Spawn(true);
     }
 
     private void Start()
@@ -45,7 +52,10 @@ public class Settlement : NetworkBehaviour
 
     public static Settlement GetClosestSettlementTo(Vector3 position)
     {
-        return AllSettlements.OrderBy(street => (street.transform.position - position).sqrMagnitude).First();
+        var settlement = AllSettlements.OrderBy(street => (street.transform.position - position).sqrMagnitude).First();
+        if (Vector3.Distance(settlement.transform.position, position) > BuildManager.MaxCursorDistanceFromBuilding)
+            return null;
+        return settlement;
     }
 
     public void Build(ulong builderId)
@@ -73,7 +83,7 @@ public class Settlement : NetworkBehaviour
 
     private bool ShowPreview()
     {
-        if (!Preview) return false;
+        if (!Preview || !NetworkManager.Singleton) return false;
         if (IsOccupied) return false;
         ulong clientId = NetworkManager.Singleton.LocalClientId;
         _settlementPreviewMaterial.color = CanBeBuildBy(clientId) ? canBuildColor : unavailableColor;

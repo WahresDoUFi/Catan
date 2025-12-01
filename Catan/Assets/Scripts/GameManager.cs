@@ -53,6 +53,7 @@ public class GameManager : NetworkBehaviour
         }
         ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
         NetworkManager.Singleton.OnClientStopped += OnClientStopped;
+        _gameState.OnValueChanged += (_, _) => BuildManager.SetActive(false);
     }
 
     public override void OnNetworkDespawn()
@@ -69,6 +70,7 @@ public class GameManager : NetworkBehaviour
 
     public bool PlaceSettlement(Settlement settlement)
     {
+        if (!settlement) return false;
         ulong clientId = NetworkManager.Singleton.LocalClientId;
         BuySettlementRpc(NetworkManager.Singleton.LocalClientId, settlement.Id);
         return settlement.CanBeBuildBy(clientId);
@@ -76,6 +78,7 @@ public class GameManager : NetworkBehaviour
 
     public bool PlaceStreet(Street street)
     {
+        if (!street) return false;
         ulong clientId = NetworkManager.Singleton.LocalClientId;
         BuyStreetRpc(clientId, street.Id);
         return street.CanBeBuildBy(clientId);
@@ -98,6 +101,14 @@ public class GameManager : NetworkBehaviour
         if (street.CanBeBuildBy(clientId))
         {
             street.SetOwner(clientId);
+            if (State == GameState.Preparing)
+            {
+                NextTurn();
+                if (_roundNumber.Value > 2)
+                {
+                    FinishStartingPhase();
+                }
+            }
         }
     }
 
@@ -110,8 +121,7 @@ public class GameManager : NetworkBehaviour
     private void FinishTurnRpc()
     {
         if (State != GameState.Playing) return;
-        _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
-        _hasThrownDice.Value = false;
+        NextTurn();
     }
 
     [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
@@ -124,6 +134,19 @@ public class GameManager : NetworkBehaviour
     {
         _gameState.Value = (byte)GameState.Preparing;
         _roundNumber.Value = 1;
+    }
+
+    private void NextTurn()
+    {
+        _hasThrownDice.Value = false;
+        _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
+        if (_playerTurn.Value == 0)
+            _roundNumber.Value += 1;
+    }
+
+    private void FinishStartingPhase()
+    {
+        _gameState.Value = (byte)GameState.Playing;
     }
 
     private void HandleInitialPlacement()

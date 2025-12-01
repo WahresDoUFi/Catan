@@ -6,13 +6,13 @@ public class TestScriopt : MonoBehaviour
 {
 #if UNITY_EDITOR
     public UnityEditor.SceneAsset boardScene;
-#endif
-    [SerializeField] private string boardSceneName;
-
+    
     private void OnValidate()
     {
         boardSceneName = boardScene.name;
     }
+#endif
+    [SerializeField] private string boardSceneName;
 
     void OnGUI()
     {

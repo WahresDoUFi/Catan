@@ -26,12 +26,20 @@ public class Street : NetworkBehaviour
     [SerializeField] private Color unavailableColor;
 
     private Material _previewMaterial;
+    
+    private void OnEnable()
+    {
+        AllStreets.Add(this);
+    }
+
+    private void OnDisable()
+    {
+        AllStreets.Remove(this);
+    }
 
     private void Awake()
     {
         _previewMaterial = previewObject.GetComponent<Renderer>().material;
-        if (HasAuthority && !IsSpawned)
-            NetworkObject.Spawn(true);
     }
 
     private void Start()
@@ -66,25 +74,18 @@ public class Street : NetworkBehaviour
 
     private bool ShowPreview()
     {
-        if (!Preview) return false;
+        if (!Preview || !NetworkManager.Singleton) return false;
         _previewMaterial.color = CanBeBuildBy(NetworkManager.Singleton.LocalClientId) ? canBuildColor : unavailableColor;
         Preview = false;
         return true;
     }
 
-    private void OnEnable()
-    {
-        AllStreets.Add(this);
-    }
-
-    private void OnDisable()
-    {
-        AllStreets.Remove(this);
-    }
-    
     public static Street GetClosestStreetTo(Vector3 position)
     {
-        return AllStreets.OrderBy(street => (street.transform.position - position).sqrMagnitude).First();
+        var street = AllStreets.OrderBy(street => (street.transform.position - position).sqrMagnitude).First();
+        if (Vector3.Distance(street.transform.position, position) > BuildManager.MaxCursorDistanceFromBuilding)
+            return null;
+        return street;
     }
     
     public void SetOwner(ulong ownerId)
