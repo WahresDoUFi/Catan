@@ -34,6 +34,15 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private float tileWidth = 20f;
     [SerializeField] private float tileHeight = 17.32051f;
 
+    private void Start()
+    {
+        if (!NetworkManager.Singleton)
+            return;
+        if (!NetworkManager.Singleton.IsServer)
+            return;
+        InitializeMap();
+    }
+
     public void InitializeMap()
     {
         var tiles = new[]
@@ -78,7 +87,8 @@ public class MapGenerator : MonoBehaviour
         var positions = GenerateTilePositions(tiles.Length);
         for (var i = 0; i < tiles.Length; i++)
         {
-            var tileObject = Instantiate(tilePrefab, positions[i], Quaternion.Euler(0f, new Random().Next(0, 6) * 60f, 0f), tileParent);
+            var tileObject = Instantiate(tilePrefab, positions[i],
+                Quaternion.Euler(0f, new Random().Next(0, 6) * 60f, 0f), tileParent);
             tileObject.GetComponent<NetworkObject>().Spawn();
             var tile = tileObject.GetComponent<MapTile>();
             var type = tiles[i];

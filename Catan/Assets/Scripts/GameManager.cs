@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using Unity.Collections;
 using Unity.Netcode;
-using UnityEditor.Build.Reporting;
+using UnityEngine.SceneManagement;
 
 public class GameManager : NetworkBehaviour
 {
@@ -47,7 +44,20 @@ public class GameManager : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        if (HasAuthority)
+        {
+            foreach (var playerId in NetworkManager.Singleton.ConnectedClientsIds)
+            {
+                _playerIds.Add(playerId);
+            }
+        }
         ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
+        NetworkManager.Singleton.OnClientStopped += OnClientStopped;
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        ConnectionNotificationManager.Instance.OnClientConnectionNotification -= OnClientConnectionStatusChange;
     }
 
     public bool IsMyTurn()
@@ -129,16 +139,30 @@ public class GameManager : NetworkBehaviour
     {
         if (!NetworkManager.Singleton.IsHost)
             return;
-        if (connectionStatus == ConnectionNotificationManager.ConnectionStatus.Connected)
+        switch (connectionStatus)
         {
-            _playerIds.Add(clientId);
-            if (State == (byte)GameState.Waiting)
+            case ConnectionNotificationManager.ConnectionStatus.Connected:
             {
-                if (NetworkManager.Singleton.ConnectedClientsIds.Count == 4)
+                _playerIds.Add(clientId);
+                if (State == (byte)GameState.Waiting)
                 {
-                    StartGame();
+                    if (NetworkManager.Singleton.ConnectedClientsIds.Count == 4)
+                    {
+                        StartGame();
+                    }
                 }
+
+                break;
             }
+            case ConnectionNotificationManager.ConnectionStatus.Disconnected:
+                _playerIds.Remove(clientId);
+                break;
         }
+    }
+
+    private void OnClientStopped(bool isHost)
+    {
+        SceneManager.LoadScene(0);
+        NetworkManager.Singleton.OnClientStopped -= OnClientStopped;
     }
 }

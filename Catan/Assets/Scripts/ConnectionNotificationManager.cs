@@ -3,39 +3,49 @@ using System;
 using UnityEngine;
 
 public class ConnectionNotificationManager : MonoBehaviour
+{
+    public static ConnectionNotificationManager Instance;
+    public event Action<ulong, ConnectionStatus> OnClientConnectionNotification;
+
+    public enum ConnectionStatus
     {
-        public static ConnectionNotificationManager Instance;
-        public event Action<ulong, ConnectionStatus> OnClientConnectionNotification;
+        Connected,
+        Disconnected,
+    }
 
-        public enum ConnectionStatus
-        {
-            Connected,
-            Disconnected,
-        }
-        private void Awake()
-        {
-            Instance = this;
-        }
+    private void Awake()
+    {
+        Instance = this;
+    }
 
-        private void Start()
+    private void Start()
+    {
+        if (NetworkManager.Singleton == null)
         {
-            if (NetworkManager.Singleton == null)
-            {
-                Debug.LogError("NetworkManager not found");
-                return;
-            }
-
-            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
-            NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectedCallback;
+            Debug.LogError("NetworkManager not found");
+            return;
         }
 
-        private void OnClientConnectedCallback(ulong clientId)
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnectedCallback;
+        NetworkManager.Singleton.OnClientDisconnectCallback += OnClientDisconnectedCallback;
+    }
+
+    private void OnDestroy()
+    {
+        if (NetworkManager.Singleton != null)
         {
-            OnClientConnectionNotification?.Invoke(clientId, ConnectionStatus.Connected);
-        }
-        
-        private void OnClientDisconnectedCallback(ulong clientId)
-        {
-            OnClientConnectionNotification?.Invoke(clientId, ConnectionStatus.Disconnected);
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnectedCallback;
+            NetworkManager.Singleton.OnClientDisconnectCallback -= OnClientDisconnectedCallback;
         }
     }
+
+    private void OnClientConnectedCallback(ulong clientId)
+    {
+        OnClientConnectionNotification?.Invoke(clientId, ConnectionStatus.Connected);
+    }
+
+    private void OnClientDisconnectedCallback(ulong clientId)
+    {
+        OnClientConnectionNotification?.Invoke(clientId, ConnectionStatus.Disconnected);
+    }
+}
