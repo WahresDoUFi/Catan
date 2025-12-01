@@ -81,7 +81,7 @@ public class MapGenerator : MonoBehaviour
             (list[k], list[n]) = (list[n], list[k]);
         }
     }
-
+    
     private void GenerateMap(Tile[] tiles)
     {
         var positions = GenerateTilePositions(tiles.Length);
@@ -99,9 +99,6 @@ public class MapGenerator : MonoBehaviour
                 tile.SetNumber(TileNumbers[randomNumber]);
                 TileNumbers.Remove(randomNumber);
             }
-
-            if (new Random().Next(0, 2) == 1)
-                tile.Discover();
         }
     }
 

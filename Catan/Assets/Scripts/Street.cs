@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using Unity.Netcode;
 using UnityEditor;
 using UnityEngine;
@@ -66,9 +67,9 @@ public class Street : NetworkBehaviour
                     if (settlement.streets.Any(otherStreet => otherStreet.IsOccupied))
                         return false;
                 }
-            }    
+            }
         }
-        if (connectedStreets.Any(otherStreet => otherStreet.Owner == playerId)) return true;
+        else if (connectedStreets.Any(otherStreet => otherStreet.Owner == playerId)) return true;
         return settlements.Any(otherSettlement => otherSettlement.Owner == playerId);
     }
 
@@ -96,6 +97,10 @@ public class Street : NetworkBehaviour
     private void UpdateStreet()
     {
         street.SetActive(IsOccupied);
+        if (IsOccupied)
+        {
+            BuildingIconManager.AddIcon(transform, IconType.Street, GameManager.Instance.GetPlayerColor(Owner));
+        }
     }
 }
 
