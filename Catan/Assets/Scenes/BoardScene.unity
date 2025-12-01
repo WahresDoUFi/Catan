@@ -1159,13 +1159,13 @@ MonoBehaviour:
   cardPrefab: {fileID: 5695294626546805545, guid: 193788bd4becb460eb7b1bfa8df32f8a, type: 3}
   resourceSprites:
   - resourceType: 0
-    icon: {fileID: 21300000, guid: 4cc687210e916499d999c48080a77e7f, type: 3}
+    icon: {fileID: 21300000, guid: 263380c5d63154e7187774aed0880717, type: 3}
   - resourceType: 1
     icon: {fileID: 21300000, guid: 7f5ca0a825897457aba83aba7ae2783d, type: 3}
   - resourceType: 2
     icon: {fileID: 21300000, guid: 079077d6a7a4c406692fb9a931414074, type: 3}
   - resourceType: 3
-    icon: {fileID: 21300000, guid: 4cc687210e916499d999c48080a77e7f, type: 3}
+    icon: {fileID: 21300000, guid: 122b1146acc0741aaa98020e8c0bdf03, type: 3}
   - resourceType: 4
     icon: {fileID: 21300000, guid: 4cc687210e916499d999c48080a77e7f, type: 3}
   maxCardTilt: 10
