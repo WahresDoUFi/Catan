@@ -14,6 +14,7 @@ public class InputManager : MonoBehaviour
 
     private void OnDisable()
     {
+        _input.Disable();
         _input.Dispose();
     }
 

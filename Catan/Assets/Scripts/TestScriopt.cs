@@ -16,6 +16,7 @@ public class TestScriopt : MonoBehaviour
 
     void OnGUI()
     {
+        if (!NetworkManager.Singleton) return;
         GUILayout.BeginArea(new Rect(10, 10, 300, 300));
         if (!NetworkManager.Singleton.IsClient && !NetworkManager.Singleton.IsServer)
         {
