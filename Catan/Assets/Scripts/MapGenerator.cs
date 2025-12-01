@@ -1,9 +1,6 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = System.Random;
 
 public enum Tile
@@ -23,7 +20,8 @@ public class MapGenerator : MonoBehaviour
         (-1, 0, 1), (0, -1, 1), (1, -1, 0), (1, 0, -1), (0, 1, -1), (-1, 1, 0)
     };
 
-    private static readonly List<int> TileNumbers = new() { 2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12 };
+    private List<int> _tileNumbers;
+
 
     [SerializeField] private GameObject tilePrefab;
 
@@ -68,6 +66,7 @@ public class MapGenerator : MonoBehaviour
             Tile.Desert,
         };
         Shuffle(tiles);
+        _tileNumbers = new List<int> { 2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12 };
         GenerateMap(tiles);
     }
 
@@ -95,9 +94,10 @@ public class MapGenerator : MonoBehaviour
             tile.SetType(type);
             if (type != Tile.Desert)
             {
-                var randomNumber = new Random().Next(TileNumbers.Count);
-                tile.SetNumber(TileNumbers[randomNumber]);
-                TileNumbers.Remove(randomNumber);
+                var randomNumber = new Random().Next(_tileNumbers.Count);
+                var number = _tileNumbers[randomNumber];
+                tile.SetNumber(number);
+                _tileNumbers.RemoveAt(randomNumber);
             }
 
             if (new Random().Next(0, 2) == 1)
