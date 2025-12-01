@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3754452461684602987
 Transform:
   m_ObjectHideFlags: 0
@@ -5660,7 +5660,7 @@ ParticleSystemRenderer:
   m_ForceMeshLod: -1
   m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
-  m_RendererPriority: 0
+  m_RendererPriority: 100
   m_Materials:
   - {fileID: 2100000, guid: 7aaeb5ac89f1c4864b0f72e0a0bbf57e, type: 2}
   m_StaticBatchInfo:
@@ -5728,6 +5728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneTile
       objectReference: {fileID: 0}
+    - target: {fileID: 430708074317002209, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5789,6 +5793,10 @@ PrefabInstance:
     - target: {fileID: 430708074317002209, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
       propertyPath: m_Name
       value: ForestTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 430708074317002209, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5852,6 +5860,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FieldTile
       objectReference: {fileID: 0}
+    - target: {fileID: 430708074317002209, guid: 5758b0388e357469eabce26e286c031f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: 5758b0388e357469eabce26e286c031f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5913,6 +5925,10 @@ PrefabInstance:
     - target: {fileID: 430708074317002209, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
       propertyPath: m_Name
       value: BrickTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 430708074317002209, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
       propertyPath: m_LocalPosition.x

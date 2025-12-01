@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Unity.Collections;
 using Unity.Netcode;
+using UnityEditor.Build.Reporting;
 
 public class GameManager : NetworkBehaviour
 {
@@ -10,9 +11,11 @@ public class GameManager : NetworkBehaviour
     public const int MaxPlayers = 4;
 
     /// <summary>
-    /// Waiting = waiting for players to connect
-    /// Preparing = Start Phase where players place initial Settlements
-    /// Playing = Normal Game Phase
+    /// <list type="bullet">
+    ///<item>Waiting = waiting for players to connect</item>
+    /// <item>Preparing = Start Phase where players place initial Settlements</item>
+    /// <item>Playing = Normal Game Phase</item>
+    /// </list>
     /// </summary>
     public enum GameState
     {
@@ -27,12 +30,21 @@ public class GameManager : NetworkBehaviour
     private readonly NetworkVariable<byte> _playerTurn = new();
     private readonly NetworkList<ulong> _playerIds = new();
     private readonly NetworkVariable<bool> _hasThrownDice = new();
+    private readonly NetworkVariable<byte> _roundNumber = new();
 
     private void Awake()
     {
         Instance = this;
     }
-    
+
+    private void Update()
+    {
+        if (State == GameState.Preparing)
+        {
+            HandleInitialPlacement();
+        }
+    }
+
     public override void OnNetworkSpawn()
     {
         ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
@@ -45,6 +57,40 @@ public class GameManager : NetworkBehaviour
         return _playerIds.IndexOf(NetworkManager.Singleton.LocalClientId) == _playerTurn.Value;
     }
 
+    public bool PlaceSettlement(Settlement settlement)
+    {
+        ulong clientId = NetworkManager.Singleton.LocalClientId;
+        BuySettlementRpc(NetworkManager.Singleton.LocalClientId, settlement.Id);
+        return settlement.CanBeBuildBy(clientId);
+    }
+
+    public bool PlaceStreet(Street street)
+    {
+        ulong clientId = NetworkManager.Singleton.LocalClientId;
+        BuyStreetRpc(clientId, street.Id);
+        return street.CanBeBuildBy(clientId);
+    }
+
+    [Rpc(SendTo.Authority)]
+    private void BuySettlementRpc(ulong clientId, int settlementId)
+    {
+        var settlement = Settlement.AllSettlements[settlementId];
+        if (settlement.CanBeBuildBy(clientId))
+        {
+            settlement.Build(clientId);
+        }
+    }
+
+    [Rpc(SendTo.Authority)]
+    private void BuyStreetRpc(ulong clientId, int streetId)
+    {
+        var street = Street.AllStreets[streetId];
+        if (street.CanBeBuildBy(clientId))
+        {
+            street.SetOwner(clientId);
+        }
+    }
+
     public void FinishTurn()
     {
         FinishTurnRpc();
@@ -53,6 +99,7 @@ public class GameManager : NetworkBehaviour
     [Rpc(SendTo.Authority)]
     private void FinishTurnRpc()
     {
+        if (State != GameState.Playing) return;
         _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
         _hasThrownDice.Value = false;
     }
@@ -66,6 +113,15 @@ public class GameManager : NetworkBehaviour
     public void StartGame()
     {
         _gameState.Value = (byte)GameState.Preparing;
+        _roundNumber.Value = 1;
+    }
+
+    private void HandleInitialPlacement()
+    {
+        if (!IsMyTurn()) return;
+        BuildManager.SelectBuildingType(Player.LocalPlayer.VictoryPoints < _roundNumber.Value
+            ? BuildManager.BuildType.Settlement
+            : BuildManager.BuildType.Street);
     }
     
     private void OnClientConnectionStatusChange(ulong clientId,

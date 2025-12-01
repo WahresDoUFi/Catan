@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 13116137}
   - component: {fileID: 13116138}
+  - component: {fileID: 13116139}
   m_Layer: 0
   m_Name: Map
   m_TagString: Untagged
@@ -172,6 +173,27 @@ MonoBehaviour:
   streets: {fileID: 1164459576}
   tileWidth: 20
   tileHeight: 17.32051
+--- !u!65 &13116139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13116136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 100, y: 1, z: 100}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &34724291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -186,7 +208,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 350814548}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 954741899}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -279,7 +313,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2047806887}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 672091133}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -510,6 +556,142 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 65800067}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &71099245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 71099246}
+  - component: {fileID: 71099248}
+  - component: {fileID: 71099247}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &71099246
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71099245}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1254117987}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &71099247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71099245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Cancel
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 186c736caf9b04a58baa52c152fa4f26, type: 2}
+  m_sharedMaterial: {fileID: -2459986537490963253, guid: 186c736caf9b04a58baa52c152fa4f26, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 42
+  m_fontSizeBase: 42
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &71099248
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71099245}
+  m_CullTransparentMesh: 1
 --- !u!1001 &72168272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -524,7 +706,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1705276839}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 801456587}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -681,6 +875,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 82369521}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &82369523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 82369521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &90545256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -695,7 +900,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 801456587}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1731379866}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -834,7 +1051,7 @@ MonoBehaviour:
   - resourceType: 1
     icon: {fileID: 21300000, guid: 7f5ca0a825897457aba83aba7ae2783d, type: 3}
   - resourceType: 2
-    icon: {fileID: 21300000, guid: 4cc687210e916499d999c48080a77e7f, type: 3}
+    icon: {fileID: 21300000, guid: 079077d6a7a4c406692fb9a931414074, type: 3}
   - resourceType: 3
     icon: {fileID: 21300000, guid: 4cc687210e916499d999c48080a77e7f, type: 3}
   - resourceType: 4
@@ -842,6 +1059,11 @@ MonoBehaviour:
   maxCardTilt: 10
   cardSpacing: 80
   cardMoveSpeed: 5
+--- !u!224 &107361495 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+  m_PrefabInstance: {fileID: 410354459380650004}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &108807071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -856,8 +1078,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 82369523}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1648684438}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -869,11 +1099,11 @@ PrefabInstance:
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 1223939921}
+      objectReference: {fileID: 521015041}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
-      objectReference: {fileID: 521015041}
+      objectReference: {fileID: 1223939921}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -37.5
@@ -949,8 +1179,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1909009374}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1125212026}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 2
@@ -1356,8 +1594,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1255109147}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1560420227}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -1449,8 +1695,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1117466312}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1671191984}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -1542,7 +1796,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1326055479}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 350814548}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -1713,7 +1979,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1942839150}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1731379866}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -1884,16 +2162,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2096627498}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2136398554}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
       value: 
-      objectReference: {fileID: 605032748}
+      objectReference: {fileID: 1706178454}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 1706178454}
+      objectReference: {fileID: 605032748}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
@@ -2409,7 +2699,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2136398554}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1808167258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -2785,7 +3087,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 925105819}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 846013094}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -2942,6 +3256,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 350814546}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &350814548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 350814546}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!114 &362610943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 168406867}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &400777881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3030,16 +3366,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 839057957}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2122691765}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
       value: 
-      objectReference: {fileID: 1635379060}
+      objectReference: {fileID: 413817204}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 413817204}
+      objectReference: {fileID: 1635379060}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
@@ -3123,8 +3471,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 839057957}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1659529728}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -3294,8 +3650,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1517074106}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1446363645}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -3473,24 +3837,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1625791134}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1165192031}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
       value: 
-      objectReference: {fileID: 1330005935}
+      objectReference: {fileID: 1992735578}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 1992735578}
+      objectReference: {fileID: 1330005935}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
-      objectReference: {fileID: 5955972833557196842}
+      objectReference: {fileID: 1178717041}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[3]'
       value: 
-      objectReference: {fileID: 1178717041}
+      objectReference: {fileID: 5955972833557196842}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.5
@@ -3796,8 +4172,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1397802420}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1648684438}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -3875,6 +4259,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &568744975 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 465211036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &581667772
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4041,7 +4436,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1479831161}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1705276839}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -4134,8 +4541,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1909009374}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2023029858}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -4363,8 +4778,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1329126809}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2096627498}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -4456,8 +4879,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1446363645}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1329126809}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -4549,8 +4980,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 568744975}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1554907483}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -4642,7 +5081,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 954741899}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1713341078}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -4655,11 +5106,11 @@ PrefabInstance:
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
-      objectReference: {fileID: 1760790501}
+      objectReference: {fileID: 889838613}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[3]'
       value: 
-      objectReference: {fileID: 889838613}
+      objectReference: {fileID: 1760790501}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.5
@@ -4947,6 +5398,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 652229036}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &652229038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 652229036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &655272251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5025,6 +5487,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 655272251}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &672091133 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 242504126}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &750195927
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5039,7 +5512,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2047806887}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2136398554}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -5392,6 +5877,69 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 785437525}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &790762736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 790762737}
+  - component: {fileID: 790762738}
+  m_Layer: 5
+  m_Name: Content
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &790762737
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790762736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 107361495}
+  m_Father: {fileID: 977950272}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -160, y: -120}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &790762738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790762736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
 --- !u!1001 &799985232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5406,7 +5954,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 568744975}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 905968287}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -5485,6 +6045,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &801456587 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 58852995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &825424477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5499,7 +6070,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 362610943}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1012305459}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -5734,6 +6317,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 839057955}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &839057957 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 839057955}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &840321014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5748,7 +6342,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1569820785}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 801456587}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -5827,6 +6433,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &846013094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 485963422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1 &881002719
 GameObject:
   m_ObjectHideFlags: 0
@@ -5838,6 +6455,7 @@ GameObject:
   - component: {fileID: 881002722}
   - component: {fileID: 881002720}
   - component: {fileID: 881002721}
+  - component: {fileID: 881002723}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -5898,6 +6516,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &881002723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881002719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014514bcbafa44955bfc15d2f62697d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InputManager
 --- !u!1001 &889838611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5912,7 +6542,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1713341078}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 846013094}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -6065,6 +6707,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 890920328}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &890920330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 890920328}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &896525521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6157,8 +6810,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 846013094}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1956804620}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[0]'
+      value: 
+      objectReference: {fileID: 333050289}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[1]'
+      value: 
+      objectReference: {fileID: 889838613}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1219666605}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'connectedStreets.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2008693136}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.5
@@ -6234,7 +6915,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1808167258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1192436801}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -6243,11 +6936,11 @@ PrefabInstance:
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 1122994834}
+      objectReference: {fileID: 1992735578}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
-      objectReference: {fileID: 1992735578}
+      objectReference: {fileID: 1122994834}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[3]'
       value: 
@@ -6313,6 +7006,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &905968287 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 896525521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &907466767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6327,7 +7031,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1731379866}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1784115125}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -6420,8 +7136,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2023029858}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1560420227}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -6499,6 +7223,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &925105819 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 265461753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &954741897
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6577,6 +7312,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 954741897}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &954741899 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 954741897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &955476841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6655,6 +7401,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 955476841}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &977950271
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 977950272}
+  - component: {fileID: 977950274}
+  - component: {fileID: 977950273}
+  m_Layer: 5
+  m_Name: BuyMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &977950272
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977950271}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 790762737}
+  m_Father: {fileID: 1655732386}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -300, y: 280}
+  m_SizeDelta: {x: 500, y: 500}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &977950273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977950271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7931275fec9b9491896b5e03c15a0ba3, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &977950274
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977950271}
+  m_CullTransparentMesh: 1
 --- !u!1001 &982592055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6669,7 +7491,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 905968287}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2029225203}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -6762,8 +7596,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1349543713}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1621029523}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 2
@@ -6837,6 +7679,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1012305459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 257915415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1075949072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6960,8 +7813,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1569820785}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1488902306}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -7039,6 +7900,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1117466312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 500752743}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1118030661
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7053,8 +7925,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1554907483}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 328571675}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 2
@@ -7142,7 +8022,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1446363645}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 672091133}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -7235,24 +8127,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1808167258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2023029858}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
       value: 
-      objectReference: {fileID: 915737552}
+      objectReference: {fileID: 598385094}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 901860912}
+      objectReference: {fileID: 915737552}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
-      objectReference: {fileID: 598385094}
+      objectReference: {fileID: 291004115}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[3]'
       value: 
-      objectReference: {fileID: 291004115}
+      objectReference: {fileID: 901860912}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 30
@@ -7388,6 +8292,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1125212024}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1125212026 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1125212024}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1127611475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7402,7 +8317,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1705276839}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2122691765}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -7737,7 +8664,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1784115125}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1625791134}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -7830,8 +8769,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 890920330}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1942839150}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -7983,6 +8930,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1184926434}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1184926436 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1184926434}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1184944890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7997,8 +8955,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 652229038}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1942839150}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -8154,6 +9120,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1192436799}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1192436801 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1192436799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1212619796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8168,7 +9145,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1192436801}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2029225203}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -8261,16 +9250,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1397802420}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1956804620}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
       value: 
-      objectReference: {fileID: 899614037}
+      objectReference: {fileID: 521015041}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 521015041}
+      objectReference: {fileID: 899614037}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
@@ -8354,8 +9355,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1184926436}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 82369523}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -8447,8 +9456,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1621029523}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1397802420}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -8604,6 +9621,127 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1233204046}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1254117986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1254117987}
+  - component: {fileID: 1254117990}
+  - component: {fileID: 1254117989}
+  - component: {fileID: 1254117988}
+  m_Layer: 5
+  m_Name: CancelButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1254117987
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254117986}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 71099246}
+  m_Father: {fileID: 1838723690}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -100, y: -40}
+  m_SizeDelta: {x: 200, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1254117988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254117986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1254117989}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1254117989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254117986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8962264, g: 0.21560161, b: 0.21560161, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1254117990
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254117986}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1255109145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8843,7 +9981,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 925105819}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 82369523}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -8922,6 +10072,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1326055479 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 831493783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!114 &1329126809 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 645853529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1330005933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8936,7 +10108,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1479831161}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1625791134}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -8945,15 +10129,15 @@ PrefabInstance:
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 444402466}
+      objectReference: {fileID: 1178717041}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
-      objectReference: {fileID: 1178717041}
+      objectReference: {fileID: 1760790501}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[3]'
       value: 
-      objectReference: {fileID: 1760790501}
+      objectReference: {fileID: 444402466}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -9015,6 +10199,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1349543713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 585865760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1385706402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9029,8 +10224,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 652229038}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 568744975}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -9108,6 +10311,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1397802420 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 581667772}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1435689732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9182,6 +10396,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1435689732}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1446363645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 655272251}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1457270240
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9274,7 +10499,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2122691765}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 925105819}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -9353,6 +10590,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1479831161 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 955476841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!114 &1488902306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1435689732}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1 &1497910588
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,8 +10729,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1671191984}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1946231751}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -9623,6 +10890,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1517074104}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1517074106 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1517074104}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1546419469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9816,8 +11094,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1517074106}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1117466312}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 2
@@ -9965,6 +11251,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1554907481}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1554907483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1554907481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1 &1558705452
 GameObject:
   m_ObjectHideFlags: 0
@@ -10050,6 +11347,17 @@ Transform:
   - {fileID: 328571674}
   m_Father: {fileID: 13116137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1560420227 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 65800067}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1569820783
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10128,6 +11436,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1569820783}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1569820785 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1569820783}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1587834496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10142,8 +11461,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 362610943}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1349543713}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -10295,6 +11622,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1621029521}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1621029523 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1621029521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1621402523
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10309,7 +11647,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1671191984}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1326055479}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -10466,6 +11816,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1625791132}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1625791134 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1625791132}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1635379058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10480,8 +11841,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1488902306}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 839057957}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -10559,6 +11928,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1648684438 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 785437525}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1 &1648940631
 GameObject:
   m_ObjectHideFlags: 0
@@ -10710,6 +12090,8 @@ RectTransform:
   m_Children:
   - {fileID: 1877112369}
   - {fileID: 104941215}
+  - {fileID: 977950272}
+  - {fileID: 1838723690}
   m_Father: {fileID: 1497910592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -10717,6 +12099,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1659529728 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 400777881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1671191982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10795,6 +12188,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1671191982}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1671191984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1671191982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!114 &1705276839 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1233204046}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1706178452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10809,8 +12224,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2096627498}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1125212026}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -10966,6 +12389,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1713341076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1713341078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1713341076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1721761433
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10980,8 +12414,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1659529728}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1184926436}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 2
@@ -11133,6 +12575,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1731379864}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1731379866 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1731379864}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1760790499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11147,7 +12600,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1479831161}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1713341078}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -11226,6 +12691,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1784115125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1457270240}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1808167256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11304,6 +12780,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1808167256}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1808167258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1808167256}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1819783191
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11318,7 +12805,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1326055479}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 672091133}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -11647,6 +13146,65 @@ MonoBehaviour:
   tiltLimit: {x: 50, y: 90}
   cameraSpeed: {x: 0.2, y: 1}
   cameraLerpSpeed: 8
+--- !u!1 &1838723689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838723690}
+  - component: {fileID: 1838723692}
+  - component: {fileID: 1838723693}
+  m_Layer: 5
+  m_Name: BuildMode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1838723690
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838723689}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1254117987}
+  m_Father: {fileID: 1655732386}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1838723692
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838723689}
+  m_CullTransparentMesh: 1
+--- !u!114 &1838723693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838723689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac2d264d4e6041d085928512920605e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildManager
+  cancelButton: {fileID: 1254117988}
 --- !u!1001 &1876557563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11661,8 +13219,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2048650203}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 890920330}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 2
@@ -11786,6 +13352,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.FinishTurnButton
   button: {fileID: 1648940633}
+--- !u!114 &1909009374 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 285499728}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1918987330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11800,8 +13377,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2048650203}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1569820785}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -11879,6 +13464,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!114 &1942839150 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 420623162}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1946231749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11953,6 +13549,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 1946231749}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1946231751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1946231749}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!114 &1956804620 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1546419469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &1974633311
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11967,7 +13585,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6208801978864841408}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2047806887}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -12060,7 +13690,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 350814548}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1012305459}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -12153,8 +13795,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1946231751}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 362610943}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: connectedStreets.Array.size
       value: 3
@@ -12246,7 +13896,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1165192031}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1192436801}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -12255,15 +13917,15 @@ PrefabInstance:
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 444402466}
+      objectReference: {fileID: 901860912}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
-      objectReference: {fileID: 5955972833557196842}
+      objectReference: {fileID: 444402466}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[3]'
       value: 
-      objectReference: {fileID: 901860912}
+      objectReference: {fileID: 5955972833557196842}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 15
@@ -12339,7 +14001,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1012305459}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1956804620}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -12472,6 +14146,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
   m_PrefabInstance: {fileID: 5955972833557196841}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2023029858 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 1075949072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &2029225201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12550,6 +14235,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 2029225201}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2029225203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 2029225201}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &2038655908
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12564,7 +14260,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6208801978864841408}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 954741899}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -12573,7 +14281,7 @@ PrefabInstance:
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 34724293}
+      objectReference: {fileID: 629908021}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
@@ -12581,7 +14289,7 @@ PrefabInstance:
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[3]'
       value: 
-      objectReference: {fileID: 629908021}
+      objectReference: {fileID: 34724293}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -12657,7 +14365,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1784115125}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 905968287}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -12814,6 +14534,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 2047806885}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2047806887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 2047806885}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &2048650201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12888,6 +14619,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 2048650201}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2048650203 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 2048650201}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &2091283787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12902,7 +14644,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
-      value: 0
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1255109147}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: 'settlements.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2029225203}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
@@ -13059,6 +14813,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 2096627496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2096627498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 2096627496}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
 --- !u!1001 &2122691763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13137,6 +14902,217 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
   m_PrefabInstance: {fileID: 2122691763}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2122691765 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 2122691763}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!114 &2136398554 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+  m_PrefabInstance: {fileID: 640708647}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!1001 &410354459380650004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 790762737}
+    m_Modifications:
+    - target: {fileID: 714479652456097884, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 714479652456097884, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 714479652456097884, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 714479652456097884, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162632695964737146, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162632695964737146, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162632695964737146, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162632695964737146, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162632695964737146, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3162632695964737146, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202847999400862445, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202847999400862445, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202847999400862445, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1838723693}
+    - target: {fileID: 3202847999400862445, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202847999400862445, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202847999400862445, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BuildManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202847999400862445, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3202847999400862445, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836267687996561982, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836267687996561982, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836267687996561982, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5836267687996561982, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556227411747537940, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288600477863412305, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
+      propertyPath: m_Name
+      value: BuyMenu
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
 --- !u!1001 &5955972833557196841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13162,17 +15138,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6208801978864841408}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: connectedStreets.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[0]'
       value: 
-      objectReference: {fileID: 1974633313}
+      objectReference: {fileID: 2038655910}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[1]'
       value: 
-      objectReference: {fileID: 1992735578}
+      objectReference: {fileID: 1974633313}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[2]'
       value: 
-      objectReference: {fileID: 2038655910}
+      objectReference: {fileID: 1992735578}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: 'connectedStreets.Array.data[3]'
       value: 

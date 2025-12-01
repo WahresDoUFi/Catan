@@ -4,12 +4,9 @@ using UnityEngine.InputSystem;
 
 public class CameraController : MonoBehaviour
 {
-    private static CameraController _instance;
+    public static CameraController Instance;
 
-    public static bool IsOverview => Mathf.Approximately(_instance.transform.position.y, _instance.heightLimit.y);
-
-    private InputSystem_Actions _inputs;
-    
+    public static bool IsOverview => Mathf.Approximately(Instance._targetPosition.y, Instance.heightLimit.y);
     private float ZoomPercentage => Mathf.InverseLerp(heightLimit.x, heightLimit.y, _targetPosition.y);
     private float Speed => Mathf.Lerp(cameraSpeed.x, cameraSpeed.y, ZoomPercentage);
     private float MaxTilt => Mathf.Lerp(tiltLimit.x, tiltLimit.y, ZoomPercentage);
@@ -34,17 +31,11 @@ public class CameraController : MonoBehaviour
 
     private void Awake()
     {
-        _instance = this;
+        Instance = this;
         
         _targetPosition = _overviewPosition = transform.position;
         _targetTilt = transform.eulerAngles.x;
         _targetRotation = transform.eulerAngles.y;
-        _inputs = new InputSystem_Actions();
-        _inputs.Camera.Enable();
-        
-        _inputs.Camera.Move.performed += ctx => Move(ctx.ReadValue<Vector2>());
-        _inputs.Camera.Zoom.performed += ctx => Zoom(ctx.ReadValue<Vector2>().y);
-        _inputs.Camera.Overview.performed += ctx => EnterOverviewPosition();
     }
 
     private void Update()
@@ -53,7 +44,12 @@ public class CameraController : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(TargetRotation), Time.deltaTime * cameraLerpSpeed);
     }
 
-    private void Move(Vector2 input)
+    public void EnterOverview(bool isToggle = false)
+    {
+        _targetPosition = _targetPosition == _overviewPosition && isToggle ? _previousPosition : _overviewPosition;
+    }
+
+    public void Move(Vector2 input)
     {
         if (Mouse.current.leftButton.isPressed)
         {
@@ -77,16 +73,11 @@ public class CameraController : MonoBehaviour
         }
     }
 
-    private void Zoom(float input)
+    public void Zoom(float input)
     {
         var targetHeight = _targetPosition.y - input;
         targetHeight = Mathf.Clamp(targetHeight, heightLimit.x, heightLimit.y);
         _targetPosition.y = targetHeight;
         _previousPosition = _targetPosition;
-    }
-
-    private void EnterOverviewPosition()
-    {
-        _targetPosition = _targetPosition == _overviewPosition ? _previousPosition : _overviewPosition;
     }
 }

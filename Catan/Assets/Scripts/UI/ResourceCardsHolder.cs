@@ -11,7 +11,7 @@ namespace UI
         [Serializable]
         private struct ResourceIcon
         {
-            public Player.ResourceType resourceType;
+            public Tile resourceType;
             public Sprite icon;
         }
         [SerializeField] private GameObject cardPrefab;
@@ -91,32 +91,32 @@ namespace UI
             var index = 0;
             for (var i = 0; i < _player.Wood; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Player.ResourceType.Wood));
+                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Forest));
                 index++;
             }
             for (var i = 0; i < _player.Stone; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Player.ResourceType.Stone));
+                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Stone));
                 index++;
             }
             for (var i = 0; i < _player.Wheat; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Player.ResourceType.Wheat));
+                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Field));
                 index++;
             }
             for (var i = 0; i < _player.Brick; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Player.ResourceType.Brick));
+                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Brick));
                 index++;
             }
             for (var i = 0; i < _player.Sheep; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Player.ResourceType.Sheep));
+                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Grass));
                 index++;
             }
         }
 
-        private Sprite GetResourceIcon(Player.ResourceType type)
+        private Sprite GetResourceIcon(Tile type)
         {
             return resourceSprites.FirstOrDefault(t => t.resourceType == type).icon;
         }
