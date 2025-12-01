@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UI;
 using Unity.Netcode;
 using UnityEditor;
 using UnityEngine;
@@ -94,6 +95,8 @@ public class Settlement : NetworkBehaviour
     private void LevelUpdated(byte previousLevel, byte newLevel) 
     {
         settlement.SetActive(newLevel == 1);
+        if (newLevel == 1)
+            BuildingIconManager.AddIcon(transform, IconType.Settlement, GameManager.Instance.GetPlayerColor(Owner));
     }
 }
 

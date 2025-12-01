@@ -7202,6 +7202,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   ShowTopMostFoldoutHeaderGroup: 1
+  playerColors:
+  - {r: 0, g: 1, b: 0.7770245, a: 1}
+  - {r: 1, g: 0.8441375, b: 0, a: 1}
+  - {r: 0.95129585, g: 0, b: 1, a: 1}
+  - {r: 0.069785595, g: 0, b: 1, a: 1}
 --- !u!4 &881002722
 Transform:
   m_ObjectHideFlags: 0
@@ -8257,6 +8262,7 @@ GameObject:
   - component: {fileID: 977950272}
   - component: {fileID: 977950274}
   - component: {fileID: 977950273}
+  - component: {fileID: 977950275}
   m_Layer: 5
   m_Name: BuyMenu
   m_TagString: Untagged
@@ -8322,6 +8328,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 977950271}
   m_CullTransparentMesh: 1
+--- !u!114 &977950275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 977950271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cedc149fd8b50445e9db00fffcbf0c85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.BuyMenu
+  closedOffset: {x: 500, y: 0, z: 0}
+  animationSpeed: 5
 --- !u!1001 &982592055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11983,6 +12003,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1946487633}
   - {fileID: 439956971}
   - {fileID: 1655732386}
   m_Father: {fileID: 0}
@@ -15205,6 +15226,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!1 &1946487632
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1946487633}
+  - component: {fileID: 1946487634}
+  m_Layer: 5
+  m_Name: Icons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1946487633
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946487632}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1497910592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1946487634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946487632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471cf29092e9249dc8804890b614345f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.BuildingIconManager
+  iconPrefab: {fileID: 6627206911502599544, guid: 18a44e0d568eb414bb1d48f7b15c480d, type: 3}
+  iconSprites:
+  - iconType: 0
+    sprite: {fileID: 21300000, guid: 7af9e9b532cb44a34b01b87bce3bbe93, type: 3}
+  - iconType: 1
+    sprite: {fileID: 21300000, guid: ee26cb6d912674b518f4f4bd77edbf6c, type: 3}
 --- !u!114 &1956804620 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}

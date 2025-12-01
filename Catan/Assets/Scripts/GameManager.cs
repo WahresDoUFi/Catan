@@ -24,6 +24,10 @@ public class GameManager : NetworkBehaviour
 
     public GameState State => (GameState)_gameState.Value;
     public int PlayerCount => _playerIds.Count;
+    
+    [SerializeField]
+    private Color[] playerColors;
+    
     private readonly NetworkVariable<byte> _gameState = new();
     private readonly NetworkVariable<byte> _playerTurn = new();
     private readonly NetworkList<ulong> _playerIds = new();
@@ -70,6 +74,11 @@ public class GameManager : NetworkBehaviour
         if (State == GameState.Waiting || !NetworkManager.Singleton)
             return false;
         return _playerIds.IndexOf(NetworkManager.Singleton.LocalClientId) == _playerTurn.Value;
+    }
+
+    public Color GetPlayerColor(ulong playerId)
+    {
+        return playerColors[_playerIds.IndexOf(playerId)];
     }
 
     public bool PlaceSettlement(Settlement settlement)
