@@ -25,6 +25,7 @@ public class Settlement : NetworkBehaviour
     
     private Material _settlementPreviewMaterial;
     private MapTile[] _neighboringTiles;
+    private MapIcon _mapIcon;
     
     private void OnEnable()
     {
@@ -108,7 +109,9 @@ public class Settlement : NetworkBehaviour
     {
         settlement.SetActive(newLevel == 1);
         if (newLevel == 1)
-            BuildingIconManager.AddIcon(transform, IconType.Settlement, GameManager.Instance.GetPlayerColor(Owner));
+            _mapIcon = MapIconManager.AddIcon(transform, IconType.Settlement, GameManager.Instance.GetPlayerColor(Owner));
+        else if (newLevel == 2)
+            MapIconManager.UpdateIcon(_mapIcon, IconType.City);
     }
 }
 

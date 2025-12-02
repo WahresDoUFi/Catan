@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6760292622302832405}
   - component: {fileID: 1319662380690737794}
   - component: {fileID: 6237955193128999866}
+  - component: {fileID: 3730531173047951367}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -90,3 +91,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.BuildingIcon
   fadeSpeed: 5
   baseAlpha: 1
+--- !u!225 &3730531173047951367
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6627206911502599544}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
