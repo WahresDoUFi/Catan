@@ -30,9 +30,6 @@ public class Player : NetworkBehaviour
         _wheat.OnValueChanged += ResourceCountChanged;
         _brick.OnValueChanged += ResourceCountChanged;
         _sheep.OnValueChanged += ResourceCountChanged;
-        
-        UpdateResources(Tile.Field, 3);
-        UpdateResources(Tile.Stone, 3);
     }
 
     public static Player GetPlayerById(ulong clientId)

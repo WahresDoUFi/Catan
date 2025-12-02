@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MapTile : NetworkBehaviour
 {
+    public Tile TileType => (Tile)_tileType.Value;
     private readonly NetworkVariable<bool> _discovered = new();
     private readonly NetworkVariable<int> _tileType = new(-1);
     private readonly NetworkVariable<int> _number = new(-1);

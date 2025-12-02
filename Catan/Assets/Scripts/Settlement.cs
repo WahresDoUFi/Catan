@@ -24,6 +24,7 @@ public class Settlement : NetworkBehaviour
     [SerializeField] private Color unavailableColor;
     
     private Material _settlementPreviewMaterial;
+    private MapTile[] _neighboringTiles;
     
     private void OnEnable()
     {
@@ -80,6 +81,17 @@ public class Settlement : NetworkBehaviour
     {
         if (IsBlocked()) return false;
         return GameManager.Instance.State == GameManager.GameState.Preparing || HasConnectedRoad(clientId);
+    }
+
+    public MapTile[] FindNeighboringTiles()
+    {
+        if (_neighboringTiles != null)
+            return _neighboringTiles;
+
+        var tiles = FindObjectsByType<MapTile>(FindObjectsSortMode.None);
+        var orderedTiles = tiles.OrderBy(tile => (tile.transform.position - transform.position).sqrMagnitude).ToArray();
+        float closest = (orderedTiles[0].transform.position - transform.position).sqrMagnitude;
+        return tiles.Where(tile => (tile.transform.position - transform.position).sqrMagnitude <= (closest + 0.1f)).ToArray();
     }
 
     private bool ShowPreview()

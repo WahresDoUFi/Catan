@@ -76,6 +76,7 @@ public class Street : NetworkBehaviour
     private bool ShowPreview()
     {
         if (!Preview || !NetworkManager.Singleton) return false;
+        if (IsOccupied) return false;
         _previewMaterial.color = CanBeBuildBy(NetworkManager.Singleton.LocalClientId) ? canBuildColor : unavailableColor;
         Preview = false;
         return true;

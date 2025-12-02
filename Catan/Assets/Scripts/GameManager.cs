@@ -52,6 +52,8 @@ public class GameManager : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        Street.AllStreets.Sort((s1, s2) => s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
+        Settlement.AllSettlements.Sort((s1, s2) => s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
         if (HasAuthority)
         {
             foreach (var playerId in NetworkManager.Singleton.ConnectedClientsIds)
@@ -163,6 +165,15 @@ public class GameManager : NetworkBehaviour
     private void FinishStartingPhase()
     {
         _gameState.Value = (byte)GameState.Playing;
+        foreach (var settlement in Settlement.AllSettlements)
+        {
+            if (!settlement.IsOccupied) continue;
+            foreach (var tile in settlement.FindNeighboringTiles())
+            {
+                tile.Discover();
+                Player.GetPlayerById(settlement.Owner).UpdateResources(tile.TileType, 1);
+            }
+        }
     }
 
     private void HandleInitialPlacement()
