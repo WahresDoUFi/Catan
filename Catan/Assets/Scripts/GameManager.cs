@@ -1,11 +1,11 @@
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Random = System.Random;
 
 public class GameManager : NetworkBehaviour
 {
     public static GameManager Instance;
-
     public const int MaxPlayers = 4;
 
     /// <summary>
@@ -33,9 +33,12 @@ public class GameManager : NetworkBehaviour
     private readonly NetworkList<ulong> _playerIds = new();
     private readonly NetworkVariable<bool> _hasThrownDice = new();
     private readonly NetworkVariable<byte> _roundNumber = new();
+    private readonly NetworkVariable<int> _seed = new();
+
 
     private void Awake()
     {
+        _seed.Value = new Random().Next(0, int.MaxValue);
         Instance = this;
     }
 
