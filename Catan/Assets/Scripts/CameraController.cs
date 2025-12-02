@@ -53,6 +53,7 @@ public class CameraController : MonoBehaviour
     {
         if (Mouse.current.leftButton.isPressed)
         {
+            if (BuildManager.BuildModeActive) return;
             _targetPosition -= Right * input.x * Speed;
             _targetPosition -= Forward * input.y * Speed;
             float height = _targetPosition.y;

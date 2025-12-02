@@ -100,7 +100,7 @@ public class Street : NetworkBehaviour
         street.SetActive(IsOccupied);
         if (IsOccupied)
         {
-            BuildingIconManager.AddIcon(transform, IconType.Street, GameManager.Instance.GetPlayerColor(Owner));
+            MapIconManager.AddIcon(transform, IconType.Street, GameManager.Instance.GetPlayerColor(Owner));
         }
     }
 }

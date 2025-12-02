@@ -36,6 +36,16 @@ public class BuildManager : MonoBehaviour
         }
     }
 
+    public void StartBuildStreet()
+    {
+        SelectBuildingType(BuildType.Street);
+    }
+
+    public void StartBuildSettlement()
+    {
+        SelectBuildingType(BuildType.Settlement);
+    }
+
     public static void SetActive(bool active)
     {
         _instance._buildModeActive = active;

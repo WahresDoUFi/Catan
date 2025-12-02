@@ -8,11 +8,12 @@ namespace UI
     {
         Street,
         Settlement,
-        City
+        City,
+        Tile
     }
     
     [RequireComponent(typeof(Image))]
-    public class BuildingIcon : MonoBehaviour
+    public class MapIcon : MonoBehaviour
     {
         [SerializeField] private float fadeSpeed;
         [SerializeField, Range(0f, 1f)] private float baseAlpha;
@@ -22,12 +23,14 @@ namespace UI
         private Image _image;
         private Camera _mainCamera;
         private RectTransform _rectTransform;
+        private CanvasGroup _canvasGroup;
         
         private void Awake()
         {
             _image = GetComponent<Image>();
             _mainCamera = Camera.main;
             _rectTransform = GetComponent<RectTransform>();
+            _canvasGroup = GetComponent<CanvasGroup>();
         }
 
         private void Update()
@@ -44,6 +47,10 @@ namespace UI
         {
             _image.sprite = sprite;
         }
+        public void SetSize(float size)
+        {
+            _rectTransform.sizeDelta = new Vector2(size, size);
+        }
         public void SetTarget(Transform target)
         {
             _target = target;
@@ -52,19 +59,18 @@ namespace UI
         private void UpdateAlpha()
         {
             float targetAlpha = Visible ? baseAlpha : 0f;
-            float alpha = Mathf.Lerp(_image.color.a, targetAlpha, Time.deltaTime * fadeSpeed);
+            float alpha = Mathf.Lerp(_canvasGroup.alpha, targetAlpha, Time.deltaTime * fadeSpeed);
             SetAlpha(alpha);
         }
         
         private void SetAlpha(float alpha)
         {
-            var color = _image.color;
-            color.a = alpha;
-            _image.color = color;
+            _canvasGroup.alpha = alpha;
         }
 
         private void UpdatePosition()
         {
+            if (!_target) return;
             _rectTransform.position = _mainCamera.WorldToScreenPoint(_target.position);
         }
     }

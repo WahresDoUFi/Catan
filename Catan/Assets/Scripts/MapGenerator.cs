@@ -23,7 +23,7 @@ public class MapGenerator : MonoBehaviour
         (-1, 0, 1), (0, -1, 1), (1, -1, 0), (1, 0, -1), (0, 1, -1), (-1, 1, 0)
     };
 
-    private static readonly List<int> TileNumbers = new() { 2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12 };
+    private readonly List<int> _tileNumbers = new() { 2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12 };
 
     [SerializeField] private GameObject tilePrefab;
 
@@ -85,6 +85,8 @@ public class MapGenerator : MonoBehaviour
     private void GenerateMap(Tile[] tiles)
     {
         var positions = GenerateTilePositions(tiles.Length);
+        Shuffle(_tileNumbers);
+        var index = 0;
         for (var i = 0; i < tiles.Length; i++)
         {
             var tileObject = Instantiate(tilePrefab, positions[i],
@@ -95,9 +97,8 @@ public class MapGenerator : MonoBehaviour
             tile.SetType(type);
             if (type != Tile.Desert)
             {
-                var randomNumber = new Random().Next(TileNumbers.Count);
-                tile.SetNumber(TileNumbers[randomNumber]);
-                TileNumbers.Remove(randomNumber);
+                tile.SetNumber(_tileNumbers[index]);
+                index++;
             }
         }
     }
@@ -107,7 +108,7 @@ public class MapGenerator : MonoBehaviour
         var positions = new List<Vector3>();
         var currentPos = new Vector3Int(0, -1, -1);
 
-        positions.Add(Vector3.zero);
+        positions.Add(transform.position);
         count--;
 
         int sideCounter = 1;
@@ -139,7 +140,7 @@ public class MapGenerator : MonoBehaviour
         int ySum = r - s;
         float y = -ySum * 0.5f * tileHeight;
         float x = (q * (0.75f * tileWidth));
-        return new Vector3(x, 0f, y);
+        return new Vector3(x, transform.position.y, y);
     }
 
     private void OnDrawGizmos()

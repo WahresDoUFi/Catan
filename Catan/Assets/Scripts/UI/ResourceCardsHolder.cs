@@ -14,11 +14,15 @@ namespace UI
             public Tile resourceType;
             public Sprite icon;
         }
+
+        private float VerticalOffset => BuildManager.BuildModeActive ? hiddenOffset : 0f;
+        
         [SerializeField] private GameObject cardPrefab;
         [SerializeField] private ResourceIcon[] resourceSprites;
         [SerializeField] private float maxCardTilt;
         [SerializeField] private float cardSpacing;
         [SerializeField] private float cardMoveSpeed = 5f;
+        [SerializeField] private float hiddenOffset;
         
         private Player _player;
         
@@ -52,7 +56,7 @@ namespace UI
             if (cardCount == 1)
             {
                 _resourceCards[0].transform.position = Vector3.Lerp(_resourceCards[0].transform.position,
-                    transform.position, Time.deltaTime * cardMoveSpeed);
+                    transform.position + Vector3.up * VerticalOffset, Time.deltaTime * cardMoveSpeed);
                 _resourceCards[0].transform.rotation = Quaternion.Lerp(_resourceCards[0].transform.rotation,
                     Quaternion.identity, Time.deltaTime * cardMoveSpeed);
                 return;
@@ -71,7 +75,7 @@ namespace UI
                 card.transform.SetSiblingIndex(transform.childCount - distanceToHoveredCard);
                 float offset = i - (cardCount / 2f);
                 if (cardCount % 2 != 0) offset += 0.5f;
-                var targetPosition = Vector3.right * (offset * cardSpacing);
+                var targetPosition = Vector3.right * (offset * cardSpacing) + Vector3.up * VerticalOffset;
                 float targetRotation = Mathf.Lerp(maxCardTilt, -maxCardTilt, (float)i / (float)cardCount);
                 card.transform.localPosition = Vector3.Lerp(card.transform.localPosition,
                     targetPosition, Time.deltaTime * cardMoveSpeed);
