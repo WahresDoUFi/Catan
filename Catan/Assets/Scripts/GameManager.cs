@@ -103,9 +103,12 @@ public class GameManager : NetworkBehaviour
     private void BuySettlementRpc(ulong clientId, int settlementId)
     {
         var settlement = Settlement.AllSettlements[settlementId];
-        if (settlement.CanBeBuildBy(clientId))
+        if (!settlement.CanBeBuildBy(clientId)) return;
+        settlement.Build(clientId);
+        if (State != GameState.Playing) return;
+        foreach (var tile in settlement.FindNeighboringTiles())
         {
-            settlement.Build(clientId);
+            tile.Discover();
         }
     }
 
