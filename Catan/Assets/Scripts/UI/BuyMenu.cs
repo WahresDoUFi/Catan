@@ -30,7 +30,7 @@ namespace UI
         {
             if (GameManager.Instance.State == GameManager.GameState.Playing)
             {
-                _targetPosition = GameManager.Instance.IsMyTurn() ? _defaultPosition : _defaultPosition + closedOffset;
+                _targetPosition = GameManager.Instance.IsMyTurn() && GameManager.Instance.CanThrowDice() == false ? _defaultPosition : _defaultPosition + closedOffset;
             }
             else
             {

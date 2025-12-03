@@ -1,3 +1,4 @@
+using Misc;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,6 +25,8 @@ public class GameManager : NetworkBehaviour
 
     public GameState State => (GameState)_gameState.Value;
     public int PlayerCount => _playerIds.Count;
+    public bool DiceThrown => _hasThrownDice.Value;
+    public int Seed => _seed.Value;
     
     [SerializeField]
     private Color[] playerColors;
@@ -35,10 +38,8 @@ public class GameManager : NetworkBehaviour
     private readonly NetworkVariable<byte> _roundNumber = new();
     private readonly NetworkVariable<int> _seed = new();
 
-
     private void Awake()
     {
-        _seed.Value = new Random().Next(0, int.MaxValue);
         Instance = this;
     }
 
@@ -52,6 +53,7 @@ public class GameManager : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        _seed.Value = new Random().Next(0, int.MaxValue);
         Street.AllStreets.Sort((s1, s2) => s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
         Settlement.AllSettlements.Sort((s1, s2) => s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
         if (HasAuthority)
@@ -63,7 +65,8 @@ public class GameManager : NetworkBehaviour
         }
         ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
         NetworkManager.Singleton.OnClientStopped += OnClientStopped;
-        _gameState.OnValueChanged += (_, _) => BuildManager.SetActive(false);
+        _gameState.OnValueChanged += (_, _) => GameStateChange();
+        _playerTurn.OnValueChanged += (_, _) => PlayerTurnChange();
     }
 
     public override void OnNetworkDespawn()
@@ -78,6 +81,21 @@ public class GameManager : NetworkBehaviour
         return _playerIds.IndexOf(NetworkManager.Singleton.LocalClientId) == _playerTurn.Value;
     }
 
+    public bool CanThrowDice()
+    {
+        if (State != GameState.Playing) return false;
+        return IsMyTurn() && !DiceThrown;
+    }
+
+    public void MarkDiceStable()
+    {
+        if (!NetworkManager.Singleton.IsHost) return;
+        var result = DiceRoll.GetResult(_seed.Value);
+        GrantResources(result.first + result.second);
+        _seed.Value = new Random().Next(0, int.MaxValue);
+        _hasThrownDice.Value = true;
+    }
+
     public Color GetPlayerColor(ulong playerId)
     {
         return playerColors[_playerIds.IndexOf(playerId)];
@@ -86,6 +104,9 @@ public class GameManager : NetworkBehaviour
     public bool PlaceSettlement(Settlement settlement)
     {
         if (!settlement) return false;
+        if (State == GameState.Playing &&
+            !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Settlement))) 
+            return false;
         ulong clientId = NetworkManager.Singleton.LocalClientId;
         BuySettlementRpc(NetworkManager.Singleton.LocalClientId, settlement.Id);
         return settlement.CanBeBuildBy(clientId);
@@ -94,6 +115,9 @@ public class GameManager : NetworkBehaviour
     public bool PlaceStreet(Street street)
     {
         if (!street) return false;
+        if (State == GameState.Playing &&
+            !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Street)))
+            return false;
         ulong clientId = NetworkManager.Singleton.LocalClientId;
         BuyStreetRpc(clientId, street.Id);
         return street.CanBeBuildBy(clientId);
@@ -104,6 +128,19 @@ public class GameManager : NetworkBehaviour
     {
         var settlement = Settlement.AllSettlements[settlementId];
         if (!settlement.CanBeBuildBy(clientId)) return;
+
+        if (State == GameState.Playing)
+        {
+            var player = Player.GetPlayerById(clientId);
+            var costs = BuildManager.GetCostsForBuilding(BuildManager.BuildType.Settlement);
+            if (!player.HasResources(costs))
+                return;
+            foreach (var cost in costs)
+            {
+                player.RemoveResources(cost.resource, cost.amount);
+            }   
+        }
+        
         settlement.Build(clientId);
         if (State != GameState.Playing) return;
         foreach (var tile in settlement.FindNeighboringTiles())
@@ -116,16 +153,26 @@ public class GameManager : NetworkBehaviour
     private void BuyStreetRpc(ulong clientId, int streetId)
     {
         var street = Street.AllStreets[streetId];
-        if (street.CanBeBuildBy(clientId))
+        if (!street.CanBeBuildBy(clientId)) return;
+
+        if (State == GameState.Playing)
         {
-            street.SetOwner(clientId);
-            if (State == GameState.Preparing)
+            var player = Player.GetPlayerById(clientId);
+            var costs = BuildManager.GetCostsForBuilding(BuildManager.BuildType.Street);
+            if (!player.HasResources(costs)) return;
+            foreach (var cost in costs)
             {
-                NextTurn();
-                if (_roundNumber.Value > 2)
-                {
-                    FinishStartingPhase();
-                }
+                player.RemoveResources(cost.resource, cost.amount);
+            }
+        }
+        
+        street.SetOwner(clientId);
+        if (State == GameState.Preparing)
+        {
+            NextTurn();
+            if (_roundNumber.Value > 2)
+            {
+                FinishStartingPhase();
             }
         }
     }
@@ -160,6 +207,9 @@ public class GameManager : NetworkBehaviour
         _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
         if (_playerTurn.Value == 0)
             _roundNumber.Value += 1;
+        
+        if (PlayerCount == 1)
+            PlayerTurnChange();
     }
 
     private void FinishStartingPhase()
@@ -171,7 +221,7 @@ public class GameManager : NetworkBehaviour
             foreach (var tile in settlement.FindNeighboringTiles())
             {
                 tile.Discover();
-                Player.GetPlayerById(settlement.Owner).UpdateResources(tile.TileType, 1);
+                Player.GetPlayerById(settlement.Owner).AddResources(tile.TileType, 1);
             }
         }
     }
@@ -182,6 +232,40 @@ public class GameManager : NetworkBehaviour
         BuildManager.SelectBuildingType(Player.LocalPlayer.VictoryPoints < _roundNumber.Value
             ? BuildManager.BuildType.Settlement
             : BuildManager.BuildType.Street);
+    }
+
+    private void HasThrownDiceChange(bool previous, bool current)
+    {
+        if (previous == false && current)
+        {
+            DiceController.Instance.Reset();
+        }
+    }
+
+    private void GrantResources(int number)
+    {
+        foreach (var settlement in Settlement.AllSettlements)
+        {
+            if (!settlement.IsOccupied) continue;
+            foreach (var tile in settlement.FindNeighboringTiles())
+            {
+                if (tile.Number == number)
+                {
+                    Player.GetPlayerById(settlement.Owner).AddResources(tile.TileType, settlement.Level);
+                }
+            }
+        }
+    }
+
+    private void GameStateChange()
+    {
+        BuildManager.SetActive(false);
+        DiceController.Instance.Reset();
+    }
+    
+    private void PlayerTurnChange()
+    {
+        DiceController.Instance.Reset();
     }
     
     private void OnClientConnectionStatusChange(ulong clientId,

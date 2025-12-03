@@ -29,7 +29,7 @@ namespace UI
 
         private void ButtonClicked()
         {
-            button.interactable = false;
+            //button.interactable = false;
         }
     }
 }
