@@ -1,7 +1,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class StreetModel: NetworkBehaviour
+public class StreetModel: MonoBehaviour
 {
     [SerializeField] private GameObject _churchDoor1_Prefab;
     [SerializeField] private GameObject _churchDoor2_Prefab;

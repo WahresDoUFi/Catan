@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4896646662181459162}
   - component: {fileID: 1538387734657661770}
   m_Layer: 0
-  m_Name: placa_gorund.001
+  m_Name: placa_gorund2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 8120548160329875291}
   - component: {fileID: 5510156928749223510}
   m_Layer: 0
-  m_Name: placa_gorund.002
+  m_Name: placa_gorund1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 5495310295636522426}
   - component: {fileID: 9103215713413006759}
   m_Layer: 0
-  m_Name: churchdoor.001
+  m_Name: churchdoor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 1337330626338777897}
   - component: {fileID: 8808063269204674720}
   m_Layer: 0
-  m_Name: churchdoor
+  m_Name: churchdoor2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -462,6 +462,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3045486664683529337}
+  - component: {fileID: 5641648336293806692}
   m_Layer: 0
   m_Name: street_model
   m_TagString: Untagged
@@ -489,3 +490,19 @@ Transform:
   - {fileID: 1986825900686188811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &5641648336293806692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8860835657604267450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6896fa75b9c244d45b3c565fd7f6442b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StreetModel
+  _churchDoor1_Prefab: {fileID: 4305479086091039512}
+  _churchDoor2_Prefab: {fileID: 6556365654215861531}
+  _plaza1_Prefab: {fileID: 1374551063711809300}
+  _plaza2_Prefab: {fileID: 699546964679386411}
