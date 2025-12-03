@@ -1,3 +1,4 @@
+using System.Collections;
 using System;
 using System.Linq;
 using UnityEngine;
@@ -31,6 +32,7 @@ public class BuildManager : MonoBehaviour
     public static bool BuildModeActive => _instance._buildModeActive;
 
     [SerializeField] private Button cancelButton;
+    [SerializeField] private AudioSource buildModeMusic;
     [SerializeField] private BuildCosts[] costs;
     
     private bool _buildModeActive;
@@ -72,9 +74,19 @@ public class BuildManager : MonoBehaviour
     {
         _instance._buildModeActive = active;
         if (active)
+        {
             CameraController.Instance.EnterOverview();
+            if (!_instance.buildModeMusic.isPlaying)
+            {
+                _instance.buildModeMusic.Play();
+            }
+        }
+        else
+        {
+            _instance.StartCoroutine(_instance.FadeOutMusic());
+        }
     }
-    
+
     public static void SelectBuildingType(BuildType buildType)
     {
         _instance._buildType = buildType;
@@ -122,5 +134,20 @@ public class BuildManager : MonoBehaviour
         var settlement = Settlement.GetClosestSettlementTo(worldPoint);
         if (settlement)
             settlement.Preview = true;
+    }
+
+    private IEnumerator FadeOutMusic()
+    {
+        var startVolume = buildModeMusic.volume;
+        const float fadeTime = 4.0f;
+
+        while (buildModeMusic.volume > 0)
+        {
+            buildModeMusic.volume -= startVolume * Time.deltaTime / fadeTime;
+            yield return null;
+        }
+
+        buildModeMusic.Stop();
+        buildModeMusic.volume = startVolume;
     }
 }

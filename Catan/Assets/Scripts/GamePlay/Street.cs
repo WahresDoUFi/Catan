@@ -10,24 +10,25 @@ using UnityEngine.Serialization;
 public class Street : NetworkBehaviour
 {
     public static readonly List<Street> AllStreets = new();
-    
+
     public Street[] connectedStreets;
     public Settlement[] settlements;
-    
+
     public bool Preview { get; set; }
     public bool IsOccupied => _owner.Value < ulong.MaxValue;
     public ulong Owner => _owner.Value;
     public int Id => AllStreets.IndexOf(this);
-    
+
     private readonly NetworkVariable<ulong> _owner = new(ulong.MaxValue);
 
     [SerializeField] private GameObject street;
     [SerializeField] private GameObject previewObject;
     [SerializeField] private Color canBuildColor;
     [SerializeField] private Color unavailableColor;
+    [SerializeField] private AudioClip placeStreetSound;
 
     private Material _previewMaterial;
-    
+
     private void OnEnable()
     {
         AllStreets.Add(this);
@@ -70,6 +71,7 @@ public class Street : NetworkBehaviour
             }
         }
         else if (connectedStreets.Any(otherStreet => otherStreet.Owner == playerId)) return true;
+
         return settlements.Any(otherSettlement => otherSettlement.Owner == playerId);
     }
 
@@ -77,7 +79,8 @@ public class Street : NetworkBehaviour
     {
         if (!Preview || !NetworkManager.Singleton) return false;
         if (IsOccupied) return false;
-        _previewMaterial.color = CanBeBuildBy(NetworkManager.Singleton.LocalClientId) ? canBuildColor : unavailableColor;
+        _previewMaterial.color =
+            CanBeBuildBy(NetworkManager.Singleton.LocalClientId) ? canBuildColor : unavailableColor;
         Preview = false;
         return true;
     }
@@ -89,12 +92,13 @@ public class Street : NetworkBehaviour
             return null;
         return street;
     }
-    
+
     public void SetOwner(ulong ownerId)
     {
         _owner.Value = ownerId;
+        AudioSource.PlayClipAtPoint(placeStreetSound, Camera.main.transform.position, 0.2f);
     }
-    
+
     private void UpdateStreet()
     {
         street.SetActive(IsOccupied);
@@ -110,6 +114,7 @@ public class Street : NetworkBehaviour
 public class StreetEditor : Editor
 {
     private const float SMALL_OFFSET = 0.01f;
+
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -127,15 +132,21 @@ public class StreetEditor : Editor
                 serializedStreet.ApplyModifiedProperties();
                 var streets = FindObjectsByType<Street>(FindObjectsSortMode.None).ToList();
                 streets.Remove(street);
-                
-                streets.Sort((s1, s2) => Vector3.Distance(s1.transform.position, street.transform.position).CompareTo(Vector3.Distance(s2.transform.position, street.transform.position)));
-                float closest = Vector3.Distance(streets[0].transform.position, street.transform.position) + SMALL_OFFSET;
-                street.connectedStreets = streets.Where(s => Vector3.Distance(s.transform.position, street.transform.position) <= closest).ToArray();
-                
+
+                streets.Sort((s1, s2) => Vector3.Distance(s1.transform.position, street.transform.position)
+                    .CompareTo(Vector3.Distance(s2.transform.position, street.transform.position)));
+                float closest = Vector3.Distance(streets[0].transform.position, street.transform.position) +
+                                SMALL_OFFSET;
+                street.connectedStreets = streets
+                    .Where(s => Vector3.Distance(s.transform.position, street.transform.position) <= closest).ToArray();
+
                 var settlements = FindObjectsByType<Settlement>(FindObjectsSortMode.None).ToList();
-                settlements.Sort((s1, s2) => Vector3.Distance(s1.transform.position, street.transform.position).CompareTo(Vector3.Distance(s2.transform.position, street.transform.position)));
+                settlements.Sort((s1, s2) =>
+                    Vector3.Distance(s1.transform.position, street.transform.position)
+                        .CompareTo(Vector3.Distance(s2.transform.position, street.transform.position)));
                 closest = Vector3.Distance(settlements[0].transform.position, street.transform.position) + SMALL_OFFSET;
-                street.settlements = settlements.Where(s => Vector3.Distance(s.transform.position, street.transform.position) <= closest).ToArray();
+                street.settlements = settlements
+                    .Where(s => Vector3.Distance(s.transform.position, street.transform.position) <= closest).ToArray();
             }
 
             serializedObject.ApplyModifiedProperties();
@@ -145,7 +156,9 @@ public class StreetEditor : Editor
         {
             foreach (var targetObject in Selection.gameObjects)
             {
-                var prefab = PrefabUtility.InstantiatePrefab(AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Street.prefab")) as GameObject;
+                var prefab =
+                    PrefabUtility.InstantiatePrefab(
+                        AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Street.prefab")) as GameObject;
                 if (!prefab) return;
                 prefab.transform.position = targetObject.transform.position;
                 prefab.transform.rotation = targetObject.transform.rotation;

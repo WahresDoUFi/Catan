@@ -85,6 +85,7 @@ MonoBehaviour:
   previewObject: {fileID: 8350988316508777302}
   canBuildColor: {r: 0, g: 1, b: 0.2592113, a: 0.87058824}
   unavailableColor: {r: 1, g: 0.23113209, b: 0.23113209, a: 0.87058824}
+  placeStreetSound: {fileID: 8300000, guid: 247a2486dfb2344c8831d91cb2c08e0a, type: 3}
 --- !u!1 &2940196689572698682
 GameObject:
   m_ObjectHideFlags: 0

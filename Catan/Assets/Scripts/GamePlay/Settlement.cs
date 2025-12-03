@@ -23,11 +23,12 @@ public class Settlement : NetworkBehaviour
     [SerializeField] private GameObject settlementPreview;
     [SerializeField] private Color canBuildColor;
     [SerializeField] private Color unavailableColor;
-    
+    [SerializeField] private AudioClip placeBuildingSound;
+
     private Material _settlementPreviewMaterial;
     private MapTile[] _neighboringTiles;
     private MapIcon _mapIcon;
-    
+
     private void OnEnable()
     {
         AllSettlements.Add(this);
@@ -66,6 +67,7 @@ public class Settlement : NetworkBehaviour
     {
         _owner.Value = builderId;
         _level.Value = 1;
+        AudioSource.PlayClipAtPoint(placeBuildingSound, Camera.main.transform.position, 0.3f);
         Player.GetPlayerById(builderId).AddVictoryPoints(1);
     }
     
@@ -93,7 +95,8 @@ public class Settlement : NetworkBehaviour
         var tiles = FindObjectsByType<MapTile>(FindObjectsSortMode.None);
         var orderedTiles = tiles.OrderBy(tile => (tile.transform.position - transform.position).sqrMagnitude).ToArray();
         float closest = (orderedTiles[0].transform.position - transform.position).sqrMagnitude;
-        return tiles.Where(tile => (tile.transform.position - transform.position).sqrMagnitude <= (closest + 0.1f)).ToArray();
+        return tiles.Where(tile => (tile.transform.position - transform.position).sqrMagnitude <= (closest + 0.1f))
+            .ToArray();
     }
 
     private bool ShowPreview()
@@ -105,12 +108,13 @@ public class Settlement : NetworkBehaviour
         Preview = false;
         return true;
     }
-    
-    private void LevelUpdated(byte previousLevel, byte newLevel) 
+
+    private void LevelUpdated(byte previousLevel, byte newLevel)
     {
         settlement.SetActive(newLevel == 1);
         if (newLevel == 1)
-            _mapIcon = MapIconManager.AddIcon(transform, IconType.Settlement, GameManager.Instance.GetPlayerColor(Owner));
+            _mapIcon = MapIconManager.AddIcon(transform, IconType.Settlement,
+                GameManager.Instance.GetPlayerColor(Owner));
         else if (newLevel == 2)
             MapIconManager.UpdateIcon(_mapIcon, IconType.City);
     }
