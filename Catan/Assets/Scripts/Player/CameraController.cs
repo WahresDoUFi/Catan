@@ -20,14 +20,14 @@ public class CameraController : MonoBehaviour
     [SerializeField] private Vector2 heightLimit;
     [SerializeField] private Vector2 tiltLimit;
     [SerializeField] private Vector2 cameraSpeed;
-
     [SerializeField] private float cameraLerpSpeed;
+    
     private Vector3 _targetPosition;
     private float _targetTilt;
     private float _targetRotation;
-
     private Vector3 _overviewPosition;
     private Vector3 _previousPosition;
+    private Camera _camera;
 
     private void Awake()
     {
@@ -36,6 +36,7 @@ public class CameraController : MonoBehaviour
         _targetPosition = _overviewPosition = transform.position;
         _targetTilt = transform.eulerAngles.x;
         _targetRotation = transform.eulerAngles.y;
+        _camera = GetComponent<Camera>();
     }
 
     private void Update()
@@ -54,6 +55,7 @@ public class CameraController : MonoBehaviour
         if (Mouse.current.leftButton.isPressed)
         {
             if (BuildManager.BuildModeActive) return;
+            if (GameManager.Instance.IsMyTurn() && !GameManager.Instance.DiceThrown) return;
             _targetPosition -= Right * input.x * Speed;
             _targetPosition -= Forward * input.y * Speed;
             float height = _targetPosition.y;
@@ -80,5 +82,12 @@ public class CameraController : MonoBehaviour
         targetHeight = Mathf.Clamp(targetHeight, heightLimit.x, heightLimit.y);
         _targetPosition.y = targetHeight;
         _previousPosition = _targetPosition;
+    }
+    
+    public Vector3 MouseWorldPosition(float offset = 0)
+    {
+        Vector3 mousePos = Mouse.current.position.ReadValue();
+        mousePos.z = _camera.transform.position.y - offset;
+        return _camera.ScreenToWorldPoint(mousePos);
     }
 }

@@ -15,7 +15,7 @@ namespace UI
             public Sprite icon;
         }
 
-        private float VerticalOffset => BuildManager.BuildModeActive ? hiddenOffset : 0f;
+        private float VerticalOffset => BuildManager.BuildModeActive || GameManager.Instance.CanThrowDice() ? hiddenOffset : 0f;
         
         [SerializeField] private GameObject cardPrefab;
         [SerializeField] private ResourceIcon[] resourceSprites;

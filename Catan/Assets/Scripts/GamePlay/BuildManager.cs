@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -11,10 +13,25 @@ public class BuildManager : MonoBehaviour
         Settlement,
         City
     }
+
+    [Serializable]
+    public struct BuildCosts
+    {
+        public BuildType type;
+        public ResourceCosts[] costs;
+    }
+    [Serializable]
+    public struct ResourceCosts
+    {
+        public Tile resource;
+        public byte amount;
+    }
+    
     private static BuildManager _instance;
     public static bool BuildModeActive => _instance._buildModeActive;
 
     [SerializeField] private Button cancelButton;
+    [SerializeField] private BuildCosts[] costs;
     
     private bool _buildModeActive;
     private BuildType _buildType;
@@ -34,6 +51,11 @@ public class BuildManager : MonoBehaviour
             if (CameraController.IsOverview && GameManager.Instance.IsMyTurn()) HandleBuildingPreview();
             else SetActive(false);
         }
+    }
+
+    public static ResourceCosts[] GetCostsForBuilding(BuildType type)
+    {
+        return _instance.costs.FirstOrDefault(buildCost => buildCost.type == type).costs;
     }
 
     public void StartBuildStreet()
@@ -70,31 +92,24 @@ public class BuildManager : MonoBehaviour
 
     private void PlaceSettlement()
     {
-        if (GameManager.Instance.PlaceSettlement(Settlement.GetClosestSettlementTo(MouseWorldPosition())))
+        if (GameManager.Instance.PlaceSettlement(Settlement.GetClosestSettlementTo(CameraController.Instance.MouseWorldPosition())))
             SetActive(false);
     }
     private void PlaceStreet()
     {
-        if (GameManager.Instance.PlaceStreet(Street.GetClosestStreetTo(MouseWorldPosition())))
+        if (GameManager.Instance.PlaceStreet(Street.GetClosestStreetTo(CameraController.Instance.MouseWorldPosition())))
             SetActive(false);
     }
 
     private void HandleBuildingPreview()
     {
-        var worldPoint = MouseWorldPosition();
+        var worldPoint = CameraController.Instance.MouseWorldPosition();
         if (_buildType == BuildType.Street)
             HandleStreetPlacing(worldPoint);
         else if (_buildType == BuildType.Settlement)
             HandleSettlementPlacing(worldPoint);
     }
 
-    private Vector3 MouseWorldPosition()
-    {
-        Vector3 mousePos = Mouse.current.position.ReadValue();
-        mousePos.z = _mainCam.transform.position.y;
-        return _mainCam.ScreenToWorldPoint(mousePos);
-    }
-    
     private void HandleStreetPlacing(Vector3 worldPoint)
     {
         var street = Street.GetClosestStreetTo(worldPoint);

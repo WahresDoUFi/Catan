@@ -1,4 +1,5 @@
 using System;
+using Misc;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -29,6 +30,8 @@ public class InputManager : MonoBehaviour
     private void SetupClickInputs()
     {
         _input.UI.Enable();
+        _input.UI.Click.performed += _ => DiceController.Instance.BeginDrag();
+        _input.UI.Click.canceled += _ => DiceController.Instance.ReleaseDice();
         _input.UI.Click.performed += _ => BuildManager.ConfirmPosition();
     }
 }

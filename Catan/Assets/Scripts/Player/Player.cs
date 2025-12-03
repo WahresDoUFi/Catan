@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Unity.Netcode;
 
 public class Player : NetworkBehaviour
@@ -46,7 +47,25 @@ public class Player : NetworkBehaviour
         _victoryPoints.Value -= points;
     }
 
-    public void UpdateResources(Tile type, byte amount)
+    public bool HasResources(BuildManager.ResourceCosts[] costs)
+    {
+        return costs.All(cost => GetResources(cost.resource) >= cost.amount);
+    }
+
+    private byte GetResources(Tile type)
+    {
+        return type switch
+        {
+            Tile.Grass => _sheep.Value,
+            Tile.Stone => _stone.Value,
+            Tile.Forest => _wood.Value,
+            Tile.Brick => _brick.Value,
+            Tile.Field => _wheat.Value,
+            _ => 0
+        };
+    }
+
+    public void AddResources(Tile type, byte amount)
     {
         switch (type)
         {
@@ -64,6 +83,29 @@ public class Player : NetworkBehaviour
                 break;
             case Tile.Grass:
                 _sheep.Value += amount;
+                break;
+            default:
+                return;
+        }
+    }
+    public void RemoveResources(Tile type, byte amount)
+    {
+        switch (type)
+        {
+            case Tile.Forest:
+                _wood.Value -= amount;
+                break;
+            case Tile.Stone:
+                _stone.Value -= amount;
+                break;
+            case Tile.Field:
+                _wheat.Value -= amount;
+                break;
+            case Tile.Brick:
+                _brick.Value -= amount;
+                break;
+            case Tile.Grass:
+                _sheep.Value -= amount;
                 break;
             default:
                 return;

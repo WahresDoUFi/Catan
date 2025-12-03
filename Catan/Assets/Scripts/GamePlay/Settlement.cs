@@ -13,6 +13,7 @@ public class Settlement : NetworkBehaviour
     public ulong Owner => _owner.Value;
     public bool Preview { get; set; }
     public int Id => AllSettlements.IndexOf(this);
+    public byte Level => _level.Value;
     
     public Street[] streets;
     private readonly NetworkVariable<ulong> _owner = new(ulong.MaxValue);
