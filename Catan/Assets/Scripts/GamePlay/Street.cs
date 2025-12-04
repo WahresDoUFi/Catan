@@ -28,6 +28,7 @@ public class Street : NetworkBehaviour
     [SerializeField] private Color canBuildColor;
     [SerializeField] private Color unavailableColor;
     [SerializeField] private AudioClip placeStreetSound;
+    [SerializeField] private ModelColorManager modelColorManager;
 
     private Material _previewMaterial;
     private StreetModel _streetModel;
@@ -109,6 +110,7 @@ public class Street : NetworkBehaviour
         if (IsOccupied)
         {
             MapIconManager.AddIcon(transform, IconType.Street, GameManager.Instance.GetPlayerColor(Owner));
+            modelColorManager.SetColor(GameManager.Instance.GetPlayerColor(Owner));
             UpdateStreetExtras();
         }
     }

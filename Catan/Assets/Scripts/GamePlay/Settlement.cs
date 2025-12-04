@@ -24,6 +24,7 @@ public class Settlement : NetworkBehaviour
     [SerializeField] private Color canBuildColor;
     [SerializeField] private Color unavailableColor;
     [SerializeField] private AudioClip placeBuildingSound;
+    [SerializeField] private ModelColorManager modelColorManager;
 
     private Material _settlementPreviewMaterial;
     private MapTile[] _neighboringTiles;
@@ -66,7 +67,7 @@ public class Settlement : NetworkBehaviour
     public void Build(ulong builderId)
     {
         _owner.Value = builderId;
-        _level.Value = 1;
+        _level.Value = 1; // in "LevelUpdated" model gets activated/deactivated based on level
         AudioSource.PlayClipAtPoint(placeBuildingSound, Camera.main.transform.position, 0.3f);
         Player.GetPlayerById(builderId).AddVictoryPoints(1);
         NotifyConnectedStreets();
@@ -125,6 +126,8 @@ public class Settlement : NetworkBehaviour
     private void LevelUpdated(byte previousLevel, byte newLevel)
     {
         settlement.SetActive(newLevel == 1);
+        modelColorManager.SetColor(GameManager.Instance.GetPlayerColor(Owner));
+        
         if (newLevel == 1)
         {
             _mapIcon = MapIconManager.AddIcon(transform, IconType.Settlement,
@@ -141,32 +144,32 @@ public class Settlement : NetworkBehaviour
         }
     }
 
-    private void OnDrawGizmos()
-    {
-        // Display corner name in the editor in RED for better visibility
-        UnityEditor.Handles.color = Color.red;
-        UnityEditor.Handles.Label(transform.position + Vector3.up * 0.5f, gameObject.name);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        // When selected, show more detailed info in bright cyan
-        UnityEditor.Handles.color = Color.cyan;
-        UnityEditor.Handles.Label(transform.position + Vector3.up * 0.8f, gameObject.name + "\n[Selected]");
-
-        // Draw connections to streets
-        Gizmos.color = Color.green;
-        if (streets != null)
-        {
-            foreach (var street in streets)
-            {
-                if (street != null)
-                {
-                    Gizmos.DrawLine(transform.position, street.transform.position);
-                }
-            }
-        }
-    }
+    // private void OnDrawGizmos()
+    // {
+    //     // Display corner name in the editor in RED for better visibility
+    //     UnityEditor.Handles.color = Color.red;
+    //     UnityEditor.Handles.Label(transform.position + Vector3.up * 0.5f, gameObject.name);
+    // }
+    //
+    // private void OnDrawGizmosSelected()
+    // {
+    //     // When selected, show more detailed info in bright cyan
+    //     UnityEditor.Handles.color = Color.cyan;
+    //     UnityEditor.Handles.Label(transform.position + Vector3.up * 0.8f, gameObject.name + "\n[Selected]");
+    //
+    //     // Draw connections to streets
+    //     Gizmos.color = Color.green;
+    //     if (streets != null)
+    //     {
+    //         foreach (var street in streets)
+    //         {
+    //             if (street != null)
+    //             {
+    //                 Gizmos.DrawLine(transform.position, street.transform.position);
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 #if UNITY_EDITOR

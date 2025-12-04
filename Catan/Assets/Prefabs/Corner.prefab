@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3105348117585840318}
   - component: {fileID: 3565288888926754900}
   - component: {fileID: 5400928400804033712}
+  - component: {fileID: 6401699759370727307}
   m_Layer: 0
   m_Name: Corner
   m_TagString: Untagged
@@ -82,6 +83,27 @@ MonoBehaviour:
   canBuildColor: {r: 0, g: 1, b: 0.36008072, a: 0.87058824}
   unavailableColor: {r: 1, g: 0.1745283, b: 0.1745283, a: 0.87058824}
   placeBuildingSound: {fileID: 8300000, guid: e19cc56639d7b43c0879a0893775c811, type: 3}
+  modelColorManager: {fileID: 6401699759370727307}
+--- !u!114 &6401699759370727307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920090526589162119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29337cec92ddd4c96a6dfd8821421d15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ModelColorManager
+  materials:
+  - {fileID: 2100000, guid: 76f4617d9830949498b21444cce3209f, type: 2}
+  - {fileID: 2100000, guid: bc7f8e9315ce5436fa7d18326974410e, type: 2}
+  - {fileID: 2100000, guid: d80878065588242f3ab211b54c27adea, type: 2}
+  - {fileID: 2100000, guid: 45d51afc8d87d40bb8f2f5a82b992397, type: 2}
+  renderers:
+  - {fileID: 6934277444306238364}
+  - {fileID: 7096458188597376303}
 --- !u!1 &2190682862439145805
 GameObject:
   m_ObjectHideFlags: 0
@@ -378,6 +400,16 @@ PrefabInstance:
 --- !u!4 &1235132782009646010 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8646469260368162704, guid: ec3fbdf9c395e4fbda865676fec1d7a7, type: 3}
+  m_PrefabInstance: {fileID: 7411376065140741162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6934277444306238364 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 495958751030521782, guid: ec3fbdf9c395e4fbda865676fec1d7a7, type: 3}
+  m_PrefabInstance: {fileID: 7411376065140741162}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7096458188597376303 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 333776941717512453, guid: ec3fbdf9c395e4fbda865676fec1d7a7, type: 3}
   m_PrefabInstance: {fileID: 7411376065140741162}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8502601872418336587
