@@ -69,6 +69,19 @@ public class Settlement : NetworkBehaviour
         _level.Value = 1;
         AudioSource.PlayClipAtPoint(placeBuildingSound, Camera.main.transform.position, 0.3f);
         Player.GetPlayerById(builderId).AddVictoryPoints(1);
+        NotifyConnectedStreets();
+    }
+
+    private void NotifyConnectedStreets()
+    {
+        // Notify all connected streets that a settlement has been built
+        foreach (var street in streets)
+        {
+            if (street != null && street.IsOccupied)
+            {
+                street.NotifySettlementBuilt(this);
+            }
+        }
     }
     
     private bool HasConnectedRoad(ulong clientId)
@@ -113,10 +126,46 @@ public class Settlement : NetworkBehaviour
     {
         settlement.SetActive(newLevel == 1);
         if (newLevel == 1)
+        {
             _mapIcon = MapIconManager.AddIcon(transform, IconType.Settlement,
                 GameManager.Instance.GetPlayerColor(Owner));
+            // Notify streets when settlement is first built (level changes from 0 to 1)
+            if (previousLevel == 0)
+            {
+                NotifyConnectedStreets();
+            }
+        }
         else if (newLevel == 2)
+        {
             MapIconManager.UpdateIcon(_mapIcon, IconType.City);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        // Display corner name in the editor in RED for better visibility
+        UnityEditor.Handles.color = Color.red;
+        UnityEditor.Handles.Label(transform.position + Vector3.up * 0.5f, gameObject.name);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        // When selected, show more detailed info in bright cyan
+        UnityEditor.Handles.color = Color.cyan;
+        UnityEditor.Handles.Label(transform.position + Vector3.up * 0.8f, gameObject.name + "\n[Selected]");
+
+        // Draw connections to streets
+        Gizmos.color = Color.green;
+        if (streets != null)
+        {
+            foreach (var street in streets)
+            {
+                if (street != null)
+                {
+                    Gizmos.DrawLine(transform.position, street.transform.position);
+                }
+            }
+        }
     }
 }
 
