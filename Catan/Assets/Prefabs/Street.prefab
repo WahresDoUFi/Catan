@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 68167937
+  GlobalObjectIdHash: 2159467449
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -103,7 +103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ModelColorManager
   materials:
-  - {fileID: 2100000, guid: c2d5a7040bf1b442683a5b879ace0e43, type: 2}
   - {fileID: 2100000, guid: 45d51afc8d87d40bb8f2f5a82b992397, type: 2}
   renderers:
   - {fileID: 4257394827098863331}
@@ -111,6 +110,8 @@ MonoBehaviour:
   - {fileID: 4406560927636325768}
   - {fileID: 5927522501162382946}
   - {fileID: 820705960862184318}
+  plaza1Renderer: {fileID: 5927522501162382946}
+  plaza2Renderer: {fileID: 820705960862184318}
 --- !u!1 &2940196689572698682
 GameObject:
   m_ObjectHideFlags: 0

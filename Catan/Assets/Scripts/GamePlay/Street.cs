@@ -127,10 +127,15 @@ public class Street : NetworkBehaviour
                 // Settlement exists on left side -> activate Door1
                 _streetModel.SetChurchDoor1Active(true);
             }
-            else if (!IsPlazaActiveOnCorner(settlement_1, true))
+            else if (!IsPlazaActiveOnCorner(settlement_1, true, out _, out _))
             {
                 // No settlement and no other Plaza on this corner -> activate Plaza1
                 _streetModel.SetPlaza1Active(true);
+            }
+            else if (IsPlazaActiveOnCorner(settlement_1, true, out var plazaModelColorManager, out var is1))
+            {
+                if (plazaModelColorManager != null)
+                    plazaModelColorManager.MixColor(GameManager.Instance.GetPlayerColor(Owner), is1);
             }
         }
 
@@ -142,16 +147,24 @@ public class Street : NetworkBehaviour
                 // Settlement exists on right side -> activate Door2
                 _streetModel.SetChurchDoor2Active(true);
             }
-            else if (!IsPlazaActiveOnCorner(settlement_2, false))
+            else if (!IsPlazaActiveOnCorner(settlement_2, false, out _, out _))
             {
                 // No settlement and no other Plaza on this corner -> activate Plaza2
                 _streetModel.SetPlaza2Active(true);
             }
+            else if (IsPlazaActiveOnCorner(settlement_2, false, out var plazaModelColorManager, out var is1))
+            {
+                if (plazaModelColorManager != null)
+                    plazaModelColorManager.MixColor(GameManager.Instance.GetPlayerColor(Owner), is1);
+            }
         }
     }
 
-    private bool IsPlazaActiveOnCorner(Settlement corner, bool isLeft)
+    private bool IsPlazaActiveOnCorner(Settlement corner, bool isLeft, out ModelColorManager plazaModelColorManager,
+    out bool otherPlazaIs1)
     {
+        plazaModelColorManager = null;
+        otherPlazaIs1 = false;
         // Check if any other street connected to this corner already has a Plaza active
         foreach (var connectedStreet in corner.streets)
         {
@@ -162,9 +175,16 @@ public class Street : NetworkBehaviour
             {
                 // Check which side this corner is on for the other street
                 if (connectedStreet.settlement_1 == corner && otherStreetModel.IsPlaza1Active())
+                {
+                    plazaModelColorManager = connectedStreet.GetComponent<ModelColorManager>();
+                    otherPlazaIs1 = true;
                     return true;
-                if (connectedStreet.settlement_2 == corner && otherStreetModel.IsPlaza2Active())
+                }
+                if (connectedStreet.settlement_2 == corner && otherStreetModel.IsPlaza2Active()) { 
+                    plazaModelColorManager = connectedStreet.GetComponent<ModelColorManager>();
+                    otherPlazaIs1 = false;
                     return true;
+                }
             }
         }
         return false;

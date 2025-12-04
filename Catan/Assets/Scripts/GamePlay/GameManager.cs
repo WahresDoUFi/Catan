@@ -1,3 +1,4 @@
+using System;
 using Misc;
 using Unity.Netcode;
 using UnityEngine;
@@ -97,8 +98,14 @@ public class GameManager : NetworkBehaviour
     }
 
     public Color GetPlayerColor(ulong playerId)
-    {
-        return playerColors[_playerIds.IndexOf(playerId)];
+    {   
+        try
+        {
+            return playerColors[_playerIds.IndexOf(playerId)];
+        } catch (IndexOutOfRangeException e)
+        {
+            return Color.white;
+        } 
     }
 
     public bool PlaceSettlement(Settlement settlement)
