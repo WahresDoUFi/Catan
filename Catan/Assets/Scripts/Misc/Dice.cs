@@ -20,14 +20,16 @@ namespace Misc
         public Vector3 Velocity => _rigidbody.linearVelocity;
         public bool Stable => _realVelocity.sqrMagnitude < 0.01f;
         public bool Active => _rigidbody.isKinematic == false;
-        
+
         [SerializeField] private float gravity;
         [SerializeField] private float correctionThreshold;
         [SerializeField] private float drag;
-        
+        [SerializeField] private AudioClip[] collisionSounds;
+
         private Vector3 _velocity;
         private Vector3 _angularVelocity;
         private Rigidbody _rigidbody;
+        private AudioSource _audioSource;
         private Vector3 _realVelocity;
         private Vector3 _lastPosition;
         private int _targetNumber;
@@ -36,6 +38,7 @@ namespace Misc
         {
             _lastPosition = transform.position;
             _rigidbody = GetComponent<Rigidbody>();
+            _audioSource = GetComponent<AudioSource>();
         }
 
         private void FixedUpdate()
@@ -66,7 +69,8 @@ namespace Misc
             _rigidbody.isKinematic = false;
             var direction = position - _rigidbody.position;
             var velocity = Vector3.ClampMagnitude(direction * speed, speed);
-            _rigidbody.linearVelocity = Vector3.Lerp(_rigidbody.linearVelocity, velocity, (smoothing * direction.magnitude) * Time.fixedDeltaTime);
+            _rigidbody.linearVelocity = Vector3.Lerp(_rigidbody.linearVelocity, velocity,
+                (smoothing * direction.magnitude) * Time.fixedDeltaTime);
             _rigidbody.angularVelocity = -Vector3.Cross(velocity.normalized, Vector3.up);
         }
 
@@ -105,12 +109,27 @@ namespace Misc
             {
                 contactPoint += point.point;
             }
+
             contactPoint /= collision.contacts.Length;
             var direction = transform.position - contactPoint;
             if (_velocity.magnitude > 0.3f)
                 _velocity = direction.normalized * _velocity.magnitude * 0.75f;
             _angularVelocity = -Vector3.Cross(direction, Vector3.up);
+
+            PlayCollisionSound(collision);
             RotateTowardsTarget();
+        }
+
+        private void PlayCollisionSound(Collision collision)
+        {
+            var impactForce = collision.relativeVelocity.magnitude;
+            if (impactForce > 0.5f && collisionSounds.Length > 0 && !_audioSource.isPlaying)
+            {
+                var randomClip = collisionSounds[Random.Range(0, collisionSounds.Length)];
+                _audioSource.pitch = Random.Range(0.9f, 1.1f);
+                _audioSource.volume = Mathf.Clamp01(impactForce / 15f);
+                _audioSource.PlayOneShot(randomClip);
+            }
         }
 
         private void RotateTowardsTarget()
@@ -127,6 +146,7 @@ namespace Misc
                 _angularVelocity = Vector3.zero;
                 return;
             }
+
             _angularVelocity = axis.normalized * (angleDeg * Mathf.Deg2Rad);
             float desiredUpForce = angleDeg / 10f;
             _velocity.y = Mathf.Max(desiredUpForce, _velocity.y);
