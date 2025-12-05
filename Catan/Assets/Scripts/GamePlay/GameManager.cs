@@ -28,10 +28,9 @@ public class GameManager : NetworkBehaviour
     public int PlayerCount => _playerIds.Count;
     public bool DiceThrown => _hasThrownDice.Value;
     public int Seed => _seed.Value;
-    
-    [SerializeField]
-    private Color[] playerColors;
-    
+
+    [SerializeField] private Color[] playerColors;
+
     private readonly NetworkVariable<byte> _gameState = new();
     private readonly NetworkVariable<byte> _playerTurn = new();
     private readonly NetworkList<ulong> _playerIds = new();
@@ -56,7 +55,8 @@ public class GameManager : NetworkBehaviour
     {
         _seed.Value = new Random().Next(0, int.MaxValue);
         Street.AllStreets.Sort((s1, s2) => s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
-        Settlement.AllSettlements.Sort((s1, s2) => s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
+        Settlement.AllSettlements.Sort((s1, s2) =>
+            s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
         if (HasAuthority)
         {
             foreach (var playerId in NetworkManager.Singleton.ConnectedClientsIds)
@@ -64,6 +64,7 @@ public class GameManager : NetworkBehaviour
                 _playerIds.Add(playerId);
             }
         }
+
         ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
         NetworkManager.Singleton.OnClientStopped += OnClientStopped;
         _gameState.OnValueChanged += (_, _) => GameStateChange();
@@ -112,7 +113,7 @@ public class GameManager : NetworkBehaviour
     {
         if (!settlement) return false;
         if (State == GameState.Playing &&
-            !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Settlement))) 
+            !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Settlement)))
             return false;
         ulong clientId = NetworkManager.Singleton.LocalClientId;
         BuySettlementRpc(NetworkManager.Singleton.LocalClientId, settlement.Id);
@@ -145,9 +146,9 @@ public class GameManager : NetworkBehaviour
             foreach (var cost in costs)
             {
                 player.RemoveResources(cost.resource, cost.amount);
-            }   
+            }
         }
-        
+
         settlement.Build(clientId);
         if (State != GameState.Playing) return;
         foreach (var tile in settlement.FindNeighboringTiles())
@@ -172,7 +173,7 @@ public class GameManager : NetworkBehaviour
                 player.RemoveResources(cost.resource, cost.amount);
             }
         }
-        
+
         street.SetOwner(clientId);
         if (State == GameState.Preparing)
         {
@@ -186,6 +187,11 @@ public class GameManager : NetworkBehaviour
 
     public void FinishTurn()
     {
+        var victoryPoints = VictoryPoints.CalculateVictoryPoints(OwnerClientId);
+        if (victoryPoints >= 7)
+        {
+            //Add Game Over!
+        }
         FinishTurnRpc();
     }
 
@@ -214,7 +220,7 @@ public class GameManager : NetworkBehaviour
         _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
         if (_playerTurn.Value == 0)
             _roundNumber.Value += 1;
-        
+
         if (PlayerCount == 1)
             PlayerTurnChange();
     }
@@ -269,12 +275,12 @@ public class GameManager : NetworkBehaviour
         BuildManager.SetActive(false);
         DiceController.Instance.Reset();
     }
-    
+
     private void PlayerTurnChange()
     {
         DiceController.Instance.Reset();
     }
-    
+
     private void OnClientConnectionStatusChange(ulong clientId,
         ConnectionNotificationManager.ConnectionStatus connectionStatus)
     {

@@ -12,8 +12,8 @@ public class Player : NetworkBehaviour
     public byte Wheat => _wheat.Value;
     public byte Brick => _brick.Value;
     public byte Sheep => _sheep.Value;
-    public byte VictoryPoints => _victoryPoints.Value;
-    
+    public int VictoryPoints => global::VictoryPoints.CalculateVictoryPoints(OwnerClientId);
+
     private readonly NetworkVariable<byte> _wood = new();
     private readonly NetworkVariable<byte> _stone = new();
     private readonly NetworkVariable<byte> _wheat = new();
@@ -25,7 +25,7 @@ public class Player : NetworkBehaviour
     {
         if (IsOwner)
             LocalPlayer = this;
-        
+
         _wood.OnValueChanged += ResourceCountChanged;
         _stone.OnValueChanged += ResourceCountChanged;
         _wheat.OnValueChanged += ResourceCountChanged;
@@ -41,10 +41,6 @@ public class Player : NetworkBehaviour
     public void AddVictoryPoints(byte points)
     {
         _victoryPoints.Value += points;
-    }
-    public void RemoveVictoryPoints(byte points)
-    {
-        _victoryPoints.Value -= points;
     }
 
     public bool HasResources(BuildManager.ResourceCosts[] costs)
@@ -88,6 +84,7 @@ public class Player : NetworkBehaviour
                 return;
         }
     }
+
     public void RemoveResources(Tile type, byte amount)
     {
         switch (type)

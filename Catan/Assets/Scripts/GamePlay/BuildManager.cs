@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class BuildManager : MonoBehaviour
 {
     public const float MaxCursorDistanceFromBuilding = 10f;
+
     public enum BuildType
     {
         Street,
@@ -21,20 +22,21 @@ public class BuildManager : MonoBehaviour
         public BuildType type;
         public ResourceCosts[] costs;
     }
+
     [Serializable]
     public struct ResourceCosts
     {
         public Tile resource;
         public byte amount;
     }
-    
+
     private static BuildManager _instance;
     public static bool BuildModeActive => _instance._buildModeActive;
 
     [SerializeField] private Button cancelButton;
     [SerializeField] private AudioSource buildModeMusic;
     [SerializeField] private BuildCosts[] costs;
-    
+
     private bool _buildModeActive;
     private BuildType _buildType;
     private Camera _mainCam;
@@ -76,14 +78,11 @@ public class BuildManager : MonoBehaviour
         if (active)
         {
             CameraController.Instance.EnterOverview();
-            if (!_instance.buildModeMusic.isPlaying)
-            {
-                _instance.buildModeMusic.Play();
-            }
+            _instance.buildModeMusic.volume = 0.4f;
         }
         else
         {
-            _instance.StartCoroutine(_instance.FadeOutMusic());
+            _instance.StartCoroutine(_instance.LowerVolume());
         }
     }
 
@@ -104,9 +103,11 @@ public class BuildManager : MonoBehaviour
 
     private void PlaceSettlement()
     {
-        if (GameManager.Instance.PlaceSettlement(Settlement.GetClosestSettlementTo(CameraController.Instance.MouseWorldPosition())))
+        if (GameManager.Instance.PlaceSettlement(
+                Settlement.GetClosestSettlementTo(CameraController.Instance.MouseWorldPosition())))
             SetActive(false);
     }
+
     private void PlaceStreet()
     {
         if (GameManager.Instance.PlaceStreet(Street.GetClosestStreetTo(CameraController.Instance.MouseWorldPosition())))
@@ -136,18 +137,15 @@ public class BuildManager : MonoBehaviour
             settlement.Preview = true;
     }
 
-    private IEnumerator FadeOutMusic()
+    private IEnumerator LowerVolume()
     {
         var startVolume = buildModeMusic.volume;
-        const float fadeTime = 4.0f;
+        const float fadeTime = 3.0f;
 
-        while (buildModeMusic.volume > 0)
+        while (buildModeMusic.volume > 0.1f)
         {
             buildModeMusic.volume -= startVolume * Time.deltaTime / fadeTime;
             yield return null;
         }
-
-        buildModeMusic.Stop();
-        buildModeMusic.volume = startVolume;
     }
 }

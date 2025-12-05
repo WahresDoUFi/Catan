@@ -14,7 +14,7 @@ public class Settlement : NetworkBehaviour
     public bool Preview { get; set; }
     public int Id => AllSettlements.IndexOf(this);
     public byte Level => _level.Value;
-    
+
     public Street[] streets;
     private readonly NetworkVariable<ulong> _owner = new(ulong.MaxValue);
     private readonly NetworkVariable<byte> _level = new();
@@ -69,7 +69,6 @@ public class Settlement : NetworkBehaviour
         _owner.Value = builderId;
         _level.Value = 1; // in "LevelUpdated" model gets activated/deactivated based on level
         AudioSource.PlayClipAtPoint(placeBuildingSound, Camera.main.transform.position, 0.3f);
-        Player.GetPlayerById(builderId).AddVictoryPoints(1);
         NotifyConnectedStreets();
     }
 
@@ -84,7 +83,7 @@ public class Settlement : NetworkBehaviour
             }
         }
     }
-    
+
     private bool HasConnectedRoad(ulong clientId)
     {
         return streets.Any(street => street.Owner == clientId);
@@ -178,6 +177,7 @@ public class Settlement : NetworkBehaviour
 public class SettlementEditor : Editor
 {
     private const float SmallOffset = 0.01f;
+
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
