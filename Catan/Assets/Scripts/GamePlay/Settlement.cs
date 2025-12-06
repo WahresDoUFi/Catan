@@ -125,7 +125,8 @@ public class Settlement : NetworkBehaviour
     private void LevelUpdated(byte previousLevel, byte newLevel)
     {
         settlement.SetActive(newLevel == 1);
-        modelColorManager.SetColor(GameManager.Instance.GetPlayerColor(Owner));
+        if (IsOccupied)
+            modelColorManager.SetColor(GameManager.Instance.GetPlayerColor(Owner));
         
         if (newLevel == 1)
         {
