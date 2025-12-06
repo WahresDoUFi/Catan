@@ -665,6 +665,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Artwork
       objectReference: {fileID: 0}
+    - target: {fileID: 5002304799529752870, guid: a047f644abe114ae0a7a547e786cfd1f, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: f25f7052756b14e49b835844290f9bdc, type: 2}
     - target: {fileID: 7498007539789083285, guid: a047f644abe114ae0a7a547e786cfd1f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -723,17 +727,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5573975893771261624}
     m_Modifications:
+    - target: {fileID: 3685939642867399561, guid: c4698c76ac9be4975949f959fe633cd8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685939642867399561, guid: c4698c76ac9be4975949f959fe633cd8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3685939642867399561, guid: c4698c76ac9be4975949f959fe633cd8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8268398632389613867, guid: c4698c76ac9be4975949f959fe633cd8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8268398632389613867, guid: c4698c76ac9be4975949f959fe633cd8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.035
+      value: 0.039
       objectReference: {fileID: 0}
     - target: {fileID: 8268398632389613867, guid: c4698c76ac9be4975949f959fe633cd8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.007
       objectReference: {fileID: 0}
     - target: {fileID: 8268398632389613867, guid: c4698c76ac9be4975949f959fe633cd8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -765,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8787807184359048081, guid: c4698c76ac9be4975949f959fe633cd8, type: 3}
       propertyPath: m_Name
-      value: animated_ogre_with_club
+      value: ogre
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
