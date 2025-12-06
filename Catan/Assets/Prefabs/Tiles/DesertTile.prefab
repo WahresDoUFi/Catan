@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 430708074317002209}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -862,10 +862,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 923269626204974231, guid: c0951f4935b904979a3e107f507d31d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4702118859744694022}
   m_SourcePrefab: {fileID: 100100000, guid: c0951f4935b904979a3e107f507d31d5, type: 3}
 --- !u!4 &2350114696997438809 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5573975893771261624, guid: c0951f4935b904979a3e107f507d31d5, type: 3}
   m_PrefabInstance: {fileID: 7910561022382347233}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6996317298566659958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 923269626204974231, guid: c0951f4935b904979a3e107f507d31d5, type: 3}
+  m_PrefabInstance: {fileID: 7910561022382347233}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4702118859744694022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6996317298566659958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80646f94d5c64d02ae4edde8c8a8b27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BanditPositionMarker

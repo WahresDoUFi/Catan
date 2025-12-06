@@ -19,6 +19,7 @@ public class MapTile : NetworkBehaviour
     
     private MapIcon _mapIcon;
     private GameObject _numberText;
+    private Transform _banditPosition;
 
     public override void OnNetworkSpawn()
     {
@@ -35,6 +36,7 @@ public class MapTile : NetworkBehaviour
         if (_tileType.Value < 0) return;
         hiddenTile.SetActive(!_discovered.Value);
         tileParent.gameObject.SetActive(_discovered.Value);
+        _banditPosition = tileParent.GetChild(_tileType.Value).GetComponentInChildren<BanditPositionMarker>().transform;
         for (var i = 0; i < tileParent.childCount; i++)
         {
             tileParent.GetChild(i).gameObject.SetActive(_tileType.Value == i);

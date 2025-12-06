@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 3509628416
+  GlobalObjectIdHash: 1020282676
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -5729,9 +5729,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: StoneTile
       objectReference: {fileID: 0}
-    - target: {fileID: 430708074317002209, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1874672836950077983, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874672836950077983, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
+      propertyPath: m_VersionIndex
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5772,6 +5776,14 @@ PrefabInstance:
     - target: {fileID: 3854678236170495456, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524106737508176571, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586096498504494468, guid: 3089f32c3dee24105b6a358e10085925, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5795,9 +5807,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ForestTile
       objectReference: {fileID: 0}
-    - target: {fileID: 430708074317002209, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1874672836950077983, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874672836950077983, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
+      propertyPath: m_VersionIndex
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5838,6 +5854,14 @@ PrefabInstance:
     - target: {fileID: 3854678236170495456, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524106737508176571, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586096498504494468, guid: eff1424003e90461d960ce4a1fcdeb90, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5861,9 +5885,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: FieldTile
       objectReference: {fileID: 0}
-    - target: {fileID: 430708074317002209, guid: 5758b0388e357469eabce26e286c031f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1874672836950077983, guid: 5758b0388e357469eabce26e286c031f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874672836950077983, guid: 5758b0388e357469eabce26e286c031f, type: 3}
+      propertyPath: m_VersionIndex
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: 5758b0388e357469eabce26e286c031f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5904,6 +5932,14 @@ PrefabInstance:
     - target: {fileID: 3854678236170495456, guid: 5758b0388e357469eabce26e286c031f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524106737508176571, guid: 5758b0388e357469eabce26e286c031f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586096498504494468, guid: 5758b0388e357469eabce26e286c031f, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5927,9 +5963,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrickTile
       objectReference: {fileID: 0}
-    - target: {fileID: 430708074317002209, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1874672836950077983, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874672836950077983, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
+      propertyPath: m_VersionIndex
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5970,6 +6010,14 @@ PrefabInstance:
     - target: {fileID: 3854678236170495456, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524106737508176571, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586096498504494468, guid: 8f455cc2b3cc44c238134560cbd9c868, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5993,9 +6041,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassTile
       objectReference: {fileID: 0}
-    - target: {fileID: 430708074317002209, guid: bba3f0296ee14499bb18d0bfe9a92a86, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1874672836950077983, guid: bba3f0296ee14499bb18d0bfe9a92a86, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874672836950077983, guid: bba3f0296ee14499bb18d0bfe9a92a86, type: 3}
+      propertyPath: m_VersionIndex
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: bba3f0296ee14499bb18d0bfe9a92a86, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6036,6 +6088,14 @@ PrefabInstance:
     - target: {fileID: 3854678236170495456, guid: bba3f0296ee14499bb18d0bfe9a92a86, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524106737508176571, guid: bba3f0296ee14499bb18d0bfe9a92a86, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586096498504494468, guid: bba3f0296ee14499bb18d0bfe9a92a86, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6059,6 +6119,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DesertTile
       objectReference: {fileID: 0}
+    - target: {fileID: 1874672836950077983, guid: d7dec7d8e41274a179994110ad93599f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874672836950077983, guid: d7dec7d8e41274a179994110ad93599f, type: 3}
+      propertyPath: m_VersionIndex
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3854678236170495456, guid: d7dec7d8e41274a179994110ad93599f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -6098,6 +6166,14 @@ PrefabInstance:
     - target: {fileID: 3854678236170495456, guid: d7dec7d8e41274a179994110ad93599f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7524106737508176571, guid: d7dec7d8e41274a179994110ad93599f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7586096498504494468, guid: d7dec7d8e41274a179994110ad93599f, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
