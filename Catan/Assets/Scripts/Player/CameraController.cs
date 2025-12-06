@@ -1,4 +1,5 @@
 using System;
+using UI.Trade;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -54,8 +55,7 @@ public class CameraController : MonoBehaviour
     {
         if (Mouse.current.leftButton.isPressed)
         {
-            if (BuildManager.BuildModeActive) return;
-            if (GameManager.Instance.IsMyTurn() && !GameManager.Instance.DiceThrown) return;
+            if (!CanMove()) return;
             _targetPosition -= Right * input.x * Speed;
             _targetPosition -= Forward * input.y * Speed;
             float height = _targetPosition.y;
@@ -89,5 +89,13 @@ public class CameraController : MonoBehaviour
         Vector3 mousePos = Mouse.current.position.ReadValue();
         mousePos.z = _camera.transform.position.y - offset;
         return _camera.ScreenToWorldPoint(mousePos);
+    }
+
+    private bool CanMove()
+    {
+        if (BuildManager.BuildModeActive) return false;
+        if (GameManager.Instance.IsMyTurn() && !GameManager.Instance.DiceThrown) return false;
+        if (TradeMenu.Instance.IsOpen) return false;
+        return true;
     }
 }

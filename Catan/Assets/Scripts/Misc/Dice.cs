@@ -20,7 +20,7 @@ namespace Misc
         public Vector3 Velocity => _rigidbody.linearVelocity;
         public bool Stable => _realVelocity.sqrMagnitude < 0.01f;
         public bool Active => _rigidbody.isKinematic == false;
-
+        
         [SerializeField] private float gravity;
         [SerializeField] private float correctionThreshold;
         [SerializeField] private float drag;
@@ -51,7 +51,8 @@ namespace Misc
 
         public void SetThrowPosition(Vector3 position, Vector3 rotation, Vector3 velocity)
         {
-            _rigidbody.Move(position, Quaternion.Euler(rotation));
+            _rigidbody.position = position;
+            _rigidbody.rotation = Quaternion.Euler(rotation);
             _rigidbody.isKinematic = false;
             _rigidbody.linearVelocity = velocity;
             _realVelocity = velocity;
@@ -69,8 +70,7 @@ namespace Misc
             _rigidbody.isKinematic = false;
             var direction = position - _rigidbody.position;
             var velocity = Vector3.ClampMagnitude(direction * speed, speed);
-            _rigidbody.linearVelocity = Vector3.Lerp(_rigidbody.linearVelocity, velocity,
-                (smoothing * direction.magnitude) * Time.fixedDeltaTime);
+            _rigidbody.linearVelocity = Vector3.Lerp(_rigidbody.linearVelocity, velocity, smoothing * Time.fixedDeltaTime);
             _rigidbody.angularVelocity = -Vector3.Cross(velocity.normalized, Vector3.up);
         }
 
@@ -109,7 +109,6 @@ namespace Misc
             {
                 contactPoint += point.point;
             }
-
             contactPoint /= collision.contacts.Length;
             var direction = transform.position - contactPoint;
             if (_velocity.magnitude > 0.3f)

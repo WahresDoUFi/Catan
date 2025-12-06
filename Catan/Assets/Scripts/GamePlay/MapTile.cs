@@ -23,6 +23,7 @@ public class MapTile : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        CreateNumberComponent();
         _discovered.OnValueChanged += DiscoverStatusChanged;
         _number.OnValueChanged += NumberValueChanged;
         _tileType.OnValueChanged += (_, _) => UpdateTile();
@@ -60,9 +61,16 @@ public class MapTile : NetworkBehaviour
 
     private void NumberValueChanged(int previous, int current)
     {
-        _numberText = Instantiate(numberTextPrefab);
         _numberText.GetComponent<TextMeshProUGUI>().text = current.ToString();
         if (current is 6 or 8)
+            _numberText.GetComponent<TextMeshProUGUI>().color = HighOddsTileColor;
+    }
+
+    private void CreateNumberComponent()
+    {
+        _numberText = Instantiate(numberTextPrefab);
+        _numberText.GetComponent<TextMeshProUGUI>().text = _number.Value.ToString();
+        if (_number.Value is 6 or 8)
             _numberText.GetComponent<TextMeshProUGUI>().color = HighOddsTileColor;
         _numberText.SetActive(false);
     }
@@ -71,19 +79,19 @@ public class MapTile : NetworkBehaviour
     {
         hiddenTile.SetActive(!newValue);
         tileParent.gameObject.SetActive(newValue);
-        if (!newValue)
-        {
-            fog.Play();   
-        }
-        else
+        if (newValue)
         {
             fog.Stop();
-            if (_numberText)
+            if (_tileType.Value != (int)Tile.Desert)
             {
                 _mapIcon = MapIconManager.AddIcon(transform, IconType.Tile, Color.white);
                 _numberText.transform.SetParent(_mapIcon.transform, false);
                 _numberText.SetActive(true);   
             }
+        }
+        else
+        {
+            fog.Play();   
         }
     }
 }

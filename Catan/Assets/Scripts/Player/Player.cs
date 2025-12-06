@@ -48,7 +48,7 @@ public class Player : NetworkBehaviour
         return costs.All(cost => GetResources(cost.resource) >= cost.amount);
     }
 
-    private byte GetResources(Tile type)
+    public byte GetResources(Tile type)
     {
         return type switch
         {

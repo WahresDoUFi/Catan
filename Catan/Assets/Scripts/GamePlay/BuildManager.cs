@@ -1,6 +1,7 @@
 using System.Collections;
 using System;
 using System.Linq;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -24,10 +25,31 @@ public class BuildManager : MonoBehaviour
     }
 
     [Serializable]
-    public struct ResourceCosts
+    public struct ResourceCosts : INetworkSerializable, IEquatable<ResourceCosts>
     {
         public Tile resource;
         public byte amount;
+        
+        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+        {
+            serializer.SerializeValue(ref resource);
+            serializer.SerializeValue(ref amount);
+        }
+
+        public bool Equals(ResourceCosts other)
+        {
+            return resource == other.resource && amount == other.amount;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return obj is ResourceCosts other && Equals(other);
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine((int)resource, amount);
+        }
     }
 
     private static BuildManager _instance;

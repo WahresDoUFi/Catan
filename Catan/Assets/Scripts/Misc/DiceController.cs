@@ -24,11 +24,7 @@ namespace Misc
         private void Awake()
         {
             Instance = this;
-        }
-
-        private void Start()
-        {
-            Reset();
+            HideDice();
         }
 
         private void FixedUpdate()
@@ -40,12 +36,14 @@ namespace Misc
             {
                 die.enabled = false;
                 die.SetTarget(targetPosition, followSpeed / Time.fixedDeltaTime, stiffness);
-                targetPosition += Vector3.right * 10f;
+                targetPosition += Vector3.right * 10f + Vector3.up;
             }
         }
 
         private void Update()
         {
+            if (CanThrow())
+                CameraController.Instance.EnterOverview();
             if (_dragging || _throwFinished) return;
             foreach (var die in dice)
             {
@@ -134,7 +132,7 @@ namespace Misc
             foreach (var die in dice)
             {
                 die.SetPosition(targetPosition);
-                targetPosition += Vector3.right * 10f;
+                targetPosition += Vector3.right * 10f + Vector3.up;
             }
         }
     }

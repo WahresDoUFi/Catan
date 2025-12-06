@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using Misc;
+using UI.Trade;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -28,15 +30,17 @@ public class GameManager : NetworkBehaviour
     public int PlayerCount => _playerIds.Count;
     public bool DiceThrown => _hasThrownDice.Value;
     public int Seed => _seed.Value;
-
+    public ulong ActivePlayer => _playerIds[_playerTurn.Value];
+    
     [SerializeField] private Color[] playerColors;
-
+    
     private readonly NetworkVariable<byte> _gameState = new();
     private readonly NetworkVariable<byte> _playerTurn = new();
     private readonly NetworkList<ulong> _playerIds = new();
     private readonly NetworkVariable<bool> _hasThrownDice = new();
     private readonly NetworkVariable<byte> _roundNumber = new();
     private readonly NetworkVariable<int> _seed = new();
+    private readonly NetworkTradeInfoVariable _playerTrades = new();
 
     private void Awake()
     {
@@ -53,22 +57,23 @@ public class GameManager : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        _seed.Value = new Random().Next(0, int.MaxValue);
         Street.AllStreets.Sort((s1, s2) => s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
         Settlement.AllSettlements.Sort((s1, s2) =>
             s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
         if (HasAuthority)
         {
+            _seed.Value = new Random().Next(0, int.MaxValue);
             foreach (var playerId in NetworkManager.Singleton.ConnectedClientsIds)
             {
                 _playerIds.Add(playerId);
             }
         }
-
         ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
         NetworkManager.Singleton.OnClientStopped += OnClientStopped;
         _gameState.OnValueChanged += (_, _) => GameStateChange();
         _playerTurn.OnValueChanged += (_, _) => PlayerTurnChange();
+        _hasThrownDice.OnValueChanged += HasThrownDiceChange;
+        _playerTrades.OnValueChanged += AvailableTradesMenu.UpdateAvailableTrades;
     }
 
     public override void OnNetworkDespawn()
@@ -99,14 +104,8 @@ public class GameManager : NetworkBehaviour
     }
 
     public Color GetPlayerColor(ulong playerId)
-    {   
-        try
-        {
-            return playerColors[_playerIds.IndexOf(playerId)];
-        } catch (IndexOutOfRangeException e)
-        {
-            return Color.white;
-        } 
+    {
+        return playerColors[_playerIds.IndexOf(playerId)];
     }
 
     public bool PlaceSettlement(Settlement settlement)
@@ -185,13 +184,26 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    public void TradeResources(Tile give, Tile get)
+    {
+        TradeResourcesRpc(NetworkManager.LocalClientId, (int)give, (int)get);
+    }
+
+    [Rpc(SendTo.Authority)]
+    private void TradeResourcesRpc(ulong clientId, int give, int get)
+    {
+        if (_playerIds.IndexOf(clientId) != _playerTurn.Value) return;
+        var player = Player.GetPlayerById(clientId);
+        var costs = new BuildManager.ResourceCosts[]
+            { new BuildManager.ResourceCosts() { amount = 4, resource = (Tile)give } };
+        if (!player.HasResources(costs)) return;
+        player.RemoveResources((Tile)give, 4);
+        player.AddResources((Tile)get, 1);
+    }
+
     public void FinishTurn()
     {
-        var victoryPoints = VictoryPoints.CalculateVictoryPoints(OwnerClientId);
-        if (victoryPoints >= 7)
-        {
-            //Add Game Over!
-        }
+        BuildManager.SetActive(false);
         FinishTurnRpc();
     }
 
@@ -208,6 +220,65 @@ public class GameManager : NetworkBehaviour
         //  show dice roll animation whatever
     }
 
+    public TradeInfo[] GetAvailableTrades()
+    {
+        var result = new List<TradeInfo>();
+        var localClientId = NetworkManager.Singleton.LocalClientId;
+        foreach (var trade in _playerTrades.Trades)
+        {
+            if (trade.ReceiverId == localClientId)
+                result.Add(trade);
+        }
+        return result.ToArray();
+    }
+
+    public int GetTradeId(TradeInfo trade)
+    {
+        return _playerTrades.Trades.IndexOf(trade);
+    }
+
+    public void CreateTrade(TradeInfo tradeInfo)
+    {
+        CreateTradeRpc(tradeInfo);
+    }
+
+    public void AcceptTrade(int tradeId)
+    {
+        AcceptTradeRpc(tradeId);
+    }
+
+    [Rpc(SendTo.Authority)]
+    private void AcceptTradeRpc(int tradeId, RpcParams rpcParams = default)
+    {
+        if (tradeId < 0 || tradeId >= _playerTrades.Trades.Count) return;
+        var trade = _playerTrades.Trades[tradeId];
+        if (trade.ReceiverId != rpcParams.Receive.SenderClientId) return;
+        var receiver = Player.GetPlayerById(trade.ReceiverId);
+        var sender = Player.GetPlayerById(trade.SenderId);
+        if (!receiver.HasResources(trade.ReceiveResources)) return;
+        if (!sender.HasResources(trade.SendResources)) return;
+        foreach (var resource in trade.ReceiveResources)
+        {
+            receiver.RemoveResources(resource.resource, resource.amount);
+            sender.AddResources(resource.resource, resource.amount);
+        }
+        foreach (var resource in trade.SendResources)
+        {
+            sender.RemoveResources(resource.resource, resource.amount);
+            receiver.AddResources(resource.resource, resource.amount);
+        }
+        _playerTrades.RemoveTrade(trade);
+    }
+
+    [Rpc(SendTo.Authority)]
+    private void CreateTradeRpc(TradeInfo tradeInfo, RpcParams rpcParams = default)
+    {
+        if (tradeInfo.SenderId != rpcParams.Receive.SenderClientId) return;
+        //  only trades with the player whose turn it is are allowed
+        if (tradeInfo.ReceiverId == ActivePlayer || tradeInfo.SenderId == ActivePlayer)
+            _playerTrades.AddTrade(tradeInfo);
+    }
+
     public void StartGame()
     {
         _gameState.Value = (byte)GameState.Preparing;
@@ -216,7 +287,13 @@ public class GameManager : NetworkBehaviour
 
     private void NextTurn()
     {
+        int victoryPoints = VictoryPoints.CalculateVictoryPoints(ActivePlayer);
+        if (victoryPoints >= 7)
+        {
+            //Add Game Over!
+        }
         _hasThrownDice.Value = false;
+        _playerTrades.Clear();
         _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
         if (_playerTurn.Value == 0)
             _roundNumber.Value += 1;
@@ -249,10 +326,7 @@ public class GameManager : NetworkBehaviour
 
     private void HasThrownDiceChange(bool previous, bool current)
     {
-        if (previous == false && current)
-        {
-            DiceController.Instance.Reset();
-        }
+        DiceController.Instance.Reset();
     }
 
     private void GrantResources(int number)
@@ -278,6 +352,8 @@ public class GameManager : NetworkBehaviour
 
     private void PlayerTurnChange()
     {
+        TradeMenu.Instance.Close();
+        TradeWindow.Close();
         DiceController.Instance.Reset();
     }
 

@@ -8,18 +8,11 @@ namespace UI
 {
     public class ResourceCardsHolder : MonoBehaviour
     {
-        [Serializable]
-        private struct ResourceIcon
-        {
-            public Tile resourceType;
-            public Sprite icon;
-        }
-
         private float VerticalOffset => BuildManager.BuildModeActive || GameManager.Instance.CanThrowDice() ? hiddenOffset : 0f;
         
         [SerializeField] private GameObject cardPrefab;
-        [SerializeField] private ResourceIcon[] resourceSprites;
         [SerializeField] private float maxCardTilt;
+        [SerializeField] private float maxCardOffset;
         [SerializeField] private float cardSpacing;
         [SerializeField] private float cardMoveSpeed = 5f;
         [SerializeField] private float hiddenOffset;
@@ -73,10 +66,10 @@ namespace UI
                 var card = _resourceCards[i];
                 int distanceToHoveredCard = Mathf.Abs(_lastHoveredCardIndex - i) + 1;
                 card.transform.SetSiblingIndex(transform.childCount - distanceToHoveredCard);
-                float offset = i - (cardCount / 2f);
-                if (cardCount % 2 != 0) offset += 0.5f;
+                float offset = i - (cardCount / 2f) + 0.5f;
                 var targetPosition = Vector3.right * (offset * cardSpacing) + Vector3.up * VerticalOffset;
-                float targetRotation = Mathf.Lerp(maxCardTilt, -maxCardTilt, (float)i / (float)cardCount);
+                float targetRotation = Mathf.Lerp(maxCardTilt, -maxCardTilt, (float)(i + 0.5f) / (float)cardCount);
+                targetPosition -= Vector3.up * ((Mathf.Abs(targetRotation) / maxCardTilt) * maxCardOffset);
                 card.transform.localPosition = Vector3.Lerp(card.transform.localPosition,
                     targetPosition, Time.deltaTime * cardMoveSpeed);
                 card.transform.rotation = Quaternion.Lerp(card.transform.rotation,
@@ -95,34 +88,29 @@ namespace UI
             var index = 0;
             for (var i = 0; i < _player.Wood; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Forest));
+                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Forest));
                 index++;
             }
             for (var i = 0; i < _player.Stone; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Stone));
+                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Stone));
                 index++;
             }
             for (var i = 0; i < _player.Wheat; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Field));
+                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Field));
                 index++;
             }
             for (var i = 0; i < _player.Brick; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Brick));
+                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Brick));
                 index++;
             }
             for (var i = 0; i < _player.Sheep; i++)
             {
-                _resourceCards[index].SetIcon(GetResourceIcon(Tile.Grass));
+                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Grass));
                 index++;
             }
-        }
-
-        private Sprite GetResourceIcon(Tile type)
-        {
-            return resourceSprites.FirstOrDefault(t => t.resourceType == type).icon;
         }
 
         private void UpdateCardCount()
