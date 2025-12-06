@@ -281,6 +281,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &7811554027150604885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7432038538405028079}
+  m_Layer: 0
+  m_Name: ogre_position
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7432038538405028079
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7811554027150604885}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.042442556, y: 0.0036742683, z: 0.086169444, w: 0.99536926}
+  m_LocalPosition: {x: -0.236, y: 0.652, z: 0.022}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 8040894394716419673}
+  m_LocalEulerAnglesHint: {x: -4.883, y: 0, z: 9.896}
 --- !u!1001 &1068929074539474687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1237,6 +1268,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97e1e6bb0ecbb499a817831c94ef753f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2177447210497464480}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 97e1e6bb0ecbb499a817831c94ef753f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7432038538405028079}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 97e1e6bb0ecbb499a817831c94ef753f, type: 3}
 --- !u!4 &8040894394716419673 stripped
