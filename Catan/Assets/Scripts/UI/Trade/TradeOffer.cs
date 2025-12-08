@@ -34,8 +34,9 @@ namespace UI.Trade
         {
             foreach (var resource in resources)
             {
-                var icon = Instantiate(resourceIconPrefab, parent).GetComponent<ResourceIcon>();
+                var icon = Instantiate(resourceIconPrefab).GetComponent<ResourceIcon>();
                 icon.SetData(resource.resource, resource.amount);
+                icon.transform.SetParent(parent);
             }
         }
 
