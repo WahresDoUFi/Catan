@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using GamePlay;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -58,7 +59,7 @@ namespace UI.Trade
 
             if (GameManager.Instance.IsMyTurn())
             {
-                foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+                foreach (ulong clientId in GameManager.Instance.GetPlayerIds())
                 {
                     if (NetworkManager.Singleton.LocalClientId == clientId) continue;
                     var tabButton = Instantiate(tabButtonPrefab, tabButtonsParent).GetComponent<TabButton>();
