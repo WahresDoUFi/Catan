@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2090468763542757479}
   - component: {fileID: 4479287371655654793}
   - component: {fileID: 5861092183908670748}
-  - component: {fileID: 4821749516474300306}
   - component: {fileID: 1346345325338123140}
   m_Layer: 0
   m_Name: NetworkManager
@@ -106,20 +105,6 @@ MonoBehaviour:
     PacketDelayMS: 0
     PacketJitterMS: 0
     PacketDropRate: 0
---- !u!114 &4821749516474300306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7386794183630426823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24d97d1a1d6104c708389f17fca8ac72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TestScriopt
-  boardScene: {fileID: 102900000, guid: 8124e5870f4fd4c779e7a5f994e84ad1, type: 3}
-  boardSceneName: BoardScene
 --- !u!114 &1346345325338123140
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -84,7 +84,7 @@ public class MapTile : NetworkBehaviour
             fog.Stop();
             if (_tileType.Value != (int)Tile.Desert)
             {
-                _mapIcon = MapIconManager.AddIcon(transform, IconType.Tile, Color.white);
+                _mapIcon = MapIconManager.AddIcon(transform, IconType.Tile, Color.black);
                 _numberText.transform.SetParent(_mapIcon.transform, false);
                 _numberText.SetActive(true);   
             }
