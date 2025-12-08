@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
+using Unity.Networking.Transport.Relay;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Relay;
@@ -33,43 +34,34 @@ namespace Networking
         
         private void Awake()
         {
-            hostButton.onClick.AddListener(Host);
-            joinButton.onClick.AddListener(Join);
+            hostButton.onClick.AddListener(() => Host());
+            joinButton.onClick.AddListener(() => Join());
         }
 
-        private void Host()
-        {
-            StartCoroutine(WaitForHost());
-        }
-
-        private IEnumerator WaitForHost()
+        private IEnumerator Start()
         {
             SetButtonsActive(false);
-            var startHost = StartHostWithRelay(GameManager.MaxPlayers, "udp");
-            while (!startHost.IsCompleted)
-            {
-                yield return null;
-            }
-            Debug.Log("Join code: " + startHost.Result);
+            yield return UnityServices.InitializeAsync();
+            yield return new WaitForSeconds(0.5f);
+            yield return AuthenticationService.Instance.SignInAnonymouslyAsync();
             SetButtonsActive(true);
         }
 
-        private void Join()
-        {
-            string code = joinCodeInput.text;
-            if (string.IsNullOrEmpty(code)) return;
-            StartCoroutine(WaitForClient(code));
-        }
-
-        private IEnumerator WaitForClient(string code)
+        private async Task Host()
         {
             SetButtonsActive(false);
-            var staratClient = StartClientWithRelay(code, "upd");
-            while (!staratClient.IsCompleted)
-            {
-                yield return null;
-            }
+            string startHost = await StartHostWithRelay(GameManager.MaxPlayers, "dtls");
+            Debug.Log("Join code: " + startHost);
+            SetButtonsActive(true);
+        }
 
+        private async Task Join()
+        {
+            SetButtonsActive(false);
+            string code = joinCodeInput.text;
+            if (string.IsNullOrEmpty(code)) return;
+            if (!await StartClientWithRelay(code, "dtls"))
+                Debug.LogWarning("Could not start client");
             SetButtonsActive(true);
         }
 
@@ -81,32 +73,43 @@ namespace Networking
         
         private async Task<string> StartHostWithRelay(int maxConnections, string connectionType)
         {
-            await UnityServices.InitializeAsync();
-            if (!AuthenticationService.Instance.IsSignedIn)
+            try
             {
-                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+                var allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
+                NetworkManager.Singleton.GetComponent<UnityTransport>()
+                    .SetRelayServerData(allocation.ToRelayServerData(connectionType));
+                string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
+                if (NetworkManager.Singleton.StartHost())
+                {
+                    NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Single);
+                    return joinCode;
+                }
+
+                return null;
             }
-            var allocation = await RelayService.Instance.CreateAllocationAsync(maxConnections);
-            NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(allocation.ToRelayServerData(connectionType));
-            string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-            if (NetworkManager.Singleton.StartHost())
+            catch (Exception e)
             {
-                NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Single);
-                return joinCode;
+                Debug.LogWarning("Could not start host: " + e.Message);
             }
             return null;
         }
         
         private async Task<bool> StartClientWithRelay(string joinCode, string connectionType)
         {
-            await UnityServices.InitializeAsync();
-            if (!AuthenticationService.Instance.IsSignedIn)
+            Debug.Log("Searching for relay allocation");
+            JoinAllocation allocation = null;
+            try
             {
-                await AuthenticationService.Instance.SignInAnonymouslyAsync();
+                allocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
             }
-
-            var allocation = await RelayService.Instance.JoinAllocationAsync(joinCode: joinCode);
+            catch (Exception e)
+            {
+                Debug.Log("Could not find allocation: " + e.Message);
+                return false;
+            }
+            Debug.Log(allocation);
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(allocation.ToRelayServerData(connectionType));
+            Debug.Log("Starting client");
             return !string.IsNullOrEmpty(joinCode) && NetworkManager.Singleton.StartClient();
         }
     }
