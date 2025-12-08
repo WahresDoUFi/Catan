@@ -1,13 +1,29 @@
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class SetUp : MonoBehaviour
+namespace Networking
 {
-    [SerializeField] GameObject networkManagerPrefab;
-    private void Start()
+    public class SetUp : MonoBehaviour
     {
-        if (NetworkManager.Singleton) return;
-        var networkManager = Instantiate(networkManagerPrefab).GetComponent<NetworkManager>();
-        networkManager.SetSingleton();
+        
+#if UNITY_EDITOR
+        public UnityEditor.SceneAsset loadingScene;
+    
+        private void OnValidate()
+        {
+            loadingSceneName = loadingScene.name;
+        }
+#endif
+        [SerializeField] private string loadingSceneName;
+
+        [SerializeField] GameObject networkManagerPrefab;
+        private void Start()
+        {
+            if (NetworkManager.Singleton) return;
+            var networkManager = Instantiate(networkManagerPrefab).GetComponent<NetworkManager>();
+            networkManager.SetSingleton();
+            SceneManager.LoadScene(loadingSceneName, LoadSceneMode.Additive);
+        }
     }
 }

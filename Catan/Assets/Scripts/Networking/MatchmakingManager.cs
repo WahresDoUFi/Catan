@@ -3,6 +3,7 @@ using System.Collections;
 using System.Threading.Tasks;
 using GamePlay;
 using TMPro;
+using UI;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
@@ -35,8 +36,18 @@ namespace Networking
         
         private void Awake()
         {
-            hostButton.onClick.AddListener(() => Host());
-            joinButton.onClick.AddListener(() => Join());
+            hostButton.onClick.AddListener(HostButtonPressed);
+            joinButton.onClick.AddListener(JoinButtonPressed);
+        }
+        
+        private void HostButtonPressed()
+        {
+            _ = Host();
+        }
+
+        private void JoinButtonPressed()
+        {
+            _ = Join();
         }
 
         private IEnumerator Start()
@@ -82,7 +93,7 @@ namespace Networking
                 string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
                 if (NetworkManager.Singleton.StartHost())
                 {
-                    NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Single);
+                    NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Additive);
                     return joinCode;
                 }
 
@@ -111,7 +122,8 @@ namespace Networking
             Debug.Log(allocation);
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(allocation.ToRelayServerData(connectionType));
             Debug.Log("Starting client");
-            return !string.IsNullOrEmpty(joinCode) && NetworkManager.Singleton.StartClient();
+            if (string.IsNullOrEmpty(joinCode)) return false;
+            return NetworkManager.Singleton.StartClient();
         }
     }
 }

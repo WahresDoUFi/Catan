@@ -1192,6 +1192,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfe1e517766d418d96e42218c33e0f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SetUp
+  loadingScene: {fileID: 102900000, guid: 5da172a9eaa0e4ad6808cb02ac171491, type: 3}
+  loadingSceneName: LoadingScene
   networkManagerPrefab: {fileID: 7386794183630426823, guid: 601e4132a03de4dd493e7c827fb2834f, type: 3}
 --- !u!4 &1022270821
 Transform:
