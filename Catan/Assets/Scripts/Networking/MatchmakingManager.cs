@@ -19,6 +19,7 @@ namespace Networking
 {
     public class MatchmakingManager : MonoBehaviour
     {
+        public static string LobbyCode { get; private set; }
         
 #if UNITY_EDITOR
         public UnityEditor.SceneAsset boardScene;
@@ -69,7 +70,8 @@ namespace Networking
                 StartHost();
                 return;
             }
-            Debug.Log("Join code: " + startHost);
+
+            LobbyCode = startHost;
             SetButtonsActive(true);
         }
 
@@ -110,6 +112,7 @@ namespace Networking
         {
             if (NetworkManager.Singleton.StartHost())
             {
+                NetworkManager.Singleton.SceneManager.SetClientSynchronizationMode(LoadSceneMode.Additive);
                 NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Additive);
                 return true;
             }

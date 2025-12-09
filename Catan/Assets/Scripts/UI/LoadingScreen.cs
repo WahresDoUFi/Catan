@@ -22,6 +22,7 @@ namespace UI
         private AsyncOperation _status;
         private bool _setup;
         private bool _loadingDone;
+        private bool _isSyncing;
         
         private void Awake()
         {
@@ -40,13 +41,14 @@ namespace UI
 
         private void Start()
         {
-            ConnectionNotificationManager.Instance.OnClientConnectionNotification += ClientConnected;
+            NetworkManager.Singleton.OnClientStarted += ClientConnected;
         }
 
-        public static async Task Show(AsyncOperation operation = null)
+        private static Task Show(AsyncOperation operation = null)
         {
             _instance.StartCoroutine(_instance.Fade(0f, 1f));
             _instance._status = operation;
+            return Task.CompletedTask;
         }
 
         public static async Task PerformTasksInOrder(Action callback, params AsyncOperation[] tasks)
@@ -63,11 +65,9 @@ namespace UI
             _instance.StartCoroutine(_instance.Fade(1f, 0f));
         }
 
-        private void ClientConnected(ulong clientId, ConnectionNotificationManager.ConnectionStatus connectionStatus)
+        private void ClientConnected()
         {
-            if (clientId != NetworkManager.Singleton.LocalClientId) return;
-            if (connectionStatus == ConnectionNotificationManager.ConnectionStatus.Connected)
-                OnConnect(NetworkManager.Singleton);
+            OnConnect(NetworkManager.Singleton);
         }
 
         private void OnConnect(NetworkManager networkManager)
@@ -93,15 +93,10 @@ namespace UI
             }
         }
 
-        private void GameJoined(NetworkManager networkManager, ConnectionEventData connectionEventData)
-        {
-            if (connectionEventData.EventType == ConnectionEvent.ClientConnected)
-                OnConnect(NetworkManager.Singleton);
-        }
-
         private void StartLoadScene(ulong clientid, string scenename, LoadSceneMode loadscenemode, AsyncOperation asyncoperation)
         {
-            if (clientid != NetworkManager.Singleton.LocalClientId) return;
+            if (_isSyncing || clientid != NetworkManager.Singleton.LocalClientId) return;
+            Debug.Log("Load scene " + loadscenemode);
             _loadingDone = false;
             _status = asyncoperation;
             camObject.SetActive(true);
@@ -109,7 +104,8 @@ namespace UI
         
         private void SceneLoadComplete(ulong clientid, string scenename, LoadSceneMode loadscenemode)
         {
-            if (clientid != NetworkManager.Singleton.LocalClientId) return;
+            if (_isSyncing || clientid != NetworkManager.Singleton.LocalClientId) return;
+            Debug.Log("Load scene complete " + loadscenemode);
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(scenename));
             camObject.SetActive(false);
         }

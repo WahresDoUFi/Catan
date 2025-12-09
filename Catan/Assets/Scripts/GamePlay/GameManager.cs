@@ -396,9 +396,9 @@ namespace GamePlay
 
         private void OnClientStopped(bool isHost)
         {
-            LoadingScreen.PerformTasksInOrder(() => SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0)), 
-                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene()),
-                SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive));
+            _ = LoadingScreen.PerformTasksInOrder(() => SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0)),
+                SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive),
+                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene()));
             NetworkManager.Singleton.OnClientStopped -= OnClientStopped;
         }
     }
