@@ -96,7 +96,6 @@ namespace UI
         private void StartLoadScene(ulong clientid, string scenename, LoadSceneMode loadscenemode, AsyncOperation asyncoperation)
         {
             if (_isSyncing || clientid != NetworkManager.Singleton.LocalClientId) return;
-            Debug.Log("Load scene " + loadscenemode);
             _loadingDone = false;
             _status = asyncoperation;
             camObject.SetActive(true);
@@ -105,7 +104,6 @@ namespace UI
         private void SceneLoadComplete(ulong clientid, string scenename, LoadSceneMode loadscenemode)
         {
             if (_isSyncing || clientid != NetworkManager.Singleton.LocalClientId) return;
-            Debug.Log("Load scene complete " + loadscenemode);
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(scenename));
             camObject.SetActive(false);
         }
