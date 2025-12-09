@@ -38,8 +38,7 @@ namespace UI
             _canvasGroup.blocksRaycasts = _open;
             _canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha, _open ? 1f : 0f, Time.deltaTime * fadeSpeed);
             float targetRotation = _open ? settingsButtonOpenRotation : 0f;
-            float fromRotation = _open ? 0f : settingsButtonOpenRotation;
-            var rotation = new Vector3(0f, 0f, Mathf.Lerp(fromRotation, targetRotation, _canvasGroup.alpha));
+            var rotation = new Vector3(0f, 0f, Mathf.Lerp(settingsButton.transform.localEulerAngles.z, targetRotation, Time.deltaTime * fadeSpeed));
             settingsButton.transform.localEulerAngles = rotation;
         }
         

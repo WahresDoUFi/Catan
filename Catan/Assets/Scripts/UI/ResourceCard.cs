@@ -9,6 +9,7 @@ namespace UI
     public class ResourceCard : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
     {
         public bool Hover { get; private set; }
+        public Tile ResourceType => _type;
         public event Action OnClick;
         
         [SerializeField] private Image icon;
@@ -19,10 +20,12 @@ namespace UI
         private Vector3 _size = Vector3.one;
         private Coroutine _scaleCoroutine;
         private bool _revealingCard;
+        private Tile _type;
 
-        public void SetIcon(Sprite sprite)
+        public void SetType(Tile type)
         {
-            icon.sprite = sprite;
+            icon.sprite = ResourceIconProvider.GetIcon(type);
+            _type = type;
         }
 
         public void ToggleIconVisibility(bool visible)

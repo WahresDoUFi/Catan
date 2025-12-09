@@ -219,9 +219,11 @@ namespace GamePlay
         }
 
         [Rpc(SendTo.Authority)]
-        private void FinishTurnRpc()
+        private void FinishTurnRpc(RpcParams rpcParams = default)
         {
             if (State != GameState.Playing) return;
+            if (ActivePlayer != rpcParams.Receive.SenderClientId) return;
+            if (!DiceThrown) return;
             NextTurn();
         }
 

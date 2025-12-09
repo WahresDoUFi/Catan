@@ -88,31 +88,59 @@ namespace UI
         private void UpdateCardIcons()
         {
             var index = 0;
-            for (var i = 0; i < _player.Wood; i++)
+            for (var i = 0; i < _player.Sheep; i++)
             {
-                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Forest));
+                _resourceCards[index].SetType(Tile.Grass);
                 index++;
             }
             for (var i = 0; i < _player.Stone; i++)
             {
-                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Stone));
+                _resourceCards[index].SetType(Tile.Stone);
                 index++;
             }
-            for (var i = 0; i < _player.Wheat; i++)
+            for (var i = 0; i < _player.Wood; i++)
             {
-                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Field));
+                _resourceCards[index].SetType(Tile.Forest);
                 index++;
             }
             for (var i = 0; i < _player.Brick; i++)
             {
-                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Brick));
+                _resourceCards[index].SetType(Tile.Brick);
                 index++;
             }
-            for (var i = 0; i < _player.Sheep; i++)
+            for (var i = 0; i < _player.Wheat; i++)
             {
-                _resourceCards[index].SetIcon(ResourceIconProvider.GetIcon(Tile.Grass));
+                _resourceCards[index].SetType(Tile.Field);
                 index++;
             }
+        }
+
+        private Tile GetMissingType()
+        {
+            if (_resourceCards.Count(card => card.ResourceType == Tile.Field) < _player.GetResources(Tile.Field))
+                return Tile.Field;
+            if (_resourceCards.Count(card => card.ResourceType == Tile.Grass) < _player.GetResources(Tile.Grass))
+                return Tile.Grass;
+            if (_resourceCards.Count(card => card.ResourceType == Tile.Brick) < _player.GetResources(Tile.Brick))
+                return Tile.Brick;
+            if (_resourceCards.Count(card => card.ResourceType == Tile.Forest) < _player.GetResources(Tile.Forest))
+                return Tile.Forest;
+            if (_resourceCards.Count(card => card.ResourceType == Tile.Stone) < _player.GetResources(Tile.Stone))
+                return Tile.Stone;
+            //  this part of the code should never be reached as this method is only supposed to be called
+            //  when it was already checked that there are cards missing
+            return Tile.Desert;
+        }
+
+        private int GetLastIndexOfType(Tile resourceType)
+        {
+            var resourceAsInt = (int)resourceType;
+            var count = 0;
+            for (var i = 0; i <= resourceAsInt; i++)
+            {
+                count += _player.GetResources((Tile)i);
+            }
+            return Mathf.Max(Mathf.Min(count, _resourceCards.Count + 1) - 1, 0);
         }
 
         private void UpdateCardCount()
@@ -123,8 +151,9 @@ namespace UI
                 int currentCount = _resourceCards.Count;
                 for (var i = 0; i < count - currentCount; i++)
                 {
-                    var card = Instantiate(cardPrefab, transform);
-                    _resourceCards.Add(card.GetComponent<ResourceCard>());
+                    var card = Instantiate(cardPrefab, transform).GetComponent<ResourceCard>();
+                    card.SetType(GetMissingType());
+                    _resourceCards.Insert(GetLastIndexOfType(card.ResourceType), card);
                 }
             } else if (_resourceCards.Count > count)
             {

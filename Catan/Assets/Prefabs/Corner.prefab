@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 4014671879
+  GlobalObjectIdHash: 2142200436
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -104,6 +104,8 @@ MonoBehaviour:
   renderers:
   - {fileID: 6934277444306238364}
   - {fileID: 7096458188597376303}
+  plaza1Renderer: {fileID: 0}
+  plaza2Renderer: {fileID: 0}
 --- !u!1 &2190682862439145805
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,7 +117,6 @@ GameObject:
   - component: {fileID: 7301411807700986575}
   - component: {fileID: 7845791024930697030}
   - component: {fileID: 3838171621406552820}
-  - component: {fileID: 8261064748719253651}
   m_Layer: 0
   m_Name: Settlement
   m_TagString: Untagged
@@ -195,27 +196,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8261064748719253651
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2190682862439145805}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7626530288594702892
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +207,6 @@ GameObject:
   - component: {fileID: 8633606328855600611}
   - component: {fileID: 4904322928928226727}
   - component: {fileID: 5218256657583934371}
-  - component: {fileID: 8003130458312892479}
   m_Layer: 0
   m_Name: SettlementPreview
   m_TagString: Untagged
@@ -307,27 +286,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8003130458312892479
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7626530288594702892}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &7411376065140741162
 PrefabInstance:
   m_ObjectHideFlags: 0
