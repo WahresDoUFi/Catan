@@ -150,6 +150,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 22369444}
   - {fileID: 1101733519}
   - {fileID: 1164459576}
   - {fileID: 1558705453}
@@ -194,6 +195,99 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 100, y: 1, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &22369443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 22369444}
+  - component: {fileID: 22369446}
+  - component: {fileID: 22369445}
+  m_Layer: 0
+  m_Name: Shore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 0
+--- !u!4 &22369444
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22369443}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -75, y: -15.5, z: -75}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 13116137}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!154 &22369445
+TerrainCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22369443}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_TerrainData: {fileID: 15600000, guid: e427528dac6ba495291dc96c849c87ca, type: 2}
+  m_EnableTreeColliders: 1
+--- !u!218 &22369446
+Terrain:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 22369443}
+  m_Enabled: 1
+  serializedVersion: 6
+  m_TerrainData: {fileID: 15600000, guid: e427528dac6ba495291dc96c849c87ca, type: 2}
+  m_TreeDistance: 5000
+  m_TreeBillboardDistance: 50
+  m_TreeCrossFadeLength: 5
+  m_TreeMaximumFullLODCount: 50
+  m_DetailObjectDistance: 80
+  m_DetailObjectDensity: 1
+  m_HeightmapPixelError: 5
+  m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
+  m_HeightmapMaximumLOD: 0
+  m_ShadowCastingMode: 2
+  m_DrawHeightmap: 1
+  m_DrawInstanced: 0
+  m_DrawTreesAndFoliage: 1
+  m_StaticShadowCaster: 0
+  m_IgnoreQualitySettings: 0
+  m_ReflectionProbeUsage: 1
+  m_MaterialTemplate: {fileID: 2100000, guid: 22ff8771d87ef27429e670136399094b, type: 2}
+  m_BakeLightProbesForTrees: 1
+  m_PreserveTreePrototypeLayers: 0
+  m_DeringLightProbesForTrees: 1
+  m_ReceiveGI: 1
+  m_ScaleInLightmap: 0.0256
+  m_LightmapParameters: {fileID: 15203, guid: 0000000000000000f000000000000000, type: 0}
+  m_GroupingID: 0
+  m_RenderingLayerMask: 1
+  m_AllowAutoConnect: 1
+  m_EnableHeightmapRayTracing: 1
+  m_EnableTreesAndDetailsRayTracing: 0
+  m_TreeMotionVectorModeOverride: 3
 --- !u!224 &24379043 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8746932456465402687, guid: 9be2750802fcb4603a1ad0830378b2cd, type: 3}
@@ -391,6 +485,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 954741899}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -527,6 +625,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 672091133}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -1141,6 +1243,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1234,6 +1340,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
@@ -1437,6 +1547,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 801456587}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1598,6 +1712,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -1714,6 +1832,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 801456587}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -2151,6 +2273,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1648684438}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2283,6 +2409,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1125212026}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -2609,13 +2739,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157207112}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
+  m_LocalRotation: {x: 0.34405023, y: -0.40452495, z: 0.1675597, w: 0.83061}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: -51.934, z: 0}
 --- !u!114 &157207115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2827,6 +2957,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3005,6 +3139,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1560420227}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3173,6 +3311,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1671191984}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -3496,6 +3638,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 350814548}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -3709,6 +3855,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -3778,6 +3928,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1731379866}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -3940,6 +4094,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -4009,6 +4167,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 2136398554}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -4170,6 +4332,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -4561,6 +4727,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4626,6 +4796,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1808167258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -4729,8 +4903,6 @@ GameObject:
   m_Component:
   - component: {fileID: 319928071}
   - component: {fileID: 319928070}
-  - component: {fileID: 319928072}
-  - component: {fileID: 319928073}
   m_Layer: 0
   m_Name: Ocean
   m_TagString: Untagged
@@ -4919,116 +5091,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &319928072
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319928069}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 259f0a3235d95459785e8aba71123f81, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 0.1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &319928073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 319928069}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
-  audioType: 1
 --- !u!1001 &328571673
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5097,6 +5159,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
@@ -5485,6 +5551,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 846013094}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -5645,6 +5715,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -5873,6 +5947,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -5938,6 +6016,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 2122691765}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -6113,6 +6195,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 839057957}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -6270,6 +6356,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -6339,6 +6429,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1446363645}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -6589,7 +6683,6 @@ RectTransform:
   m_Children:
   - {fileID: 280076656}
   - {fileID: 1158503663}
-  - {fileID: 446935413}
   m_Father: {fileID: 1497910592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6641,6 +6734,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1165192031}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -6746,7 +6843,7 @@ GameObject:
   - component: {fileID: 446935414}
   - component: {fileID: 446935415}
   m_Layer: 5
-  m_Name: Audio Source
+  m_Name: WaitingMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6759,16 +6856,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446935412}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 17.97296}
+  m_LocalScale: {x: 0.75364584, y: 0.75364584, z: 0.75364584}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 439956971}
+  m_Father: {fileID: 1331943236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 722.6483, y: 299.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &446935414
@@ -6950,6 +7047,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -7044,6 +7145,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -7137,6 +7242,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
@@ -7240,6 +7349,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1648684438}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -7892,6 +8005,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -7986,6 +8103,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -8051,6 +8172,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1705276839}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -8342,6 +8467,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 2023029858}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -8665,6 +8794,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2096627498}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -8797,6 +8930,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1446363645}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -9011,6 +9148,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 568744975}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -9181,6 +9322,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1713341078}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -9342,6 +9487,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -9471,6 +9620,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
@@ -9698,6 +9851,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -9799,6 +9956,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -9835,6 +9996,153 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!1 &686278149
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 686278150}
+  - component: {fileID: 686278152}
+  - component: {fileID: 686278151}
+  m_Layer: 5
+  m_Name: Ocean
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &686278150
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686278149}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 17.97296}
+  m_LocalScale: {x: 0.40989584, y: 0.40989584, z: 0.40989584}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1331943236}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 959.14825, y: 420.68292}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &686278151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686278149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
+  audioType: 0
+--- !u!82 &686278152
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686278149}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 259f0a3235d95459785e8aba71123f81, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &703382209
 GameObject:
   m_ObjectHideFlags: 0
@@ -9969,6 +10277,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 2136398554}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -10602,6 +10914,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -10635,7 +10951,7 @@ GameObject:
   - component: {fileID: 787365813}
   - component: {fileID: 787365814}
   m_Layer: 5
-  m_Name: Audio Source
+  m_Name: GameMusic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10649,15 +10965,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 787365811}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 17.97296}
   m_LocalScale: {x: 0.40989584, y: 0.40989584, z: 0.40989584}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1331943236}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 959.99994, y: 528.1829}
+  m_AnchoredPosition: {x: 959.14825, y: 420.68292}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &787365813
@@ -11075,6 +11391,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 905968287}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -11253,6 +11573,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805651326}
   m_CullTransparentMesh: 1
+--- !u!1 &814877989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814877990}
+  m_Layer: 0
+  m_Name: BuildSounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &814877990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814877989}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1783313199}
+  - {fileID: 1942010082}
+  m_Father: {fileID: 1331943236}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824724611
 GameObject:
   m_ObjectHideFlags: 0
@@ -11372,6 +11725,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1012305459}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -11571,6 +11928,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -11665,6 +12026,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -11745,6 +12110,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 801456587}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -12418,6 +12787,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1713341078}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -12579,6 +12952,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -12680,6 +13057,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -12749,6 +13130,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1956804620}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -12886,6 +13271,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1192436801}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -13035,6 +13424,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1784115125}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -13177,6 +13570,7 @@ GameObject:
   - component: {fileID: 915234359}
   - component: {fileID: 915234358}
   - component: {fileID: 915234362}
+  - component: {fileID: 915234363}
   m_Layer: 3
   m_Name: Dice (1)
   m_TagString: Untagged
@@ -13369,6 +13763,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &915234363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915234357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
+  audioType: 1
 --- !u!1 &915635259
 GameObject:
   m_ObjectHideFlags: 0
@@ -13489,6 +13896,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1560420227}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -13590,6 +14001,7 @@ GameObject:
   - component: {fileID: 923286504}
   - component: {fileID: 923286499}
   - component: {fileID: 923286505}
+  - component: {fileID: 923286506}
   m_Layer: 3
   m_Name: Dice (2)
   m_TagString: Untagged
@@ -13782,6 +14194,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &923286506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923286498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
+  audioType: 1
 --- !u!114 &925105819 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
@@ -14137,6 +14562,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -14241,6 +14670,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -14623,6 +15056,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2029225203}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -14834,6 +15271,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1621029523}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -15551,6 +15992,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -15808,6 +16253,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1488902306}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -16074,6 +16523,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 328571675}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -16202,6 +16655,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 672091133}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -16339,6 +16796,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1808167258}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -16501,6 +16962,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -16577,6 +17042,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1705276839}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -16900,7 +17369,7 @@ Transform:
   m_GameObject: {fileID: 1164459575}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17046,6 +17515,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -17301,6 +17774,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1625791134}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -17437,6 +17914,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1942839150}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -17595,6 +18076,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -17671,6 +18156,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1942839150}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -17829,6 +18318,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -17984,6 +18477,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 2029225203}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -18294,6 +18791,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1956804620}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -18431,6 +18932,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 82369523}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -18563,6 +19068,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1397802420}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -18795,6 +19304,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -19086,6 +19599,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -19303,6 +19820,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 925105819}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -19500,6 +20021,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1625791134}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -19592,6 +20117,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
+--- !u!1 &1331943235
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1331943236}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1331943236
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1331943235}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 446935413}
+  - {fileID: 787365812}
+  - {fileID: 686278150}
+  - {fileID: 814877990}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346482738
 GameObject:
   m_ObjectHideFlags: 0
@@ -19819,6 +20379,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 568744975}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -20119,6 +20683,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -20374,6 +20942,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -20503,6 +21075,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 925105819}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -20862,6 +21438,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1671191984}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -21019,6 +21599,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -21120,6 +21704,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -21189,6 +21777,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1255109147}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -21322,6 +21914,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1517074106}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -21475,6 +22071,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
@@ -21806,6 +22406,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -21961,6 +22565,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1349543713}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -22568,6 +23176,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -22644,6 +23256,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1326055479}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -22806,6 +23422,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -22886,6 +23506,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 839057957}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -23227,6 +23851,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -23695,6 +24323,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1125212026}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -23905,6 +24537,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -24052,6 +24688,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1184926436}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -24205,6 +24845,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -25032,6 +25676,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1713341078}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -25124,7 +25772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5773ae84614e443f3961b94ee5a8c7a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Street
---- !u!1 &1777282100
+--- !u!1 &1783313198
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -25132,42 +25780,141 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1777282101}
-  - component: {fileID: 1777282102}
+  - component: {fileID: 1783313199}
+  - component: {fileID: 1783313200}
+  - component: {fileID: 1783313201}
   m_Layer: 0
-  m_Name: VolumeManager
+  m_Name: Settlement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1777282101
+--- !u!4 &1783313199
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777282100}
+  m_GameObject: {fileID: 1783313198}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 957.7089, y: 340.99957, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 814877990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1777282102
+--- !u!82 &1783313200
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783313198}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: e19cc56639d7b43c0879a0893775c811, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1783313201
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1777282100}
+  m_GameObject: {fileID: 1783313198}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 637a1ff0b9fad40f79fee36c44849b31, type: 3}
+  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeManager
+  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
+  audioType: 1
 --- !u!114 &1784115125 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
@@ -25389,6 +26136,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -25590,6 +26341,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1326055479}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -26204,7 +26959,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildManager
   cancelButton: {fileID: 1254117988}
-  buildModeMusic: {fileID: 787365813}
   costs:
   - type: 0
     costs:
@@ -26222,6 +26976,9 @@ MonoBehaviour:
       amount: 1
     - resource: 0
       amount: 1
+  buildModeMusic: {fileID: 787365814}
+  defaultVolume: 0.1
+  activeVolume: 0.4
 --- !u!1 &1848305428
 GameObject:
   m_ObjectHideFlags: 0
@@ -26728,6 +27485,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 890920330}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -26954,6 +27715,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1569820785}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -27119,6 +27884,149 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1942010081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1942010082}
+  - component: {fileID: 1942010083}
+  - component: {fileID: 1942010084}
+  m_Layer: 0
+  m_Name: Street
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1942010082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942010081}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 814877990}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1942010083
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942010081}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 247a2486dfb2344c8831d91cb2c08e0a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.2
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &1942010084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942010081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
+  audioType: 1
 --- !u!114 &1942839150 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
@@ -27274,6 +28182,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -27424,6 +28336,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2047806887}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -27560,6 +28476,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 350814548}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -27698,6 +28618,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 362610943}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -27830,6 +28754,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1165192031}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -28103,6 +29031,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 1956804620}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -28467,6 +29399,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -28583,6 +29519,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 6208801978864841408}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -28720,6 +29660,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 905968287}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -28882,6 +29826,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -28986,6 +29934,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 2
@@ -29137,6 +30089,10 @@ PrefabInstance:
       propertyPath: rightSettlement
       value: 
       objectReference: {fileID: 2029225203}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
@@ -29298,6 +30254,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -29592,6 +30552,10 @@ PrefabInstance:
       propertyPath: InScenePlacedSourceGlobalObjectIdHash
       value: 2142200436
       objectReference: {fileID: 0}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
@@ -29969,6 +30933,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 94480039125816660, guid: 4b3903dde6136439eb5ef07d575e2c70, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 94480039125816660, guid: 4b3903dde6136439eb5ef07d575e2c70, type: 3}
+      propertyPath: m_AnchorMin.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 143659222841408891, guid: 4b3903dde6136439eb5ef07d575e2c70, type: 3}
@@ -30413,7 +31381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6368938549926625975, guid: 4b3903dde6136439eb5ef07d575e2c70, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.000061035156
+      value: -0.000091552734
       objectReference: {fileID: 0}
     - target: {fileID: 6626568262524700730, guid: 4b3903dde6136439eb5ef07d575e2c70, type: 3}
       propertyPath: m_Size
@@ -30677,6 +31645,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6208801978864841408}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
+      propertyPath: placeStreetSound
+      value: 
+      objectReference: {fileID: 1942010083}
+    - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
       propertyPath: settlements.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -30833,6 +31805,10 @@ PrefabInstance:
       value: 2142200436
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
+      propertyPath: placeBuildingSound
+      value: 
+      objectReference: {fileID: 1783313200}
+    - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
       propertyPath: streets.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -30966,7 +31942,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 881002722}
-  - {fileID: 1777282101}
   - {fileID: 1516044146}
   - {fileID: 1823688467}
   - {fileID: 157207114}
@@ -30977,4 +31952,4 @@ SceneRoots:
   - {fileID: 1497910592}
   - {fileID: 779552078}
   - {fileID: 1013710303}
-  - {fileID: 787365812}
+  - {fileID: 1331943236}

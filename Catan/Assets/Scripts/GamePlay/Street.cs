@@ -28,7 +28,7 @@ public class Street : NetworkBehaviour
     [SerializeField] private GameObject previewObject;
     [SerializeField] private Color canBuildColor;
     [SerializeField] private Color unavailableColor;
-    [SerializeField] private AudioClip placeStreetSound;
+    [SerializeField] private AudioSource placeStreetSound;
     [SerializeField] private ModelColorManager modelColorManager;
 
     private Material _previewMaterial;
@@ -102,7 +102,6 @@ public class Street : NetworkBehaviour
     public void SetOwner(ulong ownerId)
     {
         _owner.Value = ownerId;
-        AudioSource.PlayClipAtPoint(placeStreetSound, Camera.main.transform.position, 0.2f);
     }
 
     private void UpdateStreet()
@@ -110,6 +109,7 @@ public class Street : NetworkBehaviour
         street.SetActive(IsOccupied);
         if (IsOccupied)
         {
+            placeStreetSound.Play();
             MapIconManager.AddIcon(transform, IconType.Street, GameManager.Instance.GetPlayerColor(Owner));
             modelColorManager.SetColor(GameManager.Instance.GetPlayerColor(Owner));
             UpdateStreetExtras();

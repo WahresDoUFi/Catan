@@ -1,4 +1,5 @@
 using UnityEngine;
+using User;
 
 namespace Misc
 {
@@ -30,6 +31,7 @@ namespace Misc
         private Vector3 _angularVelocity;
         private Rigidbody _rigidbody;
         private AudioSource _audioSource;
+        private VolumeController _volumeController;
         private Vector3 _realVelocity;
         private Vector3 _lastPosition;
         private int _targetNumber;
@@ -39,6 +41,7 @@ namespace Misc
             _lastPosition = transform.position;
             _rigidbody = GetComponent<Rigidbody>();
             _audioSource = GetComponent<AudioSource>();
+            _volumeController = GetComponent<VolumeController>();
         }
 
         private void FixedUpdate()
@@ -126,7 +129,7 @@ namespace Misc
             {
                 var randomClip = collisionSounds[Random.Range(0, collisionSounds.Length)];
                 _audioSource.pitch = Random.Range(0.9f, 1.1f);
-                _audioSource.volume = Mathf.Clamp01(impactForce / 15f);
+                _volumeController.SetBaseVolume(Mathf.Clamp01(impactForce / 15f));
                 _audioSource.PlayOneShot(randomClip);
             }
         }

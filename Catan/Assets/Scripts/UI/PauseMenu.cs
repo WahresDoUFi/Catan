@@ -39,16 +39,16 @@ namespace UI
 
         private void LoadInitialValues()
         {
-            masterVolumeSlider.SetValueWithoutNotify(VolumeManager.Instance.GetMasterVolume());
-            musicVolumeSlider.SetValueWithoutNotify(VolumeManager.Instance.GetVolume(AudioType.Music));
-            soundEffectsVolumeSlider.SetValueWithoutNotify(VolumeManager.Instance.GetVolume(AudioType.SoundEffect));
+            masterVolumeSlider.SetValueWithoutNotify(VolumeManager.GetMasterVolume());
+            musicVolumeSlider.SetValueWithoutNotify(VolumeManager.GetVolume(AudioType.Music));
+            soundEffectsVolumeSlider.SetValueWithoutNotify(VolumeManager.GetVolume(AudioType.SoundEffect));
         }
 
         private void SetupBindings()
         {
-            masterVolumeSlider.onValueChanged.AddListener(volume => VolumeManager.Instance.SetMasterVolume(volume));
-            musicVolumeSlider.onValueChanged.AddListener(volume => VolumeManager.Instance.SetVolume(AudioType.Music, volume));
-            soundEffectsVolumeSlider.onValueChanged.AddListener(volume => VolumeManager.Instance.SetVolume(AudioType.SoundEffect, volume));
+            masterVolumeSlider.onValueChanged.AddListener(VolumeManager.SetMasterVolume);
+            musicVolumeSlider.onValueChanged.AddListener(volume => VolumeManager.SetVolume(AudioType.Music, volume));
+            soundEffectsVolumeSlider.onValueChanged.AddListener(volume => VolumeManager.SetVolume(AudioType.SoundEffect, volume));
             closeButton.onClick.AddListener(Toggle);
             quitButton.onClick.AddListener(() => NetworkManager.Singleton.Shutdown());
         }

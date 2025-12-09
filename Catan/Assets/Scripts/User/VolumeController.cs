@@ -11,6 +11,8 @@ namespace User
     [RequireComponent(typeof(AudioSource))]
     public class VolumeController : MonoBehaviour
     {
+        public float Volume => _baseVolume;
+        
         [SerializeField] private AudioType audioType;
 
         private float _baseVolume;
@@ -25,17 +27,23 @@ namespace User
         private void Start()
         {
             UpdateVolume();
-            VolumeManager.Instance.OnVolumeChanged += UpdateVolume;
+            VolumeManager.OnVolumeChanged += UpdateVolume;
         }
         
         private void OnDestroy()
         {
-            VolumeManager.Instance.OnVolumeChanged -= UpdateVolume;
+            VolumeManager.OnVolumeChanged -= UpdateVolume;
+        }
+
+        public void SetBaseVolume(float baseVolume)
+        {
+            _baseVolume = baseVolume;
+            UpdateVolume();
         }
 
         private void UpdateVolume()
         {
-            _audioSource.volume = _baseVolume * VolumeManager.Instance.GetVolume(audioType) * VolumeManager.Instance.GetMasterVolume();
+            _audioSource.volume = _baseVolume * VolumeManager.GetVolume(audioType) * VolumeManager.GetMasterVolume();
         }
     }
 }

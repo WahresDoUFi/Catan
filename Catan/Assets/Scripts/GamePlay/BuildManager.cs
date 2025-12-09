@@ -58,8 +58,14 @@ namespace GamePlay
         public static bool BuildModeActive => _instance._buildModeActive;
 
         [SerializeField] private Button cancelButton;
-        [SerializeField] private AudioSource buildModeMusic;
         [SerializeField] private BuildCosts[] costs;
+        
+        [Header("Music")]
+        [SerializeField] private VolumeController buildModeMusic;
+        [SerializeField] private float defaultVolume = 0.1f;
+        [SerializeField] private float fadeTimeActive = 0.5f;
+        [SerializeField] private float activeVolume = 0.4f;
+        [SerializeField] private float fadeTimeDefault = 3f;
 
         private bool _buildModeActive;
         private BuildType _buildType;
@@ -102,11 +108,13 @@ namespace GamePlay
             if (active)
             {
                 CameraController.Instance.EnterOverview();
-                _instance.buildModeMusic.volume = 0.4f;
+                _instance.StopAllCoroutines();
+                _instance.StartCoroutine(_instance.FadeVolume(_instance.activeVolume, _instance.fadeTimeActive));
             }
             else
             {
-                _instance.StartCoroutine(_instance.LowerVolume());
+                _instance.StopAllCoroutines();
+                _instance.StartCoroutine(_instance.FadeVolume(_instance.defaultVolume, _instance.fadeTimeDefault));
             }
         }
 
@@ -161,16 +169,17 @@ namespace GamePlay
                 settlement.Preview = true;
         }
 
-        private IEnumerator LowerVolume()
+        private IEnumerator FadeVolume(float target, float fadeTime)
         {
-            var startVolume = buildModeMusic.volume;
-            const float fadeTime = 3.0f;
-
-            while (buildModeMusic.volume > 0.1f)
+            float from = buildModeMusic.Volume;
+            var t = 0f;
+            while (t < fadeTime)
             {
-                buildModeMusic.volume -= startVolume * Time.deltaTime / fadeTime;
+                t += Time.deltaTime;
+                buildModeMusic.SetBaseVolume(Mathf.Lerp(from, target, t / fadeTime));
                 yield return null;
             }
+            buildModeMusic.SetBaseVolume(target);
         }
     }
 }

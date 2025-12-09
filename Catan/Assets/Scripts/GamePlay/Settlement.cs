@@ -24,7 +24,7 @@ public class Settlement : NetworkBehaviour
     [SerializeField] private GameObject settlementPreview;
     [SerializeField] private Color canBuildColor;
     [SerializeField] private Color unavailableColor;
-    [SerializeField] private AudioClip placeBuildingSound;
+    [SerializeField] private AudioSource placeBuildingSound;
     [SerializeField] private ModelColorManager modelColorManager;
 
     private Material _settlementPreviewMaterial;
@@ -69,7 +69,6 @@ public class Settlement : NetworkBehaviour
     {
         _owner.Value = builderId;
         _level.Value = 1; // in "LevelUpdated" model gets activated/deactivated based on level
-        AudioSource.PlayClipAtPoint(placeBuildingSound, Camera.main.transform.position, 0.3f);
         NotifyConnectedStreets();
     }
 
@@ -131,6 +130,7 @@ public class Settlement : NetworkBehaviour
         
         if (newLevel == 1)
         {
+            placeBuildingSound.Play();
             _mapIcon = MapIconManager.AddIcon(transform, IconType.Settlement,
                 GameManager.Instance.GetPlayerColor(Owner));
             // Notify streets when settlement is first built (level changes from 0 to 1)
