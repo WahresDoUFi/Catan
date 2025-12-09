@@ -4,6 +4,7 @@ using System.Linq;
 using GamePlay;
 using Unity.Netcode;
 using UnityEngine;
+using User;
 
 namespace UI
 {

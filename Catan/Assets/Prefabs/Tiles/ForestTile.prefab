@@ -688,6 +688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2328670678370544673}
   - component: {fileID: 3011862299027871061}
+  - component: {fileID: 8721397783156547757}
   m_Layer: 0
   m_Name: Audio Source
   m_TagString: Untagged
@@ -807,6 +808,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8721397783156547757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8923511122391755347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
+  audioType: 1
 --- !u!1001 &6958215752528172835
 PrefabInstance:
   m_ObjectHideFlags: 0

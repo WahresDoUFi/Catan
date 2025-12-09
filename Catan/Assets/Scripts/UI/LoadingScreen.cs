@@ -43,9 +43,24 @@ namespace UI
             ConnectionNotificationManager.Instance.OnClientConnectionNotification += ClientConnected;
         }
 
-        public static async Task Show()
+        public static async Task Show(AsyncOperation operation = null)
         {
             _instance.StartCoroutine(_instance.Fade(0f, 1f));
+            _instance._status = operation;
+        }
+
+        public static async Task PerformTasksInOrder(Action callback, params AsyncOperation[] tasks)
+        {
+            await Show();
+            foreach (var task in tasks)
+            {
+               _instance._status = task;
+               await task;
+            }
+
+            callback.Invoke();
+
+            _instance.StartCoroutine(_instance.Fade(1f, 0f));
         }
 
         private void ClientConnected(ulong clientId, ConnectionNotificationManager.ConnectionStatus connectionStatus)
@@ -95,6 +110,7 @@ namespace UI
         private void SceneLoadComplete(ulong clientid, string scenename, LoadSceneMode loadscenemode)
         {
             if (clientid != NetworkManager.Singleton.LocalClientId) return;
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(scenename));
             camObject.SetActive(false);
         }
 

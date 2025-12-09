@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using Misc;
+using UI;
 using UI.Trade;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using User;
 using Random = System.Random;
 
 namespace GamePlay
@@ -394,7 +396,9 @@ namespace GamePlay
 
         private void OnClientStopped(bool isHost)
         {
-            SceneManager.LoadScene(0);
+            LoadingScreen.PerformTasksInOrder(() => SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0)), 
+                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene()),
+                SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive));
             NetworkManager.Singleton.OnClientStopped -= OnClientStopped;
         }
     }

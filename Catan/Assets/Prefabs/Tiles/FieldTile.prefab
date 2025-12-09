@@ -689,6 +689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 937769441364194814}
   - component: {fileID: 2936138762681657213}
+  - component: {fileID: 1367875844728035349}
   m_Layer: 0
   m_Name: Audio Source (1)
   m_TagString: Untagged
@@ -808,6 +809,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1367875844728035349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058618057374552757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
+  audioType: 1
 --- !u!1 &7562714924369405058
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,6 +832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5651375276351995808}
   - component: {fileID: 6239192451568951134}
+  - component: {fileID: 1930382550580244602}
   m_Layer: 0
   m_Name: Audio Source (2)
   m_TagString: Untagged
@@ -937,6 +952,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1930382550580244602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7562714924369405058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397aa8f6bf0204c89bafec1916653e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::User.VolumeController
+  audioType: 1
 --- !u!1001 &1324568659924742171
 PrefabInstance:
   m_ObjectHideFlags: 0

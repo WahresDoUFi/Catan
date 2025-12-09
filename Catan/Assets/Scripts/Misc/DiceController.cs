@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using GamePlay;
+using UI;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
+using User;
 
 namespace Misc
 {
@@ -66,6 +68,7 @@ namespace Misc
         private bool CanThrow()
         {
             if (_hasThrown) return false;
+            if (PauseMenu.IsOpen) return false;
             return GameManager.Instance.CanThrowDice();
         }
 

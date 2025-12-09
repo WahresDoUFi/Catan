@@ -4,6 +4,7 @@ using GamePlay;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using User;
 
 namespace UI.Trade
 {
