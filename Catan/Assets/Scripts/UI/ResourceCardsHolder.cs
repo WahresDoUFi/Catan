@@ -140,7 +140,7 @@ namespace UI
             {
                 count += _player.GetResources((Tile)i);
             }
-            return Mathf.Max(Mathf.Min(count, _resourceCards.Count + 1) - 1, 0);
+            return Mathf.Min(count, _resourceCards.Count + 1) - 1;
         }
 
         private void UpdateCardCount()
