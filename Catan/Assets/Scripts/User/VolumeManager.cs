@@ -7,7 +7,7 @@ namespace User
     {
         public static VolumeManager Instance;
         
-        public delegate void VolumeChangeEvent(AudioType type, float volume);
+        public delegate void VolumeChangeEvent();
         public event VolumeChangeEvent OnVolumeChanged;
         
         private void Awake()
@@ -18,8 +18,7 @@ namespace User
         public void SetMasterVolume(float volume)
         {
             PlayerPrefs.SetFloat("MasterVolume", volume);
-            OnVolumeChanged?.Invoke(AudioType.Music, GetVolume(AudioType.Music));
-            OnVolumeChanged?.Invoke(AudioType.SoundEffect, GetVolume(AudioType.SoundEffect));
+            OnVolumeChanged?.Invoke();
         }
 
         public float GetMasterVolume()
@@ -30,12 +29,12 @@ namespace User
         public void SetVolume(AudioType type, float volume)
         {
             PlayerPrefs.SetFloat("Volume" + type.ToString(), volume);
-            OnVolumeChanged?.Invoke(type, volume);
+            OnVolumeChanged?.Invoke();
         }
 
         public float GetVolume(AudioType type)
         {
-            return PlayerPrefs.GetFloat("Volume" + type.ToString(), 1f) * GetMasterVolume();
+            return PlayerPrefs.GetFloat("Volume" + type.ToString(), 1f);
         }
     }
 }

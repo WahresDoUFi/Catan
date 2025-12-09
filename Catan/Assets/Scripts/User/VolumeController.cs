@@ -24,7 +24,7 @@ namespace User
 
         private void Start()
         {
-            UpdateVolume(audioType, VolumeManager.Instance.GetVolume(audioType));
+            UpdateVolume();
             VolumeManager.Instance.OnVolumeChanged += UpdateVolume;
         }
         
@@ -33,10 +33,9 @@ namespace User
             VolumeManager.Instance.OnVolumeChanged -= UpdateVolume;
         }
 
-        private void UpdateVolume(AudioType type, float volume)
+        private void UpdateVolume()
         {
-            if (type != audioType) return;
-            _audioSource.volume = _baseVolume * volume;
+            _audioSource.volume = _baseVolume * VolumeManager.Instance.GetVolume(audioType) * VolumeManager.Instance.GetMasterVolume();
         }
     }
 }

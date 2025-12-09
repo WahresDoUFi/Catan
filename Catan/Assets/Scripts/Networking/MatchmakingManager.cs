@@ -63,6 +63,12 @@ namespace Networking
         {
             SetButtonsActive(false);
             string startHost = await StartHostWithRelay(GameManager.MaxPlayers, "dtls");
+            if (string.IsNullOrEmpty(startHost))
+            {
+                NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("127.0.0.1", 7777);
+                StartHost();
+                return;
+            }
             Debug.Log("Join code: " + startHost);
             SetButtonsActive(true);
         }
@@ -91,19 +97,24 @@ namespace Networking
                 NetworkManager.Singleton.GetComponent<UnityTransport>()
                     .SetRelayServerData(allocation.ToRelayServerData(connectionType));
                 string joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-                if (NetworkManager.Singleton.StartHost())
-                {
-                    NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Additive);
-                    return joinCode;
-                }
-
-                return null;
+                return StartHost() ? joinCode : null;
             }
             catch (Exception e)
             {
                 Debug.LogWarning("Could not start host: " + e.Message);
             }
             return null;
+        }
+
+        private bool StartHost()
+        {
+            if (NetworkManager.Singleton.StartHost())
+            {
+                NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Additive);
+                return true;
+            }
+
+            return false;
         }
         
         private async Task<bool> StartClientWithRelay(string joinCode, string connectionType)
