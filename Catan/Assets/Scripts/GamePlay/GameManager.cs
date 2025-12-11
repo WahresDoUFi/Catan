@@ -34,9 +34,11 @@ namespace GamePlay
         public bool DiceThrown => _hasThrownDice.Value;
         public int Seed => _seed.Value;
         public ulong ActivePlayer => _playerIds[_playerTurn.Value];
-    
+        public bool IsGameOver => gameOverScreen.gameObject.activeSelf;
+
         [SerializeField] private Color[] playerColors;
-    
+        [SerializeField] private GameOverScreen gameOverScreen;
+
         private readonly NetworkVariable<byte> _gameState = new();
         private readonly NetworkVariable<byte> _playerTurn = new();
         private readonly NetworkList<ulong> _playerIds = new();
@@ -60,7 +62,8 @@ namespace GamePlay
 
         public override void OnNetworkSpawn()
         {
-            Street.AllStreets.Sort((s1, s2) => s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
+            Street.AllStreets.Sort((s1, s2) =>
+                s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
             Settlement.AllSettlements.Sort((s1, s2) =>
                 s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
             if (HasAuthority)
@@ -71,6 +74,7 @@ namespace GamePlay
                     _playerIds.Add(playerId);
                 }
             }
+
             ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
             NetworkManager.Singleton.OnClientStopped += OnClientStopped;
             _gameState.OnValueChanged += (_, _) => GameStateChange();
@@ -90,7 +94,7 @@ namespace GamePlay
                 return false;
             return _playerIds.IndexOf(NetworkManager.Singleton.LocalClientId) == _playerTurn.Value;
         }
-    
+
         public IEnumerable<ulong> GetPlayerIds()
         {
             foreach (ulong clientId in _playerIds)
@@ -215,7 +219,20 @@ namespace GamePlay
         public void FinishTurn()
         {
             BuildManager.SetActive(false);
-            FinishTurnRpc();
+            if (VictoryPoints.CalculateVictoryPoints(NetworkManager.Singleton.LocalClientId) >= 2)
+            {
+                ShowGameOverClientRpc(NetworkManager.Singleton.LocalClientId);
+            }
+            else
+            {
+                FinishTurnRpc();
+            }
+        }
+
+        [ClientRpc]
+        private void ShowGameOverClientRpc(ulong winnerClientId)
+        {
+            gameOverScreen.ShowGameOverScreen(winnerClientId, NetworkManager.Singleton.LocalClientId);
         }
 
         [Rpc(SendTo.Authority)]
@@ -242,6 +259,7 @@ namespace GamePlay
                 if (trade.ReceiverId == localClientId)
                     result.Add(trade);
             }
+
             return result.ToArray();
         }
 
@@ -275,11 +293,13 @@ namespace GamePlay
                 receiver.RemoveResources(resource.resource, resource.amount);
                 sender.AddResources(resource.resource, resource.amount);
             }
+
             foreach (var resource in trade.SendResources)
             {
                 sender.RemoveResources(resource.resource, resource.amount);
                 receiver.AddResources(resource.resource, resource.amount);
             }
+
             _playerTrades.RemoveTrade(trade);
         }
 
@@ -305,6 +325,7 @@ namespace GamePlay
             {
                 //Add Game Over!
             }
+
             _hasThrownDice.Value = false;
             _playerTrades.Clear();
             _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
@@ -398,7 +419,8 @@ namespace GamePlay
 
         private void OnClientStopped(bool isHost)
         {
-            _ = LoadingScreen.PerformTasksInOrder(() => SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0)),
+            _ = LoadingScreen.PerformTasksInOrder(
+                () => SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(0)),
                 SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive),
                 SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene()));
             NetworkManager.Singleton.OnClientStopped -= OnClientStopped;

@@ -14,18 +14,19 @@ namespace User
         private float ZoomPercentage => Mathf.InverseLerp(heightLimit.x, heightLimit.y, _targetPosition.y);
         private float Speed => Mathf.Lerp(cameraSpeed.x, cameraSpeed.y, ZoomPercentage);
         private float MaxTilt => Mathf.Lerp(tiltLimit.x, tiltLimit.y, ZoomPercentage);
-        private Vector3 TargetRotation => new Vector3(Mathf.Clamp(_targetTilt, MaxTilt, tiltLimit.y), _targetRotation, 0f);
+
+        private Vector3 TargetRotation =>
+            new Vector3(Mathf.Clamp(_targetTilt, MaxTilt, tiltLimit.y), _targetRotation, 0f);
 
         private Vector3 Forward => Quaternion.Euler(0f, _targetRotation, 0f) * Vector3.forward;
         private Vector3 Right => Quaternion.Euler(0f, 90f, 0f) * Forward;
-    
-        [SerializeField]
-        private float maxDistance;
+
+        [SerializeField] private float maxDistance;
         [SerializeField] private Vector2 heightLimit;
         [SerializeField] private Vector2 tiltLimit;
         [SerializeField] private Vector2 cameraSpeed;
         [SerializeField] private float cameraLerpSpeed;
-    
+
         private Vector3 _targetPosition;
         private float _targetTilt;
         private float _targetRotation;
@@ -36,7 +37,7 @@ namespace User
         private void Awake()
         {
             Instance = this;
-        
+
             _targetPosition = _overviewPosition = transform.position;
             _targetTilt = transform.eulerAngles.x;
             _targetRotation = transform.eulerAngles.y;
@@ -46,7 +47,8 @@ namespace User
         private void Update()
         {
             transform.position = Vector3.Lerp(transform.position, _targetPosition, Time.deltaTime * cameraLerpSpeed);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(TargetRotation), Time.deltaTime * cameraLerpSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(TargetRotation),
+                Time.deltaTime * cameraLerpSpeed);
         }
 
         public void EnterOverview(bool isToggle = false)
@@ -67,7 +69,8 @@ namespace User
                 clampedPosition.y = height;
                 _targetPosition = clampedPosition;
                 _previousPosition = _targetPosition;
-            } else if (Mouse.current.rightButton.isPressed)
+            }
+            else if (Mouse.current.rightButton.isPressed)
             {
                 float tilt = _targetTilt - input.y;
                 tilt = Mathf.Clamp(tilt, tiltLimit.x, tiltLimit.y);
@@ -81,12 +84,13 @@ namespace User
 
         public void Zoom(float input)
         {
+            if (GameManager.Instance.IsGameOver) return;
             var targetHeight = _targetPosition.y - input;
             targetHeight = Mathf.Clamp(targetHeight, heightLimit.x, heightLimit.y);
             _targetPosition.y = targetHeight;
             _previousPosition = _targetPosition;
         }
-    
+
         public Vector3 MouseWorldPosition(float offset = 0)
         {
             Vector3 mousePos = Mouse.current.position.ReadValue();
@@ -100,6 +104,7 @@ namespace User
             if (GameManager.Instance.IsMyTurn() && !GameManager.Instance.DiceThrown) return false;
             if (TradeMenu.Instance.IsOpen) return false;
             if (PauseMenu.IsOpen) return false;
+            if (GameManager.Instance.IsGameOver) return false;
             return true;
         }
     }
