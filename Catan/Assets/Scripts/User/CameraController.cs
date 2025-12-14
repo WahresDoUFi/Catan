@@ -58,9 +58,9 @@ namespace User
 
         public void Move(Vector2 input)
         {
+            if (!CanMove()) return;
             if (Mouse.current.leftButton.isPressed)
             {
-                if (!CanMove()) return;
                 _targetPosition -= Right * input.x * Speed;
                 _targetPosition -= Forward * input.y * Speed;
                 float height = _targetPosition.y;

@@ -69,12 +69,15 @@ namespace GamePlay
             if (HasAuthority)
             {
                 _seed.Value = new Random().Next(0, int.MaxValue);
-                foreach (var playerId in NetworkManager.Singleton.ConnectedClientsIds)
+                foreach (ulong playerId in NetworkManager.Singleton.ConnectedClientsIds)
                 {
                     _playerIds.Add(playerId);
                 }
             }
-
+            foreach (ulong playerId in _playerIds)
+            {
+                PlayerCardList.AddPlayerCard(Player.GetPlayerById(playerId));
+            }
             ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
             NetworkManager.Singleton.OnClientStopped += OnClientStopped;
             _gameState.OnValueChanged += (_, _) => GameStateChange();
@@ -259,7 +262,6 @@ namespace GamePlay
                 if (trade.ReceiverId == localClientId)
                     result.Add(trade);
             }
-
             return result.ToArray();
         }
 
@@ -389,11 +391,20 @@ namespace GamePlay
             TradeMenu.Instance.Close();
             TradeWindow.Close();
             DiceController.Instance.Reset();
+            PlayerCardList.RollDice(ActivePlayer);
         }
 
         private void OnClientConnectionStatusChange(ulong clientId,
             ConnectionNotificationManager.ConnectionStatus connectionStatus)
         {
+            if (connectionStatus == ConnectionNotificationManager.ConnectionStatus.Connected)
+            {
+                PlayerCardList.AddPlayerCard(Player.GetPlayerById(clientId));
+            }
+            else
+            {
+                PlayerCardList.RemovePlayerCard(clientId);
+            }
             if (!NetworkManager.Singleton.IsHost)
                 return;
             switch (connectionStatus)

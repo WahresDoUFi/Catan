@@ -105,6 +105,7 @@ namespace GamePlay
         public static void SetActive(bool active)
         {
             _instance._buildModeActive = active;
+            _instance.cancelButton.gameObject.SetActive(active);
             if (active)
             {
                 CameraController.Instance.EnterOverview();
