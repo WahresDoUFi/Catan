@@ -4,6 +4,7 @@ using System.Linq;
 using GamePlay;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
 using User;
 
 namespace UI
@@ -18,11 +19,23 @@ namespace UI
         [SerializeField] private float cardSpacing;
         [SerializeField] private float cardMoveSpeed = 5f;
         [SerializeField] private float hiddenOffset;
+        [SerializeField] private Button discardCardsButton;
+        [SerializeField] private float discardCardOffset;
+        [SerializeField] private float discardCardSpacing;
+        [SerializeField] private float selectedCardOffset;
         
         private Player _player;
         
         private readonly List<ResourceCard> _resourceCards = new();
+        private readonly List<ResourceCard> _selectedCards = new();
         private int _lastHoveredCardIndex;
+
+        private void Awake()
+        {
+            discardCardsButton.onClick.AddListener(DiscardSelectedCards);
+            discardCardsButton.gameObject.SetActive(false);
+        }
+
         private void Update()
         {
             if (!NetworkManager.Singleton) return;
@@ -31,8 +44,15 @@ namespace UI
                 ClearCards();
                 return;
             };
+            UpdateDiscardsCardsButton();
             UpdatePlayer();
             UpdateCardPositions();
+        }
+
+        private void UpdateDiscardsCardsButton()
+        {
+            discardCardsButton.gameObject.SetActive(GameManager.Instance.CardsToDiscard > 0);
+            discardCardsButton.interactable = GameManager.Instance.CardsToDiscard == _selectedCards.Count;
         }
 
         private void ClearCards()
@@ -66,9 +86,20 @@ namespace UI
             for (var i = 0; i < cardCount; i++)
             {
                 var card = _resourceCards[i];
+                float offset = i - (cardCount / 2f) + 0.5f;
                 int distanceToHoveredCard = Mathf.Abs(_lastHoveredCardIndex - i) + 1;
                 card.transform.SetSiblingIndex(transform.childCount - distanceToHoveredCard);
-                float offset = i - (cardCount / 2f) + 0.5f;
+                
+                if (GameManager.Instance.CardsToDiscard > 0)
+                {
+                    float heightOffset = discardCardOffset + (_selectedCards.Contains(card) ? selectedCardOffset : 0f);
+                    var cardPosition = Vector3.right * (offset * discardCardSpacing) + Vector3.up * heightOffset;
+                    card.transform.localPosition = Vector3.Lerp(card.transform.localPosition, cardPosition,
+                        Time.deltaTime * cardMoveSpeed);
+                    card.transform.rotation = Quaternion.Lerp(card.transform.rotation, Quaternion.identity,
+                        Time.deltaTime * cardMoveSpeed);
+                    continue;
+                }
                 var targetPosition = Vector3.right * (offset * cardSpacing) + Vector3.up * VerticalOffset;
                 float targetRotation = Mathf.Lerp(maxCardTilt, -maxCardTilt, (float)(i + 0.5f) / (float)cardCount);
                 targetPosition -= Vector3.up * ((Mathf.Abs(targetRotation) / maxCardTilt) * maxCardOffset);
@@ -153,6 +184,7 @@ namespace UI
                 {
                     var card = Instantiate(cardPrefab, transform).GetComponent<ResourceCard>();
                     card.SetType(GetMissingType());
+                    card.OnClick += ResourceCardClicked;
                     _resourceCards.Insert(GetLastIndexOfType(card.ResourceType), card);
                 }
             } else if (_resourceCards.Count > count)
@@ -179,6 +211,37 @@ namespace UI
             _player = NetworkManager.Singleton.LocalClient.PlayerObject.gameObject.GetComponent<Player>();
             _player.ResourcesUpdated += UpdateResourceCards;
             UpdateResourceCards();
+        }
+
+        private void ResourceCardClicked(ResourceCard card)
+        {
+            if (GameManager.Instance.CardsToDiscard == 0) return;
+            if (_selectedCards.Contains(card))
+            {
+                _selectedCards.Remove(card);
+            }
+            else
+            {
+                SelectCard(card);
+            }
+        }
+
+        private void SelectCard(ResourceCard card)
+        {
+            if (_selectedCards.Count < GameManager.Instance.CardsToDiscard)
+            {
+                _selectedCards.Add(card);
+            }
+        }
+
+        private void DiscardSelectedCards()
+        {
+            if (_selectedCards.Count != GameManager.Instance.CardsToDiscard) return;
+            foreach (var card in _selectedCards)
+            {
+                GameManager.Instance.DiscardResource(card.ResourceType);
+            }
+            _selectedCards.Clear();
         }
     }
 }

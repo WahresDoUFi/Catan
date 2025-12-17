@@ -17,7 +17,7 @@ namespace UI
         private void Update()
         {
             if (!GameManager.Instance) return;
-            if (GameManager.Instance.IsMyTurn())
+            if (IsActive())
             {
                 button.gameObject.SetActive(true);    
             }
@@ -28,9 +28,18 @@ namespace UI
             }
         }
 
+        private bool IsActive()
+        {
+            if (!GameManager.Instance.IsMyTurn()) return false;
+            if (!GameManager.Instance.DiceThrown) return false;
+            if (GameManager.Instance.CardLimitActive) return false;
+
+            return true;
+        }
+
         private void ButtonClicked()
         {
-            //button.interactable = false;
+            button.interactable = false;
         }
     }
 }

@@ -10,7 +10,7 @@ namespace UI
     {
         public bool Hover { get; private set; }
         public Tile ResourceType => _type;
-        public event Action OnClick;
+        public event Action<ResourceCard> OnClick;
         
         [SerializeField] private Image icon;
         [SerializeField] private float scaleSpeed;
@@ -109,7 +109,7 @@ namespace UI
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            OnClick?.Invoke();
+            OnClick?.Invoke(this);
         }
     }
 }

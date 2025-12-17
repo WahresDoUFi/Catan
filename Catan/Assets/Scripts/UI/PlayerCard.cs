@@ -38,6 +38,7 @@ namespace UI
         {
             if (!_player) return;
             cardAmountText.text = $"{_player.ResourceCount}";
+            cardAmountText.color = _player.ResourceCount > GameManager.MaxCardsOnBandit ? Color.red : Color.white;
             victoryPointsText.text = $"{_player.VictoryPoints}";
             settlementsText.text = $"{Settlement.AllSettlements.Count(s => s.Owner == _player.OwnerClientId)}";
             streetsText.text = $"{Street.AllStreets.Count(s => s.Owner == _player.OwnerClientId)}";

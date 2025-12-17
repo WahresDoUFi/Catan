@@ -30,6 +30,7 @@ namespace UI.Trade
 
         private void Update()
         {
+            button.interactable = IsAvailable();
             _rectTransform.anchoredPosition = Vector3.Lerp(_rectTransform.anchoredPosition, GetTargetPosition(),
                 animationSpeed * Time.deltaTime);
         }
@@ -42,11 +43,17 @@ namespace UI.Trade
                 TradeWindow.Open();
         }
 
+        private static bool IsAvailable()
+        {
+            if (GameManager.Instance.State != GameManager.GameState.Playing) return false;
+            if (!GameManager.Instance.DiceThrown) return false;
+            if (GameManager.Instance.CardLimitActive) return false;
+            return true;
+        }
+
         private Vector3 GetTargetPosition()
         {
-            if (GameManager.Instance.State != GameManager.GameState.Playing) return _closedPosition;
-            if (!GameManager.Instance.DiceThrown) return _closedPosition;
-            return _defaultPosition;
+            return IsAvailable() ? _defaultPosition : _closedPosition;
         }
     }
 }

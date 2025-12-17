@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Misc;
 using UI;
 using UI.Trade;
@@ -14,6 +15,8 @@ namespace GamePlay
     {
         public static GameManager Instance;
         public const int MaxPlayers = 4;
+        public const int MaxCardsOnBandit = 6;
+        private const int VictoryPointsTarget = 7;
 
         /// <summary>
         /// <list type="bullet">
@@ -35,6 +38,8 @@ namespace GamePlay
         public int Seed => _seed.Value;
         public ulong ActivePlayer => _playerIds[_playerTurn.Value];
         public bool IsGameOver => gameOverScreen.gameObject.activeSelf;
+        public bool CardLimitActive => _cardsToDiscard.AsNativeArray().Any(cards => cards > 0);
+        public int CardsToDiscard => _cardsToDiscard[_playerIds.IndexOf(NetworkManager.LocalClientId)];
 
         [SerializeField] private Color[] playerColors;
         [SerializeField] private GameOverScreen gameOverScreen;
@@ -46,6 +51,7 @@ namespace GamePlay
         private readonly NetworkVariable<byte> _roundNumber = new();
         private readonly NetworkVariable<int> _seed = new();
         private readonly NetworkTradeInfoVariable _playerTrades = new();
+        private readonly NetworkList<byte> _cardsToDiscard = new();
 
         private void Awake()
         {
@@ -72,6 +78,7 @@ namespace GamePlay
                 foreach (ulong playerId in NetworkManager.Singleton.ConnectedClientsIds)
                 {
                     _playerIds.Add(playerId);
+                    _cardsToDiscard.Add(0);
                 }
             }
             foreach (ulong playerId in _playerIds)
@@ -222,7 +229,7 @@ namespace GamePlay
         public void FinishTurn()
         {
             BuildManager.SetActive(false);
-            if (VictoryPoints.CalculateVictoryPoints(NetworkManager.Singleton.LocalClientId) >= 2)
+            if (VictoryPoints.CalculateVictoryPoints(NetworkManager.Singleton.LocalClientId) >= VictoryPointsTarget)
             {
                 ShowGameOverClientRpc(NetworkManager.Singleton.LocalClientId);
             }
@@ -320,6 +327,21 @@ namespace GamePlay
             _roundNumber.Value = 1;
         }
 
+        public void DiscardResource(Tile resource)
+        {
+            DiscardResourceRpc(resource);
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void DiscardResourceRpc(Tile resource, RpcParams rpcParams = default)
+        {
+            var playerIndex = _playerIds.IndexOf(rpcParams.Receive.SenderClientId);
+            if (_cardsToDiscard[playerIndex] == 0) return;
+            var player = Player.GetPlayerById(rpcParams.Receive.SenderClientId);
+            player.RemoveResources(resource, 1);
+            _cardsToDiscard[playerIndex]--;
+        }
+
         private void NextTurn()
         {
             int victoryPoints = VictoryPoints.CalculateVictoryPoints(ActivePlayer);
@@ -367,6 +389,18 @@ namespace GamePlay
 
         private void GrantResources(int number)
         {
+            if (number is 7)
+            {
+                for (var i = 0; i < _playerIds.Count; i++)
+                {
+                    int cardCount = Player.GetPlayerById(_playerIds[i]).ResourceCount;
+                    if (cardCount > MaxCardsOnBandit)
+                    {
+                        _cardsToDiscard[i] = (byte)Mathf.FloorToInt(cardCount / 2f);
+                    }
+                }
+                return;
+            }
             foreach (var settlement in Settlement.AllSettlements)
             {
                 if (!settlement.IsOccupied) continue;
@@ -411,6 +445,7 @@ namespace GamePlay
             {
                 case ConnectionNotificationManager.ConnectionStatus.Connected:
                 {
+                    _cardsToDiscard.Add(0);
                     _playerIds.Add(clientId);
                     if (State == (byte)GameState.Waiting)
                     {
@@ -423,6 +458,7 @@ namespace GamePlay
                     break;
                 }
                 case ConnectionNotificationManager.ConnectionStatus.Disconnected:
+                    _cardsToDiscard.RemoveAt(_playerIds.IndexOf(clientId));
                     _playerIds.Remove(clientId);
                     break;
             }

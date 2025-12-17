@@ -493,11 +493,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 350814548}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 954741899}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -505,19 +505,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1982438143}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 2038655910}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 629908021}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 239809587}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -634,11 +634,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 2047806887}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 672091133}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -646,19 +646,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1974633313}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 750195929}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1819783193}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 1118109707}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -1115,15 +1115,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 90545258}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 72168274}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 840321016}
     m_RemovedComponents: []
@@ -1213,11 +1213,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 915737552}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 183779666}
     m_RemovedComponents: []
@@ -1419,11 +1419,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1705276839}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 801456587}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -1431,19 +1431,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 586954515}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1127611477}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 90545258}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 840321016}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -1584,15 +1584,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 108807073}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1280832176}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1223939921}
     m_RemovedComponents: []
@@ -1705,11 +1705,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 801456587}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1731379866}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -1717,19 +1717,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 907466769}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 72168274}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 840321016}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 250772218}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -1952,7 +1952,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.TradeButton
   button: {fileID: 1435879764}
   animationSpeed: 5
-  closedOffset: {x: -125, y: 0, z: 0}
+  closedOffset: {x: 0, y: -150, z: 0}
 --- !u!4 &102533052 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3105348117585840318, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
@@ -1989,9 +1989,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1655732386}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 200}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -340}
   m_SizeDelta: {x: 900, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &104941216
@@ -2012,6 +2012,10 @@ MonoBehaviour:
   cardSpacing: 80
   cardMoveSpeed: 5
   hiddenOffset: -215
+  discardCardsButton: {fileID: 359203793}
+  discardCardOffset: 340
+  discardCardSpacing: 100
+  selectedCardOffset: 60
 --- !u!224 &107361495 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5471237063718696262, guid: 947e0cc6b842b4fca962a0e46e51a48d, type: 3}
@@ -2070,11 +2074,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 82369523}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1648684438}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -2082,15 +2086,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1280832176}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1223939921}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 521015041}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -2207,11 +2211,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1909009374}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1125212026}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -2219,11 +2223,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 598385094}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1706178454}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -2604,15 +2608,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 825424479}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1587834498}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1991995076}
     m_RemovedComponents: []
@@ -2786,11 +2790,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1255109147}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1560420227}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -2798,15 +2802,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 2091283789}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 915737552}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1551262630}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -2959,11 +2963,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1117466312}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1671191984}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -2971,15 +2975,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1551601783}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1516249858}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1621402525}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -3149,11 +3153,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1326055479}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 350814548}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -3161,19 +3165,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1819783193}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1982438143}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 34724293}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 1621402525}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -3366,15 +3370,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1819783193}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 38692891}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1118109707}
     m_RemovedComponents: []
@@ -3440,11 +3444,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1942839150}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1731379866}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -3452,19 +3456,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1184944892}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1182182531}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 90545258}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 907466769}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -3605,15 +3609,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 2008693136}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1982438143}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 825424479}
     m_RemovedComponents: []
@@ -3679,11 +3683,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 2096627498}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2136398554}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -3691,19 +3695,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1706178454}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 605032748}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 291004115}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 750195929}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -3844,15 +3848,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 333050289}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1280832176}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1471171552}
     m_RemovedComponents: []
@@ -4025,7 +4029,7 @@ GameObject:
   - component: {fileID: 280076657}
   - component: {fileID: 280076659}
   m_Layer: 5
-  m_Name: PlayerCount
+  m_Name: LobbyCode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4238,11 +4242,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 118974799}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 598385094}
     m_RemovedComponents: []
@@ -4308,11 +4312,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 2136398554}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1808167258}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -4320,19 +4324,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 750195929}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1122994834}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 901860912}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 259902268}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -4671,11 +4675,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1551262630}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1118030663}
     m_RemovedComponents: []
@@ -4986,11 +4990,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 925105819}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 846013094}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -4998,19 +5002,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 899614037}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 889838613}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1471171552}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 1280832176}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -5151,15 +5155,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 34724293}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1982438143}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 239809587}
     m_RemovedComponents: []
@@ -5183,6 +5187,127 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292711c6fd1e34808805457c07fc693e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Settlement
+--- !u!1 &359203791
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 359203792}
+  - component: {fileID: 359203795}
+  - component: {fileID: 359203794}
+  - component: {fileID: 359203793}
+  m_Layer: 5
+  m_Name: DiscardCardsButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &359203792
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359203791}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1512375062}
+  m_Father: {fileID: 1655732386}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 300}
+  m_SizeDelta: {x: 200, y: 80}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &359203793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359203791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 359203794}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &359203794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359203791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.4745098, g: 0.8235294, b: 0.8392157, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.35
+--- !u!222 &359203795
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 359203791}
+  m_CullTransparentMesh: 1
 --- !u!114 &362610943 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
@@ -5271,11 +5396,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1721761435}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 413817204}
     m_RemovedComponents: []
@@ -5341,11 +5466,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 839057957}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2122691765}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -5353,19 +5478,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 413817204}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1635379060}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1127611477}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 1471171552}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -5482,11 +5607,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1659529728}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 839057957}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -5494,15 +5619,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 411272293}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1635379060}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1721761435}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -5643,15 +5768,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 250772218}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1184944892}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1182182531}
     m_RemovedComponents: []
@@ -5717,11 +5842,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1517074106}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1446363645}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -5729,15 +5854,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 610850284}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1118109707}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1551601783}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -6022,11 +6147,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1625791134}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1165192031}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -6034,19 +6159,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1330005935}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1992735578}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 5955972833557196842}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 1178717041}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -6334,15 +6459,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 799985234}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 616772137}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1385706404}
     m_RemovedComponents: []
@@ -6432,15 +6557,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 899614037}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 889838613}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 333050289}
     m_RemovedComponents: []
@@ -6530,11 +6655,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 224231107}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1551601783}
     m_RemovedComponents: []
@@ -6637,11 +6762,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1397802420}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1648684438}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -6649,15 +6774,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1219666605}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 108807073}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1225915392}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -7367,15 +7492,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 521015041}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1219666605}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1225915392}
     m_RemovedComponents: []
@@ -7465,11 +7590,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 983606002}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1587834498}
     m_RemovedComponents: []
@@ -7535,11 +7660,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1479831161}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1705276839}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -7547,19 +7672,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1127611477}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1330005935}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1760790501}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 72168274}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -7755,11 +7880,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1909009374}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2023029858}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -7767,15 +7892,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 118974799}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1122994834}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 915737552}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8081,11 +8206,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1329126809}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2096627498}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8093,15 +8218,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 259902268}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1706178454}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 610850284}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8218,11 +8343,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1446363645}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1329126809}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8230,15 +8355,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 428234780}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1118109707}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 605032748}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8355,11 +8480,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 568744975}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1554907483}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8367,15 +8492,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 799985234}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1118030663}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1385706404}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8529,11 +8654,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 954741899}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1713341078}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8541,19 +8666,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 2038655910}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 34724293}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1760790501}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 889838613}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -8694,15 +8819,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 291004115}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 750195929}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 259902268}
     m_RemovedComponents: []
@@ -8828,11 +8953,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 605032748}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 610850284}
     m_RemovedComponents: []
@@ -9058,11 +9183,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1385706404}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1184944892}
     m_RemovedComponents: []
@@ -9163,15 +9288,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1118109707}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 610850284}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 428234780}
     m_RemovedComponents: []
@@ -9561,11 +9686,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 2047806887}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2136398554}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -9573,19 +9698,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 291004115}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1974633313}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 38692891}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 259902268}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -9953,11 +10078,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 521015041}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 108807073}
     m_RemovedComponents: []
@@ -10430,11 +10555,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 568744975}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 905968287}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -10442,19 +10567,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 616772137}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1385706404}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 2043562568}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 982592057}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -10765,11 +10890,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 362610943}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1012305459}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -10777,19 +10902,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1587834498}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1991995076}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1982438143}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 2008693136}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -10967,15 +11092,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 239809587}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1819783193}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1621402525}
     m_RemovedComponents: []
@@ -11065,15 +11190,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 411272293}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 413817204}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1635379060}
     m_RemovedComponents: []
@@ -11150,11 +11275,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1569820785}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 801456587}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -11162,19 +11287,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1106765715}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1918987332}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 90545258}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 72168274}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -11737,11 +11862,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 846013094}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1713341078}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -11749,19 +11874,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 333050289}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1760790501}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 899614037}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 629908021}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -11902,11 +12027,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1182182531}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1876557565}
     m_RemovedComponents: []
@@ -12007,15 +12132,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 982592057}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 2043562568}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 799985234}
     m_RemovedComponents: []
@@ -12081,11 +12206,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 846013094}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1956804620}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -12093,19 +12218,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 333050289}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1219666605}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 889838613}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 2008693136}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -12222,11 +12347,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1808167258}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1192436801}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -12234,19 +12359,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1212619798}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1992735578}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1122994834}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 291004115}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -12374,11 +12499,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1731379866}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1784115125}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -12386,19 +12511,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 90545258}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1178717041}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 2043562568}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 250772218}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -12734,11 +12859,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 2023029858}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1560420227}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -12746,15 +12871,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1122994834}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 598385094}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 183779666}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -13325,15 +13450,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 629908021}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 2038655910}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 34724293}
     m_RemovedComponents: []
@@ -13434,15 +13559,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 586954515}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1760790501}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1330005935}
     m_RemovedComponents: []
@@ -13894,11 +14019,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 905968287}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2029225203}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -13906,19 +14031,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 2043562568}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 2091283789}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1212619798}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 799985234}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -14035,11 +14160,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1349543713}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1621029523}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -14047,11 +14172,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1587834498}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1225915392}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -14719,15 +14844,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 915737552}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1122994834}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 598385094}
     m_RemovedComponents: []
@@ -15250,11 +15375,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1569820785}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1488902306}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -15262,15 +15387,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 840321016}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1635379060}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1918987332}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -15519,11 +15644,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1554907483}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 328571675}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -15531,11 +15656,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 616772137}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1551262630}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -15652,11 +15777,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1446363645}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 672091133}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -15664,19 +15789,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 610850284}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 428234780}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1819783193}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 38692891}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -15793,11 +15918,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1808167258}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2023029858}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -15805,19 +15930,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 901860912}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 598385094}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 291004115}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 915737552}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -15958,11 +16083,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1706178454}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 118974799}
     m_RemovedComponents: []
@@ -16039,11 +16164,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1705276839}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2122691765}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -16051,19 +16176,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1471171552}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 586954515}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 72168274}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 411272293}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -16363,15 +16488,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1992735578}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 5955972833557196842}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 444402466}
     m_RemovedComponents: []
@@ -16453,11 +16578,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1784115125}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1625791134}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -16465,19 +16590,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 2043562568}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1330005935}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 444402466}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 907466769}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -16594,11 +16719,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 890920330}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1942839150}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -16606,15 +16731,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1876557565}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1184944892}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 250772218}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -16755,11 +16880,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1223939921}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1721761435}
     m_RemovedComponents: []
@@ -16836,11 +16961,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 652229038}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1942839150}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -16848,15 +16973,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 250772218}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1385706404}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1182182531}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -16997,15 +17122,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1212619798}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1992735578}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 901860912}
     m_RemovedComponents: []
@@ -17157,11 +17282,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1192436801}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2029225203}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -17169,19 +17294,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 901860912}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1992735578}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 2091283789}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 982592057}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -17298,11 +17423,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1956804620}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1397802420}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -17310,19 +17435,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 899614037}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 521015041}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 2008693136}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 1225915392}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -17439,11 +17564,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1184926436}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 82369523}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -17451,15 +17576,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1280832176}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 108807073}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1721761435}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -17576,11 +17701,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1621029523}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1397802420}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -17588,15 +17713,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1219666605}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 983606002}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 521015041}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -17812,15 +17937,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 72168274}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1127611477}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 586954515}
     m_RemovedComponents: []
@@ -18106,15 +18231,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 2091283789}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 183779666}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1551262630}
     m_RemovedComponents: []
@@ -18327,11 +18452,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 925105819}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 82369523}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -18339,19 +18464,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1471171552}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 108807073}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1223939921}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 333050289}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -18528,11 +18653,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1625791134}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1479831161}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -18540,19 +18665,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 586954515}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1760790501}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1178717041}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 444402466}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -18808,11 +18933,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 652229038}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 568744975}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -18820,15 +18945,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1184944892}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 799985234}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 616772137}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -19251,11 +19376,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1635379060}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1106765715}
     m_RemovedComponents: []
@@ -19510,15 +19635,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1178717041}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 2043562568}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 907466769}
     m_RemovedComponents: []
@@ -19644,11 +19769,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 2122691765}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 925105819}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -19656,19 +19781,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1127611477}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1280832176}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 333050289}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 411272293}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -19850,8 +19975,8 @@ RectTransform:
   m_Children:
   - {fileID: 1946487633}
   - {fileID: 439956971}
-  - {fileID: 1655732386}
   - {fileID: 1513323800}
+  - {fileID: 1655732386}
   - {fileID: 266319534}
   - {fileID: 1142825957}
   - {fileID: 1420437679}
@@ -19863,6 +19988,142 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1512375061
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512375062}
+  - component: {fileID: 1512375064}
+  - component: {fileID: 1512375063}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1512375062
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512375061}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 359203792}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1512375063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512375061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Discard
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 6793de1e01a314d4fa4d4417c6b063d7, type: 2}
+  m_sharedMaterial: {fileID: -8727079910859990971, guid: 6793de1e01a314d4fa4d4417c6b063d7, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280302167
+  m_fontColor: {r: 0.34117648, g: 0.22745098, b: 0.1254902, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 39.78
+  m_fontSizeBase: 39.78
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 4096
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1512375064
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512375061}
+  m_CullTransparentMesh: 1
 --- !u!1 &1513323799
 GameObject:
   m_ObjectHideFlags: 0
@@ -20023,11 +20284,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1946231751}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1671191984}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -20035,15 +20296,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1621402525}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1991995076}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 224231107}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -20184,11 +20445,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 428234780}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1551601783}
     m_RemovedComponents: []
@@ -20289,15 +20550,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 2008693136}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1219666605}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 899614037}
     m_RemovedComponents: []
@@ -20363,11 +20624,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 328571675}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1255109147}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -20375,15 +20636,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1118030663}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 2091283789}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 183779666}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -20500,11 +20761,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1517074106}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1117466312}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -20512,11 +20773,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 224231107}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 428234780}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -20657,11 +20918,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1118030663}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 616772137}
     m_RemovedComponents: []
@@ -20991,15 +21252,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 840321016}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1106765715}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1918987332}
     m_RemovedComponents: []
@@ -21076,11 +21337,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 362610943}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1349543713}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -21088,15 +21349,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 825424479}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 983606002}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1991995076}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -21475,11 +21736,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1225915392}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 983606002}
     m_RemovedComponents: []
@@ -21556,11 +21817,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1671191984}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1326055479}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -21568,19 +21829,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1516249858}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 224231107}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1819783193}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 239809587}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -21721,15 +21982,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1330005935}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 444402466}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1178717041}
     m_RemovedComponents: []
@@ -21806,11 +22067,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1488902306}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 839057957}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -21818,15 +22079,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 411272293}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 413817204}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1106765715}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -22051,6 +22312,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1877112369}
+  - {fileID: 359203792}
   - {fileID: 104941215}
   - {fileID: 977950272}
   - {fileID: 1838723690}
@@ -22151,15 +22413,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1621402525}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1516249858}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 224231107}
     m_RemovedComponents: []
@@ -22511,11 +22773,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1125212026}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2096627498}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -22523,15 +22785,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 259902268}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 605032748}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 118974799}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -22725,15 +22987,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 889838613}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 629908021}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1760790501}
     m_RemovedComponents: []
@@ -22877,11 +23139,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1659529728}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1184926436}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -22889,11 +23151,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 413817204}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1223939921}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -23034,15 +23296,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 907466769}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 90545258}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 250772218}
     m_RemovedComponents: []
@@ -23864,11 +24126,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1479831161}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1713341078}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -23876,19 +24138,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 889838613}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 586954515}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1330005935}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 629908021}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -24188,15 +24450,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1122994834}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 901860912}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 291004115}
     m_RemovedComponents: []
@@ -24394,11 +24656,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1326055479}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 672091133}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -24406,19 +24668,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 239809587}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 38692891}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1118109707}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 1621402525}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -25601,11 +25863,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 890920330}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2048650203}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -25613,11 +25875,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1182182531}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1918987332}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -25932,11 +26194,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 2048650203}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1569820785}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -25944,15 +26206,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1876557565}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1106765715}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 840321016}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -26361,11 +26623,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1991995076}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1516249858}
     m_RemovedComponents: []
@@ -26515,11 +26777,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 6208801978864841408}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2047806887}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -26527,19 +26789,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 750195929}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 2038655910}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 38692891}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 5955972833557196842}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -26656,11 +26918,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 350814548}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1012305459}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -26668,19 +26930,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 34724293}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 2008693136}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 239809587}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 825424479}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -26797,11 +27059,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1946231751}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 362610943}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -26809,15 +27071,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1516249858}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1587834498}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 825424479}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -26934,11 +27196,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1192436801}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1165192031}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -26946,19 +27208,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1212619798}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 444402466}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 901860912}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 5955972833557196842}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -27347,11 +27609,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1012305459}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1956804620}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -27359,19 +27621,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1982438143}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1219666605}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 899614037}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 825424479}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -27714,15 +27976,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 982592057}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 2091283789}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1212619798}
     m_RemovedComponents: []
@@ -27799,11 +28061,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 6208801978864841408}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 954741899}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -27811,19 +28073,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1974633313}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 5955972833557196842}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 629908021}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 34724293}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -27940,11 +28202,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 905968287}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1784115125}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -27952,19 +28214,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1178717041}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 982592057}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 907466769}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 799985234}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -28105,15 +28367,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 38692891}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 750195929}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 1974633313}
     m_RemovedComponents: []
@@ -28214,11 +28476,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1918987332}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1876557565}
     m_RemovedComponents: []
@@ -28369,11 +28631,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 1255109147}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 2029225203}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -28381,19 +28643,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 982592057}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 183779666}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 1212619798}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 1551262630}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -28534,15 +28796,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 259902268}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1706178454}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 605032748}
     m_RemovedComponents: []
@@ -28832,15 +29094,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1471171552}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 1127611477}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 411272293}
     m_RemovedComponents: []
@@ -29666,10 +29928,6 @@ PrefabInstance:
       propertyPath: m_Value
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6626568262524700730, guid: 4b3903dde6136439eb5ef07d575e2c70, type: 3}
-      propertyPath: m_Size
-      value: 0.34782642
-      objectReference: {fileID: 0}
     - target: {fileID: 6782251944883973024, guid: 4b3903dde6136439eb5ef07d575e2c70, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -30053,11 +30311,11 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[0]
+      propertyPath: 'settlements.Array.data[0]'
       value: 
       objectReference: {fileID: 6208801978864841408}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: settlements.Array.data[1]
+      propertyPath: 'settlements.Array.data[1]'
       value: 
       objectReference: {fileID: 1165192031}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -30065,19 +30323,19 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[0]
+      propertyPath: 'connectedStreets.Array.data[0]'
       value: 
       objectReference: {fileID: 1974633313}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[1]
+      propertyPath: 'connectedStreets.Array.data[1]'
       value: 
       objectReference: {fileID: 1992735578}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[2]
+      propertyPath: 'connectedStreets.Array.data[2]'
       value: 
       objectReference: {fileID: 2038655910}
     - target: {fileID: 667572025551381265, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
-      propertyPath: connectedStreets.Array.data[3]
+      propertyPath: 'connectedStreets.Array.data[3]'
       value: 
       objectReference: {fileID: 444402466}
     - target: {fileID: 4669746392451987794, guid: 3ff68fc027bd2462ca3fa14b0fa8ed14, type: 3}
@@ -30213,15 +30471,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[0]
+      propertyPath: 'streets.Array.data[0]'
       value: 
       objectReference: {fileID: 1974633313}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[1]
+      propertyPath: 'streets.Array.data[1]'
       value: 
       objectReference: {fileID: 2038655910}
     - target: {fileID: 5400928400804033712, guid: ac7892337d89a4b4b9a4aedc60e738e7, type: 3}
-      propertyPath: streets.Array.data[2]
+      propertyPath: 'streets.Array.data[2]'
       value: 
       objectReference: {fileID: 5955972833557196842}
     m_RemovedComponents: []
