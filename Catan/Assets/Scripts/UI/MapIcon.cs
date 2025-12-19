@@ -9,16 +9,19 @@ namespace UI
         Street,
         Settlement,
         City,
-        Tile
+        Tile,
+        BuildPreview
     }
     
     [RequireComponent(typeof(Image))]
     public class MapIcon : MonoBehaviour
     {
+        public bool Visible { get; set; }
+        public float Alpha { get; set; }
+
         [SerializeField] private float fadeSpeed;
         [SerializeField, Range(0f, 1f)] private float baseAlpha;
         
-        public bool Visible { get; set; }
         private Transform _target;
         private Image _image;
         private Camera _mainCamera;
@@ -27,6 +30,7 @@ namespace UI
         
         private void Awake()
         {
+            Alpha = 1f;
             _image = GetComponent<Image>();
             _mainCamera = Camera.main;
             _rectTransform = GetComponent<RectTransform>();
@@ -58,7 +62,7 @@ namespace UI
 
         private void UpdateAlpha()
         {
-            float targetAlpha = Visible ? baseAlpha : 0f;
+            float targetAlpha = Visible ? (baseAlpha * Alpha) : 0f;
             float alpha = Mathf.Lerp(_canvasGroup.alpha, targetAlpha, Time.deltaTime * fadeSpeed);
             SetAlpha(alpha);
         }

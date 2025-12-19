@@ -56,6 +56,7 @@ namespace GamePlay
 
         private static BuildManager _instance;
         public static bool BuildModeActive => _instance._buildModeActive;
+        public static BuildType ActiveBuildType => _instance._buildType;
 
         [SerializeField] private Button cancelButton;
         [SerializeField] private BuildCosts[] costs;

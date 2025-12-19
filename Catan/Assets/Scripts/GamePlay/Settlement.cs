@@ -6,6 +6,7 @@ using UI;
 using Unity.Netcode;
 using UnityEditor;
 using UnityEngine;
+using User;
 
 public class Settlement : NetworkBehaviour
 {
@@ -26,10 +27,14 @@ public class Settlement : NetworkBehaviour
     [SerializeField] private Color unavailableColor;
     [SerializeField] private AudioSource placeBuildingSound;
     [SerializeField] private ModelColorManager modelColorManager;
+    [SerializeField] private float maxPreviewAlpha = 0.5f;
+    [SerializeField] private Color defaultColor, selectedColor;
+    [SerializeField] private float previewFadeDistance;
 
     private Material _settlementPreviewMaterial;
     private MapTile[] _neighboringTiles;
     private MapIcon _mapIcon;
+    private MapIcon _buildPreviewIcon;
 
     private void OnEnable()
     {
@@ -50,11 +55,38 @@ public class Settlement : NetworkBehaviour
     {
         _level.OnValueChanged += LevelUpdated;
         LevelUpdated(0, 0);
+        _buildPreviewIcon = MapIconManager.AddIcon(transform, IconType.BuildPreview, Color.white);
     }
 
     private void Update()
     {
         settlementPreview.SetActive(ShowPreview());
+        UpdateBuildPreviewIcon();
+    }
+
+    private void UpdateBuildPreviewIcon()
+    {
+        if (!IsBuildPreviewIconVisible())
+        {
+            _buildPreviewIcon.Alpha = 0f;
+            return;
+        }
+
+        var mousePos = CameraController.Instance.MouseWorldPosition();
+        float distanceToMouse = Vector3.Distance(transform.position, mousePos);
+        _buildPreviewIcon.Alpha = Mathf.InverseLerp(previewFadeDistance, 0f, distanceToMouse) * maxPreviewAlpha;
+        _buildPreviewIcon.SetColor(GetClosestSettlementTo(mousePos) == this ? selectedColor : defaultColor);
+    }
+    
+    private bool IsBuildPreviewIconVisible()
+    {
+        if (!BuildManager.BuildModeActive) return false;
+        if (!CanBeBuildBy(NetworkManager.LocalClientId)) return false;
+        if (BuildManager.ActiveBuildType != BuildManager.BuildType.Settlement) return false;
+        if (GameManager.Instance.State == GameManager.GameState.Playing &&
+            !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Settlement))) 
+            return false;
+        return true;
     }
 
     public static Settlement GetClosestSettlementTo(Vector3 position)

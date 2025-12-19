@@ -5,6 +5,7 @@ using UI;
 using Unity.Netcode;
 using UnityEditor;
 using UnityEngine;
+using User;
 
 public class Street : NetworkBehaviour
 {
@@ -30,9 +31,13 @@ public class Street : NetworkBehaviour
     [SerializeField] private Color unavailableColor;
     [SerializeField] private AudioSource placeStreetSound;
     [SerializeField] private ModelColorManager modelColorManager;
+    [SerializeField] private float maxPreviewAlpha = 0.5f;
+    [SerializeField] private Color defaultColor, selectedColor;
+    [SerializeField] private float previewFadeDistance;
 
     private Material _previewMaterial;
     private StreetModel _streetModel;
+    private MapIcon _buildPreviewIcon;
 
     private void OnEnable()
     {
@@ -54,11 +59,38 @@ public class Street : NetworkBehaviour
     {
         _owner.OnValueChanged += (_, _) => UpdateStreet();
         UpdateStreet();
+        _buildPreviewIcon = MapIconManager.AddIcon(transform, IconType.BuildPreview, Color.white);
     }
 
     private void Update()
     {
         previewObject.SetActive(ShowPreview());
+        UpdateBuildPreviewIcon();
+    }
+
+    private void UpdateBuildPreviewIcon()
+    {
+        if (!IsBuildPreviewIconVisible())
+        {
+            _buildPreviewIcon.Alpha = 0f;
+            return;
+        }
+
+        var mousePos = CameraController.Instance.MouseWorldPosition();
+        float distanceToMouse = Vector3.Distance(transform.position, mousePos);
+        _buildPreviewIcon.Alpha = Mathf.InverseLerp(previewFadeDistance, 0f, distanceToMouse) * maxPreviewAlpha;
+        _buildPreviewIcon.SetColor(GetClosestStreetTo(mousePos) == this ? selectedColor : defaultColor);
+    }
+
+    private bool IsBuildPreviewIconVisible()
+    {
+        if (!BuildManager.BuildModeActive) return false;
+        if (!CanBeBuildBy(NetworkManager.LocalClientId)) return false;
+        if (BuildManager.ActiveBuildType != BuildManager.BuildType.Street) return false;
+        if (GameManager.Instance.State == GameManager.GameState.Playing &&
+             !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Street))) 
+            return false;
+        return true;
     }
 
     public bool CanBeBuildBy(ulong playerId)

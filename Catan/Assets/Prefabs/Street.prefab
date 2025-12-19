@@ -90,6 +90,10 @@ MonoBehaviour:
   unavailableColor: {r: 1, g: 0.23113209, b: 0.23113209, a: 0.87058824}
   placeStreetSound: {fileID: 8300000, guid: 247a2486dfb2344c8831d91cb2c08e0a, type: 3}
   modelColorManager: {fileID: 8393546441522873973}
+  maxPreviewAlpha: 0.8
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedColor: {r: 0.4745098, g: 0.8235294, b: 0.8392157, a: 1}
+  previewFadeDistance: 35
 --- !u!114 &8393546441522873973
 MonoBehaviour:
   m_ObjectHideFlags: 0
