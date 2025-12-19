@@ -18,7 +18,7 @@ namespace User
         public byte Sheep => _sheep.Value;
 
         public int VictoryPoints =>
-            global::VictoryPoints.CalculateVictoryPoints(NetworkManager.Singleton.LocalClientId);
+            global::VictoryPoints.CalculateVictoryPoints(OwnerClientId);
 
         private readonly NetworkVariable<byte> _wood = new();
         private readonly NetworkVariable<byte> _stone = new();
