@@ -426,6 +426,30 @@ namespace GamePlay
         private void OnClientConnectionStatusChange(ulong clientId,
             ConnectionNotificationManager.ConnectionStatus connectionStatus)
         {
+            if (NetworkManager.Singleton.IsHost)
+            {
+                switch (connectionStatus)
+                {
+                    case ConnectionNotificationManager.ConnectionStatus.Connected:
+                        {
+                            _cardsToDiscard.Add(0);
+                            _playerIds.Add(clientId);
+                            if (State == (byte)GameState.Waiting)
+                            {
+                                if (NetworkManager.Singleton.ConnectedClientsIds.Count == 4)
+                                {
+                                    StartGame();
+                                }
+                            }
+
+                            break;
+                        }
+                    case ConnectionNotificationManager.ConnectionStatus.Disconnected:
+                        _cardsToDiscard.RemoveAt(_playerIds.IndexOf(clientId));
+                        _playerIds.Remove(clientId);
+                        break;
+                }
+            }
             if (connectionStatus == ConnectionNotificationManager.ConnectionStatus.Connected)
             {
                 PlayerCardList.AddPlayerCard(Player.GetPlayerById(clientId));
@@ -433,29 +457,6 @@ namespace GamePlay
             else
             {
                 PlayerCardList.RemovePlayerCard(clientId);
-            }
-            if (!NetworkManager.Singleton.IsHost)
-                return;
-            switch (connectionStatus)
-            {
-                case ConnectionNotificationManager.ConnectionStatus.Connected:
-                {
-                    _cardsToDiscard.Add(0);
-                    _playerIds.Add(clientId);
-                    if (State == (byte)GameState.Waiting)
-                    {
-                        if (NetworkManager.Singleton.ConnectedClientsIds.Count == 4)
-                        {
-                            StartGame();
-                        }
-                    }
-
-                    break;
-                }
-                case ConnectionNotificationManager.ConnectionStatus.Disconnected:
-                    _cardsToDiscard.RemoveAt(_playerIds.IndexOf(clientId));
-                    _playerIds.Remove(clientId);
-                    break;
             }
         }
 
