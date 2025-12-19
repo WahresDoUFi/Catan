@@ -131,7 +131,7 @@ namespace GamePlay
 
         public Color GetPlayerColor(ulong playerId)
         {
-            return playerColors[LocalPlayerIndex];
+            return playerColors[_playerIds.IndexOf(playerId)];
         }
 
         public bool PlaceSettlement(Settlement settlement)
@@ -230,14 +230,7 @@ namespace GamePlay
         public void FinishTurn()
         {
             BuildManager.SetActive(false);
-            if (VictoryPoints.CalculateVictoryPoints(NetworkManager.Singleton.LocalClientId) >= VictoryPointsTarget)
-            {
-                ShowGameOverClientRpc(NetworkManager.Singleton.LocalClientId);
-            }
-            else
-            {
-                FinishTurnRpc();
-            }
+            FinishTurnRpc();
         }
 
         [ClientRpc]
@@ -342,7 +335,7 @@ namespace GamePlay
             int victoryPoints = VictoryPoints.CalculateVictoryPoints(ActivePlayer);
             if (victoryPoints >= 7)
             {
-                //Add Game Over!
+                ShowGameOverClientRpc(ActivePlayer);
             }
 
             _hasThrownDice.Value = false;
