@@ -39,7 +39,8 @@ namespace GamePlay
         public ulong ActivePlayer => _playerIds[_playerTurn.Value];
         public bool IsGameOver => gameOverScreen.gameObject.activeSelf;
         public bool CardLimitActive => _cardsToDiscard.AsNativeArray().Any(cards => cards > 0);
-        public int CardsToDiscard => _cardsToDiscard[_playerIds.IndexOf(NetworkManager.LocalClientId)];
+        public int CardsToDiscard => _cardsToDiscard[LocalPlayerIndex];
+        private int LocalPlayerIndex => Mathf.Max(0, _playerIds.IndexOf(NetworkManager.LocalClientId));
 
         [SerializeField] private Color[] playerColors;
         [SerializeField] private GameOverScreen gameOverScreen;
@@ -102,7 +103,7 @@ namespace GamePlay
         {
             if (State == GameState.Waiting || !NetworkManager.Singleton)
                 return false;
-            return _playerIds.IndexOf(NetworkManager.Singleton.LocalClientId) == _playerTurn.Value;
+            return LocalPlayerIndex == _playerTurn.Value;
         }
 
         public IEnumerable<ulong> GetPlayerIds()
@@ -130,7 +131,7 @@ namespace GamePlay
 
         public Color GetPlayerColor(ulong playerId)
         {
-            return playerColors[_playerIds.IndexOf(playerId)];
+            return playerColors[LocalPlayerIndex];
         }
 
         public bool PlaceSettlement(Settlement settlement)
@@ -252,12 +253,6 @@ namespace GamePlay
             if (ActivePlayer != rpcParams.Receive.SenderClientId) return;
             if (!DiceThrown) return;
             NextTurn();
-        }
-
-        [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
-        private void DiceResultRpc(int diceOne, int diceTwo)
-        {
-            //  show dice roll animation whatever
         }
 
         public TradeInfo[] GetAvailableTrades()
