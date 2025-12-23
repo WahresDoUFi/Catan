@@ -88,6 +88,7 @@ namespace GamePlay
             }
             ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
             NetworkManager.Singleton.OnClientStopped += OnClientStopped;
+            _playerIds.OnListChanged += PlayerIdsChange;
             _gameState.OnValueChanged += (_, _) => GameStateChange();
             _playerTurn.OnValueChanged += (_, _) => PlayerTurnChange();
             _hasThrownDice.OnValueChanged += HasThrownDiceChange;
@@ -360,6 +361,7 @@ namespace GamePlay
                     Player.GetPlayerById(settlement.Owner).AddResources(tile.TileType, 1);
                 }
             }
+            PlayerCardList.RollDice(ActivePlayer);
         }
 
         private void HandleInitialPlacement()
@@ -399,6 +401,17 @@ namespace GamePlay
                         Player.GetPlayerById(settlement.Owner).AddResources(tile.TileType, settlement.Level);
                     }
                 }
+            }
+        }
+
+        private void PlayerIdsChange(NetworkListEvent<ulong> changeEvent)
+        {
+            if (changeEvent.Type == NetworkListEvent<ulong>.EventType.Add)
+            {
+                PlayerCardList.AddPlayerCard(Player.GetPlayerById(changeEvent.Value));
+            } else if (changeEvent.Type == NetworkListEvent<ulong>.EventType.Remove)
+            {
+                PlayerCardList.RemovePlayerCard(changeEvent.Value);
             }
         }
 
@@ -442,14 +455,6 @@ namespace GamePlay
                         _playerIds.Remove(clientId);
                         break;
                 }
-            }
-            if (connectionStatus == ConnectionNotificationManager.ConnectionStatus.Connected)
-            {
-                PlayerCardList.AddPlayerCard(Player.GetPlayerById(clientId));
-            }
-            else
-            {
-                PlayerCardList.RemovePlayerCard(clientId);
             }
         }
 

@@ -12,6 +12,7 @@ namespace UI
     public class LoadingScreen : MonoBehaviour
     {
         private static LoadingScreen _instance;
+        public static event Action LoadingDone;
 
         [SerializeField] private GameObject camObject;
         [SerializeField] private float fadeSpeed;
@@ -89,6 +90,7 @@ namespace UI
             {
                 _loadingDone = true;
                 progressBar.fillAmount = 1f;
+                LoadingDone?.Invoke();
                 StartCoroutine(Fade(1f, 0f));
             }
         }
@@ -96,14 +98,28 @@ namespace UI
         private void StartLoadScene(ulong clientid, string scenename, LoadSceneMode loadscenemode, AsyncOperation asyncoperation)
         {
             if (_isSyncing || clientid != NetworkManager.Singleton.LocalClientId) return;
+            asyncoperation.allowSceneActivation = false;
             _loadingDone = false;
             _status = asyncoperation;
+            StartCoroutine(FinishSceneLoading(asyncoperation));
             camObject.SetActive(true);
+        }
+
+        private IEnumerator FinishSceneLoading(AsyncOperation asyncoperation)
+        {
+            while (asyncoperation.progress < 0.9f)
+            {
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(0.3f);
+            asyncoperation.allowSceneActivation = true;
         }
         
         private void SceneLoadComplete(ulong clientid, string scenename, LoadSceneMode loadscenemode)
         {
-            if (_isSyncing || clientid != NetworkManager.Singleton.LocalClientId) return;
+            if (_isSyncing) return;
+            if (clientid != NetworkManager.Singleton.LocalClientId) return;
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(scenename));
             camObject.SetActive(false);
         }

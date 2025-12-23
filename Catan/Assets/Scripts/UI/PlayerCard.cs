@@ -37,6 +37,7 @@ namespace UI
         private void Update()
         {
             if (!_player) return;
+            nameText.text = _player.PlayerName;
             cardAmountText.text = $"{_player.ResourceCount}";
             cardAmountText.color = _player.ResourceCount > GameManager.MaxCardsOnBandit ? Color.red : Color.white;
             victoryPointsText.text = $"{_player.VictoryPoints}";
@@ -56,7 +57,6 @@ namespace UI
         public void SetPlayer(Player player)
         {
             _player = player;
-            nameText.text = player.OwnerClientId.ToString();
             playerColorImage.color = nameTextImage.color = GameManager.Instance.GetPlayerColor(PlayerId);
         }
         

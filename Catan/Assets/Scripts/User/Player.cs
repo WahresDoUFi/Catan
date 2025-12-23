@@ -3,6 +3,7 @@ using System.Linq;
 using GamePlay;
 using UI;
 using Unity.Netcode;
+using UnityEngine;
 
 namespace User
 {
@@ -16,6 +17,7 @@ namespace User
         public byte Wheat => _wheat.Value;
         public byte Brick => _brick.Value;
         public byte Sheep => _sheep.Value;
+        public string PlayerName => _playerName;
 
         public int VictoryPoints =>
             global::VictoryPoints.CalculateVictoryPoints(OwnerClientId);
@@ -27,10 +29,15 @@ namespace User
         private readonly NetworkVariable<byte> _sheep = new();
         private readonly NetworkVariable<byte> _victoryPoints = new();
 
+        private string _playerName;
+
         public override void OnNetworkSpawn()
         {
             if (IsOwner)
-                LocalPlayer = this;
+            {
+                SetNameRpc(PlayerPrefs.GetString("Nickname"));
+                LocalPlayer = this;   
+            }
 
             _wood.OnValueChanged += ResourceCountChanged;
             _stone.OnValueChanged += ResourceCountChanged;
@@ -113,6 +120,12 @@ namespace User
                 default:
                     return;
             }
+        }
+
+        [Rpc(SendTo.Authority, InvokePermission = RpcInvokePermission.Owner)]
+        private void SetNameRpc(string playerName)
+        {
+            _playerName = playerName;
         }
 
         private void ResourceCountChanged(byte previous, byte current)

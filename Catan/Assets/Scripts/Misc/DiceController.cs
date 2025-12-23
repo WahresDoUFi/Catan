@@ -47,6 +47,7 @@ namespace Misc
         {
             if (CanThrow())
                 CameraController.Instance.EnterOverview();
+            if (!IsHost) return;
             if (_dragging || _throwFinished) return;
             foreach (var die in dice)
             {
@@ -60,6 +61,14 @@ namespace Misc
         {
             _throwFinished = true;
             yield return new WaitForSeconds(stableUntilReset);
+            foreach (var die in dice)
+            {
+                if (!die.Active || !die.Stable)
+                {
+                    _throwFinished = false;
+                    yield break;   
+                }
+            }
             GameManager.Instance.MarkDiceStable();
             Reset();
             _throwFinished = false;

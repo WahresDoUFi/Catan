@@ -60,12 +60,16 @@ namespace UI
         {
             var card = _instance._playerCards.FirstOrDefault(card => card.PlayerId == clientId);
             if (card)
+            {
                 _instance._playerCards.Remove(card);
+                Destroy(card.gameObject);
+            }
         }
 
         private Vector3 GetTargetPosition(int index)
         {
-            float offset = index - ((float)_playerCards.Count / 2f) + 0.5f;
+            float cardCount = _playerCards.Count;
+            float offset = (cardCount - index - 1) - (cardCount / 2f) + 0.5f;
             var targetPosition = Vector3.up * (offset * spacing);
             if (GameManager.Instance.State == GameManager.GameState.Playing &&
                 _playerCards[index].PlayerId == GameManager.Instance.ActivePlayer)

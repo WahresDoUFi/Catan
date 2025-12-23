@@ -1556,14 +1556,14 @@ MonoBehaviour:
   m_text: Player 1
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6793de1e01a314d4fa4d4417c6b063d7, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 5d98bea34fca34939b83d18535ad3d86, type: 2}
+  m_sharedMaterial: {fileID: -8727079910859990971, guid: 6793de1e01a314d4fa4d4417c6b063d7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278393395
+  m_fontColor: {r: 0.2, g: 0.101960786, b: 0.011764706, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
