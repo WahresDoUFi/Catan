@@ -237,9 +237,9 @@ namespace UI
         private void DiscardSelectedCards()
         {
             if (_selectedCards.Count != GameManager.Instance.CardsToDiscard) return;
-            foreach (var card in _selectedCards)
+            foreach (var resource in _selectedCards.Select(card => card.ResourceType))
             {
-                GameManager.Instance.DiscardResource(card.ResourceType);
+                GameManager.Instance.DiscardResource(resource);
             }
             _selectedCards.Clear();
         }
