@@ -237,7 +237,7 @@ namespace GamePlay
         [ClientRpc]
         private void ShowGameOverClientRpc(ulong winnerClientId)
         {
-            gameOverScreen.ShowGameOverScreen(winnerClientId, NetworkManager.Singleton.LocalClientId);
+            gameOverScreen.ShowGameOverScreen(Player.GetPlayerById(winnerClientId));
         }
 
         [Rpc(SendTo.Authority)]

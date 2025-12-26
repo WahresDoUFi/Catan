@@ -2,6 +2,7 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
+using User;
 
 [RequireComponent(typeof(CanvasGroup))]
 public class GameOverScreen : MonoBehaviour
@@ -39,11 +40,11 @@ public class GameOverScreen : MonoBehaviour
         }
     }
 
-    public void ShowGameOverScreen(ulong winnerClientId, ulong ownClientId)
+    public void ShowGameOverScreen(Player winner)
     {
         if (gameOverScreen != null)
         {
-            if (ownClientId == winnerClientId)
+            if (winner.HasAuthority)
             {
                 gameOverText.text = "You won! \nCongratulations!";
                 gameOverImage.sprite = winSprite;
@@ -53,7 +54,7 @@ public class GameOverScreen : MonoBehaviour
             }
             else
             {
-                gameOverText.text = "You lost! Player " + winnerClientId + " won the game!";
+                gameOverText.text = "You lost! Player " + winner.PlayerName + " won the game!";
                 gameOverImage.rectTransform.sizeDelta = (new Vector2(768, 552));
                 gameOverImage.sprite = loseSprite;
             }
