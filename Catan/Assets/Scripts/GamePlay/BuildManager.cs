@@ -16,7 +16,8 @@ namespace GamePlay
         {
             Street,
             Settlement,
-            City
+            City,
+            DevelopmentCard
         }
 
         [Serializable]

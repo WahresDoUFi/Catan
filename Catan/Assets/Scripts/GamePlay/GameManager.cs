@@ -157,6 +157,24 @@ namespace GamePlay
             return street.CanBeBuildBy(clientId);
         }
 
+        public void BuyDevelopmentCard()
+        {
+            BuyDevelopmentCardRpc();
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void BuyDevelopmentCardRpc(RpcParams rpcParams = default)
+        {
+            var player = Player.GetPlayerById(rpcParams.Receive.SenderClientId);
+            var costs = BuildManager.GetCostsForBuilding(BuildManager.BuildType.DevelopmentCard);
+            if (!player.HasResources(costs)) return;
+            foreach (var cost in costs)
+            {
+                player.RemoveResources(cost.resource, cost.amount);
+            }
+            player.BuyDevelopmentCard(RandomDevelopmentCard.Next());
+        }
+
         [Rpc(SendTo.Authority)]
         private void BuySettlementRpc(ulong clientId, int settlementId)
         {

@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
 using UI;
+using UI.DevelopmentCards;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -11,6 +13,7 @@ namespace User
     {
         public static Player LocalPlayer { get; private set; }
         public event Action ResourcesUpdated;
+        public event Action<DevelopmentCard.Type> DevelopmentCardBought;
         public int ResourceCount => _wood.Value + _stone.Value + _wheat.Value + _brick.Value + _sheep.Value;
         public byte Wood => _wood.Value;
         public byte Stone => _stone.Value;
@@ -28,7 +31,9 @@ namespace User
         private readonly NetworkVariable<byte> _brick = new();
         private readonly NetworkVariable<byte> _sheep = new();
         private readonly NetworkVariable<byte> _victoryPoints = new();
+        private readonly NetworkList<byte> _developmentCards = new();
 
+        private readonly List<DevelopmentCard.Type> _boughtCards = new(); 
         private string _playerName;
 
         public override void OnNetworkSpawn()
@@ -54,6 +59,24 @@ namespace User
         public void AddVictoryPoints(byte points)
         {
             _victoryPoints.Value += points;
+        }
+
+        public void BuyDevelopmentCard(DevelopmentCard.Type cardType)
+        {
+            _boughtCards.Add(cardType);
+            DevelopmentCardBought?.Invoke(cardType);
+        }
+
+        public void ConvertBoughtCardsToAvailableOnes()
+        {
+            if (NetworkManager.IsHost)
+            {
+                foreach (var card in _boughtCards)
+                {
+                    _developmentCards.Add((byte)card);
+                }
+            }
+            _boughtCards.Clear();
         }
 
         public bool HasResources(BuildManager.ResourceCosts[] costs)
