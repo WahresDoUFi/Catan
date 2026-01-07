@@ -33,6 +33,7 @@ namespace UI
             if (!GameManager.Instance.IsMyTurn()) return false;
             if (!GameManager.Instance.DiceThrown) return false;
             if (GameManager.Instance.CardLimitActive) return false;
+            if (GameManager.Instance.RepositionBandit) return false;
 
             return true;
         }

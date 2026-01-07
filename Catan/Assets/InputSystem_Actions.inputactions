@@ -582,7 +582,7 @@
                 {
                     "name": "",
                     "id": "bd17bd92-6fe0-4977-8da9-5ae50886cd5c",
-                    "path": "<Pointer>/delta",
+                    "path": "<Mouse>/delta",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -595,7 +595,7 @@
                     "id": "ce3ebb33-d8c1-4e40-b20e-6e5d7fa29a8d",
                     "path": "<Mouse>/scroll",
                     "interactions": "",
-                    "processors": "",
+                    "processors": "ScaleVector2(y=10)",
                     "groups": "",
                     "action": "Zoom",
                     "isComposite": false,

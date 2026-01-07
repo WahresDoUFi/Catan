@@ -1,4 +1,6 @@
 using GamePlay;
+using UI.DevelopmentCards;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +10,7 @@ namespace UI.Trade
     {
         public static TradeMenu Instance;
 
-        public bool IsOpen => _open;
+        public bool IsOpen => _open && CanBeOpened();
 
         [SerializeField] private Button closeButton;
         [SerializeField] private float animationSpeed;
@@ -31,6 +33,7 @@ namespace UI.Trade
         private void Update()
         {
             _rectTransform.anchoredPosition = Vector3.Lerp(_rectTransform.anchoredPosition, GetTargetPosition(), Time.deltaTime * animationSpeed);
+            if (_open && !CanBeOpened()) Close();
         }
 
         public void Open()
@@ -39,14 +42,23 @@ namespace UI.Trade
                 _open = true;
         }
 
-        public void Close()
+        private void Close()
         {
             _open = false;
         }
 
+        private bool CanBeOpened()
+        {
+            if (!GameManager.Instance.DiceThrown) return false;
+            if (DevelopmentCardsDisplay.HasToRevealCard) return false;
+            if (GameManager.Instance.ActivePlayer != NetworkManager.Singleton.LocalClientId) return false;
+            if (GameManager.Instance.RepositionBandit) return false;
+            return true;
+        }
+
         private Vector2 GetTargetPosition()
         {
-            return _open ? _openPosition : _closedPosition;
+            return IsOpen ? _openPosition : _closedPosition;
         }
     }
 }

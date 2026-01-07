@@ -19,7 +19,7 @@ namespace Misc
         public Vector3 Position => _rigidbody.position;
         public Vector3 Rotation => _rigidbody.rotation.eulerAngles;
         public Vector3 Velocity => _rigidbody.linearVelocity;
-        public bool Stable => _realVelocity.sqrMagnitude < 0.01f;
+        public bool Stable => _realVelocity.sqrMagnitude < 0.05f;
         public bool Active => _rigidbody.isKinematic == false;
         
         [SerializeField] private float gravity;

@@ -12,6 +12,10 @@ namespace User
         private void Awake()
         {
             _input = new InputSystem_Actions();
+        }
+
+        private void Start()
+        {
             SetupCameraInputs();
             SetupClickInputs();
             SetupPlayerInputs();
@@ -37,6 +41,7 @@ namespace User
             _input.UI.Click.performed += _ => DiceController.Instance.BeginDrag();
             _input.UI.Click.canceled += _ => DiceController.Instance.ReleaseDice();
             _input.UI.Click.performed += _ => BuildManager.ConfirmPosition();
+            _input.UI.Click.performed += _ => Bandit.Instance.ClickPerformed();
         }
 
         private void SetupPlayerInputs()

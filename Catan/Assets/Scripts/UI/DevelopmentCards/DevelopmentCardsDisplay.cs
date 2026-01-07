@@ -1,14 +1,27 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using GamePlay;
+using UI.Trade;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using User;
 
 namespace UI.DevelopmentCards
 {
-    public class DevelopmentCardsDisplay : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+    public class DevelopmentCardsDisplay : MonoBehaviour, IHoverable
     {
-        private bool IsHovered => _hovering && GameManager.Instance.IsMyTurn() && GameManager.Instance.DiceThrown;
+        public static event Action CardRevealed;
+        public static bool HasToRevealCard { get; private set; }
+
+        private static DevelopmentCardsDisplay _instance;
+
+        private bool IsHovered => _hovering &&
+            GameManager.Instance.IsMyTurn() &&
+            GameManager.Instance.DiceThrown &&
+            !HasToRevealCard &&
+            !GameManager.Instance.RepositionBandit &&
+            !_moving;
         
         [SerializeField] private float hoverScale;
         [SerializeField] private float scaleSpeed;
@@ -17,11 +30,14 @@ namespace UI.DevelopmentCards
         [SerializeField] private float cardAdjustSpeed;
         [SerializeField] private float cardTargetScale;
         [SerializeField] private float cardSpacing;
+        [SerializeField] private Transform cardParentTransform;
         [SerializeField] private Transform boughtCardsParent;
         [SerializeField] private Transform availableCardsParent;
         [SerializeField] private GameObject developmentCardPrefab;
         [SerializeField] private Transform centerPosition;
-        
+        [SerializeField] private Transform cardSpawnPosition;
+
+        private bool _moving;
         private bool _hovering;
         private RectTransform _rectTransform;
         private Vector3 _defaultPosition;
@@ -30,12 +46,25 @@ namespace UI.DevelopmentCards
   
         private void Awake()
         {
+            _instance = this;
             _rectTransform = GetComponent<RectTransform>();
         }
 
         private void Start()
         {
             _defaultPosition = _rectTransform.anchoredPosition;
+            Player.LocalPlayer.DevelopmentCardBought += DevelopmentCardBought;
+            GameManager.Instance.TurnChanged += TurnChanged;
+        }
+
+        private void TurnChanged()
+        {
+            _availableDevelopmentCards.AddRange(_boughtDevelopmentCards);
+            foreach (var card in _boughtDevelopmentCards)
+            {
+                card.Scale = cardTargetScale;
+            }
+            _boughtDevelopmentCards.Clear();
         }
 
         private void Update()
@@ -46,20 +75,22 @@ namespace UI.DevelopmentCards
             UpdateAvailableCards();
         }
 
-        public void Open()
+        public static void Open()
         {
-            StartCoroutine(AnimatePosition(_defaultPosition, moveTime));
+            _instance.StartCoroutine(_instance.AnimatePosition(_instance._defaultPosition, _instance.moveTime));
         }
 
-        public void Close()
+        public IEnumerator Close()
         {
-            StartCoroutine(AnimatePosition(_defaultPosition + closedOffset, moveTime));
+            yield return AnimatePosition(_defaultPosition + closedOffset, moveTime);
+            DevelopmentCardsMenu.Open();
         }
 
         private IEnumerator AnimatePosition(Vector3 to, float duration)
         {
             var t = 0f;
             var startPos = _rectTransform.anchoredPosition;
+            _moving = true;
             while (t < duration)
             {
                 t += Time.deltaTime;
@@ -67,6 +98,7 @@ namespace UI.DevelopmentCards
                 yield return null;
             }
             _rectTransform.anchoredPosition = to;
+            _moving = false;
         }
 
         private float GetScale()
@@ -80,8 +112,8 @@ namespace UI.DevelopmentCards
 
         private void UpdateBoughtCards()
         {
-            int cardCount = _boughtDevelopmentCards.Count;
-            for (var i = 0; i < cardCount; i++)
+            int cardCount = _boughtDevelopmentCards.Count(card => card.Revealed);
+            for (var i = 0; i < _boughtDevelopmentCards.Count; i++)
             {
                 var card = _boughtDevelopmentCards[i];
                 if (card.Revealed)
@@ -93,7 +125,6 @@ namespace UI.DevelopmentCards
                 {
                     card.transform.position = Vector3.Lerp(card.transform.position, centerPosition.position,
                         cardAdjustSpeed * Time.deltaTime);
-                    card.Scale = Mathf.Lerp(card.Scale, 1f, Time.deltaTime * cardAdjustSpeed);
                 }
             }
         }
@@ -110,24 +141,40 @@ namespace UI.DevelopmentCards
         private void UpdateCardPosition(Transform cardTransform, int index, int cardCount, Transform parent)
         {
             float offset = index - (cardCount / 2f) + 0.5f;
-            var targetPosition = boughtCardsParent.position;
+            var targetPosition = parent.position + Vector3.right * (offset * cardSpacing);
             cardTransform.position =
                 Vector3.Lerp(cardTransform.position, targetPosition, Time.deltaTime * cardAdjustSpeed);
         }
 
-        public void OnPointerEnter(PointerEventData eventData)
+        private void DevelopmentCardBought(DevelopmentCard.Type type)
         {
-            _hovering = true;
+            var card = Instantiate(developmentCardPrefab, cardParentTransform).GetComponent<DevelopmentCard>();
+            card.transform.position = cardSpawnPosition.position;
+            card.SetType(type);
+            _boughtDevelopmentCards.Add(card);
+            card.CardClicked += BoughtCardClicked;
+            HasToRevealCard = true;
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        private void BoughtCardClicked(DevelopmentCard card)
         {
-            _hovering = true;
+            if (Vector3.Distance(card.transform.position, centerPosition.position) < 5f)
+            {
+                card.RevealCard(CardRevealed);
+                card.CardClicked -= BoughtCardClicked;
+                HasToRevealCard = false;
+            }
         }
 
-        public void OnPointerClick(PointerEventData eventData)
+        public void HoverUpdated(bool hovering)
         {
-            //  open menu
+            _hovering = hovering;
+        }
+
+        public void Clicked()
+        {
+            if (IsHovered)
+                StartCoroutine(Close());
         }
     }
 }

@@ -1,3 +1,4 @@
+using GamePlay;
 using TMPro;
 using UI;
 using Unity.Netcode;
@@ -8,6 +9,9 @@ public class MapTile : NetworkBehaviour
     private static readonly Color HighOddsTileColor = Color.red;
     public Tile TileType => (Tile)_tileType.Value;
     public int Number => _number.Value;
+    public bool Discovered => _discovered.Value;
+    public bool Blocked { get; private set; }
+    public Transform BanditPosition => _banditPosition;
     
     private readonly NetworkVariable<bool> _discovered = new();
     private readonly NetworkVariable<int> _tileType = new(-1);
@@ -16,6 +20,7 @@ public class MapTile : NetworkBehaviour
     [SerializeField] private Transform tileParent;
     [SerializeField] private GameObject hiddenTile;
     [SerializeField] private GameObject numberTextPrefab;
+    [SerializeField] private Color blockedColor;
     
     private MapIcon _mapIcon;
     private GameObject _numberText;
@@ -30,6 +35,7 @@ public class MapTile : NetworkBehaviour
         if (_discovered.Value == false) fog.Play();
         hiddenTile.SetActive(_discovered.Value == false);
         UpdateTile();
+        Bandit.Instance.BanditMoved += BanditMoved;
     }
 
     private void UpdateTile()
@@ -47,6 +53,8 @@ public class MapTile : NetworkBehaviour
     public void SetType(Tile tile)
     {
         _tileType.Value = (int)tile;
+        if (tile == Tile.Desert)
+            Bandit.Instance.SetInitialTile(this);
     }
 
     public void SetNumber(int number)
@@ -84,14 +92,27 @@ public class MapTile : NetworkBehaviour
             fog.Stop();
             if (_tileType.Value != (int)Tile.Desert)
             {
-                _mapIcon = MapIconManager.AddIcon(transform, IconType.Tile, Color.black);
+                _mapIcon = MapIconManager.AddIcon(transform, IconType.Tile, Blocked ? blockedColor : Color.black);
                 _numberText.transform.SetParent(_mapIcon.transform, false);
                 _numberText.SetActive(true);   
             }
+            if (Blocked)
+                Bandit.Instance.Show();
         }
         else
         {
             fog.Play();   
+        }
+    }
+
+    private void BanditMoved(MapTile targetTile)
+    {
+        Blocked = targetTile == this;
+        if (TileType == Tile.Desert) return;
+        if (_mapIcon != null)
+        {
+            _mapIcon.SetColor(Blocked ? blockedColor : Color.black);
+            _mapIcon.Alpha = Blocked ? blockedColor.a : 1f;
         }
     }
 }

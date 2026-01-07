@@ -63,8 +63,10 @@ namespace User
 
         public void BuyDevelopmentCard(DevelopmentCard.Type cardType)
         {
-            _boughtCards.Add(cardType);
-            DevelopmentCardBought?.Invoke(cardType);
+            if (IsServer)
+            {
+                DevelopmentCardBoughtRpc((byte)cardType);
+            }
         }
 
         public void ConvertBoughtCardsToAvailableOnes()
@@ -143,6 +145,14 @@ namespace User
                 default:
                     return;
             }
+        }
+
+        [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Server)]
+        private void DevelopmentCardBoughtRpc(byte card)
+        {
+            var cardType = (DevelopmentCard.Type)card;
+            _boughtCards.Add(cardType);
+            DevelopmentCardBought?.Invoke(cardType);
         }
 
         [Rpc(SendTo.Authority, InvokePermission = RpcInvokePermission.Owner)]

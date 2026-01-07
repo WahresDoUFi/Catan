@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Linq;
+using TMPro;
+using UI.DevelopmentCards;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +25,7 @@ namespace GamePlay
         [Serializable]
         public struct BuildCosts
         {
+            public string name;
             public BuildType type;
             public ResourceCosts[] costs;
         }
@@ -59,9 +62,14 @@ namespace GamePlay
         public static bool BuildModeActive => _instance._buildModeActive;
         public static BuildType ActiveBuildType => _instance._buildType;
 
-        [SerializeField] private Button cancelButton;
         [SerializeField] private BuildCosts[] costs;
-        
+
+        [Header("BuildMode Display")]
+        [SerializeField] private RectTransform buildModeDisplay;
+        [SerializeField] private TextMeshProUGUI buildModeText;
+        [SerializeField] private float buildModeExtraWidth;
+        [SerializeField] private Button cancelButton;
+
         [Header("Music")]
         [SerializeField] private VolumeController buildModeMusic;
         [SerializeField] private float defaultVolume = 0.1f;
@@ -78,6 +86,7 @@ namespace GamePlay
             _instance = this;
             cancelButton.onClick.AddListener(() => SetActive(false));
             _mainCam = Camera.main;
+            SetActive(false);
         }
 
         private void Update()
@@ -106,8 +115,9 @@ namespace GamePlay
 
         public static void SetActive(bool active)
         {
+            _instance.cancelButton.gameObject.SetActive(GameManager.Instance.State == GameManager.GameState.Playing);
             _instance._buildModeActive = active;
-            _instance.cancelButton.gameObject.SetActive(active);
+            _instance.buildModeDisplay.gameObject.SetActive(active);
             if (active)
             {
                 CameraController.Instance.EnterOverview();
@@ -123,7 +133,12 @@ namespace GamePlay
 
         public static void SelectBuildingType(BuildType buildType)
         {
+            if (DevelopmentCardsDisplay.HasToRevealCard) return;
             _instance._buildType = buildType;
+            _instance.buildModeText.text = GetNameForBuildType(buildType);
+            var size = _instance.buildModeDisplay.sizeDelta;
+            size.x = _instance.buildModeText.GetPreferredValues().x + _instance.buildModeExtraWidth;
+            _instance.buildModeDisplay.sizeDelta = size;
             SetActive(true);
         }
 
@@ -134,6 +149,11 @@ namespace GamePlay
                 _instance.PlaceStreet();
             else if (_instance._buildType == BuildType.Settlement)
                 _instance.PlaceSettlement();
+        }
+
+        private static string GetNameForBuildType(BuildType buildType)
+        {
+            return _instance.costs.FirstOrDefault(cost => cost.type == buildType).name;
         }
 
         private void PlaceSettlement()

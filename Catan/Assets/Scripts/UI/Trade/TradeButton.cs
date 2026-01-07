@@ -41,6 +41,7 @@ namespace UI.Trade
                 TradeMenu.Instance.Open();
             else
                 TradeWindow.Open();
+            BuildManager.SetActive(false);
         }
 
         private static bool IsAvailable()
@@ -48,6 +49,7 @@ namespace UI.Trade
             if (GameManager.Instance.State != GameManager.GameState.Playing) return false;
             if (!GameManager.Instance.DiceThrown) return false;
             if (GameManager.Instance.CardLimitActive) return false;
+            if (GameManager.Instance.RepositionBandit) return false;
             return true;
         }
 

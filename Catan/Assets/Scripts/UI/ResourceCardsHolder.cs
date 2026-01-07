@@ -11,7 +11,7 @@ namespace UI
 {
     public class ResourceCardsHolder : MonoBehaviour
     {
-        private float VerticalOffset => BuildManager.BuildModeActive || GameManager.Instance.CanThrowDice() ? hiddenOffset : 0f;
+        private float VerticalOffset => IsCardsVisible() == false ? hiddenOffset : 0f;
         
         [SerializeField] private GameObject cardPrefab;
         [SerializeField] private float maxCardTilt;
@@ -242,6 +242,14 @@ namespace UI
                 GameManager.Instance.DiscardResource(resource);
             }
             _selectedCards.Clear();
+        }
+
+        private bool IsCardsVisible()
+        {
+            if (BuildManager.BuildModeActive) return false;
+            if (GameManager.Instance.CanThrowDice()) return false;
+            if (GameManager.Instance.RepositionBandit && GameManager.Instance.IsMyTurn()) return false;
+            return true;
         }
     }
 }

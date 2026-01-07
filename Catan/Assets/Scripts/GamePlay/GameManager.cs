@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Misc;
@@ -40,7 +41,9 @@ namespace GamePlay
         public bool IsGameOver => gameOverScreen.gameObject.activeSelf;
         public bool CardLimitActive => _cardsToDiscard.AsNativeArray().Any(cards => cards > 0);
         public int CardsToDiscard => _cardsToDiscard[LocalPlayerIndex];
+        public bool RepositionBandit => _repositionBandit.Value;
         private int LocalPlayerIndex => Mathf.Max(0, _playerIds.IndexOf(NetworkManager.LocalClientId));
+        public event Action TurnChanged;
 
         [SerializeField] private Color[] playerColors;
         [SerializeField] private GameOverScreen gameOverScreen;
@@ -49,6 +52,7 @@ namespace GamePlay
         private readonly NetworkVariable<byte> _playerTurn = new();
         private readonly NetworkList<ulong> _playerIds = new();
         private readonly NetworkVariable<bool> _hasThrownDice = new();
+        private readonly NetworkVariable<bool> _repositionBandit = new();
         private readonly NetworkVariable<byte> _roundNumber = new();
         private readonly NetworkVariable<int> _seed = new();
         private readonly NetworkTradeInfoVariable _playerTrades = new();
@@ -93,6 +97,7 @@ namespace GamePlay
             _playerTurn.OnValueChanged += (_, _) => PlayerTurnChange();
             _hasThrownDice.OnValueChanged += HasThrownDiceChange;
             _playerTrades.OnValueChanged += AvailableTradesMenu.UpdateAvailableTrades;
+            _repositionBandit.OnValueChanged += RepositionBanditChange;
         }
 
         public override void OnNetworkDespawn()
@@ -159,7 +164,29 @@ namespace GamePlay
 
         public void BuyDevelopmentCard()
         {
+            var costs = BuildManager.GetCostsForBuilding(BuildManager.BuildType.DevelopmentCard);
+            if (!Player.LocalPlayer.HasResources(costs)) return;
             BuyDevelopmentCardRpc();
+        }
+
+        public void SetBanditTile(MapTile tile)
+        {
+            if (tile.Discovered == false) return;
+            SetBanditTileRpc(tile);
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void SetBanditTileRpc(NetworkBehaviourReference reference, RpcParams rpcparams = default)
+        {
+            if (RepositionBandit == false) return;
+            var senderId = rpcparams.Receive.SenderClientId;
+            if (ActivePlayer != senderId) return;
+            if (!reference.TryGet(out var tileObject)) return;
+            var tile = tileObject.GetComponent<MapTile>();
+            if (tile == null) return;
+            if (tile.Discovered == false) return;
+            Bandit.Instance.SetTargetTile(tile);
+            _repositionBandit.Value = false;
         }
 
         [Rpc(SendTo.Authority)]
@@ -407,6 +434,7 @@ namespace GamePlay
                         _cardsToDiscard[i] = (byte)Mathf.FloorToInt(cardCount / 2f);
                     }
                 }
+                _repositionBandit.Value = true;
                 return;
             }
             foreach (var settlement in Settlement.AllSettlements)
@@ -414,7 +442,7 @@ namespace GamePlay
                 if (!settlement.IsOccupied) continue;
                 foreach (var tile in settlement.FindNeighboringTiles())
                 {
-                    if (tile.Number == number)
+                    if (!tile.Blocked && tile.Number == number)
                     {
                         Player.GetPlayerById(settlement.Owner).AddResources(tile.TileType, settlement.Level);
                     }
@@ -441,10 +469,16 @@ namespace GamePlay
 
         private void PlayerTurnChange()
         {
-            TradeMenu.Instance.Close();
             TradeWindow.Close();
             DiceController.Instance.Reset();
             PlayerCardList.RollDice(ActivePlayer);
+            TurnChanged?.Invoke();
+        }
+
+        private void RepositionBanditChange(bool previousValue, bool newValue)
+        {
+            if (newValue && IsMyTurn())
+                CameraController.Instance.EnterOverview();
         }
 
         private void OnClientConnectionStatusChange(ulong clientId,

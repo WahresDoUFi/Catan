@@ -79,7 +79,11 @@ namespace Networking
         {
             SetButtonsActive(false);
             string code = joinCodeInput.text;
-            if (string.IsNullOrEmpty(code)) return;
+            if (string.IsNullOrEmpty(code))
+            {
+                SetButtonsActive(true);
+                return;
+            }
             if (!await StartClientWithRelay(code, "dtls"))
                 Debug.LogWarning("Could not start client");
             SetButtonsActive(true);

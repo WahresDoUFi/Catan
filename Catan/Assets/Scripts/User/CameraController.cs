@@ -1,8 +1,10 @@
 using GamePlay;
 using UI;
+using UI.DevelopmentCards;
 using UI.Trade;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 namespace User
 {
@@ -34,6 +36,10 @@ namespace User
         private Vector3 _previousPosition;
         private Camera _camera;
 
+        //  input data
+        private Vector2 _moveInput;
+        private float _scrollInput;
+
         private void Awake()
         {
             Instance = this;
@@ -46,9 +52,9 @@ namespace User
 
         private void Update()
         {
-            transform.position = Vector3.Lerp(transform.position, _targetPosition, Time.deltaTime * cameraLerpSpeed);
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(TargetRotation),
-                Time.deltaTime * cameraLerpSpeed);
+            PerformMove();
+            PerformZoom();
+            UpdatePosition();
         }
 
         public void EnterOverview(bool isToggle = false)
@@ -58,37 +64,60 @@ namespace User
 
         public void Move(Vector2 input)
         {
-            if (!CanMove()) return;
-            if (Mouse.current.leftButton.isPressed)
-            {
-                _targetPosition -= Right * input.x * Speed;
-                _targetPosition -= Forward * input.y * Speed;
-                float height = _targetPosition.y;
-                var clampedPosition =
-                    Vector3.ClampMagnitude(Vector3.ProjectOnPlane(_targetPosition, Vector3.up), maxDistance);
-                clampedPosition.y = height;
-                _targetPosition = clampedPosition;
-                _previousPosition = _targetPosition;
-            }
-            else if (Mouse.current.rightButton.isPressed)
-            {
-                float tilt = _targetTilt - input.y;
-                tilt = Mathf.Clamp(tilt, tiltLimit.x, tiltLimit.y);
-                _targetTilt = tilt;
-
-                float rotation = _targetRotation + input.x;
-                rotation %= 360f;
-                _targetRotation = rotation;
-            }
+            _moveInput = input;
         }
 
         public void Zoom(float input)
         {
-            if (GameManager.Instance.IsGameOver) return;
-            var targetHeight = _targetPosition.y - input;
-            targetHeight = Mathf.Clamp(targetHeight, heightLimit.x, heightLimit.y);
-            _targetPosition.y = targetHeight;
-            _previousPosition = _targetPosition;
+            _scrollInput = input;
+        }
+
+        private void PerformMove()
+        {
+            if (CanMove())
+            {
+                if (Mouse.current.leftButton.isPressed)
+                {
+                    _targetPosition -= Right * (_moveInput.x * Speed * Time.deltaTime);
+                    _targetPosition -= Forward * (_moveInput.y * Speed * Time.deltaTime);
+                    float height = _targetPosition.y;
+                    var clampedPosition =
+                        Vector3.ClampMagnitude(Vector3.ProjectOnPlane(_targetPosition, Vector3.up), maxDistance);
+                    clampedPosition.y = height;
+                    _targetPosition = clampedPosition;
+                    _previousPosition = _targetPosition;
+                }
+                else if (Mouse.current.rightButton.isPressed)
+                {
+                    float tilt = _targetTilt - _moveInput.y;
+                    tilt = Mathf.Clamp(tilt, tiltLimit.x, tiltLimit.y);
+                    _targetTilt = tilt;
+
+                    float rotation = _targetRotation + _moveInput.x;
+                    rotation %= 360f;
+                    _targetRotation = rotation;
+                }
+            }
+            _moveInput = Vector2.zero;
+        }
+
+        private void UpdatePosition()
+        {
+            transform.position = Vector3.Lerp(transform.position, _targetPosition, Time.deltaTime * cameraLerpSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(TargetRotation),
+                Time.deltaTime * cameraLerpSpeed);
+        }
+
+        private void PerformZoom()
+        {
+            if (CanMove())
+            {
+                var targetHeight = _targetPosition.y - _scrollInput;
+                targetHeight = Mathf.Clamp(targetHeight, heightLimit.x, heightLimit.y);
+                _targetPosition.y = targetHeight;
+                _previousPosition = _targetPosition;
+            }
+            _scrollInput = 0f;
         }
 
         public Vector3 MouseWorldPosition(float offset = 0)
@@ -98,6 +127,17 @@ namespace User
             return _camera.ScreenToWorldPoint(mousePos);
         }
 
+        public GameObject Raycast(LayerMask mask, float offset = 0f)
+        {
+            var targetPos = MouseWorldPosition(offset);
+            var direction = targetPos - transform.position;
+            if (Physics.Raycast(transform.position, direction.normalized, out RaycastHit hit, float.MaxValue, mask))
+            {
+                return hit.collider.gameObject;
+            }
+            return null;
+        }
+
         private bool CanMove()
         {
             if (BuildManager.BuildModeActive) return false;
@@ -105,6 +145,9 @@ namespace User
             if (TradeMenu.Instance.IsOpen) return false;
             if (PauseMenu.IsOpen) return false;
             if (GameManager.Instance.IsGameOver) return false;
+            if (DevelopmentCardsDisplay.HasToRevealCard) return false;
+            if (DevelopmentCardsMenu.IsOpen) return false;
+            if (GameManager.Instance.RepositionBandit) return false;
             return true;
         }
     }

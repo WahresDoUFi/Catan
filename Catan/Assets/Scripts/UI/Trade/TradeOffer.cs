@@ -4,6 +4,7 @@ using GamePlay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using User;
 
 namespace UI.Trade
 {
@@ -25,7 +26,7 @@ namespace UI.Trade
         public void Initialize(int id, TradeInfo trade)
         {
             _tradeId = id;
-            senderName.text = trade.SenderId.ToString();
+            senderName.text = Player.GetPlayerById(trade.SenderId).PlayerName;
             AddResourceIcons(trade.ReceiveResources, payItemsParent);
             AddResourceIcons(trade.SendResources, receiveItemsParent);
         }
