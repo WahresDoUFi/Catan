@@ -32,6 +32,7 @@ namespace User
         private readonly NetworkVariable<byte> _sheep = new();
         private readonly NetworkVariable<byte> _victoryPoints = new();
         private readonly NetworkList<byte> _developmentCards = new();
+        private readonly NetworkList<byte> _freeBuildings = new();
 
         private readonly List<DevelopmentCard.Type> _boughtCards = new(); 
         private string _playerName;
@@ -79,6 +80,27 @@ namespace User
                 }
             }
             _boughtCards.Clear();
+        }
+
+        public bool CanAfford(BuildManager.BuildType building)
+        {
+            if (_freeBuildings.Contains((byte)building)) return true;
+            else return HasResources(BuildManager.GetCostsForBuilding(building));
+        }
+
+        public void Purchase(BuildManager.BuildType building)
+        {
+            if (_freeBuildings.Contains((byte)building))
+            {
+                _freeBuildings.Remove((byte)building);
+                return;
+            }
+            var costs = BuildManager.GetCostsForBuilding(building);
+            if (!HasResources(costs)) return;
+            foreach (var cost in costs)
+            {
+                RemoveResources(cost.resource, cost.amount);
+            }
         }
 
         public bool HasResources(BuildManager.ResourceCosts[] costs)
@@ -145,6 +167,35 @@ namespace User
                 default:
                     return;
             }
+        }
+
+        /// <summary>
+        /// Give player buildings for free, that they have to immediately place
+        /// </summary>
+        /// <param name="type">The building to place</param>
+        /// <param name="amount">default 1, how many of that type</param>
+        public void AddFreeBuilding(BuildManager.BuildType type, int amount = 1)
+        {
+            if (!IsHost) return;
+            for (var i = 0; i < amount; i++)
+            {
+                _freeBuildings.Add((byte)type);
+            }
+        }
+
+        public bool HasFreeBuildings()
+        {
+            return _freeBuildings.Count > 0;
+        }
+
+        public BuildManager.BuildType[] AvailableBuildings()
+        {
+            var result = new BuildManager.BuildType[_freeBuildings.Count];
+            for (var i = 0; i < result.Length; i++)
+            {
+                result[i] = (BuildManager.BuildType)_freeBuildings[i];
+            }
+            return result;
         }
 
         [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Server)]

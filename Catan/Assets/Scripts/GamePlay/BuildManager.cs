@@ -115,7 +115,7 @@ namespace GamePlay
 
         public static void SetActive(bool active)
         {
-            _instance.cancelButton.gameObject.SetActive(GameManager.Instance.State == GameManager.GameState.Playing);
+            _instance.cancelButton.gameObject.SetActive(!Player.LocalPlayer.HasFreeBuildings());
             _instance._buildModeActive = active;
             _instance.buildModeDisplay.gameObject.SetActive(active);
             if (active)

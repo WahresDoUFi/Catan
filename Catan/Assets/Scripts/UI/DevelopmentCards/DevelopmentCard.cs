@@ -22,6 +22,7 @@ namespace UI.DevelopmentCards
         public bool IsHovered => _isHovering;
         public bool Revealed { get; private set; }
         public Type CardType { get; private set; }
+        public RectTransform Rect;
 
         public float Scale
         {
@@ -35,6 +36,11 @@ namespace UI.DevelopmentCards
         [SerializeField] private float revealFinishDelay;
 
         private bool _isHovering;
+
+        private void Awake()
+        {
+            Rect = GetComponent<RectTransform>();
+        }
 
         public void SetType(Type type, bool revealed = false)
         {

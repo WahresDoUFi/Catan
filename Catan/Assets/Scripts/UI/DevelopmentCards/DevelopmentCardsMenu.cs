@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 using User;
 
@@ -31,6 +32,7 @@ namespace UI.DevelopmentCards
         [SerializeField] private float cardScale;
         [SerializeField] private Transform boughtCardsListTransform;
         [SerializeField] private Transform availableCardsListTransform;
+        [SerializeField] private Tooltip cardTooltip;
         [SerializeField] private CardDescription[] cardDescriptions;
 
         private CanvasGroup _canvasGroup;
@@ -47,6 +49,12 @@ namespace UI.DevelopmentCards
             signRect.anchoredPosition = defaultPosition + Vector2.up * closedOffset;
             _canvasGroup.interactable = false;
             _canvasGroup.blocksRaycasts = false;
+        }
+
+        private void Update()
+        {
+            if (IsOpen)
+                CheckForCardHover();
         }
 
         private void Start()
@@ -96,6 +104,29 @@ namespace UI.DevelopmentCards
             card.SetType(type, true);
             card.Scale = cardScale;
             _boughtCards.Add(card);
+        }
+
+        private void CheckForCardHover()
+        {
+            foreach (var card in _availableCards)
+            {
+                if (UpdateCardTooltip(card)) return;
+            }
+            foreach (var card in _boughtCards)
+            {
+                if (UpdateCardTooltip(card)) return;
+            }
+            cardTooltip.gameObject.SetActive(false);
+        }
+
+        private bool UpdateCardTooltip(DevelopmentCard card)
+        {
+            if (card.IsHovered)
+            {
+                cardTooltip.SetTooltip(card.Rect, GetDescription(card.CardType));
+                return true;
+            }
+            return false;
         }
 
         private void TurnChanged()

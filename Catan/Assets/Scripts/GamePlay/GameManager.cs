@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Misc;
 using UI;
+using UI.DevelopmentCards;
 using UI.Trade;
 using Unity.Netcode;
 using UnityEngine;
@@ -65,9 +66,18 @@ namespace GamePlay
 
         private void Update()
         {
+            HandleFreeBuildingSelection();
+            if (!IsHost) return;
             if (State == GameState.Preparing)
             {
-                HandleInitialPlacement();
+                if (!Player.GetPlayerById(ActivePlayer).HasFreeBuildings())
+                {
+                    NextTurn();
+                    if (_roundNumber.Value > 2)
+                        FinishStartingPhase();
+                    else
+                        GrantFreeBuildings();
+                }
             }
         }
 
@@ -145,7 +155,7 @@ namespace GamePlay
         {
             if (!settlement) return false;
             if (State == GameState.Playing &&
-                !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Settlement)))
+                !Player.LocalPlayer.CanAfford(BuildManager.BuildType.Settlement))
                 return false;
             ulong clientId = NetworkManager.Singleton.LocalClientId;
             BuySettlementRpc(NetworkManager.Singleton.LocalClientId, settlement.Id);
@@ -156,7 +166,7 @@ namespace GamePlay
         {
             if (!street) return false;
             if (State == GameState.Playing &&
-                !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Street)))
+                !Player.LocalPlayer.CanAfford(BuildManager.BuildType.Street))
                 return false;
             ulong clientId = NetworkManager.Singleton.LocalClientId;
             BuyStreetRpc(clientId, street.Id);
@@ -208,18 +218,10 @@ namespace GamePlay
         {
             var settlement = Settlement.AllSettlements[settlementId];
             if (!settlement.CanBeBuildBy(clientId)) return;
+            var player = Player.GetPlayerById(clientId);
 
-            if (State == GameState.Playing)
-            {
-                var player = Player.GetPlayerById(clientId);
-                var costs = BuildManager.GetCostsForBuilding(BuildManager.BuildType.Settlement);
-                if (!player.HasResources(costs))
-                    return;
-                foreach (var cost in costs)
-                {
-                    player.RemoveResources(cost.resource, cost.amount);
-                }
-            }
+            if (!player.CanAfford(BuildManager.BuildType.Settlement)) return;
+            player.Purchase(BuildManager.BuildType.Settlement);
 
             settlement.Build(clientId);
             if (State != GameState.Playing) return;
@@ -234,27 +236,12 @@ namespace GamePlay
         {
             var street = Street.AllStreets[streetId];
             if (!street.CanBeBuildBy(clientId)) return;
+            var player = Player.GetPlayerById(clientId);
 
-            if (State == GameState.Playing)
-            {
-                var player = Player.GetPlayerById(clientId);
-                var costs = BuildManager.GetCostsForBuilding(BuildManager.BuildType.Street);
-                if (!player.HasResources(costs)) return;
-                foreach (var cost in costs)
-                {
-                    player.RemoveResources(cost.resource, cost.amount);
-                }
-            }
+            if (!player.CanAfford(BuildManager.BuildType.Street)) return;
+            player.Purchase(BuildManager.BuildType.Street);
 
             street.SetOwner(clientId);
-            if (State == GameState.Preparing)
-            {
-                NextTurn();
-                if (_roundNumber.Value > 2)
-                {
-                    FinishStartingPhase();
-                }
-            }
         }
 
         public void TradeResources(Tile give, Tile get)
@@ -360,6 +347,8 @@ namespace GamePlay
         {
             _gameState.Value = (byte)GameState.Preparing;
             _roundNumber.Value = 1;
+
+            GrantFreeBuildings();
         }
 
         public void DiscardResource(Tile resource)
@@ -395,6 +384,13 @@ namespace GamePlay
                 PlayerTurnChange();
         }
 
+        private void GrantFreeBuildings()
+        {
+            var player = Player.GetPlayerById(ActivePlayer);
+            player.AddFreeBuilding(BuildManager.BuildType.Settlement);
+            player.AddFreeBuilding(BuildManager.BuildType.Street);
+        }
+
         private void FinishStartingPhase()
         {
             _gameState.Value = (byte)GameState.Playing;
@@ -410,12 +406,11 @@ namespace GamePlay
             PlayerCardList.RollDice(ActivePlayer);
         }
 
-        private void HandleInitialPlacement()
+        private void HandleFreeBuildingSelection()
         {
             if (!IsMyTurn()) return;
-            BuildManager.SelectBuildingType(Player.LocalPlayer.VictoryPoints < _roundNumber.Value
-                ? BuildManager.BuildType.Settlement
-                : BuildManager.BuildType.Street);
+            if (!Player.LocalPlayer.HasFreeBuildings()) return;
+            BuildManager.SelectBuildingType(Player.LocalPlayer.AvailableBuildings()[0]);
         }
 
         private void HasThrownDiceChange(bool previous, bool current)
@@ -475,6 +470,7 @@ namespace GamePlay
         {
             BuildManager.SetActive(false);
             DiceController.Instance.Reset();
+            DevelopmentCardsDisplay.Open();
         }
 
         private void PlayerTurnChange()
@@ -534,6 +530,8 @@ namespace GamePlay
                 SceneManager.LoadSceneAsync(0, LoadSceneMode.Additive),
                 SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene()));
             NetworkManager.Singleton.OnClientStopped -= OnClientStopped;
+            enabled = false;
+            Camera.main.gameObject.SetActive(false);
         }
     }
 }

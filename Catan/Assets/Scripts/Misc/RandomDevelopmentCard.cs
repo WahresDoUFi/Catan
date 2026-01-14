@@ -13,7 +13,7 @@ namespace Misc
         //private const float HangedKnightsChance = 0.08f;
         
         /// <summary>
-        /// Returns a random development card with the odds defined in the const values above
+        /// Returns a random development card with the odds defined by the const values in this class
         /// </summary>
         /// <returns>DevelopmentCard.Type</returns>
         public static DevelopmentCard.Type Next()

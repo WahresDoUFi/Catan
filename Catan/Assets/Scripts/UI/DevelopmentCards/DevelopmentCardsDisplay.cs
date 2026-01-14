@@ -53,6 +53,7 @@ namespace UI.DevelopmentCards
         private void Start()
         {
             _defaultPosition = _rectTransform.anchoredPosition;
+            _rectTransform.anchoredPosition = _defaultPosition + closedOffset;
             Player.LocalPlayer.DevelopmentCardBought += DevelopmentCardBought;
             GameManager.Instance.TurnChanged += TurnChanged;
         }

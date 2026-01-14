@@ -12,7 +12,9 @@ namespace Misc
     public class DiceController : NetworkBehaviour
     {
         public static DiceController Instance;
-        
+
+        public bool HasThrown { get; private set; }
+
         [SerializeField] private Dice[] dice;
         [SerializeField] private float followSpeed;
         [SerializeField] private float stiffness;
@@ -20,7 +22,6 @@ namespace Misc
         [SerializeField] private float stableUntilReset;
         
         private bool _dragging;
-        private bool _hasThrown;
         private Coroutine _markDiceStableCoroutine;
         private bool _throwFinished;
         
@@ -76,14 +77,14 @@ namespace Misc
 
         private bool CanThrow()
         {
-            if (_hasThrown) return false;
+            if (HasThrown) return false;
             if (PauseMenu.IsOpen) return false;
             return GameManager.Instance.CanThrowDice();
         }
 
         public void Reset()
         {
-            _hasThrown = false;
+            HasThrown = false;
             if (CanThrow())
             {
                 PrepareThrow();
@@ -104,7 +105,7 @@ namespace Misc
         {
             if (!_dragging) return;
             if (!CanThrow()) return;
-            _hasThrown = true;
+            HasThrown = true;
             _dragging = false;
             DiceThrownRpc();
             for (var i = 0; i < dice.Length; i++)

@@ -1,4 +1,5 @@
 using GamePlay;
+using Misc;
 using UI;
 using UI.DevelopmentCards;
 using UI.Trade;
@@ -141,7 +142,7 @@ namespace User
         private bool CanMove()
         {
             if (BuildManager.BuildModeActive) return false;
-            if (GameManager.Instance.IsMyTurn() && !GameManager.Instance.DiceThrown) return false;
+            if (GameManager.Instance.IsMyTurn() && !(DiceController.Instance.HasThrown || GameManager.Instance.DiceThrown)) return false;
             if (TradeMenu.Instance.IsOpen) return false;
             if (PauseMenu.IsOpen) return false;
             if (GameManager.Instance.IsGameOver) return false;
