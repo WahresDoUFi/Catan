@@ -26,6 +26,12 @@ namespace UI.Trade
             _instance.gameObject.SetActive(true);
         }
 
+        public static void OpenWithMenu(int menuId)
+        {
+            Open();
+            _instance.menuSelectionDropdown.SelectMenu(menuId);
+        }
+
         public static void Close()
         {
             _instance.gameObject.SetActive(false);

@@ -142,6 +142,16 @@ namespace GamePlay
             SetActive(true);
         }
 
+        public static void ShowInfoText(string text)
+        {
+            _instance.buildModeDisplay.gameObject.SetActive(true);
+            _instance.buildModeText.text = text;
+            var size = _instance.buildModeDisplay.sizeDelta;
+            size.x = _instance.buildModeText.GetPreferredValues().x + _instance.buildModeExtraWidth;
+            _instance.buildModeDisplay.sizeDelta = size;
+            _instance.cancelButton.gameObject.SetActive(false);
+        }
+
         public static void ConfirmPosition()
         {
             if (!BuildModeActive) return;

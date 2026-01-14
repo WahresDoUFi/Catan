@@ -96,7 +96,8 @@ namespace GamePlay
             _gameState.OnValueChanged += (_, _) => GameStateChange();
             _playerTurn.OnValueChanged += (_, _) => PlayerTurnChange();
             _hasThrownDice.OnValueChanged += HasThrownDiceChange;
-            _playerTrades.OnValueChanged += AvailableTradesMenu.UpdateAvailableTrades;
+            _playerTrades.TradeUpdated += TradeUpdated;
+            _playerTrades.TradeCleared += AvailableTradesMenu.UpdateAvailableTrades;
             _repositionBandit.OnValueChanged += RepositionBanditChange;
         }
 
@@ -422,6 +423,15 @@ namespace GamePlay
             DiceController.Instance.Reset();
         }
 
+        private void TradeUpdated(TradeInfo info)
+        {
+            AvailableTradesMenu.UpdateAvailableTrades();
+            if (info.ReceiverId == NetworkManager.LocalClientId)
+            {
+                MessageHub.TradeReceived(info);
+            }
+        }
+
         private void GrantResources(int number)
         {
             if (number is 7)
@@ -478,7 +488,14 @@ namespace GamePlay
         private void RepositionBanditChange(bool previousValue, bool newValue)
         {
             if (newValue && IsMyTurn())
+            {
                 CameraController.Instance.EnterOverview();
+                BuildManager.ShowInfoText("Bandit");
+            }
+            if (!newValue)
+            {
+                BuildManager.SetActive(false);
+            }
         }
 
         private void OnClientConnectionStatusChange(ulong clientId,

@@ -38,6 +38,17 @@ namespace UI.Trade
             StartCoroutine(Fade(1f, transitionDuration));
         }
 
+        public void SelectMenu(int index)
+        {
+            for (var i = 0; i < menus.Length; i++)
+            {
+                buttons[i].interactable = i != index;
+                menus[i].SetActive(i == index);
+            }
+
+            Close();
+        }
+
         private void Close()
         {
             StopAllCoroutines();
@@ -53,17 +64,6 @@ namespace UI.Trade
                 int index = i;
                 buttons[i].onClick.AddListener(() => SelectMenu(index));
             }
-        }
-
-        private void SelectMenu(int index)
-        {
-            for (var i = 0; i < menus.Length; i++)
-            {
-                buttons[i].interactable = i != index;
-                menus[i].SetActive(i == index);
-            }
-
-            Close();
         }
 
         private IEnumerator Fade(float target, float duration)

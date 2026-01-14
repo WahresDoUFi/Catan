@@ -206,8 +206,10 @@ namespace UI.Trade
 
     public class NetworkTradeInfoVariable : NetworkVariableBase
     {
+        private readonly List<TradeInfo> _previousBuffer = new();
         public readonly List<TradeInfo> Trades = new();
-        public Action OnValueChanged;
+        public Action<TradeInfo> TradeUpdated;
+        public Action TradeCleared;
 
         public void AddTrade(TradeInfo trade)
         {
@@ -216,21 +218,21 @@ namespace UI.Trade
                 Trades.RemoveAt(index);
             Trades.Add(trade);
             SetDirty(true);
-            OnValueChanged?.Invoke();
+            TradeUpdated?.Invoke(trade);
         }
 
         public void RemoveTrade(TradeInfo trade)
         {
             Trades.Remove(trade);
             SetDirty(true);
-            OnValueChanged?.Invoke();
+            TradeCleared?.Invoke();
         }
 
         public void Clear()
         {
             Trades.Clear();
             SetDirty(true);
-            OnValueChanged?.Invoke();
+            TradeCleared?.Invoke();
         }
         
         public override void WriteField(FastBufferWriter writer)
@@ -286,8 +288,15 @@ namespace UI.Trade
                 }
                 trade.ReceiveResources = receiveResources;
                 Trades.Add(trade);
+                if (_previousBuffer.Contains(trade))
+                    _previousBuffer.Remove(trade);
+                else
+                    TradeUpdated?.Invoke(trade);
             }
-            OnValueChanged?.Invoke();
+            if (Trades.Count == 0 || _previousBuffer.Count > 0)
+                TradeCleared?.Invoke();
+            _previousBuffer.Clear();
+            _previousBuffer.AddRange(Trades);
         }
 
         public override void ReadDelta(FastBufferReader reader, bool keepDirtyDelta)
