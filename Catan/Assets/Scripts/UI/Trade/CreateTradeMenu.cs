@@ -214,11 +214,12 @@ namespace UI.Trade
         public void AddTrade(TradeInfo trade)
         {
             int index = Trades.IndexOf(trade);
+            Trades.Add(trade);
             if (index != -1)
                 Trades.RemoveAt(index);
-            Trades.Add(trade);
+            else
+                TradeUpdated?.Invoke(trade);
             SetDirty(true);
-            TradeUpdated?.Invoke(trade);
         }
 
         public void RemoveTrade(TradeInfo trade)

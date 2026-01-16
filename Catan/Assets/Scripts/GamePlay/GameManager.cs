@@ -89,7 +89,7 @@ namespace GamePlay
                 s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
             if (HasAuthority)
             {
-                _seed.Value = new Random().Next(0, int.MaxValue);
+                _seed.Value = new Random().Next(int.MinValue, int.MaxValue);
                 foreach (ulong playerId in NetworkManager.Singleton.ConnectedClientsIds)
                 {
                     _playerIds.Add(playerId);
@@ -142,7 +142,7 @@ namespace GamePlay
             if (!NetworkManager.Singleton.IsHost) return;
             var result = DiceRoll.GetResult(_seed.Value);
             GrantResources(result.first + result.second);
-            _seed.Value = new Random().Next(0, int.MaxValue);
+            _seed.Value = new Random().Next(int.MinValue, int.MaxValue);
             _hasThrownDice.Value = true;
         }
 
@@ -292,6 +292,42 @@ namespace GamePlay
                     result.Add(trade);
             }
             return result.ToArray();
+        }
+
+        public void PlayDevelopmentCard(DevelopmentCard.Type cardType)
+        {
+            PlayDevelopmentCardRpc(cardType);
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void PlayDevelopmentCardRpc(DevelopmentCard.Type cardType, RpcParams rpcparams = default)
+        {
+            var senderId = rpcparams.Receive.SenderClientId;
+            var player = Player.GetPlayerById(senderId);
+            if (!player.HasDevelopmentCard(cardType)) return;
+
+            switch (cardType)
+            {
+                case DevelopmentCard.Type.Knight:
+                    player.KnightCardPlayed();
+                    _repositionBandit.Value = true;
+                    break;
+                case DevelopmentCard.Type.HangedKnights:
+                    foreach (var clientId in NetworkManager.ConnectedClientsIds)
+                    {
+                        if (clientId == senderId) continue;
+                        Player.GetPlayerById(clientId).LimitKnightCards(1);
+                    }
+                    break;
+                case DevelopmentCard.Type.VictoryPoint:
+                    player.AddVictoryPoints(1);
+                    break;
+                case DevelopmentCard.Type.RoadBuilding:
+                    player.AddFreeBuilding(BuildManager.BuildType.Street, 2);
+                    break;
+            }
+
+            player.RemoveDevelopmentCard(cardType);
         }
 
         public int GetTradeId(TradeInfo trade)
@@ -479,6 +515,10 @@ namespace GamePlay
             DiceController.Instance.Reset();
             PlayerCardList.RollDice(ActivePlayer);
             TurnChanged?.Invoke();
+            foreach (var clientId in _playerIds)
+            {
+                Player.GetPlayerById(clientId).ConvertBoughtCardsToAvailableOnes();
+            }
         }
 
         private void RepositionBanditChange(bool previousValue, bool newValue)

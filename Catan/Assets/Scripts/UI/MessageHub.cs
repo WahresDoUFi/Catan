@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using GamePlay;
 using UI.Trade;
 using UnityEngine;
 using User;
@@ -27,13 +29,28 @@ public class MessageHub : MonoBehaviour
 
     public static void TradeReceived(TradeInfo trade)
     {
+        var playerName = Player.GetPlayerById(trade.SenderId).PlayerName;
+        var playerColor = GameManager.Instance.GetPlayerColor(trade.SenderId);
+        var hexColor = ColorUtility.ToHtmlStringRGB(playerColor);
+        var message = SpawnPopUp("New Trade!", $"<color=#{hexColor}>{playerName}</color> sent you a trade offer");
+        message.SetAction("View", () => TradeWindow.OpenWithMenu(1));
+    }
+
+    public static void KnightsHanged(byte amount)
+    {
+        var playerName = Player.GetPlayerById(GameManager.Instance.ActivePlayer).PlayerName;
+        var playerColor = GameManager.Instance.GetPlayerColor(GameManager.Instance.ActivePlayer);
+        var hexColor = ColorUtility.ToHtmlStringRGB(playerColor);
+        SpawnPopUp("Knights Hanged", $"<color=#{hexColor}>{playerName} has hanged <color=#79D2D6>{amount}</color> of your knights");
+    }
+
+    private static PopUpMessage SpawnPopUp(string title, string description)
+    {
         var message = Instantiate(_instance.popUpMessagePrefab, _instance.transform).GetComponent<PopUpMessage>();
         message.Alpha = 0f;
         message.Position = _instance.spawnOffset;
-        message.SetTitle("New Trade!");
-        message.SetText($"<color=#79D2D6>{Player.GetPlayerById(trade.SenderId).PlayerName}</color> sent you a trade offer");
-        message.SetAction("View", () => TradeWindow.OpenWithMenu(1));
         _instance._messages.Add(message);
+        return message;
     }
 
     private void UpdatePopUps()

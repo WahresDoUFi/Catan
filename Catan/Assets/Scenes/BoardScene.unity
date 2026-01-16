@@ -12657,7 +12657,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -325, y: -155}
+  m_AnchoredPosition: {x: -280, y: -155}
   m_SizeDelta: {x: 650, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673761018
@@ -12712,7 +12712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.DevelopmentCards.DevelopmentCardsDisplay
   hoverScale: 1.1
   scaleSpeed: 15
-  moveTime: 0.6
+  moveTime: 0.2
   closedOffset: {x: 0, y: 340, z: 0}
   cardAdjustSpeed: 3
   cardTargetScale: 0.187
@@ -26063,7 +26063,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.DevelopmentCards.DevelopmentCardsMenu
   closedOffset: 1000
-  moveTime: 1
+  moveTime: 0.6
+  playCardScaleTime: 0.25
   closeButton: {fileID: 2081193277}
   signRect: {fileID: 1530839697}
   cardPrefab: {fileID: 2437445665853831265, guid: 244c400af4e5ce14fb57f86c17f3f434, type: 3}
@@ -27395,11 +27396,11 @@ RectTransform:
   - {fileID: 771876236}
   m_Father: {fileID: 1439754063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 100}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 328}
   m_SizeDelta: {x: 1536, y: 1536}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1530839698
 MonoBehaviour:
   m_ObjectHideFlags: 0

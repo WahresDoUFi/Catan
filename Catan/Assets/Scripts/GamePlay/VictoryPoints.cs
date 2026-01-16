@@ -1,18 +1,18 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using GamePlay;
 using Unity.Netcode;
+using User;
 
 public static class VictoryPoints
 {
     public static int CalculateVictoryPoints(ulong clientId)
     {
         var victoryPoints = 0;
-        victoryPoints += CalculateForBuildings(clientId);
-        if (HasLongestStreet(clientId))
-        {
-            victoryPoints += 2;
-        }
+        victoryPoints += CalculateForBuildings(clientId) + Player.GetPlayerById(clientId).AdditionalVictoryPoints;
+        if (HasLongestStreet(clientId)) victoryPoints += 2;
+        if (HasMostKnightCards(clientId)) victoryPoints += 2;
 
         return victoryPoints;
     }
@@ -42,6 +42,18 @@ public static class VictoryPoints
                 return false;
         }
 
+        return true;
+    }
+
+    private static bool HasMostKnightCards(ulong clientId)
+    {
+        byte cards = Player.GetPlayerById(clientId).KnightCardsPlayed;
+        if (cards < 3) return false;
+        foreach (var playerId in GameManager.Instance.GetPlayerIds())
+        {
+            if (playerId == clientId) continue;
+            if (Player.GetPlayerById(playerId).KnightCardsPlayed >= cards) return false;
+        }
         return true;
     }
 

@@ -16,12 +16,7 @@ namespace UI.DevelopmentCards
 
         private static DevelopmentCardsDisplay _instance;
 
-        private bool IsHovered => _hovering &&
-            GameManager.Instance.IsMyTurn() &&
-            GameManager.Instance.DiceThrown &&
-            !HasToRevealCard &&
-            !GameManager.Instance.RepositionBandit &&
-            !_moving;
+        private bool IsHovered => _hovering && !_moving && DevelopmentCardsMenu.CanOpen();
         
         [SerializeField] private float hoverScale;
         [SerializeField] private float scaleSpeed;
@@ -55,6 +50,7 @@ namespace UI.DevelopmentCards
             _defaultPosition = _rectTransform.anchoredPosition;
             _rectTransform.anchoredPosition = _defaultPosition + closedOffset;
             Player.LocalPlayer.DevelopmentCardBought += DevelopmentCardBought;
+            Player.LocalPlayer.DevelopmentCardPlayed += DevelopmentCardPlayed;
             GameManager.Instance.TurnChanged += TurnChanged;
         }
 
@@ -157,9 +153,17 @@ namespace UI.DevelopmentCards
             HasToRevealCard = true;
         }
 
+        private void DevelopmentCardPlayed(DevelopmentCard.Type type)
+        {
+            var card = _availableDevelopmentCards.FirstOrDefault(c => c.CardType == type);
+            if (card == null) return;
+            _availableDevelopmentCards.Remove(card);
+            Destroy(card.gameObject);
+        }
+
         private void BoughtCardClicked(DevelopmentCard card)
         {
-            if (Vector3.Distance(card.transform.position, centerPosition.position) < 5f)
+            if (Vector3.Distance(card.transform.position, centerPosition.position) < 20f)
             {
                 card.RevealCard(CardRevealed);
                 card.CardClicked -= BoughtCardClicked;

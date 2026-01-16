@@ -14,6 +14,7 @@ namespace User
         public static Player LocalPlayer { get; private set; }
         public event Action ResourcesUpdated;
         public event Action<DevelopmentCard.Type> DevelopmentCardBought;
+        public event Action<DevelopmentCard.Type> DevelopmentCardPlayed;
         public int ResourceCount => _wood.Value + _stone.Value + _wheat.Value + _brick.Value + _sheep.Value;
         public byte Wood => _wood.Value;
         public byte Stone => _stone.Value;
@@ -21,7 +22,9 @@ namespace User
         public byte Brick => _brick.Value;
         public byte Sheep => _sheep.Value;
         public string PlayerName => _playerName;
+        public byte KnightCardsPlayed => _knightCards.Value;
 
+        public byte AdditionalVictoryPoints => _victoryPoints.Value;
         public int VictoryPoints =>
             global::VictoryPoints.CalculateVictoryPoints(OwnerClientId);
 
@@ -32,6 +35,7 @@ namespace User
         private readonly NetworkVariable<byte> _sheep = new();
         private readonly NetworkVariable<byte> _victoryPoints = new();
         private readonly NetworkList<byte> _developmentCards = new();
+        private readonly NetworkVariable<byte> _knightCards = new();
         private readonly NetworkList<byte> _freeBuildings = new();
 
         private readonly List<DevelopmentCard.Type> _boughtCards = new(); 
@@ -42,7 +46,8 @@ namespace User
             if (IsOwner)
             {
                 SetNameRpc(PlayerPrefs.GetString("Nickname"));
-                LocalPlayer = this;   
+                LocalPlayer = this;
+                _knightCards.OnValueChanged += KnightCardsChanged;
             }
 
             _wood.OnValueChanged += ResourceCountChanged;
@@ -50,6 +55,7 @@ namespace User
             _wheat.OnValueChanged += ResourceCountChanged;
             _brick.OnValueChanged += ResourceCountChanged;
             _sheep.OnValueChanged += ResourceCountChanged;
+            _developmentCards.OnListChanged += DevelopmentCardsChanged;
         }
 
         public static Player GetPlayerById(ulong clientId)
@@ -60,6 +66,31 @@ namespace User
         public void AddVictoryPoints(byte points)
         {
             _victoryPoints.Value += points;
+        }
+
+        public void KnightCardPlayed()
+        {
+            if (IsHost == false) return;
+            _knightCards.Value++;
+        }
+
+        public void LimitKnightCards(byte limit)
+        {
+            _knightCards.Value = (byte)Mathf.Min(_knightCards.Value, limit);
+        }
+
+        public bool HasDevelopmentCard(DevelopmentCard.Type cardType)
+        {
+            foreach (var card in _developmentCards)
+            {
+                if (card == (byte)cardType) return true;
+            }
+            return false;
+        }
+
+        public void RemoveDevelopmentCard(DevelopmentCard.Type card)
+        {
+            _developmentCards.Remove((byte)card);
         }
 
         public void BuyDevelopmentCard(DevelopmentCard.Type cardType)
@@ -215,6 +246,23 @@ namespace User
         private void ResourceCountChanged(byte previous, byte current)
         {
             ResourcesUpdated?.Invoke();
+        }
+
+        private void DevelopmentCardsChanged(NetworkListEvent<byte> changeEvent)
+        {
+            if (changeEvent.Type == NetworkListEvent<byte>.EventType.Remove)
+            {
+                DevelopmentCardPlayed?.Invoke((DevelopmentCard.Type)changeEvent.Value);
+            }
+        }
+
+        private void KnightCardsChanged(byte previousValue, byte newValue)
+        {
+            var change = previousValue - newValue;
+            if (change > 0)
+            {
+                MessageHub.KnightsHanged((byte)change);
+            }
         }
     }
 }

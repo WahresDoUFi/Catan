@@ -26,6 +26,7 @@ namespace UI.DevelopmentCards
 
         [SerializeField] private float closedOffset;
         [SerializeField] private float moveTime;
+        [SerializeField] private float playCardScaleTime;
         [SerializeField] private Button closeButton;
         [SerializeField] private RectTransform signRect;
         [SerializeField] private GameObject cardPrefab;
@@ -51,16 +52,27 @@ namespace UI.DevelopmentCards
             _canvasGroup.blocksRaycasts = false;
         }
 
+        private void Start()
+        {
+            Player.LocalPlayer.DevelopmentCardBought += CardBought;
+            Player.LocalPlayer.DevelopmentCardPlayed += CardPlayed;
+            GameManager.Instance.TurnChanged += TurnChanged;
+        }
+
         private void Update()
         {
             if (IsOpen)
                 CheckForCardHover();
         }
 
-        private void Start()
+        public static bool CanOpen()
         {
-            Player.LocalPlayer.DevelopmentCardBought += CardBought;
-            GameManager.Instance.TurnChanged += TurnChanged;
+            return 
+                GameManager.Instance.IsMyTurn() &&
+                GameManager.Instance.DiceThrown &&
+                !DevelopmentCardsDisplay.HasToRevealCard &&
+                !GameManager.Instance.RepositionBandit &&
+                !BuildManager.BuildModeActive;
         }
 
         public static void Open()
@@ -91,6 +103,19 @@ namespace UI.DevelopmentCards
                 yield return null;
             }
             signRect.anchoredPosition = target;
+        }
+
+        private IEnumerator PlayCardAnimation(DevelopmentCard card)
+        {
+            _availableCards.Remove(card);
+            float t = 0f;
+            while (t < playCardScaleTime)
+            {
+                t += Time.deltaTime;
+                card.Scale = Mathf.Lerp(1f, 0f, t / playCardScaleTime);
+                yield return null;
+            }
+            Destroy(card.gameObject);
         }
 
         private string GetDescription(DevelopmentCard.Type cardType)
@@ -142,7 +167,14 @@ namespace UI.DevelopmentCards
 
         private void PlayCard(DevelopmentCard card)
         {
-            Debug.Log("Playing card: " + card.CardType);
+            GameManager.Instance.PlayDevelopmentCard(card.CardType);
+            StartCoroutine(PlayCardAnimation(card));
         }
+
+        private void CardPlayed(DevelopmentCard.Type _)
+        {
+            if (CanOpen()) return;
+            StartCoroutine(Close());
+        } 
     }
 }
