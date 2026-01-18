@@ -4,6 +4,7 @@ using System.Linq;
 using GamePlay;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using User;
@@ -11,9 +12,10 @@ using Random = UnityEngine.Random;
 
 namespace UI
 {
-    public class PlayerCard : MonoBehaviour
+    public class PlayerCard : MonoBehaviour, IPointerClickHandler
     {
         public ulong PlayerId => _player ? _player.OwnerClientId : 0;
+
         [SerializeField] private Image playerColorImage;
         [SerializeField] private Image nameTextImage;
         [SerializeField] private TextMeshProUGUI nameText;
@@ -70,6 +72,15 @@ namespace UI
         {
             (_resultOne, _resultTwo) = DiceRoll.GetResult(GameManager.Instance.Seed);
             StartCoroutine(RollDiceCoroutine());
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            if (GameManager.Instance.CanStealResource && GameManager.Instance.IsMyTurn())
+            {
+                if (_player.IsLocalPlayer) return;
+                GameManager.Instance.StealResource(PlayerId);
+            }
         }
 
         private IEnumerator RollDiceCoroutine()

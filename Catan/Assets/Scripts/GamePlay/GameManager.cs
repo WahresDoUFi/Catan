@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Helpers;
 using Misc;
 using UI;
 using UI.DevelopmentCards;
@@ -42,7 +43,8 @@ namespace GamePlay
         public bool IsGameOver => gameOverScreen.gameObject.activeSelf;
         public bool CardLimitActive => _cardsToDiscard.AsNativeArray().Any(cards => cards > 0);
         public int CardsToDiscard => _cardsToDiscard[LocalPlayerIndex];
-        public bool RepositionBandit => _repositionBandit.Value;
+        public bool RepositionBandit => _repositionBanditState.Value.IsBitSet(0);
+        public bool CanStealResource => _repositionBanditState.Value.IsBitSet(1);
         private int LocalPlayerIndex => Mathf.Max(0, _playerIds.IndexOf(NetworkManager.LocalClientId));
         public event Action TurnChanged;
 
@@ -53,7 +55,7 @@ namespace GamePlay
         private readonly NetworkVariable<byte> _playerTurn = new();
         private readonly NetworkList<ulong> _playerIds = new();
         private readonly NetworkVariable<bool> _hasThrownDice = new();
-        private readonly NetworkVariable<bool> _repositionBandit = new();
+        private readonly NetworkVariable<byte> _repositionBanditState = new();
         private readonly NetworkVariable<byte> _roundNumber = new();
         private readonly NetworkVariable<int> _seed = new();
         private readonly NetworkTradeInfoVariable _playerTrades = new();
@@ -108,7 +110,7 @@ namespace GamePlay
             _hasThrownDice.OnValueChanged += HasThrownDiceChange;
             _playerTrades.TradeUpdated += TradeUpdated;
             _playerTrades.TradeCleared += AvailableTradesMenu.UpdateAvailableTrades;
-            _repositionBandit.OnValueChanged += RepositionBanditChange;
+            _repositionBanditState.OnValueChanged += RepositionBanditChange;
         }
 
         public override void OnNetworkDespawn()
@@ -197,7 +199,27 @@ namespace GamePlay
             if (tile == null) return;
             if (tile.Discovered == false) return;
             Bandit.Instance.SetTargetTile(tile);
-            _repositionBandit.Value = false;
+            _repositionBanditState.Value = _repositionBanditState.Value.SetBitNoRef(0, false);
+            CheckResourceStealAbilit();
+        }
+
+        public IEnumerable<ulong> PlayersInBanditRange()
+        {
+            foreach (var settlement in Settlement.AllSettlements)
+            {
+                if (!settlement.IsOccupied) continue;
+                if (settlement.Owner == ActivePlayer) continue;
+                if (Player.GetPlayerById(settlement.Owner).ResourceCount == 0) continue;
+                if (settlement.FindNeighboringTiles().Any(tile => tile.Blocked))
+                    yield return settlement.Owner;
+            }
+        }
+
+        private void CheckResourceStealAbilit()
+        {
+            if (!IsHost) return;
+            
+            _repositionBanditState.Value = _repositionBanditState.Value.SetBitNoRef(1, PlayersInBanditRange().Count() > 0);
         }
 
         [Rpc(SendTo.Authority)]
@@ -299,6 +321,35 @@ namespace GamePlay
             PlayDevelopmentCardRpc(cardType);
         }
 
+        public void StealResource(ulong playerId)
+        {
+            StealResourceCardRpc(playerId);
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void StealResourceCardRpc(ulong playerId, RpcParams rpcparams = default)
+        {
+            if (!CanStealResource) return;
+            if (ActivePlayer != rpcparams.Receive.SenderClientId) return;
+            if (!PlayersInBanditRange().Contains(playerId)) return;
+
+            var player = Player.GetPlayerById(playerId);
+            var resourceToSteal = new Random().Next(1, player.ResourceCount);
+            var count = 0;
+            foreach (var tile in (Tile[])Enum.GetValues(typeof(Tile)))
+            {
+                count += player.GetResources(tile);
+                if (resourceToSteal <= count)
+                {
+                    player.RemoveResources(tile, 1);
+                    Player.GetPlayerById(ActivePlayer).AddResources(tile, 1);
+
+                    _repositionBanditState.Value = 0;
+                    return;
+                }
+            }
+        }
+
         [Rpc(SendTo.Authority)]
         private void PlayDevelopmentCardRpc(DevelopmentCard.Type cardType, RpcParams rpcparams = default)
         {
@@ -310,7 +361,7 @@ namespace GamePlay
             {
                 case DevelopmentCard.Type.Knight:
                     player.KnightCardPlayed();
-                    _repositionBandit.Value = true;
+                    _repositionBanditState.Value.SetBitNoRef(0, true);
                     break;
                 case DevelopmentCard.Type.HangedKnights:
                     foreach (var clientId in NetworkManager.ConnectedClientsIds)
@@ -475,7 +526,7 @@ namespace GamePlay
                         _cardsToDiscard[i] = (byte)Mathf.FloorToInt(cardCount / 2f);
                     }
                 }
-                _repositionBandit.Value = true;
+                _repositionBanditState.Value = _repositionBanditState.Value.SetBitNoRef(0, true);
                 return;
             }
             foreach (var settlement in Settlement.AllSettlements)
@@ -521,14 +572,14 @@ namespace GamePlay
             }
         }
 
-        private void RepositionBanditChange(bool previousValue, bool newValue)
+        private void RepositionBanditChange(byte previousValue, byte newValue)
         {
-            if (newValue && IsMyTurn())
+            if (RepositionBandit && IsMyTurn())
             {
                 CameraController.Instance.EnterOverview();
                 BuildManager.ShowInfoText("Bandit");
             }
-            if (!newValue)
+            if (newValue == 0)
             {
                 BuildManager.SetActive(false);
             }

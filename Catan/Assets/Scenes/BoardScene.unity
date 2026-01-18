@@ -25987,13 +25987,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1439754062}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1530839697}
-  m_Father: {fileID: 1655732386}
+  m_Father: {fileID: 1497910592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -26565,7 +26565,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -330}
+  m_AnchoredPosition: {x: -10, y: -330}
   m_SizeDelta: {x: 450, y: -330}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1496341429
@@ -26680,9 +26680,10 @@ RectTransform:
   m_Children:
   - {fileID: 1946487633}
   - {fileID: 439956971}
-  - {fileID: 1513323800}
   - {fileID: 1655732386}
   - {fileID: 266319534}
+  - {fileID: 1513323800}
+  - {fileID: 1439754063}
   - {fileID: 1142825957}
   - {fileID: 1420437679}
   - {fileID: 1736650570}
@@ -26879,8 +26880,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.PlayerCardList
   playerCardPrefab: {fileID: 5066109155759423522, guid: 54971f65aa3c84268a5004918a1dc779, type: 3}
+  screenCenter: {fileID: 1497910592}
   animationSpeed: 5
   spacing: 260
+  stealModeSpacing: 0
   turnOffset: 50
 --- !u!1 &1516044145
 GameObject:
@@ -29846,7 +29849,6 @@ RectTransform:
   - {fileID: 1496341428}
   - {fileID: 1100190541}
   - {fileID: 673761017}
-  - {fileID: 1439754063}
   m_Father: {fileID: 1497910592}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

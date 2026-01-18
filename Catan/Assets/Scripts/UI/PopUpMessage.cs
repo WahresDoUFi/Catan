@@ -29,12 +29,14 @@ public class PopUpMessage : MonoBehaviour
 
     private CanvasGroup _canvasGroup;
     private RectTransform _rectTransform;
+    private RectTransform _textRectTransform;
     private float _timer;
 
     private void Awake()
     {
         _canvasGroup = GetComponent<CanvasGroup>();
         _rectTransform = GetComponent<RectTransform>();
+        _textRectTransform = description.GetComponent<RectTransform>();
         actionButton.gameObject.SetActive(false);
     }
 
@@ -60,9 +62,12 @@ public class PopUpMessage : MonoBehaviour
         titleText.text = title;
     }
 
-    public void SetText(string text)
+    public void SetText(string text, float containerWidth)
     {
         description.text = text;
+        var size = description.GetPreferredValues(containerWidth, 0);
+        size.x = _rectTransform.sizeDelta.x;
+        _textRectTransform.sizeDelta = size;
     }
 
     public void SetAction(string name, UnityAction action)

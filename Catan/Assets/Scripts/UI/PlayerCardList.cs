@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
+using Unity.Netcode;
 using UnityEngine;
 using User;
 
@@ -12,24 +13,47 @@ namespace UI
         private static PlayerCardList _instance;
         
         [SerializeField] private GameObject playerCardPrefab;
+        [SerializeField] private Transform screenCenter;
         [SerializeField] private float animationSpeed;
         [SerializeField] private float spacing;
+        [SerializeField] private float stealModeSpacing;
         [SerializeField] private float turnOffset;
 
         private readonly List<PlayerCard> _playerCards = new();
 
+        private float _cardWidth;
+
         private void Awake()
         {
             _instance = this;
+            _cardWidth = playerCardPrefab.GetComponent<RectTransform>().sizeDelta.x;
         }
 
         private void Update()
         {
-            for (var i = 0; i < _playerCards.Count; i++)
+            if (GameManager.Instance.CanStealResource && GameManager.Instance.IsMyTurn())
             {
-                var playerCard = _playerCards[i];
-                playerCard.transform.localPosition = Vector3.Lerp(playerCard.transform.localPosition,
-                    GetTargetPosition(i), Time.deltaTime * animationSpeed);
+                byte cardsDisplayed = 0;
+                var localPlayerIndex = GameManager.Instance.GetPlayerIds().ToList().IndexOf(NetworkManager.Singleton.LocalClientId);
+                var playersInRange = GameManager.Instance.PlayersInBanditRange().ToArray();
+                for (var index = 0; index < _playerCards.Count; index++)
+                {
+                    var playerCard = _playerCards[index];
+                    if (index != localPlayerIndex && playersInRange.Contains(playerCard.PlayerId))
+                    {
+                        playerCard.transform.localPosition = Vector3.Lerp(playerCard.transform.localPosition,
+                            GetTargetPositionStealMode(cardsDisplayed), Time.deltaTime * animationSpeed);
+                    }
+                }
+            } 
+            else
+            {
+                for (var i = 0; i < _playerCards.Count; i++)
+                {
+                    var playerCard = _playerCards[i];
+                    playerCard.transform.localPosition = Vector3.Lerp(playerCard.transform.localPosition,
+                        GetTargetPosition(i), Time.deltaTime * animationSpeed);
+                }
             }
         }
 
@@ -76,7 +100,16 @@ namespace UI
             {
                 targetPosition += Vector3.right * turnOffset;
             }
+            targetPosition += Vector3.right * (_cardWidth / 2f);
             return targetPosition;
+        }
+
+        private Vector3 GetTargetPositionStealMode(int index)
+        {
+            float count = _playerCards.Count - 1;
+            float offset = (count - index - 1) - (count / 2f) + 0.5f;
+            var targetPosition = Vector3.right * (offset * stealModeSpacing);
+            return transform.InverseTransformPoint(screenCenter.position + targetPosition);
         }
     }
 }

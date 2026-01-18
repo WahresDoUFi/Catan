@@ -17,9 +17,12 @@ public class MessageHub : MonoBehaviour
 
     private readonly List<PopUpMessage> _messages = new();
 
+    private RectTransform _rectTransform;
+
     private void Awake()
     {
         _instance = this;
+        _rectTransform = GetComponent<RectTransform>();
     }
 
     private void Update()
@@ -49,6 +52,8 @@ public class MessageHub : MonoBehaviour
         var message = Instantiate(_instance.popUpMessagePrefab, _instance.transform).GetComponent<PopUpMessage>();
         message.Alpha = 0f;
         message.Position = _instance.spawnOffset;
+        message.SetTitle(title);
+        message.SetText(description, _instance._rectTransform.sizeDelta.x);
         _instance._messages.Add(message);
         return message;
     }
