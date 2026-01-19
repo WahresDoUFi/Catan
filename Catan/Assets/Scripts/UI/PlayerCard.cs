@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Linq;
 using GamePlay;
@@ -8,7 +7,6 @@ using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using User;
-using Random = UnityEngine.Random;
 
 namespace UI
 {
@@ -26,6 +24,7 @@ namespace UI
         [SerializeField] private float diceRollDelay;
         [SerializeField] private Transform diceOne;
         [SerializeField] private Transform diceTwo;
+        [SerializeField] private ResourceCardsTooltip resourceCardsTooltip;
 
         private Player _player;
         private int _resultOne, _resultTwo;
@@ -59,6 +58,7 @@ namespace UI
         public void SetPlayer(Player player)
         {
             _player = player;
+            resourceCardsTooltip.SetPlayer(player);
             playerColorImage.color = nameTextImage.color = GameManager.Instance.GetPlayerColor(PlayerId);
         }
         

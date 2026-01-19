@@ -1,5 +1,6 @@
 using GamePlay;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace UI
@@ -34,6 +35,7 @@ namespace UI
             if (!GameManager.Instance.DiceThrown) return false;
             if (GameManager.Instance.CardLimitActive) return false;
             if (GameManager.Instance.RepositionBandit) return false;
+            if (GameManager.Instance.CanStealResource) return false;
 
             return true;
         }

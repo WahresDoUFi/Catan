@@ -144,6 +144,7 @@ namespace User
             if (BuildManager.BuildModeActive) return false;
             if (GameManager.Instance.IsMyTurn() && !(DiceController.Instance.HasThrown || GameManager.Instance.DiceThrown)) return false;
             if (TradeMenu.Instance.IsOpen) return false;
+            if (TradeWindow.IsOpen) return false;
             if (PauseMenu.IsOpen) return false;
             if (GameManager.Instance.IsGameOver) return false;
             if (DevelopmentCardsDisplay.HasToRevealCard) return false;

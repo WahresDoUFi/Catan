@@ -44,7 +44,7 @@ namespace GamePlay
         public bool CardLimitActive => _cardsToDiscard.AsNativeArray().Any(cards => cards > 0);
         public int CardsToDiscard => _cardsToDiscard[LocalPlayerIndex];
         public bool RepositionBandit => _repositionBanditState.Value.IsBitSet(0);
-        public bool CanStealResource => _repositionBanditState.Value.IsBitSet(1);
+        public bool CanStealResource => _repositionBanditState.Value.IsBitSet(1) && !CardLimitActive;
         private int LocalPlayerIndex => Mathf.Max(0, _playerIds.IndexOf(NetworkManager.LocalClientId));
         public event Action TurnChanged;
 
@@ -323,6 +323,7 @@ namespace GamePlay
 
         public void StealResource(ulong playerId)
         {
+            if (CardLimitActive) return;
             StealResourceCardRpc(playerId);
         }
 
@@ -607,6 +608,10 @@ namespace GamePlay
                             break;
                         }
                     case ConnectionNotificationManager.ConnectionStatus.Disconnected:
+                        _cardsToDiscard.Clear();
+                        _repositionBanditState.Value = 0;
+                        NextTurn();
+                        //  fix required: when player leaves, there is no check in place for who is supposed to be the next player etc.
                         _cardsToDiscard.RemoveAt(_playerIds.IndexOf(clientId));
                         _playerIds.Remove(clientId);
                         break;
