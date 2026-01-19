@@ -52,7 +52,7 @@ public class MessageHub : MonoBehaviour
         var playerName = Player.GetPlayerById(playerId).PlayerName;
         var playerColor = GameManager.Instance.GetPlayerColor(playerId);
         var hexColor = ColorUtility.ToHtmlStringRGB(playerColor);
-        SpawnPopUp("Resources stolen!", $"<color=#{hexColor}>{playerName} stole x{amount} {resource.ToString()} from you");
+        SpawnPopUp("Resources stolen!", $"<color=#{hexColor}>{playerName}</color> stole <color=#79D2D6>x{amount} {resource.ToString()}</color> from you");
     }
 
     private static PopUpMessage SpawnPopUp(string title, string description)
