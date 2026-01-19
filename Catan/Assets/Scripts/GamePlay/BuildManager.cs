@@ -86,6 +86,10 @@ namespace GamePlay
             _instance = this;
             cancelButton.onClick.AddListener(() => SetActive(false));
             _mainCam = Camera.main;
+        }
+
+        private void Start()
+        {
             SetActive(false);
         }
 
