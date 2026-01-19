@@ -346,9 +346,16 @@ namespace GamePlay
                     Player.GetPlayerById(ActivePlayer).AddResources(tile, 1);
 
                     _repositionBanditState.Value = 0;
+                    ResourceCardsStolenRpc(ActivePlayer, tile, 1, RpcTarget.Single(playerId, RpcTargetUse.Temp));
                     return;
                 }
             }
+        }
+
+        [Rpc(SendTo.SpecifiedInParams, InvokePermission = RpcInvokePermission.Server)]
+        private void ResourceCardsStolenRpc(ulong playerId, Tile resource, byte amount, RpcParams rpcparams)
+        {
+            MessageHub.ResourcesStolen(playerId, resource, amount);
         }
 
         [Rpc(SendTo.Authority)]
@@ -575,12 +582,17 @@ namespace GamePlay
 
         private void RepositionBanditChange(byte previousValue, byte newValue)
         {
-            if (RepositionBandit && IsMyTurn())
-            {
+            if (IsMyTurn())
                 CameraController.Instance.EnterOverview();
+            if (RepositionBandit)
+            {
                 BuildManager.ShowInfoText("Bandit");
             }
-            if (newValue == 0)
+            else if (CanStealResource)
+            {
+                BuildManager.ShowInfoText("Stealing Resource");
+            }
+            else if (newValue == 0)
             {
                 BuildManager.SetActive(false);
             }

@@ -11,6 +11,7 @@ public class ResourceDisplay : MonoBehaviour
 
     public void SetAmount(int amount)
     {
+        gameObject.SetActive(amount > 0);
         amountText.text = "x" + amount;
     }
 }

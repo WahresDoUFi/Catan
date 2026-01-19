@@ -27380,16 +27380,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa67e687c1aa413c97f58590c6d7d49a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.ResourceIconProvider
-  resourceIcons:
-  - resourceType: 0
+  resourceData:
+  - name: Sheep
+    resourceType: 0
     icon: {fileID: 21300000, guid: 263380c5d63154e7187774aed0880717, type: 3}
-  - resourceType: 1
+  - name: Stone
+    resourceType: 1
     icon: {fileID: 21300000, guid: 7f5ca0a825897457aba83aba7ae2783d, type: 3}
-  - resourceType: 2
+  - name: Woo
+    resourceType: 2
     icon: {fileID: 21300000, guid: 079077d6a7a4c406692fb9a931414074, type: 3}
-  - resourceType: 3
+  - name: Brick
+    resourceType: 3
     icon: {fileID: 21300000, guid: 122b1146acc0741aaa98020e8c0bdf03, type: 3}
-  - resourceType: 4
+  - name: Wheat
+    resourceType: 4
     icon: {fileID: 21300000, guid: 4cc687210e916499d999c48080a77e7f, type: 3}
 --- !u!1001 &1516249856
 PrefabInstance:

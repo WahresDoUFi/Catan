@@ -5,8 +5,9 @@ using UnityEngine;
 namespace UI
 {
     [Serializable]
-    public struct ResourceIcon
+    public struct ResourceData
     {
+        public string name;
         public Tile resourceType;
         public Sprite icon;
     }
@@ -15,7 +16,7 @@ namespace UI
         private static ResourceIconProvider _instance;
         
         [SerializeField]
-        private ResourceIcon[] resourceIcons;
+        private ResourceData[] resourceData;
 
         private void Awake()
         {
@@ -24,7 +25,12 @@ namespace UI
 
         public static Sprite GetIcon(Tile resourceType)
         {
-            return _instance.resourceIcons.FirstOrDefault(t => t.resourceType == resourceType).icon;
+            return _instance.resourceData.FirstOrDefault(t => t.resourceType == resourceType).icon;
+        }
+
+        public static string GetResourceName(Tile resourceType)
+        {
+            return _instance.resourceData.FirstOrDefault(t => t.resourceType == resourceType).name;
         }
     }
 }

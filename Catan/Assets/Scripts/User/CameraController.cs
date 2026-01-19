@@ -141,15 +141,17 @@ namespace User
 
         private bool CanMove()
         {
+            var localTurn = GameManager.Instance.IsMyTurn();
             if (BuildManager.BuildModeActive) return false;
-            if (GameManager.Instance.IsMyTurn() && !(DiceController.Instance.HasThrown || GameManager.Instance.DiceThrown)) return false;
+            if (localTurn && !(DiceController.Instance.HasThrown || GameManager.Instance.DiceThrown)) return false;
             if (TradeMenu.Instance.IsOpen) return false;
             if (TradeWindow.IsOpen) return false;
             if (PauseMenu.IsOpen) return false;
             if (GameManager.Instance.IsGameOver) return false;
             if (DevelopmentCardsDisplay.HasToRevealCard) return false;
             if (DevelopmentCardsMenu.IsOpen) return false;
-            if (GameManager.Instance.RepositionBandit) return false;
+            if (localTurn && GameManager.Instance.RepositionBandit) return false;
+            if (localTurn && GameManager.Instance.CanStealResource) return false;
             return true;
         }
     }

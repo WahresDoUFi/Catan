@@ -44,7 +44,15 @@ public class MessageHub : MonoBehaviour
         var playerName = Player.GetPlayerById(GameManager.Instance.ActivePlayer).PlayerName;
         var playerColor = GameManager.Instance.GetPlayerColor(GameManager.Instance.ActivePlayer);
         var hexColor = ColorUtility.ToHtmlStringRGB(playerColor);
-        SpawnPopUp("Knights Hanged", $"<color=#{hexColor}>{playerName} has hanged <color=#79D2D6>{amount}</color> of your knights");
+        SpawnPopUp("Knights Hanged!", $"<color=#{hexColor}>{playerName} has hanged <color=#79D2D6>{amount}</color> of your knights");
+    }
+
+    public static void ResourcesStolen(ulong playerId, Tile resource, byte amount)
+    {
+        var playerName = Player.GetPlayerById(playerId).PlayerName;
+        var playerColor = GameManager.Instance.GetPlayerColor(playerId);
+        var hexColor = ColorUtility.ToHtmlStringRGB(playerColor);
+        SpawnPopUp("Resources stolen!", $"<color=#{hexColor}>{playerName} stole x{amount} {resource.ToString()} from you");
     }
 
     private static PopUpMessage SpawnPopUp(string title, string description)
