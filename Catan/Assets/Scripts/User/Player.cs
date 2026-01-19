@@ -49,6 +49,10 @@ namespace User
                 LocalPlayer = this;
                 _knightCards.OnValueChanged += KnightCardsChanged;
             }
+            else if (!IsHost)
+            {
+                RequestNameRpc();
+            }
 
             _wood.OnValueChanged += ResourceCountChanged;
             _stone.OnValueChanged += ResourceCountChanged;
@@ -237,11 +241,23 @@ namespace User
             DevelopmentCardBought?.Invoke(cardType);
         }
 
-        [Rpc(SendTo.Authority, InvokePermission = RpcInvokePermission.Owner)]
+        [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Owner)]
         private void SetNameRpc(string playerName)
         {
             _playerName.Value = playerName;
         }
+
+        [Rpc(SendTo.SpecifiedInParams, InvokePermission = RpcInvokePermission.Server)]
+        private void SendNameRpc(string playerName, RpcParams rpcparams)
+        {
+            _playerName = playerName;
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void RequestNameRpc(RpcParams rpcparams = default)
+        {
+            SendNameRpc(_playerName, RpcTarget.Single(rpcparams.Receive.SenderClientId, RpcTargetUse.Temp));
+        } 
 
         private void ResourceCountChanged(byte previous, byte current)
         {
