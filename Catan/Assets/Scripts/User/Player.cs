@@ -21,7 +21,7 @@ namespace User
         public byte Wheat => _wheat.Value;
         public byte Brick => _brick.Value;
         public byte Sheep => _sheep.Value;
-        public string PlayerName => _playerName.Value;
+        public string PlayerName => _playerName;
         public byte KnightCardsPlayed => _knightCards.Value;
 
         public byte AdditionalVictoryPoints => _victoryPoints.Value;
@@ -37,9 +37,9 @@ namespace User
         private readonly NetworkList<byte> _developmentCards = new();
         private readonly NetworkVariable<byte> _knightCards = new();
         private readonly NetworkList<byte> _freeBuildings = new();
-        private readonly NetworkVariable<string> _playerName = new();
-        
+
         private readonly List<DevelopmentCard.Type> _boughtCards = new(); 
+        private string _playerName;
 
         public override void OnNetworkSpawn()
         {
@@ -244,7 +244,7 @@ namespace User
         [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Owner)]
         private void SetNameRpc(string playerName)
         {
-            _playerName.Value = playerName;
+            _playerName = playerName;
         }
 
         [Rpc(SendTo.SpecifiedInParams, InvokePermission = RpcInvokePermission.Server)]
