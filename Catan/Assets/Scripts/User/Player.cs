@@ -11,6 +11,7 @@ namespace User
 {
     public class Player : NetworkBehaviour
     {
+        private static List<Player> _players = new List<Player>();
         public static Player LocalPlayer { get; private set; }
         public event Action ResourcesUpdated;
         public event Action<DevelopmentCard.Type> DevelopmentCardBought;
@@ -40,9 +41,10 @@ namespace User
 
         private readonly List<DevelopmentCard.Type> _boughtCards = new(); 
         private string _playerName;
-
+        
         public override void OnNetworkSpawn()
         {
+            _players.Add(this);
             if (IsOwner)
             {
                 SetNameRpc(PlayerPrefs.GetString("Nickname"));
@@ -64,7 +66,7 @@ namespace User
 
         public static Player GetPlayerById(ulong clientId)
         {
-            return NetworkManager.Singleton.ConnectedClients[clientId].PlayerObject.GetComponent<Player>();
+            return _players.FirstOrDefault(player => player.OwnerClientId == clientId);
         }
 
         public void AddVictoryPoints(byte points)
