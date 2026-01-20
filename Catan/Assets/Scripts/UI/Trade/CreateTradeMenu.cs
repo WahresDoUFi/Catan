@@ -64,7 +64,7 @@ namespace UI.Trade
                 {
                     if (NetworkManager.Singleton.LocalClientId == clientId) continue;
                     var tabButton = Instantiate(tabButtonPrefab, tabButtonsParent).GetComponent<TabButton>();
-                    tabButton.SetText(clientId.ToString());
+                    tabButton.SetText(Player.GetPlayerById(clientId).PlayerName);
                     ulong id = clientId;
                     tabButton.OnClick.AddListener(() => ButtonPressed(tabButton, id));
                     if (!firstButton)
