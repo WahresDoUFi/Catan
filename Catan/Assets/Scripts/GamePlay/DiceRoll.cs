@@ -7,7 +7,7 @@ public static class DiceRoll
     {
 #if UNITY_EDITOR
         //  debug result, remove or update as needed
-        return (6, 1);
+        //return (6, 1);
 #endif
         var random = new Random(seed);
         var die = random.Next(1, 7);
