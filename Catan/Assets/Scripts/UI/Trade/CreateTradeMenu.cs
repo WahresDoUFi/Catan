@@ -37,6 +37,8 @@ namespace UI.Trade
 
         private void OnEnable()
         {
+            if (!GameManager.Instance) return;
+
             UpdatePlayerList();
             foreach (var resourceCounter in playerResources)
             {
