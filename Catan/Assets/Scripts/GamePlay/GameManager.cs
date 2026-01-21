@@ -369,7 +369,7 @@ namespace GamePlay
             {
                 case DevelopmentCard.Type.Knight:
                     player.KnightCardPlayed();
-                    _repositionBanditState.Value.SetBitNoRef(0, true);
+                    _repositionBanditState.Value = _repositionBanditState.Value.SetBitNoRef(0, true);
                     break;
                 case DevelopmentCard.Type.HangedKnights:
                     foreach (var clientId in NetworkManager.ConnectedClientsIds)

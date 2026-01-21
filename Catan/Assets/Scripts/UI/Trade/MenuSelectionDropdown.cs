@@ -22,12 +22,12 @@ namespace UI.Trade
             _canvasGroup.alpha = 0;
             _canvasGroup.interactable = false;
             _canvasGroup.blocksRaycasts = false;
+            SelectMenu(0);
         }
 
         private void Start()
         {
             ConnectButtons();
-            SelectMenu(0);
         }
 
         public void Open()

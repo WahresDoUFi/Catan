@@ -76,7 +76,7 @@ namespace User
 
         public void KnightCardPlayed()
         {
-            if (IsHost == false) return;
+            if (NetworkManager.IsHost == false) return;
             _knightCards.Value++;
         }
 
