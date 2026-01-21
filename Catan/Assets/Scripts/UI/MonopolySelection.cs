@@ -19,7 +19,7 @@ public class MonopolySelection : MonoBehaviour
         _instance = this;
         _rectTransform = GetComponent<RectTransform>();
         _cards = cardList.GetComponentsInChildren<MonopolyResourceCard>();
-        //gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     public static void Open()
