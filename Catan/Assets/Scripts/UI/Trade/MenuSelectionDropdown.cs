@@ -10,11 +10,14 @@ namespace UI.Trade
     [RequireComponent(typeof(CanvasGroup))]
     public class MenuSelectionDropdown : MonoBehaviour, IPointerClickHandler
     {
+        public int LastSelectedMenu => _lastSelectedMenu;
+
         [SerializeField] private float transitionDuration = 0.5f;
         [SerializeField] private Button[] buttons;
         [SerializeField] private GameObject[] menus;
         
         private CanvasGroup _canvasGroup;
+        private int _lastSelectedMenu;
         
         private void Awake()
         {
@@ -39,6 +42,8 @@ namespace UI.Trade
 
         public void SelectMenu(int index)
         {
+            _lastSelectedMenu = index;
+
             for (var i = 0; i < menus.Length; i++)
             {
                 buttons[i].interactable = i != index;

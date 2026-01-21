@@ -21,19 +21,14 @@ namespace UI.Trade
             Close();
         }
 
-        private void Start()
-        {
-            menuSelectionDropdown.SelectMenu(0);
-        }
-
         public static void Open()
         {
-            _instance.gameObject.SetActive(true);
+            OpenWithMenu(_instance.menuSelectionDropdown.LastSelectedMenu);
         }
 
         public static void OpenWithMenu(int menuId)
         {
-            Open();
+            _instance.gameObject.SetActive(true);
             _instance.menuSelectionDropdown.SelectMenu(menuId);
         }
 

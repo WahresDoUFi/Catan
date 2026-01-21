@@ -11,11 +11,13 @@ namespace User
 {
     public class Player : NetworkBehaviour
     {
-        private static List<Player> _players = new List<Player>();
+        public static readonly List<Player> AllPlayers = new List<Player>();
         public static Player LocalPlayer { get; private set; }
         public event Action ResourcesUpdated;
         public event Action<DevelopmentCard.Type> DevelopmentCardBought;
         public event Action<DevelopmentCard.Type> DevelopmentCardPlayed;
+
+        public ulong PlayerId => OwnerClientId;
         public int ResourceCount => _wood.Value + _stone.Value + _wheat.Value + _brick.Value + _sheep.Value;
         public byte Wood => _wood.Value;
         public byte Stone => _stone.Value;
@@ -44,7 +46,7 @@ namespace User
         
         public override void OnNetworkSpawn()
         {
-            _players.Add(this);
+            AllPlayers.Add(this);
             if (IsOwner)
             {
                 SetNameRpc(PlayerPrefs.GetString("Nickname"));
@@ -66,7 +68,7 @@ namespace User
 
         public static Player GetPlayerById(ulong clientId)
         {
-            return _players.FirstOrDefault(player => player.OwnerClientId == clientId);
+            return AllPlayers.FirstOrDefault(player => player.OwnerClientId == clientId);
         }
 
         public void AddVictoryPoints(byte points)

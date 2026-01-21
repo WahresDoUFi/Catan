@@ -21,6 +21,10 @@ namespace GamePlay
         public const int MaxCardsOnBandit = 6;
         private const int VictoryPointsTarget = 7;
 
+        private const byte RepositionBanditBit = 0b1;
+        private const byte StealResourcesBit = 0b10;
+        private const byte MonopolyActiveBit = 0b100;
+
         /// <summary>
         /// <list type="bullet">
         ///<item>Waiting = waiting for players to connect</item>
@@ -43,8 +47,9 @@ namespace GamePlay
         public bool IsGameOver => gameOverScreen.gameObject.activeSelf;
         public bool CardLimitActive => _cardsToDiscard.AsNativeArray().Any(cards => cards > 0);
         public int CardsToDiscard => _cardsToDiscard[LocalPlayerIndex];
-        public bool RepositionBandit => _repositionBanditState.Value.IsBitSet(0);
-        public bool CanStealResource => _repositionBanditState.Value.IsBitSet(1) && !CardLimitActive;
+        public bool SpecialActionActive => _specialActionState.Value != 0;
+        public bool RepositionBandit => _specialActionState.Value == RepositionBanditBit;
+        public bool CanStealResource => _specialActionState.Value == StealResourcesBit && !CardLimitActive;
         private int LocalPlayerIndex => Mathf.Max(0, _playerIds.IndexOf(NetworkManager.LocalClientId));
         public event Action TurnChanged;
 
@@ -55,7 +60,7 @@ namespace GamePlay
         private readonly NetworkVariable<byte> _playerTurn = new();
         private readonly NetworkList<ulong> _playerIds = new();
         private readonly NetworkVariable<bool> _hasThrownDice = new();
-        private readonly NetworkVariable<byte> _repositionBanditState = new();
+        private readonly NetworkVariable<byte> _specialActionState = new();
         private readonly NetworkVariable<byte> _roundNumber = new();
         private readonly NetworkVariable<int> _seed = new();
         private readonly NetworkTradeInfoVariable _playerTrades = new();
@@ -110,7 +115,7 @@ namespace GamePlay
             _hasThrownDice.OnValueChanged += HasThrownDiceChange;
             _playerTrades.TradeUpdated += TradeUpdated;
             _playerTrades.TradeCleared += AvailableTradesMenu.UpdateAvailableTrades;
-            _repositionBanditState.OnValueChanged += RepositionBanditChange;
+            _specialActionState.OnValueChanged += SpecialActionStateChange;
         }
 
         public override void OnNetworkDespawn()
@@ -185,6 +190,7 @@ namespace GamePlay
         public void SetBanditTile(MapTile tile)
         {
             if (tile.Discovered == false) return;
+            if (tile.Blocked) return;   // can't place bandit on the same tile again
             SetBanditTileRpc(tile);
         }
 
@@ -198,8 +204,9 @@ namespace GamePlay
             var tile = tileObject.GetComponent<MapTile>();
             if (tile == null) return;
             if (tile.Discovered == false) return;
+            if (tile.Blocked) return;
             Bandit.Instance.SetTargetTile(tile);
-            _repositionBanditState.Value = _repositionBanditState.Value.SetBitNoRef(0, false);
+            _specialActionState.Value = 0;
             CheckResourceStealAbilit();
         }
 
@@ -218,8 +225,9 @@ namespace GamePlay
         private void CheckResourceStealAbilit()
         {
             if (!IsHost) return;
-            
-            _repositionBanditState.Value = _repositionBanditState.Value.SetBitNoRef(1, PlayersInBanditRange().Count() > 0);
+
+            if (PlayersInBanditRange().Count() > 0)
+                _specialActionState.Value = StealResourcesBit;
         }
 
         [Rpc(SendTo.Authority)]
@@ -345,7 +353,7 @@ namespace GamePlay
                     player.RemoveResources(tile, 1);
                     Player.GetPlayerById(ActivePlayer).AddResources(tile, 1);
 
-                    _repositionBanditState.Value = 0;
+                    _specialActionState.Value = 0;
                     ResourceCardsStolenRpc(ActivePlayer, tile, 1, RpcTarget.Single(playerId, RpcTargetUse.Temp));
                     return;
                 }
@@ -369,7 +377,7 @@ namespace GamePlay
             {
                 case DevelopmentCard.Type.Knight:
                     player.KnightCardPlayed();
-                    _repositionBanditState.Value = _repositionBanditState.Value.SetBitNoRef(0, true);
+                    _specialActionState.Value = RepositionBanditBit;
                     break;
                 case DevelopmentCard.Type.HangedKnights:
                     foreach (var clientId in NetworkManager.ConnectedClientsIds)
@@ -383,6 +391,12 @@ namespace GamePlay
                     break;
                 case DevelopmentCard.Type.RoadBuilding:
                     player.AddFreeBuilding(BuildManager.BuildType.Street, 2);
+                    break;
+                case DevelopmentCard.Type.Monopoly:
+                    if (Player.AllPlayers.Any(player => player.PlayerId != senderId && player.ResourceCount > 0))
+                    {
+                        _specialActionState.Value = MonopolyActiveBit;
+                    }
                     break;
             }
 
@@ -436,6 +450,31 @@ namespace GamePlay
             //  only trades with the player whose turn it is are allowed
             if (tradeInfo.ReceiverId == ActivePlayer || tradeInfo.SenderId == ActivePlayer)
                 _playerTrades.AddTrade(tradeInfo);
+        }
+
+        public void DeclareMonopoly(Tile resourceType)
+        {
+            DeclareMonopolyRpc(resourceType);
+        }
+
+        [Rpc(SendTo.Server)]
+        private void DeclareMonopolyRpc(Tile resourceType, RpcParams rpcparams = default)
+        {
+            if (_specialActionState.Value != MonopolyActiveBit) return;
+            var senderId = rpcparams.Receive.SenderClientId;
+            if (senderId != ActivePlayer) return;
+
+            byte resourceCount = 0;
+            foreach (var clientId in _playerIds)
+            {
+                if (clientId == ActivePlayer) continue;
+                var player = Player.GetPlayerById(clientId);
+                var resources = player.GetResources(resourceType);
+                resourceCount += resources;
+                player.RemoveResources(resourceType, resourceCount);
+            }
+
+            Player.GetPlayerById(senderId).AddResources(resourceType, resourceCount);
         }
 
         public void StartGame()
@@ -534,7 +573,7 @@ namespace GamePlay
                         _cardsToDiscard[i] = (byte)Mathf.FloorToInt(cardCount / 2f);
                     }
                 }
-                _repositionBanditState.Value = _repositionBanditState.Value.SetBitNoRef(0, true);
+                _specialActionState.Value = RepositionBanditBit;
                 return;
             }
             foreach (var settlement in Settlement.AllSettlements)
@@ -580,20 +619,26 @@ namespace GamePlay
             }
         }
 
-        private void RepositionBanditChange(byte previousValue, byte newValue)
+        private void SpecialActionStateChange(byte previousValue, byte newValue)
         {
             if (IsMyTurn())
                 CameraController.Instance.EnterOverview();
-            if (RepositionBandit)
+            DevelopmentCardsMenu.Close();
+            if (newValue == RepositionBanditBit)
             {
                 BuildManager.ShowInfoText("Bandit");
             }
-            else if (CanStealResource)
+            else if (newValue == StealResourcesBit)
             {
                 BuildManager.ShowInfoText("Stealing Resource");
             }
+            else if (newValue == MonopolyActiveBit)
+            {
+                MonopolySelection.Open();
+            }
             else if (newValue == 0)
             {
+                MonopolySelection.Close();
                 BuildManager.SetActive(false);
             }
         }
@@ -621,7 +666,7 @@ namespace GamePlay
                         }
                     case ConnectionNotificationManager.ConnectionStatus.Disconnected:
                         _cardsToDiscard.Clear();
-                        _repositionBanditState.Value = 0;
+                        _specialActionState.Value = 0;
                         NextTurn();
                         //  fix required: when player leaves, there is no check in place for who is supposed to be the next player etc.
                         _cardsToDiscard.RemoveAt(_playerIds.IndexOf(clientId));

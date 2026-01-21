@@ -49,8 +49,7 @@ namespace UI.Trade
             if (GameManager.Instance.State != GameManager.GameState.Playing) return false;
             if (!GameManager.Instance.DiceThrown) return false;
             if (GameManager.Instance.CardLimitActive) return false;
-            if (GameManager.Instance.RepositionBandit) return false;
-            if (GameManager.Instance.CanStealResource) return false;
+            if (GameManager.Instance.SpecialActionActive) return false;
             return true;
         }
 

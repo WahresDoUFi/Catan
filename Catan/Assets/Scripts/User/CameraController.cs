@@ -153,6 +153,7 @@ namespace User
             if (GameManager.Instance.IsGameOver) return false;
             if (DevelopmentCardsDisplay.HasToRevealCard) return false;
             if (DevelopmentCardsMenu.IsOpen) return false;
+            if (MonopolySelection.IsOpen) return false;
             return true;
         }
     }

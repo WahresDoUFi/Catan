@@ -62,7 +62,8 @@ public class MessageHub : MonoBehaviour
         message.Alpha = 0f;
         message.Position = _instance.spawnOffset;
         message.SetTitle(title);
-        message.SetText(description, _instance._rectTransform.sizeDelta.x);
+        //  reduce width by 10 for padding
+        message.SetText(description, _instance._rectTransform.sizeDelta.x - 10f);
         _instance._messages.Add(message);
         return message;
     }

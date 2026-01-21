@@ -18,6 +18,7 @@ namespace Misc
         /// <returns>DevelopmentCard.Type</returns>
         public static DevelopmentCard.Type Next()
         {
+            return DevelopmentCard.Type.Monopoly;
             float number = Random.Range(0f, 1f);
             number -= VictoryPointChance;
             if (number <= 0f)

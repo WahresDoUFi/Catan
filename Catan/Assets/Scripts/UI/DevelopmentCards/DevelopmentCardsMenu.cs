@@ -45,7 +45,7 @@ namespace UI.DevelopmentCards
         {
             _instance = this;
             _canvasGroup = GetComponent<CanvasGroup>();
-            closeButton.onClick.AddListener(() => StartCoroutine(Close()));
+            closeButton.onClick.AddListener(Close);
             defaultPosition = signRect.anchoredPosition;
             signRect.anchoredPosition = defaultPosition + Vector2.up * closedOffset;
             _canvasGroup.interactable = false;
@@ -55,7 +55,6 @@ namespace UI.DevelopmentCards
         private void Start()
         {
             Player.LocalPlayer.DevelopmentCardBought += CardBought;
-            Player.LocalPlayer.DevelopmentCardPlayed += CardPlayed;
             GameManager.Instance.TurnChanged += TurnChanged;
         }
 
@@ -75,6 +74,11 @@ namespace UI.DevelopmentCards
                 !BuildManager.BuildModeActive;
         }
 
+        public static void Close()
+        {
+            _instance.StartCoroutine(_instance.CloseCoroutine());
+        }
+
         public static void Open()
         {
             IsOpen = true;
@@ -83,7 +87,7 @@ namespace UI.DevelopmentCards
             _instance._canvasGroup.blocksRaycasts = true;
         }
 
-        private IEnumerator Close()
+        private IEnumerator CloseCoroutine()
         {
             _canvasGroup.interactable = false;
             _canvasGroup.blocksRaycasts = false;
@@ -170,11 +174,5 @@ namespace UI.DevelopmentCards
             GameManager.Instance.PlayDevelopmentCard(card.CardType);
             StartCoroutine(PlayCardAnimation(card));
         }
-
-        private void CardPlayed(DevelopmentCard.Type _)
-        {
-            if (CanOpen()) return;
-            StartCoroutine(Close());
-        } 
     }
 }
