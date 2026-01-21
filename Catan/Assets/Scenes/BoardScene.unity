@@ -27377,9 +27377,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1516044145}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa67e687c1aa413c97f58590c6d7d49a, type: 3}
+  m_Script: {fileID: 11500000, guid: fcc08726ec925994c9e2aaa561736bd5, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UI.ResourceIconProvider
+  m_EditorClassIdentifier: Assembly-CSharp::UI.ResourceDataProvider
   resourceData:
   - name: Sheep
     resourceType: 0
@@ -27387,7 +27387,7 @@ MonoBehaviour:
   - name: Stone
     resourceType: 1
     icon: {fileID: 21300000, guid: 7f5ca0a825897457aba83aba7ae2783d, type: 3}
-  - name: Woo
+  - name: Wood
     resourceType: 2
     icon: {fileID: 21300000, guid: 079077d6a7a4c406692fb9a931414074, type: 3}
   - name: Brick
