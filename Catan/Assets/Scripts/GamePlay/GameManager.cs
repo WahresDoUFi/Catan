@@ -471,7 +471,7 @@ namespace GamePlay
                 var player = Player.GetPlayerById(clientId);
                 var resources = player.GetResources(resourceType);
                 resourceCount += resources;
-                player.RemoveResources(resourceType, resourceCount);
+                player.RemoveResources(resourceType, resources);
             }
 
             Player.GetPlayerById(senderId).AddResources(resourceType, resourceCount);
