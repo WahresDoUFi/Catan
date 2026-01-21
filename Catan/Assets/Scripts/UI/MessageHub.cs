@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
+using UI;
 using UI.Trade;
 using UnityEngine;
 using User;
@@ -52,7 +53,7 @@ public class MessageHub : MonoBehaviour
         var playerName = Player.GetPlayerById(playerId).PlayerName;
         var playerColor = GameManager.Instance.GetPlayerColor(playerId);
         var hexColor = ColorUtility.ToHtmlStringRGB(playerColor);
-        SpawnPopUp("Resources stolen!", $"<color=#{hexColor}>{playerName}</color> stole <color=#79D2D6>x{amount} {resource.ToString()}</color> from you");
+        SpawnPopUp("Resources stolen!", $"<color=#{hexColor}>{playerName}</color> stole <color=#79D2D6>x{amount} {ResourceDataProvider.GetResourceName(resource)}</color> from you");
     }
 
     private static PopUpMessage SpawnPopUp(string title, string description)

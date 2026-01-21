@@ -235,7 +235,7 @@ namespace User
             return result;
         }
 
-        [Rpc(SendTo.Owner, InvokePermission = RpcInvokePermission.Server)]
+        [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
         private void DevelopmentCardBoughtRpc(byte card)
         {
             var cardType = (DevelopmentCard.Type)card;

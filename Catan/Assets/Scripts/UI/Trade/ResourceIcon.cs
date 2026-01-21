@@ -17,7 +17,7 @@ namespace UI.Trade
 
         public void SetData(Tile resource, int amount)
         {
-            _image.sprite = ResourceIconProvider.GetIcon(resource);
+            _image.sprite = ResourceDataProvider.GetIcon(resource);
             amountText.text = "x" + amount;
         }
     }

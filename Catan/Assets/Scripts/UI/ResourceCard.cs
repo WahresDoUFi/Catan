@@ -24,7 +24,7 @@ namespace UI
 
         public void SetType(Tile type)
         {
-            icon.sprite = ResourceIconProvider.GetIcon(type);
+            icon.sprite = ResourceDataProvider.GetIcon(type);
             _type = type;
         }
 

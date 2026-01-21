@@ -21,6 +21,7 @@ namespace GamePlay
         {
             Instance = this;
             _renderers = GetComponentsInChildren<Renderer>();
+            SetVisible(false);
         }
 
         public override void OnNetworkSpawn()
@@ -38,10 +39,7 @@ namespace GamePlay
 
         public void Show()
         {
-            foreach (var renderer in _renderers)
-            {
-                renderer.enabled = true;
-            }
+            SetVisible(true);
         }
 
         public void ClickPerformed()
@@ -60,6 +58,14 @@ namespace GamePlay
                 _tileId.Value = tile;
         }
 
+        private void SetVisible(bool visible)
+        {
+            foreach (var renderer in _renderers)
+            {
+                renderer.enabled = visible;
+            }
+        }
+
         private void TileIdChanged(NetworkBehaviourReference previousValue, NetworkBehaviourReference newValue)
         {
             if (!newValue.TryGet(out var tileObject)) return;
@@ -68,10 +74,7 @@ namespace GamePlay
             transform.position = targetTransform.position;
             transform.rotation = targetTransform.rotation;
             BanditMoved?.Invoke(tile);
-            foreach (var renderer in _renderers)
-            {
-                renderer.enabled = tile.Discovered;
-            }
+            SetVisible(tile.Discovered);
         }
     }
 }

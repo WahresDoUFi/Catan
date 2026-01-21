@@ -11,9 +11,9 @@ namespace UI
         public Tile resourceType;
         public Sprite icon;
     }
-    public class ResourceIconProvider : MonoBehaviour
+    public class ResourceDataProvider : MonoBehaviour
     {
-        private static ResourceIconProvider _instance;
+        private static ResourceDataProvider _instance;
         
         [SerializeField]
         private ResourceData[] resourceData;

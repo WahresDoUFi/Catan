@@ -37,6 +37,7 @@ namespace UI.Trade
 
         private void OnEnable()
         {
+            UpdatePlayerList();
             foreach (var resourceCounter in playerResources)
             {
                 resourceCounter.Reset();
@@ -77,7 +78,7 @@ namespace UI.Trade
             else
             {
                 var tabButton = Instantiate(tabButtonPrefab, tabButtonsParent).GetComponent<TabButton>();
-                tabButton.SetText(GameManager.Instance.ActivePlayer.ToString());
+                tabButton.SetText(Player.GetPlayerById(GameManager.Instance.ActivePlayer).PlayerName);
                 tabButton.OnClick.AddListener(() => ButtonPressed(tabButton, GameManager.Instance.ActivePlayer));
                 firstButton = tabButton;
                 firstClientId = GameManager.Instance.ActivePlayer;
