@@ -475,6 +475,7 @@ namespace GamePlay
             }
 
             Player.GetPlayerById(senderId).AddResources(resourceType, resourceCount);
+            _specialActionState.Value = 0;
         }
 
         public void StartGame()
