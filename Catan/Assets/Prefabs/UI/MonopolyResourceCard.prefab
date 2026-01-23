@@ -274,7 +274,7 @@ MonoBehaviour:
   resourceType: 0
   amountText: {fileID: 7987874521601651700}
   hoverScale: 1.1
-  animationSpeed: 0.2
+  animationSpeed: 5
 --- !u!1 &5541628595231527066
 GameObject:
   m_ObjectHideFlags: 0

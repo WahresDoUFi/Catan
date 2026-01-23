@@ -24,6 +24,7 @@ namespace GamePlay
         private const byte RepositionBanditBit = 0b1;
         private const byte StealResourcesBit = 0b10;
         private const byte MonopolyActiveBit = 0b100;
+        private const byte YearOfPlentyActiveBit = 0b1000;
 
         /// <summary>
         /// <list type="bullet">
@@ -222,6 +223,28 @@ namespace GamePlay
             }
         }
 
+        public void SelectYearOfPlentyResources(BuildManager.ResourceCosts[] resources)
+        {
+            SelectYearOfPlentyResourcesRpc(resources);
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void SelectYearOfPlentyResourcesRpc(BuildManager.ResourceCosts[] resources,
+            RpcParams rpcparams = default)
+        {
+            if (_specialActionState.Value != YearOfPlentyActiveBit) return;
+            var player = Player.GetPlayerById(rpcparams.Receive.SenderClientId);
+            if (player.PlayerId != ActivePlayer) return;
+            if (resources.Sum(resource => resource.amount) != 2) return;
+
+            foreach (var resource in resources)
+            {
+                player.AddResources(resource.resource, resource.amount);
+            }
+
+            _specialActionState.Value = 0;
+        }
+
         private void CheckResourceStealAbilit()
         {
             if (!IsHost) return;
@@ -393,10 +416,13 @@ namespace GamePlay
                     player.AddFreeBuilding(BuildManager.BuildType.Street, 2);
                     break;
                 case DevelopmentCard.Type.Monopoly:
-                    if (Player.AllPlayers.Any(player => player.PlayerId != senderId && player.ResourceCount > 0))
+                    if (Player.AllPlayers.Any(otherPlayer => otherPlayer.PlayerId != senderId && otherPlayer.ResourceCount > 0))
                     {
                         _specialActionState.Value = MonopolyActiveBit;
                     }
+                    break;
+                case DevelopmentCard.Type.YearOfPlenty:
+                    _specialActionState.Value = YearOfPlentyActiveBit;
                     break;
             }
 
@@ -637,9 +663,14 @@ namespace GamePlay
             {
                 MonopolySelection.Open();
             }
+            else if (newValue == YearOfPlentyActiveBit)
+            {
+                YearOfPlentySelection.Open();
+            }
             else if (newValue == 0)
             {
                 MonopolySelection.Close();
+                YearOfPlentySelection.Close();
                 BuildManager.SetActive(false);
             }
         }

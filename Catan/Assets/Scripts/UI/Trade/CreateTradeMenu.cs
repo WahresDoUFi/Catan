@@ -13,8 +13,8 @@ namespace UI.Trade
         [SerializeField] private GameObject tabButtonPrefab;
         [SerializeField] private Transform tabButtonsParent;
 
-        [SerializeField] private ResourceCounter[] otherPlayerResources;
-        [SerializeField] private ResourceCounter[] playerResources;
+        [SerializeField] private TradeResourceCounter[] otherPlayerResources;
+        [SerializeField] private TradeResourceCounter[] playerResources;
 
         [SerializeField] private Button createTradeButton;
 
@@ -127,7 +127,7 @@ namespace UI.Trade
             return CreateResourceList(otherPlayerResources);
         }
         
-        private BuildManager.ResourceCosts[] CreateResourceList(IEnumerable<ResourceCounter> counters)
+        private BuildManager.ResourceCosts[] CreateResourceList(IEnumerable<TradeResourceCounter> counters)
         {
             List<BuildManager.ResourceCosts> resources = new();
             foreach (var resource in counters)

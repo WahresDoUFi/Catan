@@ -1,23 +1,27 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using User;
 
-namespace UI.Trade
+namespace UI.Components
 {
     public class ResourceCounter : MonoBehaviour
     {
         public byte Value
         {
             get => (byte)_value;
-            private set
+            set => _value = Mathf.Clamp(value, 0, Limit);
+        }
+		public int Limit 
+        { 
+            get => _limit;
+            set
             {
-                if (!_player) _value = 0;
-                else _value = Mathf.Clamp(value, 0, _player.GetResources(resource));
+                if (_limit == value) return;
+                _limit = value;
+                _value = Mathf.Clamp(_value, 0, Limit);
+                UpdateButtonState();
             }
         }
-
         public Tile Resource => resource;
 
         [SerializeField] private Tile resource;
@@ -25,8 +29,8 @@ namespace UI.Trade
         [SerializeField] private Button addButton;
         [SerializeField] private Button removeButton;
 
+        private int _limit;
         private int _value;
-        private Player _player;
 
         private void OnEnable()
         {
@@ -40,38 +44,29 @@ namespace UI.Trade
             removeButton.onClick.RemoveAllListeners();
         }
 
-        private void Update()
-        {
-            if (!_player) return;
-            amountText.text = Value.ToString();
-            UpdateButtonState();
-        }
-
         public void Reset()
         {
             Value = 0;
+            UpdateButtonState();
         }
 
-        public void SetPlayer(Player player)
+        protected virtual void UpdateButtonState()
         {
-            _player = player;
-            gameObject.SetActive(_player);
-        }
-
-        private void UpdateButtonState()
-        {
+            amountText.text = Value.ToString();
             removeButton.interactable = Value > 0;
-            addButton.interactable = Value < _player.GetResources(resource);
+            addButton.interactable = Value < Limit;
         }
 
         private void AddResource()
         {
             Value++;
+            UpdateButtonState();
         }
 
         private void RemoveResource()
         {
             Value--;
+            UpdateButtonState();
         }
     }
 }
