@@ -163,6 +163,8 @@ namespace GamePlay
                 _instance.PlaceStreet();
             else if (_instance._buildType == BuildType.Settlement)
                 _instance.PlaceSettlement();
+            else if (_instance._buildType == BuildType.City)
+                _instance.UpgradeSettlement();
         }
 
         private static string GetNameForBuildType(BuildType buildType)
@@ -173,6 +175,13 @@ namespace GamePlay
         private void PlaceSettlement()
         {
             if (GameManager.Instance.PlaceSettlement(
+                    Settlement.GetClosestSettlementTo(CameraController.Instance.MouseWorldPosition())))
+                SetActive(false);
+        }
+
+        private void UpgradeSettlement()
+        {
+            if (GameManager.Instance.UpgradeSettlement(
                     Settlement.GetClosestSettlementTo(CameraController.Instance.MouseWorldPosition())))
                 SetActive(false);
         }
@@ -190,6 +199,8 @@ namespace GamePlay
                 HandleStreetPlacing(worldPoint);
             else if (_buildType == BuildType.Settlement)
                 HandleSettlementPlacing(worldPoint);
+            else if (_buildType == BuildType.City)
+                HandleCityUpgrade(worldPoint);
         }
 
         private void HandleStreetPlacing(Vector3 worldPoint)
@@ -202,8 +213,19 @@ namespace GamePlay
         private void HandleSettlementPlacing(Vector3 worldPoint)
         {
             var settlement = Settlement.GetClosestSettlementTo(worldPoint);
-            if (settlement)
+            if (settlement && !settlement.IsOccupied)
                 settlement.Preview = true;
+        }
+
+        private void HandleCityUpgrade(Vector3 worldPoint)
+        {
+            var settlement = Settlement.GetClosestSettlementTo(worldPoint);
+            if (settlement)
+            {
+                if (settlement.Level != 1) return;
+                if (!settlement.IsOwner) return;
+                settlement.Preview = true;
+            }
         }
 
         private IEnumerator FadeVolume(float target, float fadeTime)

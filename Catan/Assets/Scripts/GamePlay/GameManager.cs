@@ -162,12 +162,19 @@ namespace GamePlay
         public bool PlaceSettlement(Settlement settlement)
         {
             if (!settlement) return false;
-            if (State == GameState.Playing &&
-                !Player.LocalPlayer.CanAfford(BuildManager.BuildType.Settlement))
-                return false;
-            ulong clientId = NetworkManager.Singleton.LocalClientId;
-            BuySettlementRpc(NetworkManager.Singleton.LocalClientId, settlement.Id);
-            return settlement.CanBeBuildBy(clientId);
+            if (!Player.LocalPlayer.CanAfford(BuildManager.BuildType.Settlement)) return false;
+            if (!settlement.CanBeBuildBy(NetworkManager.Singleton.LocalClientId)) return false;
+            BuySettlementRpc(settlement.Id);
+            return true;
+        }
+
+        public bool UpgradeSettlement(Settlement settlement)
+        {
+            if (!settlement) return false;
+            if (!Player.LocalPlayer.CanAfford(BuildManager.BuildType.City)) return false;
+            if (settlement.Level != 1) return false;
+            UpgradeSettlementRpc(settlement.Id);
+            return true;
         }
 
         public bool PlaceStreet(Street street)
@@ -267,8 +274,10 @@ namespace GamePlay
         }
 
         [Rpc(SendTo.Authority)]
-        private void BuySettlementRpc(ulong clientId, int settlementId)
+        private void BuySettlementRpc(int settlementId, RpcParams rpcparams = default)
         {
+            var clientId = rpcparams.Receive.SenderClientId;
+            if (clientId != ActivePlayer) return;
             var settlement = Settlement.AllSettlements[settlementId];
             if (!settlement.CanBeBuildBy(clientId)) return;
             var player = Player.GetPlayerById(clientId);
@@ -282,6 +291,19 @@ namespace GamePlay
             {
                 tile.Discover();
             }
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void UpgradeSettlementRpc(int settlementId, RpcParams rpcparams = default)
+        {
+            var clientId = rpcparams.Receive.SenderClientId;
+            if (clientId != ActivePlayer) return;
+            var settlement = Settlement.AllSettlements[settlementId];
+            if (settlement.Owner != clientId && settlement.Level != 1) return;
+            var player = Player.GetPlayerById(clientId);
+            if (!player.CanAfford(BuildManager.BuildType.City)) return;
+            player.Purchase(BuildManager.BuildType.City);
+            settlement.Upgrade();
         }
 
         [Rpc(SendTo.Authority)]

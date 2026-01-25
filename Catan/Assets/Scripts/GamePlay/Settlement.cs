@@ -23,6 +23,8 @@ public class Settlement : NetworkBehaviour
 
     [SerializeField] private GameObject settlement;
     [SerializeField] private GameObject settlementPreview;
+    [SerializeField] private GameObject city;
+    [SerializeField] private GameObject cityPreview;
     [SerializeField] private Color canBuildColor;
     [SerializeField] private Color unavailableColor;
     [SerializeField] private AudioSource placeBuildingSound;
@@ -31,7 +33,7 @@ public class Settlement : NetworkBehaviour
     [SerializeField] private Color defaultColor, selectedColor;
     [SerializeField] private float previewFadeDistance;
 
-    private Material _settlementPreviewMaterial;
+    private Material[] _settlementPreviewMaterials;
     private MapTile[] _neighboringTiles;
     private MapIcon _mapIcon;
     private MapIcon _buildPreviewIcon;
@@ -48,7 +50,7 @@ public class Settlement : NetworkBehaviour
 
     private void Awake()
     {
-        _settlementPreviewMaterial = settlementPreview.GetComponent<Renderer>().material;
+        _settlementPreviewMaterials = settlementPreview.GetComponent<Renderer>().materials;
     }
 
     private void Start()
@@ -60,7 +62,8 @@ public class Settlement : NetworkBehaviour
 
     private void Update()
     {
-        settlementPreview.SetActive(ShowPreview());
+        settlementPreview.SetActive(ShowSettlementPreview());
+        UpdateCityPreview();
         UpdateBuildPreviewIcon();
     }
 
@@ -104,12 +107,17 @@ public class Settlement : NetworkBehaviour
         NotifyConnectedStreets();
     }
 
+    public void Upgrade()
+    {
+        _level.Value = 2;
+    }
+
     private void NotifyConnectedStreets()
     {
         // Notify all connected streets that a settlement has been built
         foreach (var street in streets)
         {
-            if (street != null && street.IsOccupied)
+            if (street && street.IsOccupied)
             {
                 street.NotifySettlementBuilt(this);
             }
@@ -144,19 +152,47 @@ public class Settlement : NetworkBehaviour
             .ToArray();
     }
 
-    private bool ShowPreview()
+    private bool ShowSettlementPreview()
     {
         if (!Preview || !NetworkManager.Singleton) return false;
         if (IsOccupied) return false;
         ulong clientId = NetworkManager.Singleton.LocalClientId;
-        _settlementPreviewMaterial.color = CanBeBuildBy(clientId) ? canBuildColor : unavailableColor;
+        foreach (var material in _settlementPreviewMaterials)
+        {
+            material.color = CanBeBuildBy(clientId) ? canBuildColor : unavailableColor;   
+        }
         Preview = false;
         return true;
+    }
+
+    private void UpdateCityPreview()
+    {
+        if (ShowCityPreview())
+        {
+            settlement.SetActive(false);
+            cityPreview.SetActive(true);
+        }
+        else
+        {
+            cityPreview.SetActive(false);
+            settlement.SetActive(Level == 1);
+        }
+
+        Preview = false;
+    }
+
+    private bool ShowCityPreview()
+    {
+        if (!Preview || !NetworkManager.Singleton) return false;
+        if (!IsOccupied) return false;
+        if (!IsOwner) return false;
+        return Level == 1;
     }
 
     private void LevelUpdated(byte previousLevel, byte newLevel)
     {
         settlement.SetActive(newLevel == 1);
+        city.SetActive(newLevel == 2);
         if (IsOccupied)
             modelColorManager.SetColor(GameManager.Instance.GetPlayerColor(Owner));
         

@@ -14,6 +14,7 @@ namespace UI
         [Header("Buy Buttons")]
         [SerializeField] private Button buyStreetButton;
         [SerializeField] private Button buySettlementButton;
+        [SerializeField] private Button buyCityButton;
         [SerializeField] private Button buyDevelopmentCardButton;
 
         private Vector3 _defaultPosition;
@@ -50,6 +51,7 @@ namespace UI
         {
             buyStreetButton.onClick.AddListener(() => BuildManager.SelectBuildingType(BuildManager.BuildType.Street));
             buySettlementButton.onClick.AddListener(() => BuildManager.SelectBuildingType(BuildManager.BuildType.Settlement));
+            buyCityButton.onClick.AddListener(() => BuildManager.SelectBuildingType(BuildManager.BuildType.City));
             buyDevelopmentCardButton.onClick.AddListener(GameManager.Instance.BuyDevelopmentCard);
             Player.LocalPlayer.DevelopmentCardBought += _ => buyDevelopmentCardButton.interactable = false;
         }

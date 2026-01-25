@@ -169,9 +169,9 @@ namespace UI
             var count = 0;
             for (var i = 0; i <= resourceAsInt; i++)
             {
-                count += _player.GetResources((Tile)i);
+                count += _resourceCards.Count(card => card.ResourceType == (Tile)i);
             }
-            return Mathf.Min(count, _resourceCards.Count + 1) - 1;
+            return count;
         }
 
         private void UpdateCardCount()
