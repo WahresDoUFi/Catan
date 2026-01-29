@@ -223,7 +223,7 @@ namespace GamePlay
             if (settlement)
             {
                 if (settlement.Level != 1) return;
-                if (!settlement.IsOwner) return;
+                if (settlement.Owner != NetworkManager.Singleton.LocalClientId) return;
                 settlement.Preview = true;
             }
         }

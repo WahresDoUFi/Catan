@@ -25,6 +25,9 @@ namespace UI
         [SerializeField] private Transform diceOne;
         [SerializeField] private Transform diceTwo;
         [SerializeField] private ResourceCardsTooltip resourceCardsTooltip;
+        [Header("Profile Picture")]
+        [SerializeField] private Image profileImage;
+        [SerializeField] private Sprite[] profileSprites;
 
         private Player _player;
         private int _resultOne, _resultTwo;
@@ -39,6 +42,7 @@ namespace UI
         {
             if (!_player) return;
             nameText.text = _player.PlayerName;
+            profileImage.sprite = profileSprites[_player.PictureId];
             cardAmountText.text = $"{_player.ResourceCount}";
             cardAmountText.color = _player.ResourceCount > GameManager.MaxCardsOnBandit ? Color.red : Color.white;
             victoryPointsText.text = $"{_player.VictoryPoints}";

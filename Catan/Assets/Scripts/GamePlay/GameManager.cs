@@ -103,6 +103,7 @@ namespace GamePlay
                     _playerIds.Add(playerId);
                     _cardsToDiscard.Add(0);
                 }
+                SetupHarbors();
             }
             foreach (ulong playerId in _playerIds)
             {
@@ -321,19 +322,51 @@ namespace GamePlay
 
         public void TradeResources(Tile give, Tile get)
         {
-            TradeResourcesRpc(NetworkManager.LocalClientId, (int)give, (int)get);
+            if (give == get) return;
+            TradeResourcesRpc((int)give, (int)get);
         }
 
         [Rpc(SendTo.Authority)]
-        private void TradeResourcesRpc(ulong clientId, int give, int get)
+        private void TradeResourcesRpc(int give, int get, RpcParams rpcparams = default)
         {
-            if (_playerIds.IndexOf(clientId) != _playerTurn.Value) return;
+            if (give == get) return;
+            var clientId = rpcparams.Receive.SenderClientId;
+            if (clientId != ActivePlayer) return;
             var player = Player.GetPlayerById(clientId);
+            byte tradeAmount = player.GetHarbors().Any(harbor => !harbor.IsResourceTrade) ? (byte)3 : (byte)4;
+            TradeResources(player, (Tile)give, tradeAmount, (Tile)get);
+        }
+
+        public void PerformHarborTrade(Tile give, Tile get)
+        {
+            if (give == get) return;
+            PerformHarborTradeRpc(give, get);
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void PerformHarborTradeRpc(Tile give, Tile get, RpcParams rpcparams = default)
+        {
+            if (give == get) return;
+            var clientId = rpcparams.Receive.SenderClientId;
+            if (clientId != ActivePlayer) return;
+            var player = Player.GetPlayerById(clientId);
+            foreach (var harbor in player.GetHarbors())
+            {
+                if (harbor.IsResourceTrade && harbor.Resource == give)
+                {
+                    TradeResources(player, give, 2, get);
+                    return;
+                }
+            }
+        }
+
+        private void TradeResources(Player player, Tile give, byte giveAmount, Tile get)
+        {
             var costs = new BuildManager.ResourceCosts[]
-                { new BuildManager.ResourceCosts() { amount = 4, resource = (Tile)give } };
+                { new BuildManager.ResourceCosts() { amount = giveAmount, resource = give } };
             if (!player.HasResources(costs)) return;
-            player.RemoveResources((Tile)give, 4);
-            player.AddResources((Tile)get, 1);
+            player.RemoveResources(give, giveAmount);
+            player.AddResources(get, 1);
         }
 
         public void FinishTurn()
@@ -520,6 +553,7 @@ namespace GamePlay
                 var resources = player.GetResources(resourceType);
                 resourceCount += resources;
                 player.RemoveResources(resourceType, resources);
+                ResourceCardsStolenRpc(senderId, resourceType, resources, RpcTarget.Single(player.PlayerId, RpcTargetUse.Temp));
             }
 
             Player.GetPlayerById(senderId).AddResources(resourceType, resourceCount);
@@ -547,6 +581,21 @@ namespace GamePlay
             var player = Player.GetPlayerById(rpcParams.Receive.SenderClientId);
             player.RemoveResources(resource, 1);
             _cardsToDiscard[playerIndex]--;
+        }
+
+        private void SetupHarbors()
+        {
+            var resources = ((Tile[])Enum.GetValues(typeof(Tile))).ToList();
+            resources.Remove(Tile.Desert);
+            foreach (var harbor in Harbor.AllHarbors)
+            {
+                if (harbor.IsResourceTrade)
+                {
+                    var resource = resources[new Random().Next(0, resources.Count)];
+                    harbor.SetResource(resource);
+                    resources.Remove(resource);
+                }
+            }
         }
 
         private void NextTurn()

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
@@ -11,6 +12,7 @@ using User;
 public class Settlement : NetworkBehaviour
 {
     public static readonly List<Settlement> AllSettlements = new();
+    public static event Action<Settlement> OnSettlementBuild;
     public bool IsOccupied => _level.Value > 0;
     public ulong Owner => _owner.Value;
     public bool Preview { get; set; }
@@ -32,6 +34,7 @@ public class Settlement : NetworkBehaviour
     [SerializeField] private float maxPreviewAlpha = 0.5f;
     [SerializeField] private Color defaultColor, selectedColor;
     [SerializeField] private float previewFadeDistance;
+    [SerializeField] private Harbor harbor;
 
     private Material[] _settlementPreviewMaterials;
     private MapTile[] _neighboringTiles;
@@ -65,6 +68,16 @@ public class Settlement : NetworkBehaviour
         settlementPreview.SetActive(ShowSettlementPreview());
         UpdateCityPreview();
         UpdateBuildPreviewIcon();
+    }
+
+    public bool HasHarbor()
+    {
+        return harbor;
+    }
+
+    public Harbor GetHarbor()
+    {
+        return harbor;
     }
 
     private void UpdateBuildPreviewIcon()
@@ -185,7 +198,7 @@ public class Settlement : NetworkBehaviour
     {
         if (!Preview || !NetworkManager.Singleton) return false;
         if (!IsOccupied) return false;
-        if (!IsOwner) return false;
+        if (Owner != NetworkManager.Singleton.LocalClientId) return false;
         return Level == 1;
     }
 
@@ -206,6 +219,7 @@ public class Settlement : NetworkBehaviour
             {
                 NotifyConnectedStreets();
             }
+            OnSettlementBuild?.Invoke(this);
         }
         else if (newLevel == 2)
         {

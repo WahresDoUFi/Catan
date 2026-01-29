@@ -8,7 +8,7 @@ namespace UI.Trade
         [SerializeField] private Button[] tabButtons;
         [SerializeField] private GameObject[] tabs;
 
-        private void Awake()
+        private void Start()
         {
             for (var i = 0; i < tabButtons.Length; i++)
             {

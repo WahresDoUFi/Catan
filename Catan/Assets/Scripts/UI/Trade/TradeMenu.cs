@@ -1,3 +1,4 @@
+using System;
 using GamePlay;
 using UI.DevelopmentCards;
 using Unity.Netcode;
@@ -11,6 +12,7 @@ namespace UI.Trade
         public static TradeMenu Instance;
 
         public bool IsOpen => _open && CanBeOpened();
+        public event Action OnOpen;
 
         [SerializeField] private Button closeButton;
         [SerializeField] private float animationSpeed;
@@ -39,7 +41,10 @@ namespace UI.Trade
         public void Open()
         {
             if (GameManager.Instance.DiceThrown)
+            {
                 _open = true;
+                OnOpen?.Invoke();
+            }
         }
 
         private void Close()

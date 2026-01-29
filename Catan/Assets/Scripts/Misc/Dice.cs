@@ -35,6 +35,7 @@ namespace Misc
         private Vector3 _realVelocity;
         private Vector3 _lastPosition;
         private int _targetNumber;
+        private Renderer[] _renderers;
 
         private void Awake()
         {
@@ -42,6 +43,8 @@ namespace Misc
             _rigidbody = GetComponent<Rigidbody>();
             _audioSource = GetComponent<AudioSource>();
             _volumeController = GetComponent<VolumeController>();
+            _renderers = GetComponentsInChildren<Renderer>();
+            SetVisible(false);
         }
 
         private void FixedUpdate()
@@ -59,6 +62,14 @@ namespace Misc
             _rigidbody.isKinematic = false;
             _rigidbody.linearVelocity = velocity;
             _realVelocity = velocity;
+        }
+
+        public void SetVisible(bool visible)
+        {
+            foreach (var renderer in _renderers)
+            {
+                renderer.enabled = visible;
+            }
         }
 
         public void SetPosition(Vector3 position)
@@ -80,6 +91,7 @@ namespace Misc
         public void Release(float maxForce)
         {
             enabled = true;
+            SetVisible(true);
             _velocity = _rigidbody.linearVelocity;
             _velocity = Vector3.ClampMagnitude(_velocity, maxForce);
             _velocity.y = -gravity;

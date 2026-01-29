@@ -10,7 +10,8 @@ namespace UI
         Settlement,
         City,
         Tile,
-        BuildPreview
+        BuildPreview,
+        Harbor
     }
     
     [RequireComponent(typeof(Image))]

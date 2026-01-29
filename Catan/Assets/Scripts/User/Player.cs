@@ -25,8 +25,8 @@ namespace User
         public byte Brick => _brick.Value;
         public byte Sheep => _sheep.Value;
         public string PlayerName => _playerName;
+        public int PictureId => _pictureId;
         public byte KnightCardsPlayed => _knightCards.Value;
-
         public byte AdditionalVictoryPoints => _victoryPoints.Value;
         public int VictoryPoints =>
             global::VictoryPoints.CalculateVictoryPoints(OwnerClientId);
@@ -43,6 +43,7 @@ namespace User
 
         private readonly List<DevelopmentCard.Type> _boughtCards = new(); 
         private string _playerName;
+        private int _pictureId;
         
         public override void OnNetworkSpawn()
         {
@@ -50,12 +51,14 @@ namespace User
             if (IsOwner)
             {
                 SetNameRpc(PlayerPrefs.GetString("Nickname"));
+                SetPictureIdRpc(PlayerPrefs.GetInt("Character"));
                 LocalPlayer = this;
                 _knightCards.OnValueChanged += KnightCardsChanged;
             }
             else if (!IsHost)
             {
                 RequestNameRpc();
+                RequestPictureIdRpc();
             }
 
             _wood.OnValueChanged += ResourceCountChanged;
@@ -64,6 +67,11 @@ namespace User
             _brick.OnValueChanged += ResourceCountChanged;
             _sheep.OnValueChanged += ResourceCountChanged;
             _developmentCards.OnListChanged += DevelopmentCardsChanged;
+        }
+
+        public override void OnNetworkDespawn()
+        {
+            AllPlayers.Remove(this);
         }
 
         public static Player GetPlayerById(ulong clientId)
@@ -237,6 +245,18 @@ namespace User
             return result;
         }
 
+        public IEnumerable<Harbor> GetHarbors()
+        {
+            foreach (var settlement in Settlement.AllSettlements)
+            {
+                if (settlement.Owner == PlayerId)
+                {
+                    if (settlement.HasHarbor())
+                        yield return settlement.GetHarbor();
+                }
+            }
+        }
+
         [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
         private void DevelopmentCardBoughtRpc(byte card)
         {
@@ -251,17 +271,35 @@ namespace User
             _playerName = playerName;
         }
 
+        [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Owner)]
+        private void SetPictureIdRpc(int pictureId)
+        {
+            _pictureId = Mathf.Max(0, pictureId);
+        }
+
         [Rpc(SendTo.SpecifiedInParams, InvokePermission = RpcInvokePermission.Server)]
         private void SendNameRpc(string playerName, RpcParams rpcparams)
         {
             _playerName = playerName;
         }
 
+        [Rpc(SendTo.SpecifiedInParams, InvokePermission = RpcInvokePermission.Server)]
+        private void SendPictureIdRpc(int pictureId, RpcParams rpcparams)
+        {
+            _pictureId = pictureId;
+        }
+
         [Rpc(SendTo.Authority)]
         private void RequestNameRpc(RpcParams rpcparams = default)
         {
             SendNameRpc(_playerName, RpcTarget.Single(rpcparams.Receive.SenderClientId, RpcTargetUse.Temp));
-        } 
+        }
+
+        [Rpc(SendTo.Authority)]
+        private void RequestPictureIdRpc(RpcParams rpcparams = default)
+        {
+            SendPictureIdRpc(_pictureId, RpcTarget.Single(rpcparams.Receive.SenderClientId, RpcTargetUse.Temp));
+        }
 
         private void ResourceCountChanged(byte previous, byte current)
         {

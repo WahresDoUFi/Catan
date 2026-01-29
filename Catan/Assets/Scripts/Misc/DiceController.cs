@@ -3,6 +3,7 @@ using System.Collections;
 using GamePlay;
 using UI;
 using Unity.Netcode;
+using Unity.Properties;
 using UnityEngine;
 using UnityEngine.Serialization;
 using User;
@@ -137,6 +138,7 @@ namespace Misc
             foreach (var die in dice)
             {
                 die.SetPosition(targetPosition);
+                die.SetVisible(false);
             }
         }
 
@@ -146,6 +148,7 @@ namespace Misc
             foreach (var die in dice)
             {
                 die.SetPosition(targetPosition);
+                die.SetVisible(true);
                 targetPosition += Vector3.right * 10f + Vector3.up;
             }
         }
