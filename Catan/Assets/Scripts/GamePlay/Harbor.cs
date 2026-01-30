@@ -36,6 +36,7 @@ namespace GamePlay
             {
                 _iconImage = new GameObject("Icon").AddComponent<Image>();
                 _iconImage.transform.SetParent(icon.transform, false);
+                ResourceChanged();
                 _resource.OnValueChanged += (_, _) => ResourceChanged();
             } else
             {

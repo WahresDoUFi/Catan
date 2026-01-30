@@ -11,7 +11,7 @@ namespace User
 {
     public class Player : NetworkBehaviour
     {
-        public static readonly List<Player> AllPlayers = new List<Player>();
+        public static readonly List<Player> AllPlayers = new();
         public static Player LocalPlayer { get; private set; }
         public event Action ResourcesUpdated;
         public event Action<DevelopmentCard.Type> DevelopmentCardBought;
@@ -44,10 +44,15 @@ namespace User
         private readonly List<DevelopmentCard.Type> _boughtCards = new(); 
         private string _playerName;
         private int _pictureId;
-        
-        public override void OnNetworkSpawn()
+
+        private void Awake()
         {
             AllPlayers.Add(this);
+            DontDestroyOnLoad(this);
+        }
+
+        public override void OnNetworkSpawn()
+        {
             if (IsOwner)
             {
                 SetNameRpc(PlayerPrefs.GetString("Nickname"));
