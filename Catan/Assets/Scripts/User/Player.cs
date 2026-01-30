@@ -45,14 +45,9 @@ namespace User
         private string _playerName;
         private int _pictureId;
 
-        private void Awake()
-        {
-            AllPlayers.Add(this);
-            DontDestroyOnLoad(this);
-        }
-
         public override void OnNetworkSpawn()
         {
+            AllPlayers.Add(this);
             if (IsOwner)
             {
                 SetNameRpc(PlayerPrefs.GetString("Nickname"));

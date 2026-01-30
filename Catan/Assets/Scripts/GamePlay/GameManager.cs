@@ -105,10 +105,6 @@ namespace GamePlay
                 }
                 SetupHarbors();
             }
-            foreach (ulong playerId in _playerIds)
-            {
-                PlayerCardList.AddPlayerCard(Player.GetPlayerById(playerId));
-            }
             ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
             NetworkManager.Singleton.OnClientStopped += OnClientStopped;
             _playerIds.OnListChanged += PlayerIdsChange;
@@ -118,6 +114,14 @@ namespace GamePlay
             _playerTrades.TradeUpdated += TradeUpdated;
             _playerTrades.TradeCleared += AvailableTradesMenu.UpdateAvailableTrades;
             _specialActionState.OnValueChanged += SpecialActionStateChange;
+        }
+
+        private void Start()
+        {
+            foreach (ulong playerId in _playerIds)
+            {
+                PlayerCardList.AddPlayerCard(Player.GetPlayerById(playerId));
+            }
         }
 
         public override void OnNetworkDespawn()
