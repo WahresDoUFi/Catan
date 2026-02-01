@@ -28,7 +28,6 @@ public class GameOverScreen : MonoBehaviour
 
     private void Update()
     {
-        _canvasGroup.blocksRaycasts = _shouldShow;
         _canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha, _shouldShow ? 1f : 0f, Time.deltaTime * 1f);
     }
 
@@ -44,7 +43,7 @@ public class GameOverScreen : MonoBehaviour
     {
         if (gameOverScreen != null)
         {
-            if (winner.HasAuthority)
+            if (winner.IsOwner)
             {
                 gameOverText.text = "You won! \nCongratulations!";
                 gameOverImage.sprite = winSprite;
@@ -60,6 +59,7 @@ public class GameOverScreen : MonoBehaviour
             }
 
             gameOverScreen.gameObject.SetActive(true);
+            _canvasGroup.blocksRaycasts = true;
             _shouldShow = true;
         }
     }

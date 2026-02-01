@@ -1388,6 +1388,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.ResourceCardsTooltip
   tooltip: {fileID: 5524080376232296829}
+  contentTransform: {fileID: 6056146585457604233}
 --- !u!114 &1023859334865122573
 MonoBehaviour:
   m_ObjectHideFlags: 0

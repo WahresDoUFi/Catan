@@ -17,6 +17,19 @@ public static class VictoryPoints
         return victoryPoints;
     }
 
+    public static int CalculateLongestStreet(ulong clientId)
+    {
+        var maxLength = 0;
+        var allStreets = Street.AllStreets.Where(s => s.Owner == clientId).ToList();
+        foreach (var street in allStreets)
+        {
+            var length = Algo(street, clientId, new HashSet<Street>());
+            maxLength = Math.Max(maxLength, length);
+        }
+
+        return maxLength;
+    }
+
     private static int CalculateForBuildings(ulong clientId)
     {
         int points = 0;
@@ -55,19 +68,6 @@ public static class VictoryPoints
             if (Player.GetPlayerById(playerId).KnightCardsPlayed >= cards) return false;
         }
         return true;
-    }
-
-    private static int CalculateLongestStreet(ulong clientId)
-    {
-        var maxLength = 0;
-        var allStreets = Street.AllStreets.Where(s => s.Owner == clientId).ToList();
-        foreach (var street in allStreets)
-        {
-            var length = Algo(street, clientId, new HashSet<Street>());
-            maxLength = Math.Max(maxLength, length);
-        }
-
-        return maxLength;
     }
 
     private static int Algo(Street currentStreet, ulong clientId, HashSet<Street> visitedStreets)
