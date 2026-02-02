@@ -8,7 +8,7 @@ namespace GamePlay
 {
     public class Harbor : NetworkBehaviour
     {
-        public static List<Harbor> AllHarbors = new();
+        public static readonly List<Harbor> AllHarbors = new();
 
         public bool IsResourceTrade => resourceTrade;
         public Tile Resource => (Tile)_resource.Value;
@@ -51,7 +51,7 @@ namespace GamePlay
 
         public void SetResource(Tile resource)
         {
-            if (!IsHost || !resourceTrade) return;
+            if (!NetworkManager.IsHost || !resourceTrade) return;
             _resource.Value = (byte)resource;
         }
 

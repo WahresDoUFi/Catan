@@ -49,7 +49,7 @@ namespace Misc
         {
             if (CanThrow())
                 CameraController.Instance.EnterOverview();
-            if (!IsHost) return;
+            if (!NetworkManager.IsHost) return;
             if (_dragging || _throwFinished) return;
             foreach (var die in dice)
             {

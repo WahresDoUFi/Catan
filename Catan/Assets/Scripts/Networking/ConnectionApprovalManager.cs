@@ -1,28 +1,29 @@
-using System;
 using GamePlay;
 using Unity.Netcode;
 using UnityEngine;
 
-
-public class ConnectionApprovalManager : MonoBehaviour
+namespace Networking
 {
-    public static ConnectionApprovalManager Instance;
-
-    private void Awake()
+    public class ConnectionApprovalManager : MonoBehaviour
     {
-        Instance = this;
-    }
+        public static ConnectionApprovalManager Instance;
 
-    private void Start()
-    {
-        NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
-        NetworkManager.Singleton.ConnectionApprovalCallback = ApprovalCheck;
-    }
+        private void Awake()
+        {
+            Instance = this;
+        }
 
-    private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request,
-        NetworkManager.ConnectionApprovalResponse response)
-    {
-        response.Approved = GameManager.Instance.PlayerCount < GameManager.MaxPlayers;
-        response.Approved &= GameManager.Instance.State == GameManager.GameState.Waiting;
+        private void Start()
+        {
+            NetworkManager.Singleton.NetworkConfig.ConnectionApproval = true;
+            NetworkManager.Singleton.ConnectionApprovalCallback = ApprovalCheck;
+        }
+
+        private void ApprovalCheck(NetworkManager.ConnectionApprovalRequest request,
+            NetworkManager.ConnectionApprovalResponse response)
+        {
+            response.Approved = GameManager.Instance.PlayerCount < GameManager.MaxPlayers;
+            response.Approved &= GameManager.Instance.State == GameManager.GameState.Waiting;
+        }
     }
 }

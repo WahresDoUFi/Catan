@@ -75,7 +75,7 @@ namespace GamePlay
         private void Update()
         {
             HandleFreeBuildingSelection();
-            if (!IsHost) return;
+            if (!NetworkManager.IsHost) return;
             if (State == GameState.Preparing)
             {
                 if (!Player.GetPlayerById(ActivePlayer).HasFreeBuildings())
@@ -259,7 +259,7 @@ namespace GamePlay
 
         private void CheckResourceStealAbilit()
         {
-            if (!IsHost) return;
+            if (!NetworkManager.IsHost) return;
 
             if (PlayersInBanditRange().Count() > 0)
                 _specialActionState.Value = StealResourcesBit;
@@ -736,11 +736,15 @@ namespace GamePlay
             }
             else if (newValue == MonopolyActiveBit)
             {
-                MonopolySelection.Open();
+                if (IsMyTurn())
+                    MonopolySelection.Open();
+                else
+                    BuildManager.ShowInfoText("Monopoly");
             }
             else if (newValue == YearOfPlentyActiveBit)
             {
-                YearOfPlentySelection.Open();
+                if (IsMyTurn())
+                    YearOfPlentySelection.Open();
             }
             else if (newValue == 0)
             {

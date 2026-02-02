@@ -34,8 +34,8 @@ namespace UI
             if (GameManager.Instance.CanStealResource && GameManager.Instance.IsMyTurn())
             {
                 byte cardsDisplayed = 0;
-                var localPlayerIndex = GameManager.Instance.GetPlayerIds().ToList().IndexOf(NetworkManager.Singleton.LocalClientId);
-                var playersInRange = GameManager.Instance.PlayersInBanditRange().ToArray();
+                int localPlayerIndex = GameManager.Instance.GetPlayerIds().ToList().IndexOf(NetworkManager.Singleton.LocalClientId);
+                ulong[] playersInRange = GameManager.Instance.PlayersInBanditRange().ToArray();
                 for (var index = 0; index < _playerCards.Count; index++)
                 {
                     var playerCard = _playerCards[index];
@@ -43,9 +43,10 @@ namespace UI
                     {
                         playerCard.transform.localPosition = Vector3.Lerp(playerCard.transform.localPosition,
                             GetTargetPositionStealMode(cardsDisplayed), Time.deltaTime * animationSpeed);
+                        cardsDisplayed++;
                     }
                 }
-            } 
+            }
             else
             {
                 for (var i = 0; i < _playerCards.Count; i++)

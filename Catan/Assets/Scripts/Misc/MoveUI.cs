@@ -1,33 +1,36 @@
 using UnityEngine;
 
-public class MoveUI : MonoBehaviour
+namespace Misc
 {
-    [SerializeField] private Vector3 moveDir;
-    [SerializeField] private float moveSpeed;
-
-    private RectTransform _rectTransform;
-    private Vector3 _startPos;
-    private bool _open;
-
-    private void Awake()
+    public class MoveUI : MonoBehaviour
     {
-        _rectTransform = GetComponent<RectTransform>();
-        _startPos = _rectTransform.anchoredPosition;
-    }
+        [SerializeField] private Vector3 moveDir;
+        [SerializeField] private float moveSpeed;
 
-    private void Update()
-    {
-        var targetPosition = _open ? _startPos + moveDir : _startPos;
-        _rectTransform.anchoredPosition = Vector3.Lerp(_rectTransform.anchoredPosition, targetPosition, Time.deltaTime * moveSpeed);
-    }
+        private RectTransform _rectTransform;
+        private Vector3 _startPos;
+        private bool _open;
 
-    public void Toggle()
-    {
-        SetOpen(!_open);
-    }
+        private void Awake()
+        {
+            _rectTransform = GetComponent<RectTransform>();
+            _startPos = _rectTransform.anchoredPosition;
+        }
 
-    public void SetOpen(bool open)
-    {
-        _open = open;
+        private void Update()
+        {
+            var targetPosition = _open ? _startPos + moveDir : _startPos;
+            _rectTransform.anchoredPosition = Vector3.Lerp(_rectTransform.anchoredPosition, targetPosition, Time.deltaTime * moveSpeed);
+        }
+
+        public void Toggle()
+        {
+            SetOpen(!_open);
+        }
+
+        public void SetOpen(bool open)
+        {
+            _open = open;
+        }
     }
 }

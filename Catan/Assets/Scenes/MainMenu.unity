@@ -1637,6 +1637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f83bad117e74ab6b1352b008c51b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.PlayerNameInputField
+  container: {fileID: 203258876}
 --- !u!1 &619382194
 GameObject:
   m_ObjectHideFlags: 0

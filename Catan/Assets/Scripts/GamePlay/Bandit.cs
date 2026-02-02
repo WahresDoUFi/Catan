@@ -54,7 +54,7 @@ namespace GamePlay
 
         public void SetTargetTile(MapTile tile)
         {
-            if (IsHost)
+            if (NetworkManager.IsHost)
                 _tileId.Value = tile;
         }
 

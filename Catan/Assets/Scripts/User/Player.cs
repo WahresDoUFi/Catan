@@ -45,9 +45,13 @@ namespace User
         private string _playerName;
         private int _pictureId;
 
-        public override void OnNetworkSpawn()
+        private void Awake()
         {
             AllPlayers.Add(this);
+        }
+
+        public override void OnNetworkSpawn()
+        {
             if (IsOwner)
             {
                 SetNameRpc(PlayerPrefs.GetString("Nickname"));
@@ -76,6 +80,8 @@ namespace User
 
         public static Player GetPlayerById(ulong clientId)
         {
+            if (AllPlayers.Count == 0)
+                Debug.LogWarning("Trying to get players before list is initialized");
             return AllPlayers.FirstOrDefault(player => player.OwnerClientId == clientId);
         }
 
@@ -223,7 +229,7 @@ namespace User
         /// <param name="amount">default 1, how many of that type</param>
         public void AddFreeBuilding(BuildManager.BuildType type, int amount = 1)
         {
-            if (!IsHost) return;
+            if (!NetworkManager.IsHost) return;
             for (var i = 0; i < amount; i++)
             {
                 _freeBuildings.Add((byte)type);
