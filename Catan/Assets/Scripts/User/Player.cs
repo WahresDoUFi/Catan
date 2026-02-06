@@ -325,7 +325,7 @@ namespace User
             var change = previousValue - newValue;
             if (change > 0)
             {
-                MessageHub.KnightsHanged((byte)change);
+                NotificationHub.KnightsHanged((byte)change);
             }
         }
     }

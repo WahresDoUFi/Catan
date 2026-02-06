@@ -443,9 +443,15 @@ namespace GamePlay
         }
 
         [Rpc(SendTo.SpecifiedInParams, InvokePermission = RpcInvokePermission.Server)]
+        private void InformMonopolyDeclaredRpc(Tile resource, RpcParams rpcparams)
+        {
+            NotificationHub.MonopolyDeclared(resource);
+        }
+
+        [Rpc(SendTo.SpecifiedInParams, InvokePermission = RpcInvokePermission.Server)]
         private void ResourceCardsStolenRpc(ulong playerId, Tile resource, byte amount, RpcParams rpcparams)
         {
-            MessageHub.ResourcesStolen(playerId, resource, amount);
+            NotificationHub.ResourcesStolen(playerId, resource, amount);
         }
 
         [Rpc(SendTo.Authority)]
@@ -550,11 +556,14 @@ namespace GamePlay
             if (senderId != ActivePlayer) return;
 
             byte resourceCount = 0;
-            foreach (var clientId in _playerIds)
+            foreach (ulong clientId in _playerIds)
             {
                 if (clientId == ActivePlayer) continue;
+                InformMonopolyDeclaredRpc(resourceType, RpcTarget.Single(clientId, RpcTargetUse.Temp));
                 var player = Player.GetPlayerById(clientId);
-                var resources = player.GetResources(resourceType);
+                byte resources = player.GetResources(resourceType);
+                if (resources == 0)
+                    continue;
                 resourceCount += resources;
                 player.RemoveResources(resourceType, resources);
                 ResourceCardsStolenRpc(senderId, resourceType, resources, RpcTarget.Single(player.PlayerId, RpcTargetUse.Temp));
@@ -659,7 +668,7 @@ namespace GamePlay
             AvailableTradesMenu.UpdateAvailableTrades();
             if (info.ReceiverId == NetworkManager.LocalClientId)
             {
-                MessageHub.TradeReceived(info);
+                NotificationHub.TradeReceived(info);
             }
         }
 
