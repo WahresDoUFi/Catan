@@ -370,6 +370,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7301411807700986575}
     m_Modifications:
+    - target: {fileID: 4068261378367921854, guid: e76a23aff85584b949a3e5eb3754e67b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4068261378367921854, guid: e76a23aff85584b949a3e5eb3754e67b, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 45d51afc8d87d40bb8f2f5a82b992397, type: 2}
     - target: {fileID: 4888645201147807453, guid: e76a23aff85584b949a3e5eb3754e67b, type: 3}
       propertyPath: m_Name
       value: Settlement
@@ -414,6 +422,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7245423534071601411, guid: e76a23aff85584b949a3e5eb3754e67b, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8385836491182413749, guid: 959a686d71213416492156dc6e7351c6, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

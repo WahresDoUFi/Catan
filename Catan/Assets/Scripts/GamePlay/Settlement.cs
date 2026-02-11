@@ -14,6 +14,7 @@ public class Settlement : NetworkBehaviour
     public static readonly List<Settlement> AllSettlements = new();
     public static event Action<Settlement> OnSettlementBuild;
     public bool IsOccupied => _level.Value > 0;
+    public bool IsCity => _level.Value > 1;
     public ulong Owner => _owner.Value;
     public bool Preview { get; set; }
     public int Id => AllSettlements.IndexOf(this);

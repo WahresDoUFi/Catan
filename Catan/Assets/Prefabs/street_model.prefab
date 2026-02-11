@@ -139,6 +139,9 @@ MonoBehaviour:
   _churchDoor2_Prefab: {fileID: 1627110248786645785}
   _plaza1_Prefab: {fileID: 555415535282159275}
   _plaza2_Prefab: {fileID: 3051020287725445038}
+  _shortStreet1_Prefab: {fileID: 8777007246760184135}
+  _shortStreet2_Prefab: {fileID: 3344118318495422130}
+  _longStreet_Prefab: {fileID: 4586799690833631766}
 --- !u!1001 &3215919689850294561
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -187,6 +190,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5564409884540068158, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 32c9a89ea91ef401885b893d47b2b191, type: 2}
+    - target: {fileID: -5564409884540068158, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 45d51afc8d87d40bb8f2f5a82b992397, type: 2}
+    - target: {fileID: -5564409884540068158, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 58b6c15be80324a969112f9b7260f60f, type: 2}
     - target: {fileID: -4038838669087367251, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -211,6 +226,18 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[2]'
       value: 
       objectReference: {fileID: 2100000, guid: d232e530e051b4e74932de24a514dcc0, type: 2}
+    - target: {fileID: 629523142127539947, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 32c9a89ea91ef401885b893d47b2b191, type: 2}
+    - target: {fileID: 629523142127539947, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 45d51afc8d87d40bb8f2f5a82b992397, type: 2}
+    - target: {fileID: 629523142127539947, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 58b6c15be80324a969112f9b7260f60f, type: 2}
     - target: {fileID: 919132149155446097, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
       propertyPath: m_Name
       value: street_newest
@@ -270,5 +297,20 @@ GameObject:
 --- !u!4 &3110725748165146314 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+  m_PrefabInstance: {fileID: 3215919689850294561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3344118318495422130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -9022526378658117741, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+  m_PrefabInstance: {fileID: 3215919689850294561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4586799690833631766 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1370972179695700791, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
+  m_PrefabInstance: {fileID: 3215919689850294561}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8777007246760184135 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6156152950098860134, guid: 03c502d0053ad4f1999f0117e2567b0a, type: 3}
   m_PrefabInstance: {fileID: 3215919689850294561}
   m_PrefabAsset: {fileID: 0}

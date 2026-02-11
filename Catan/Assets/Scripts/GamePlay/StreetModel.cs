@@ -7,6 +7,9 @@ public class StreetModel: MonoBehaviour
     [SerializeField] private GameObject _churchDoor2_Prefab;
     [SerializeField] private GameObject _plaza1_Prefab;
     [SerializeField] private GameObject _plaza2_Prefab;
+    [SerializeField] private GameObject _shortStreet1_Prefab;
+    [SerializeField] private GameObject _shortStreet2_Prefab;
+    [SerializeField] private GameObject _longStreet_Prefab;
 
     private void OnEnable()
     {
@@ -14,6 +17,8 @@ public class StreetModel: MonoBehaviour
         _plaza1_Prefab.SetActive(false);
         _churchDoor2_Prefab.SetActive(false);
         _plaza2_Prefab.SetActive(false);
+        _shortStreet1_Prefab.SetActive(false);
+        _shortStreet2_Prefab.SetActive(false);
     }
     
     public void SetChurchDoor1Active(bool active)
@@ -32,6 +37,36 @@ public class StreetModel: MonoBehaviour
         {
             _plaza2_Prefab.SetActive(false);
         }
+    }
+    
+    public void SetShortStreet1Active(bool active)
+    {
+        _shortStreet1_Prefab.SetActive(active);
+        if(active)
+        {
+            _shortStreet2_Prefab.SetActive(false);
+            _longStreet_Prefab.SetActive(false);
+        }
+    }
+    
+    public void SetShortStreet2Active(bool active)
+    {
+        _shortStreet2_Prefab.SetActive(active);
+        if(active)
+        {
+            _shortStreet1_Prefab.SetActive(false);
+            _longStreet_Prefab.SetActive(false);
+        }
+    }
+    
+    public void SetLongStreetActive(bool active)
+    { 
+        _longStreet_Prefab.SetActive(active);
+        if(active)
+        {
+            _shortStreet1_Prefab.SetActive(false);
+            _shortStreet2_Prefab.SetActive(false);
+        } 
     }
     
     public void SetPlaza1Active(bool active)
