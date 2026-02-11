@@ -64,10 +64,18 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1806680513116206669, guid: f982a5109d4254b2b9ee7027fd31945c, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2638119925241954961, guid: 179d7883433104fd98d4e872bb908810, type: 3}
     - target: {fileID: 919132149155446097, guid: f982a5109d4254b2b9ee7027fd31945c, type: 3}
       propertyPath: m_Name
-      value: settlement_actually
+      value: Settlement
       objectReference: {fileID: 0}
+    - target: {fileID: 8602934196968088882, guid: f982a5109d4254b2b9ee7027fd31945c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 45d51afc8d87d40bb8f2f5a82b992397, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

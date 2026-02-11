@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 432683539
+  GlobalObjectIdHash: 2142200436
   InScenePlacedSourceGlobalObjectIdHash: 0
   DeferredDespawnTick: 0
   Ownership: 1
@@ -110,9 +110,12 @@ MonoBehaviour:
   - {fileID: 2100000, guid: bc7f8e9315ce5436fa7d18326974410e, type: 2}
   - {fileID: 2100000, guid: d80878065588242f3ab211b54c27adea, type: 2}
   - {fileID: 2100000, guid: 45d51afc8d87d40bb8f2f5a82b992397, type: 2}
+  - {fileID: 2638119925241954961, guid: 179d7883433104fd98d4e872bb908810, type: 3}
   renderers:
   - {fileID: 6934277444306238364}
   - {fileID: 7096458188597376303}
+  - {fileID: 3780219701213402756}
+  - {fileID: 2736125327163226629}
   plaza1Renderer: {fileID: 0}
   plaza2Renderer: {fileID: 0}
 --- !u!1 &2190682862439145805
@@ -416,6 +419,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e76a23aff85584b949a3e5eb3754e67b, type: 3}
+--- !u!23 &2736125327163226629 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3025289323303858751, guid: e76a23aff85584b949a3e5eb3754e67b, type: 3}
+  m_PrefabInstance: {fileID: 865632179022825530}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &3780219701213402756 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4068261378367921854, guid: e76a23aff85584b949a3e5eb3754e67b, type: 3}
+  m_PrefabInstance: {fileID: 865632179022825530}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4944798069274743901 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5232096743149345895, guid: e76a23aff85584b949a3e5eb3754e67b, type: 3}
