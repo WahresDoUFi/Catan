@@ -47,7 +47,7 @@ namespace UI
             cardAmountText.color = _player.ResourceCount > GameManager.MaxCardsOnBandit ? Color.red : Color.white;
             victoryPointsText.text = $"{_player.VictoryPoints}";
             settlementsText.text = $"{Settlement.AllSettlements.Count(s => s.Owner == _player.OwnerClientId)}";
-            streetsText.text = $"{VictoryPoints.CalculateLongestStreet(PlayerId)}";
+            streetsText.text = $"{VictoryPoints.GetLongestStreetForPlayer(PlayerId)}";
             if (_rolling)
             {
                 if (GameManager.Instance.DiceThrown)

@@ -17,13 +17,13 @@ public static class VictoryPoints
         return victoryPoints;
     }
 
-    public static int CalculateLongestStreet(ulong clientId)
+    public static int GetLongestStreetForPlayer(ulong clientId)
     {
         var maxLength = 0;
         var allStreets = Street.AllStreets.Where(s => s.Owner == clientId).ToList();
         foreach (var street in allStreets)
         {
-            var length = Algo(street, clientId, new HashSet<Street>());
+            var length = CalculateLongestStreet(street, clientId, new HashSet<Street>(), new HashSet<Settlement>());
             maxLength = Math.Max(maxLength, length);
         }
 
@@ -44,15 +44,14 @@ public static class VictoryPoints
         return points;
     }
 
-    private static bool HasLongestStreet(ulong playerId)
+    private static bool HasLongestStreet(ulong clientId)
     {
-        var longestRoadForPlayer = CalculateLongestStreet(playerId);
-        if (longestRoadForPlayer < 5) return false;
-        foreach (var clientId in NetworkManager.Singleton.ConnectedClients.Keys)
+        var street = Player.GetPlayerById(clientId).LongestStreet;
+        if (street < 5) return false;
+        foreach (var playerId in NetworkManager.Singleton.ConnectedClients.Keys)
         {
-            if (clientId == playerId) continue;
-            if (CalculateLongestStreet(clientId) >= longestRoadForPlayer)
-                return false;
+            if (playerId == clientId) continue;
+            if (Player.GetPlayerById(playerId).LongestStreet >= street) return false;
         }
 
         return true;
@@ -70,25 +69,34 @@ public static class VictoryPoints
         return true;
     }
 
-    private static int Algo(Street currentStreet, ulong clientId, HashSet<Street> visitedStreets)
+    private static int CalculateLongestStreet(Street currentStreet, ulong clientId, HashSet<Street> visitedStreets,
+        HashSet<Settlement> visitedSettlements)
     {
         visitedStreets.Add(currentStreet);
         var maxPath = 0;
 
         foreach (var next in currentStreet.connectedStreets)
         {
+            // if street was already visited or is broken up by other players street
             if (next.Owner != clientId || visitedStreets.Contains(next)) continue;
             var commonSettlement = GetCommonSettlement(currentStreet, next);
+            // if street is broken up by enemy settlement
             if (commonSettlement != null && commonSettlement.IsOccupied && commonSettlement.Owner != clientId)
                 continue;
-            var pathLength = Algo(next, clientId, visitedStreets);
+            // if settlement was already visited or does not exist
+            if (commonSettlement == null || !visitedSettlements.Add(commonSettlement))
+                continue;
+
+            var pathLength = CalculateLongestStreet(next, clientId, visitedStreets, visitedSettlements);
             maxPath = Math.Max(maxPath, pathLength);
+
+            visitedSettlements.Remove(commonSettlement);
         }
 
         visitedStreets.Remove(currentStreet);
         return maxPath + 1;
     }
-    
+
     private static Settlement GetCommonSettlement(Street street1, Street street2)
     {
         foreach (var settlement in street1.settlements)

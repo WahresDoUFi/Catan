@@ -28,9 +28,11 @@ namespace User
         public int PictureId => _pictureId;
         public byte KnightCardsPlayed => _knightCards.Value;
         public byte AdditionalVictoryPoints => _victoryPoints.Value;
+
         public int VictoryPoints =>
             global::VictoryPoints.CalculateVictoryPoints(OwnerClientId);
-
+        public int LongestStreet => global::VictoryPoints.GetLongestStreetForPlayer(OwnerClientId);
+        
         private readonly NetworkVariable<byte> _wood = new();
         private readonly NetworkVariable<byte> _stone = new();
         private readonly NetworkVariable<byte> _wheat = new();
@@ -41,7 +43,7 @@ namespace User
         private readonly NetworkVariable<byte> _knightCards = new();
         private readonly NetworkList<byte> _freeBuildings = new();
 
-        private readonly List<DevelopmentCard.Type> _boughtCards = new(); 
+        private readonly List<DevelopmentCard.Type> _boughtCards = new();
         private string _playerName;
         private int _pictureId;
 
@@ -107,6 +109,7 @@ namespace User
             {
                 if (card == (byte)cardType) return true;
             }
+
             return false;
         }
 
@@ -132,6 +135,7 @@ namespace User
                     _developmentCards.Add((byte)card);
                 }
             }
+
             _boughtCards.Clear();
         }
 
@@ -148,6 +152,7 @@ namespace User
                 _freeBuildings.Remove((byte)building);
                 return;
             }
+
             var costs = BuildManager.GetCostsForBuilding(building);
             if (!HasResources(costs)) return;
             foreach (var cost in costs)
