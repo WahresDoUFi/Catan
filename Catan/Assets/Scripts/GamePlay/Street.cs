@@ -156,10 +156,21 @@ public class Street : NetworkBehaviour
         // Update left side (Plaza1/Door1)
         if (settlement_1 != null)
         {
-            if (settlement_1.IsOccupied)
+            if (settlement_1.IsCity)
             {
-                // Settlement exists on left side -> activate Door1
+                // City exists on left side
+                // -> activate Door1
                 _streetModel.SetChurchDoor1Active(true);
+                // -> use long street
+                _streetModel.SetLongStreetActive(true);
+            }
+            else if (settlement_1.IsOccupied)
+            {
+                // Settlement exists on left side
+                // -> activate Door1
+                _streetModel.SetChurchDoor1Active(true);
+                // -> use short street 1
+                _streetModel.SetShortStreet1Active(true);
             }
             else if (!IsPlazaActiveOnCorner(settlement_1, true, out _, out _))
             {
@@ -176,10 +187,21 @@ public class Street : NetworkBehaviour
         // Update right side (Plaza2/Door2)
         if (settlement_2 != null)
         {
-            if (settlement_2.IsOccupied)
+            if (settlement_2.IsCity)
             {
-                // Settlement exists on right side -> activate Door2
+                // City exists on right side
+                // -> activate Door2
                 _streetModel.SetChurchDoor2Active(true);
+                // -> use long street
+                _streetModel.SetLongStreetActive(true);
+            }
+            else if (settlement_2.IsOccupied)
+            {
+                // Settlement exists on right side
+                // -> activate Door2
+                _streetModel.SetChurchDoor2Active(true);
+                // -> use short street 2
+                _streetModel.SetShortStreet2Active(true);
             }
             else if (!IsPlazaActiveOnCorner(settlement_2, false, out _, out _))
             {

@@ -44,7 +44,7 @@ namespace Misc
         public void MixColor(Color additionalColor, bool plaza1)
         {
             var r = plaza1 ? plaza1Renderer : plaza2Renderer;
-            Color baseColor = r.material.color;
+            Color baseColor = r.materials[1].color;
             Color other = additionalColor;
             Color mixed = Color.Lerp(baseColor, other, 0.5f);
 
