@@ -30,9 +30,10 @@ namespace User
         public byte AdditionalVictoryPoints => _victoryPoints.Value;
 
         public int VictoryPoints =>
-            global::VictoryPoints.CalculateVictoryPoints(OwnerClientId);
-        public int LongestStreet => global::VictoryPoints.GetLongestStreetForPlayer(OwnerClientId);
-        
+            global::GamePlay.VictoryPoints.CalculateVictoryPoints(OwnerClientId);
+
+        public int LongestStreet { get; private set; }
+
         private readonly NetworkVariable<byte> _wood = new();
         private readonly NetworkVariable<byte> _stone = new();
         private readonly NetworkVariable<byte> _wheat = new();
@@ -50,6 +51,15 @@ namespace User
         private void Awake()
         {
             AllPlayers.Add(this);
+            Street.OnStreetBuild += OnStreetBuild;
+            Settlement.OnSettlementBuild += OnSettlementBuild;
+        }
+
+        public override void OnDestroy()
+        {
+            base.OnDestroy();
+            Street.OnStreetBuild -= OnStreetBuild;
+            Settlement.OnSettlementBuild -= OnSettlementBuild;
         }
 
         public override void OnNetworkSpawn()
@@ -332,6 +342,21 @@ namespace User
             {
                 NotificationHub.KnightsHanged((byte)change);
             }
+        }
+
+        private void OnStreetBuild(Street street)
+        {
+            CalculateLongestStreet();
+        }
+
+        private void OnSettlementBuild(Settlement settlement)
+        {
+            CalculateLongestStreet();
+        }
+
+        private void CalculateLongestStreet()
+        {
+            LongestStreet = GamePlay.VictoryPoints.GetLongestStreetForPlayer(OwnerClientId);
         }
     }
 }

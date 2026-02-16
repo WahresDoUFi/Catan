@@ -4,7 +4,6 @@ using GamePlay;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using User;
 
@@ -25,8 +24,10 @@ namespace UI
         [SerializeField] private Transform diceOne;
         [SerializeField] private Transform diceTwo;
         [SerializeField] private ResourceCardsTooltip resourceCardsTooltip;
-        [Header("Profile Picture")]
-        [SerializeField] private Image profileImage;
+
+        [Header("Profile Picture")] [SerializeField]
+        private Image profileImage;
+
         [SerializeField] private Sprite[] profileSprites;
 
         private Player _player;
@@ -47,7 +48,7 @@ namespace UI
             cardAmountText.color = _player.ResourceCount > GameManager.MaxCardsOnBandit ? Color.red : Color.white;
             victoryPointsText.text = $"{_player.VictoryPoints}";
             settlementsText.text = $"{Settlement.AllSettlements.Count(s => s.Owner == _player.OwnerClientId)}";
-            streetsText.text = $"{VictoryPoints.GetLongestStreetForPlayer(PlayerId)}";
+            streetsText.text = $"{_player.LongestStreet}";
             if (_rolling)
             {
                 if (GameManager.Instance.DiceThrown)
@@ -65,7 +66,7 @@ namespace UI
             resourceCardsTooltip.SetPlayer(player);
             playerColorImage.color = nameTextImage.color = GameManager.Instance.GetPlayerColor(PlayerId);
         }
-        
+
         public void HideDice()
         {
             StopAllCoroutines();

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
@@ -11,12 +12,14 @@ using User;
 public class Street : NetworkBehaviour
 {
     public static readonly List<Street> AllStreets = new();
+    public static event Action<Street> OnStreetBuild;
 
     public Street[] connectedStreets;
     public Settlement[] settlements;
 
-    [Header("Plaza/Door Side Configuration")]
-    [SerializeField] private Settlement settlement_1;  // Maps to Plaza1/Door1
+    [Header("Plaza/Door Side Configuration")] [SerializeField]
+    private Settlement settlement_1; // Maps to Plaza1/Door1
+
     [SerializeField] private Settlement settlement_2; // Maps to Plaza2/Door2
 
     public bool Preview { get; set; }
@@ -89,7 +92,7 @@ public class Street : NetworkBehaviour
         if (!CanBeBuildBy(NetworkManager.LocalClientId)) return false;
         if (BuildManager.ActiveBuildType != BuildManager.BuildType.Street) return false;
         if (GameManager.Instance.State == GameManager.GameState.Playing &&
-             !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Street))) 
+            !Player.LocalPlayer.HasResources(BuildManager.GetCostsForBuilding(BuildManager.BuildType.Street)))
             return false;
         return true;
     }
@@ -142,6 +145,7 @@ public class Street : NetworkBehaviour
         street.SetActive(IsOccupied);
         if (IsOccupied)
         {
+            OnStreetBuild?.Invoke(this);
             placeStreetSound.Play();
             MapIconManager.AddIcon(transform, IconType.Street, GameManager.Instance.GetPlayerColor(Owner));
             modelColorManager.SetColor(GameManager.Instance.GetPlayerColor(Owner));
@@ -217,7 +221,7 @@ public class Street : NetworkBehaviour
     }
 
     private bool IsPlazaActiveOnCorner(Settlement corner, bool isLeft, out ModelColorManager plazaModelColorManager,
-    out bool otherPlazaIs1)
+        out bool otherPlazaIs1)
     {
         plazaModelColorManager = null;
         otherPlazaIs1 = false;
@@ -236,13 +240,16 @@ public class Street : NetworkBehaviour
                     otherPlazaIs1 = true;
                     return true;
                 }
-                if (connectedStreet.settlement_2 == corner && otherStreetModel.IsPlaza2Active()) { 
+
+                if (connectedStreet.settlement_2 == corner && otherStreetModel.IsPlaza2Active())
+                {
                     plazaModelColorManager = connectedStreet.GetComponent<ModelColorManager>();
                     otherPlazaIs1 = false;
                     return true;
                 }
             }
         }
+
         return false;
     }
 
@@ -280,7 +287,8 @@ public class Street : NetworkBehaviour
             {
                 if (settlement != null)
                 {
-                    UnityEditor.Handles.Label(settlement.transform.position + Vector3.up * 0.5f, settlement.name, style);
+                    UnityEditor.Handles.Label(settlement.transform.position + Vector3.up * 0.5f, settlement.name,
+                        style);
                 }
             }
         }
@@ -340,7 +348,8 @@ public class Street : NetworkBehaviour
                     UnityEditor.Handles.Label(midPoint, $"UNASSIGNED\n{settlement.name}", grayStyle);
 
                     // Show corner name
-                    UnityEditor.Handles.Label(settlement.transform.position + Vector3.up * 0.5f, settlement.name, redStyle);
+                    UnityEditor.Handles.Label(settlement.transform.position + Vector3.up * 0.5f, settlement.name,
+                        redStyle);
                 }
             }
         }
