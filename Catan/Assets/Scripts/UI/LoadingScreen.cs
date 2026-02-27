@@ -13,6 +13,7 @@ namespace UI
     {
         private static LoadingScreen _instance;
         public static event Action LoadingDone;
+        public static bool IsLoading => _instance._loadingDone == false;
 
         [SerializeField] private GameObject camObject;
         [SerializeField] private float fadeSpeed;

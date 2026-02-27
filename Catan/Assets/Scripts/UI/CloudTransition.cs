@@ -10,8 +10,15 @@ namespace UI
         private void Awake()
         {
             _videoPlayer = GetComponent<VideoPlayer>();
-            LoadingScreen.LoadingDone += SceneLoaded;
-            _videoPlayer.Prepare();
+            if (LoadingScreen.IsLoading)
+            {
+                LoadingScreen.LoadingDone += SceneLoaded;
+                _videoPlayer.Prepare();   
+            }
+            else
+            {
+                SceneLoaded();
+            }
         }
 
         private void SceneLoaded()
