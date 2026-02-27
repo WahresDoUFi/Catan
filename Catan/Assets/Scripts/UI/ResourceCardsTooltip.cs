@@ -48,12 +48,14 @@ namespace UI
             {
                 display.SetAmount(_player.GetResources(display.Resource));
             }
-            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(contentTransform);
             CheckVisibility();
         }
 
         private void CheckVisibility()
         {
+            tooltip.transform.localRotation = Quaternion.identity;
+            contentTransform.localRotation = Quaternion.identity;
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(contentTransform);
             var rect = contentTransform.rect;
             var screen = new Vector2(Screen.width, Screen.height);
             var max = contentTransform.TransformPoint(rect.max);
