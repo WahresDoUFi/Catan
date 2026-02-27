@@ -30172,7 +30172,7 @@ MonoBehaviour:
   screenCenter: {fileID: 1497910592}
   animationSpeed: 5
   spacing: 260
-  stealModeSpacing: 0
+  stealModeSpacing: 250
   turnOffset: 50
 --- !u!1 &1516044145
 GameObject:
