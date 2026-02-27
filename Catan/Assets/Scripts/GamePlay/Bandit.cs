@@ -1,5 +1,6 @@
 using System;
 using System.Security.Cryptography;
+using UI;
 using Unity.Netcode;
 using UnityEngine;
 using User;
@@ -16,6 +17,7 @@ namespace GamePlay
 
         readonly NetworkVariable<NetworkBehaviourReference> _tileId = new();
         private Renderer[] _renderers;
+        private bool _dontShowConfirmationWindow;
 
         private void Awake()
         {
@@ -44,12 +46,23 @@ namespace GamePlay
 
         public void ClickPerformed()
         {
+            if (ConfirmationWindow.IsOpen) return;
             if (!GameManager.Instance.RepositionBandit || !GameManager.Instance.IsMyTurn()) return;
             if (GameManager.Instance.CardsToDiscard > 0) return;
             var go = CameraController.Instance.Raycast(tileLayer);
             if (go == null) return;
             if (!go.TryGetComponent<MapTile>(out var tile)) return;
-            GameManager.Instance.SetBanditTile(tile);
+            if (!_dontShowConfirmationWindow)
+            {
+                ConfirmationWindow.Show("Bandit", "Are you sure that you want to place the bandit on this tile?", () =>
+                {
+                    GameManager.Instance.SetBanditTile(tile); 
+                }, value => _dontShowConfirmationWindow = value);   
+            }
+            else
+            {
+                GameManager.Instance.SetBanditTile(tile);
+            }
         }
 
         public void SetTargetTile(MapTile tile)
