@@ -38,6 +38,7 @@ namespace GamePlay
             Waiting,
             Preparing,
             Playing,
+            GameOver,
         }
 
         public GameState State => (GameState)_gameState.Value;
@@ -616,6 +617,7 @@ namespace GamePlay
             int victoryPoints = VictoryPoints.CalculateVictoryPoints(ActivePlayer);
             if (victoryPoints >= 7)
             {
+                _gameState.Value = (byte)GameState.GameOver;
                 ShowGameOverClientRpc(ActivePlayer);
             }
 

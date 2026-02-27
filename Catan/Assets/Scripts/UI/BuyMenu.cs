@@ -17,6 +17,7 @@ namespace UI
         [SerializeField] private Button buyCityButton;
         [SerializeField] private Button buyDevelopmentCardButton;
 
+        private bool _canBuyDevelopmentCard = true;
         private Vector3 _defaultPosition;
         private Vector3 _targetPosition;
         private RectTransform _rectTransform;
@@ -44,7 +45,7 @@ namespace UI
         {
             _rectTransform.anchoredPosition = Vector3.Lerp(_rectTransform.anchoredPosition, 
                 _targetPosition, Time.deltaTime * animationSpeed);
-            UpdateTargetPosition();
+            UpdateButtonState();
         }
 
         private void AddButtonCallbacks()
@@ -53,29 +54,37 @@ namespace UI
             buySettlementButton.onClick.AddListener(() => BuildManager.SelectBuildingType(BuildManager.BuildType.Settlement));
             buyCityButton.onClick.AddListener(() => BuildManager.SelectBuildingType(BuildManager.BuildType.City));
             buyDevelopmentCardButton.onClick.AddListener(GameManager.Instance.BuyDevelopmentCard);
-            Player.LocalPlayer.DevelopmentCardBought += _ => buyDevelopmentCardButton.interactable = false;
+            Player.LocalPlayer.DevelopmentCardBought += _ => _canBuyDevelopmentCard = false;
         }
 
         private void DevelopmentCardRevealed()
         {
-            buyDevelopmentCardButton.interactable = true;
+            _canBuyDevelopmentCard = true;
         }
 
-        private void UpdateTargetPosition()
+        private void UpdateButtonState()
         {
             if (GameManager.Instance.State == GameManager.GameState.Playing)
             {
-                _targetPosition = 
-                    GameManager.Instance.IsMyTurn() &&
-                    GameManager.Instance.CanThrowDice() == false && 
-                    GameManager.Instance.CardLimitActive == false &&
-                    GameManager.Instance.RepositionBandit == false
-                        ? _defaultPosition : _defaultPosition + closedOffset;
+                _targetPosition = _defaultPosition;
+                SetButtonsEnabled(GameManager.Instance.IsMyTurn() &&
+                                  GameManager.Instance.CanThrowDice() == false &&
+                                  GameManager.Instance.CardLimitActive == false &&
+                                  GameManager.Instance.RepositionBandit == false);
             }
             else
             {
-                _targetPosition = _defaultPosition + closedOffset;   
+                _targetPosition = _defaultPosition + closedOffset;
+                SetButtonsEnabled(false);
             }
+        }
+
+        private void SetButtonsEnabled(bool active)
+        {
+            buyStreetButton.interactable = active;
+            buySettlementButton.interactable = active;
+            buyCityButton.interactable = active;
+            buyDevelopmentCardButton.interactable = active && _canBuyDevelopmentCard;
         }
     }
 }
