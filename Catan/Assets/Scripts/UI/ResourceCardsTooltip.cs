@@ -7,16 +7,14 @@ namespace UI
     public class ResourceCardsTooltip : MonoBehaviour, IHoverable
     {
         [SerializeField] private GameObject tooltip;
-        [SerializeField] private Transform contentTransform;
-
-        private RectTransform _rectTransform;
+        [SerializeField] private RectTransform contentTransform;
+        
         private Player _player;
         private ResourceDisplay[] _resourceDisplays;
 
         private void Awake()
         {
             _resourceDisplays = GetComponentsInChildren<ResourceDisplay>();
-            _rectTransform = tooltip.GetComponent<RectTransform>();
         }
 
         private void Start()
@@ -28,6 +26,7 @@ namespace UI
         {
             _player = player;
             _player.ResourcesUpdated += UpdateTooltipContent;
+            UpdateTooltipContent();
         }
 
         public void Clicked()
@@ -38,6 +37,7 @@ namespace UI
         public void HoverUpdated(bool hovering)
         {
             tooltip.SetActive(hovering);
+            CheckVisibility();
         }
 
         private void UpdateTooltipContent()
@@ -48,19 +48,21 @@ namespace UI
             {
                 display.SetAmount(_player.GetResources(display.Resource));
             }
+            UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(contentTransform);
             CheckVisibility();
         }
 
         private void CheckVisibility()
         {
-            var rect = _rectTransform.rect;
+            var rect = contentTransform.rect;
             var screen = new Vector2(Screen.width, Screen.height);
-            var max = tooltip.transform.TransformPoint(rect.max);
-            if (max.y > screen.y)
-            {
-                tooltip.transform.up = Vector2.down;
-                contentTransform.up = Vector2.up;
-            }
+            var max = contentTransform.TransformPoint(rect.max);
+            bool invert = max.y > screen.y; // outside of the screen
+
+            var rotation = invert ? Quaternion.Euler(0, 0, 180) : Quaternion.identity;
+            tooltip.transform.localRotation = rotation;
+            contentTransform.localRotation = rotation;
+            contentTransform.anchoredPosition = invert ? new Vector2(0, contentTransform.sizeDelta.y) : Vector2.zero;
         }
     }
 }
