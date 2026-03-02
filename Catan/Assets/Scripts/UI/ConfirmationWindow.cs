@@ -44,8 +44,10 @@ namespace UI
         {
             //  close any window that might still be open
             _instance.Close();
-            
+
+            _instance.dontShowAgainToggle.gameObject.SetActive(dontShowAgainAction != null);
             _instance.dontShowAgainToggle.onValueChanged.AddListener(dontShowAgainAction);
+            _instance.confirmButton.gameObject.SetActive(confirmAction != null);
             _instance.confirmButton.onClick.AddListener(() =>
             {
                 confirmAction?.Invoke();
