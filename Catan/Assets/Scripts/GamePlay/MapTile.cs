@@ -54,7 +54,10 @@ public class MapTile : NetworkBehaviour
     {
         _tileType.Value = (int)tile;
         if (tile == Tile.Desert)
-            Bandit.Instance.SetInitialTile(this);
+        {
+            Bandit.Instance.SetInitialTile(this);   
+            Blocked = true;
+        }
     }
 
     public void SetNumber(int number)
@@ -107,8 +110,8 @@ public class MapTile : NetworkBehaviour
 
     private void BanditMoved(MapTile targetTile)
     {
-        Blocked = targetTile == this;
         if (TileType == Tile.Desert) return;
+        Blocked = targetTile == this;
         if (_mapIcon != null)
         {
             _mapIcon.SetColor(Blocked ? blockedColor : Color.black);
