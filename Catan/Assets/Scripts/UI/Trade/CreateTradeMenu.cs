@@ -114,6 +114,7 @@ namespace UI.Trade
                 ReceiveResources = GetReceiveResources()
             };
             GameManager.Instance.CreateTrade(tradeInfo);
+            ConfirmationWindow.Show("Trade sent!", "You have successfully sent a trade offer to " + Player.GetPlayerById(_targetId).PlayerName, null, null);
         }
 
         private BuildManager.ResourceCosts[] GetSendResources()

@@ -46,7 +46,7 @@ namespace UI
             _instance.Close();
 
             _instance.dontShowAgainToggle.gameObject.SetActive(dontShowAgainAction != null);
-            _instance.confirmButton.gameObject.SetActive(confirmAction != null);
+            _instance.cancelButton.gameObject.SetActive(confirmAction != null);
             _instance.confirmButton.onClick.AddListener(() =>
             {
                 confirmAction?.Invoke();
@@ -62,9 +62,15 @@ namespace UI
 
         private void RecalculateSize()
         {
-            var size = text.GetPreferredValues(maxWidth, 0);
+            float preferredWidth = text.GetPreferredValues().x + 60; // add some margin
+            int maxLines = Mathf.CeilToInt(preferredWidth / minWidth);
+            int minLines = Mathf.Max(1, Mathf.CeilToInt(preferredWidth / maxWidth));
+            int addon = minLines / maxLines;
+            float width = preferredWidth / (minLines + addon);
+            var size = text.GetPreferredValues(width, 0);
             var textRect = text.GetComponent<RectTransform>();
-            textRect.sizeDelta = new Vector2(Mathf.Max(minWidth, Mathf.Min(size.x, maxWidth)), size.y);
+            textRect.sizeDelta = new Vector2(Mathf.Clamp(width, minWidth, maxWidth), size.y);
+            
             LayoutRebuilder.ForceRebuildLayoutImmediate(contentRectTransform);
             windowFrameRectTransform.sizeDelta = contentRectTransform.rect.size + new Vector2(20f, 20f);
         }
