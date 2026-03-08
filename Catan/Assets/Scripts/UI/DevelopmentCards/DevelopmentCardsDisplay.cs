@@ -45,13 +45,14 @@ namespace UI.DevelopmentCards
             _rectTransform = GetComponent<RectTransform>();
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
             _defaultPosition = _rectTransform.anchoredPosition;
             _rectTransform.anchoredPosition = _defaultPosition + closedOffset;
+            GameManager.Instance.TurnChanged += TurnChanged;
+            yield return new WaitUntil(() => Player.LocalPlayer);
             Player.LocalPlayer.DevelopmentCardBought += DevelopmentCardBought;
             Player.LocalPlayer.DevelopmentCardPlayed += DevelopmentCardPlayed;
-            GameManager.Instance.TurnChanged += TurnChanged;
         }
 
         private void TurnChanged()

@@ -1,13 +1,11 @@
-using System;
 using GamePlay;
 using Networking;
 using TMPro;
-using Unity.Netcode;
 using UnityEngine;
 
 namespace UI
 {
-    public class PlayerCountDisplay : MonoBehaviour
+    public class LobbyCodeDisplay : MonoBehaviour
     {
         private TextMeshProUGUI _textField;
 
@@ -19,6 +17,14 @@ namespace UI
         private void Start()
         {
             _textField.text = MatchmakingManager.LobbyCode;
+        }
+
+        public static void CopyCodeToClipboard()
+        {
+            if (GameManager.Instance?.IsHost == true)
+            {
+                GUIUtility.systemCopyBuffer = MatchmakingManager.LobbyCode;
+            }
         }
     }
 }

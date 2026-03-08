@@ -62,7 +62,7 @@ namespace GamePlay
         {
             byte cards = Player.GetPlayerById(clientId).KnightCardsPlayed;
             if (cards < 3) return false;
-            foreach (var playerId in GameManager.Instance.GetPlayerIds())
+            foreach (var playerId in GameManager.Instance.GetConnectedPlayerIds())
             {
                 if (playerId == clientId) continue;
                 if (Player.GetPlayerById(playerId).KnightCardsPlayed >= cards) return false;

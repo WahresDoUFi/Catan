@@ -29,6 +29,7 @@ public class MapTile : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         CreateNumberComponent();
+        DiscoverStatusChanged(false, Discovered);
         _discovered.OnValueChanged += DiscoverStatusChanged;
         _number.OnValueChanged += NumberValueChanged;
         _tileType.OnValueChanged += (_, _) => UpdateTile();
@@ -102,9 +103,9 @@ public class MapTile : NetworkBehaviour
             if (Blocked)
                 Bandit.Instance.Show();
         }
-        else
+        else if (!fog.isPlaying)
         {
-            fog.Play();   
+            fog.Play();
         }
     }
 

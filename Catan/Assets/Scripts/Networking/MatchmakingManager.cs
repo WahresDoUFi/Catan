@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Text;
 using System.Threading.Tasks;
 using GamePlay;
 using TMPro;
@@ -34,11 +35,15 @@ namespace Networking
         [SerializeField] private Button hostButton;
         [SerializeField] private Button joinButton;
         [SerializeField] private TMP_InputField joinCodeInput;
+
+        private string _guid;
         
         private void Awake()
         {
             hostButton.onClick.AddListener(HostButtonPressed);
             joinButton.onClick.AddListener(JoinButtonPressed);
+            _guid = PlayerPrefs.GetString("Guid", Guid.NewGuid().ToString());
+            PlayerPrefs.SetString("Guid", _guid);
         }
         
         private void HostButtonPressed()
@@ -116,6 +121,7 @@ namespace Networking
         {
             if (NetworkManager.Singleton.StartHost())
             {
+                GameManager.InitializeUserData(PlayerPrefs.GetString("Guid", Guid.NewGuid().ToString()));
                 NetworkManager.Singleton.SceneManager.SetClientSynchronizationMode(LoadSceneMode.Additive);
                 NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Additive);
                 return true;
@@ -140,8 +146,8 @@ namespace Networking
             Debug.Log(allocation);
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(allocation.ToRelayServerData(connectionType));
             Debug.Log("Starting client");
-            if (string.IsNullOrEmpty(joinCode)) return false;
-            return NetworkManager.Singleton.StartClient();
+            NetworkManager.Singleton.NetworkConfig.ConnectionData = Encoding.UTF8.GetBytes(_guid);
+            return !string.IsNullOrEmpty(joinCode) && NetworkManager.Singleton.StartClient();
         }
     }
 }

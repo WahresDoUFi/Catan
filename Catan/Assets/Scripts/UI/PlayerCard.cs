@@ -11,7 +11,7 @@ namespace UI
 {
     public class PlayerCard : MonoBehaviour, IPointerClickHandler
     {
-        public ulong PlayerId => _player ? _player.OwnerClientId : 0;
+        public ulong PlayerId => _player ? _player.PlayerId : 0;
 
         [SerializeField] private Image playerColorImage;
         [SerializeField] private Image nameTextImage;
@@ -24,6 +24,7 @@ namespace UI
         [SerializeField] private Transform diceOne;
         [SerializeField] private Transform diceTwo;
         [SerializeField] private ResourceCardsTooltip resourceCardsTooltip;
+        [SerializeField] private GameObject disconnectIcon;
 
         [Header("Profile Picture")] [SerializeField]
         private Image profileImage;
@@ -49,6 +50,7 @@ namespace UI
             victoryPointsText.text = $"{_player.VictoryPoints}";
             settlementsText.text = $"{Settlement.AllSettlements.Count(s => s.Owner == _player.OwnerClientId)}";
             streetsText.text = $"{_player.LongestStreet}";
+            disconnectIcon.SetActive(_player.IsConnected == false);
             if (_rolling)
             {
                 if (GameManager.Instance.DiceThrown)
@@ -64,6 +66,13 @@ namespace UI
         {
             _player = player;
             resourceCardsTooltip.SetPlayer(player);
+            StartCoroutine(UpdateColor());
+        }
+
+        private IEnumerator UpdateColor()
+        {
+            while (!GameManager.Instance)
+                yield return null;
             playerColorImage.color = nameTextImage.color = GameManager.Instance.GetPlayerColor(PlayerId);
         }
 

@@ -40,7 +40,7 @@ public class MonopolySelection : MonoBehaviour
         foreach (var card in _cards)
         {
             byte resources = 0;
-            foreach (var playerId in GameManager.Instance.GetPlayerIds())
+            foreach (var playerId in GameManager.Instance.GetConnectedPlayerIds())
             {
                 if (playerId == localClientId) continue;
 

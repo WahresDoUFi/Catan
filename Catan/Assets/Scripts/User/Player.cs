@@ -6,6 +6,7 @@ using UI;
 using UI.DevelopmentCards;
 using Unity.Netcode;
 using UnityEngine;
+using Random = System.Random;
 
 namespace User
 {
@@ -17,7 +18,10 @@ namespace User
         public event Action<DevelopmentCard.Type> DevelopmentCardBought;
         public event Action<DevelopmentCard.Type> DevelopmentCardPlayed;
 
-        public ulong PlayerId => OwnerClientId;
+        public ulong PlayerId { get; private set; }
+        public string Guid { get; private set; }
+
+        public bool IsConnected => PlayerId == OwnerClientId;
         public int ResourceCount => _wood.Value + _stone.Value + _wheat.Value + _brick.Value + _sheep.Value;
         public byte Wood => _wood.Value;
         public byte Stone => _stone.Value;
@@ -64,6 +68,12 @@ namespace User
 
         public override void OnNetworkSpawn()
         {
+            PlayerId = OwnerClientId;
+            if (IsHost)
+            {
+                Guid = GameManager.GetPlayerUserId(OwnerClientId);
+            }
+            
             if (IsOwner)
             {
                 SetNameRpc(PlayerPrefs.GetString("Nickname"));
@@ -85,16 +95,35 @@ namespace User
             _developmentCards.OnListChanged += DevelopmentCardsChanged;
         }
 
+        public override void OnGainedOwnership()
+        {
+            //  host automatically gains ownership on disconnect, we do not want to update the client id for that
+            if (IsHost) return;
+            PlayerId = OwnerClientId;
+            LocalPlayer = this;
+        }
+
+        protected override void OnOwnershipChanged(ulong previous, ulong current)
+        {
+            //  host is always 0, we do not want to update the player id for the host
+            if (current == 0) return;
+            PlayerId = current;
+        }
+
         public override void OnNetworkDespawn()
         {
+            PlayerCardList.RemovePlayerCard(PlayerId);
             AllPlayers.Remove(this);
         }
 
         public static Player GetPlayerById(ulong clientId)
         {
-            if (AllPlayers.Count == 0)
-                Debug.LogWarning("Trying to get players before list is initialized");
-            return AllPlayers.FirstOrDefault(player => player.OwnerClientId == clientId);
+            return AllPlayers.FirstOrDefault(player => player.PlayerId == clientId);
+        }
+
+        public static Player GetPlayerByGuid(string guid)
+        {
+            return AllPlayers.FirstOrDefault(player => player.Guid == guid);
         }
 
         public void AddVictoryPoints(byte points)
@@ -187,6 +216,23 @@ namespace User
                 Tile.Field => _wheat.Value,
                 _ => 0
             };
+        }
+
+        public Tile GetRandomResource()
+        {
+            int randomResourceId = new Random().Next(1, ResourceCount);
+            var count = 0;
+            foreach (var tile in (Tile[])Enum.GetValues(typeof(Tile)))
+            {
+                count += GetResources(tile);
+                if (randomResourceId <= count)
+                {
+                    return tile;
+                }
+            }
+
+            //  this should never be reached
+            return default;
         }
 
         public void AddResources(Tile type, byte amount)

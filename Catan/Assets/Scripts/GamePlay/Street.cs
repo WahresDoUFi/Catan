@@ -43,11 +43,6 @@ public class Street : NetworkBehaviour
     private StreetModel _streetModel;
     private MapIcon _buildPreviewIcon;
 
-    private void OnEnable()
-    {
-        AllStreets.Add(this);
-    }
-
     private void OnDisable()
     {
         AllStreets.Remove(this);
@@ -55,6 +50,7 @@ public class Street : NetworkBehaviour
 
     private void Awake()
     {
+        AllStreets.Add(this);
         _previewMaterial = previewObject.GetComponent<Renderer>().material;
         _streetModel = street.GetComponentInChildren<StreetModel>();
     }
@@ -62,7 +58,7 @@ public class Street : NetworkBehaviour
     private void Start()
     {
         _owner.OnValueChanged += (_, _) => UpdateStreet();
-        UpdateStreet();
+        street.SetActive(false);
         _buildPreviewIcon = MapIconManager.AddIcon(transform, IconType.BuildPreview, Color.white);
     }
 
@@ -72,7 +68,24 @@ public class Street : NetworkBehaviour
         UpdateBuildPreviewIcon();
     }
 
-    private void UpdateBuildPreviewIcon()
+    public static void ReplaceClientId(ulong oldClientId, ulong newClientId)
+    {
+        foreach (var street in AllStreets)
+        {
+            if (street.Owner == oldClientId)
+                street.SetOwner(newClientId);
+        }
+    }
+
+    public static void UpdateAll()
+    {
+        foreach (var street in AllStreets)
+        {
+            street.UpdateStreet();
+        }
+    }
+
+private void UpdateBuildPreviewIcon()
     {
         if (!IsBuildPreviewIconVisible())
         {
