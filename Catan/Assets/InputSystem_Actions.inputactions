@@ -38,7 +38,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "One Modifier",
+                    "name": "MacKeyboard",
                     "id": "d33e5768-ae6e-4ab4-a86a-e7387f2c781e",
                     "path": "OneModifier(overrideModifiersNeedToBePressedFirst=true)",
                     "interactions": "",
@@ -62,6 +62,39 @@
                 {
                     "name": "Binding",
                     "id": "bb08b319-06bd-462b-b18f-50ae93e7b355",
+                    "path": "<Keyboard>/c",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Copy",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "WindowsKeyboard",
+                    "id": "9b11a170-9b89-4a32-ae39-a444677d0a6f",
+                    "path": "OneModifier(overrideModifiersNeedToBePressedFirst=true)",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Copy",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "c1bd1df3-263d-4af5-84b1-3d98b7b7d355",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Copy",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "0d12b220-41d5-4a2a-8ff4-363624cf5e7e",
                     "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
