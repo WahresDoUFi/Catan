@@ -19,7 +19,7 @@ namespace GamePlay
     {
         public static GameManager Instance;
         public const int MaxPlayers = 4;
-        public const int MaxCardsOnBandit = 6;
+        public const int MaxCardsOnBandit = 7;
         private const int VictoryPointsTarget = 7;
 
         private const byte RepositionBanditBit = 0b1;
@@ -817,6 +817,7 @@ namespace GamePlay
         private void OnClientConnectionStatusChange(ulong clientId,
             ConnectionNotificationManager.ConnectionStatus connectionStatus)
         {
+            PlayerCardList.RefreshPlayerCards();
             if (NetworkManager.Singleton.IsHost)
             {
                 switch (connectionStatus)

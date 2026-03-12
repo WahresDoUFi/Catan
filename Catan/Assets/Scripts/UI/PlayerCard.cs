@@ -88,6 +88,11 @@ namespace UI
             StartCoroutine(RollDiceCoroutine());
         }
 
+        public void Refresh()
+        {
+            SetPlayer(_player);
+        }
+        
         public void OnPointerClick(PointerEventData eventData)
         {
             if (GameManager.Instance.CanStealResource && GameManager.Instance.IsMyTurn())

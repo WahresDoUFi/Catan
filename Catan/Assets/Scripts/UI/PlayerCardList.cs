@@ -92,6 +92,14 @@ namespace UI
             }
         }
 
+        public static void RefreshPlayerCards()
+        {
+            foreach (var card in _instance._playerCards)
+            {
+                card.Refresh();
+            }
+        }
+
         private Vector3 GetTargetPosition(int index)
         {
             float cardCount = _playerCards.Count;
