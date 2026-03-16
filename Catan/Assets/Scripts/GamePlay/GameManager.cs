@@ -77,12 +77,13 @@ namespace GamePlay
 
         private void Update()
         {
+            if (!IsSpawned) return;
             HandleFreeBuildingSelection();
             if (!NetworkManager.IsHost) return;
             HandlePlayerDisconnectWaiting();
             if (State == GameState.Preparing)
             {
-                if (!Player.GetPlayerById(ActivePlayer).HasFreeBuildings())
+                if (Player.GetPlayerById(ActivePlayer)?.HasFreeBuildings() == false)
                 {
                     NextTurn();
                     if (_roundNumber.Value > 2)
