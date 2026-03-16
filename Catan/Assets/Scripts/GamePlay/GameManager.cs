@@ -713,8 +713,8 @@ namespace GamePlay
         private void HandleFreeBuildingSelection()
         {
             if (!IsMyTurn()) return;
-            if (!Player.LocalPlayer.HasFreeBuildings()) return;
-            BuildManager.SelectBuildingType(Player.LocalPlayer.AvailableBuildings()[0]);
+            if (Player.LocalPlayer?.HasFreeBuildings() == true)
+                BuildManager.SelectBuildingType(Player.LocalPlayer.AvailableBuildings()[0]);
         }
 
         private void HasThrownDiceChange(bool previous, bool current)

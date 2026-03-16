@@ -60,7 +60,7 @@ namespace UI
 
         public static void AddPlayerCard(Player player)
         {
-            if (!player) return;
+            if (player == null) return;
             if (_instance._playerCards.Any(card => card.PlayerId == player.PlayerId)) return;
             var card = Instantiate(_instance.playerCardPrefab, _instance.transform).GetComponent<PlayerCard>();
             card.SetPlayer(player);
