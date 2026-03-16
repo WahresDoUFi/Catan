@@ -124,6 +124,7 @@ namespace GamePlay
             _playerTrades.TradeUpdated += TradeUpdated;
             _playerTrades.TradeCleared += AvailableTradesMenu.UpdateAvailableTrades;
             _specialActionState.OnValueChanged += SpecialActionStateChange;
+            _playerIds.OnListChanged += PlayerIdsChange;
             
             StartCoroutine(LateNetworkSpawn());
         }
@@ -131,11 +132,6 @@ namespace GamePlay
         private IEnumerator LateNetworkSpawn()
         {
             yield return null;
-            foreach (ulong playerId in _playerIds)
-            {
-                PlayerCardList.AddPlayerCard(Player.GetPlayerById(playerId));
-            }
-            _playerIds.OnListChanged += PlayerIdsChange;
             Street.UpdateAll();
             Settlement.UpdateAll();
         }
@@ -147,7 +143,7 @@ namespace GamePlay
 
         public static bool PlayerConnected(ulong clientId)
         {
-            if (Instance && !Instance._playerIds.Contains(clientId)) return false;
+            if (!Instance || !Instance._playerIds.Contains(clientId)) return false;
             return Player.GetPlayerById(clientId)?.IsConnected == true;
         }
 
@@ -184,6 +180,11 @@ namespace GamePlay
         public bool PlayerGuidExists(string guid)
         {
             return PlayerGuidsToClientId.ContainsKey(guid);
+        }
+
+        public int GetPlayerIndex(ulong clientId)
+        {
+            return _playerIds.IndexOf(clientId);
         }
 
         public bool IsMyTurn()

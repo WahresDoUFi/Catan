@@ -65,6 +65,7 @@ namespace UI
             var card = Instantiate(_instance.playerCardPrefab, _instance.transform).GetComponent<PlayerCard>();
             card.SetPlayer(player);
             _instance._playerCards.Add(card);
+            _instance.RefreshListOrder();
         }
 
         public static void RollDice(ulong playerId)
@@ -98,6 +99,15 @@ namespace UI
             foreach (var card in _instance._playerCards)
             {
                 card.Refresh();
+            }
+            _instance.RefreshListOrder();
+        }
+
+        private void RefreshListOrder()
+        {
+            foreach (var card in _playerCards)
+            {
+                card.gameObject.transform.SetSiblingIndex(GameManager.Instance.GetPlayerIndex(card.PlayerId));
             }
         }
 

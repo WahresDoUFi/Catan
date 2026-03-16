@@ -328,7 +328,7 @@ namespace User
 
         private IEnumerator AddPlayerCard()
         {
-            while (GameManager.PlayerConnected(PlayerId))
+            while (!GameManager.PlayerConnected(PlayerId))
                 yield return null;
             PlayerCardList.AddPlayerCard(this);
         }
