@@ -74,7 +74,7 @@ namespace UI
 
         private IEnumerator UpdateColor()
         {
-            while (!GameManager.Instance)
+            while (!GameManager.PlayerConnected(PlayerId))
                 yield return null;
             playerColorImage.color = nameTextImage.color = GameManager.Instance.GetPlayerColor(PlayerId);
         }

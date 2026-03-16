@@ -144,7 +144,7 @@ namespace GamePlay
             ConnectionNotificationManager.Instance.OnClientConnectionNotification -= OnClientConnectionStatusChange;
         }
 
-        private static bool PlayerConnected(ulong clientId)
+        public static bool PlayerConnected(ulong clientId)
         {
             return Player.GetPlayerById(clientId)?.IsConnected == true;
         }
