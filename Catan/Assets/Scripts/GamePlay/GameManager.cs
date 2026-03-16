@@ -21,6 +21,7 @@ namespace GamePlay
         public const int MaxPlayers = 4;
         public const int MaxCardsOnBandit = 7;
         private const int VictoryPointsTarget = 7;
+        private const float DisconnectWaitDelay = 10f;
 
         private const byte RepositionBanditBit = 0b1;
         private const byte StealResourcesBit = 0b10;
@@ -46,6 +47,7 @@ namespace GamePlay
         }
 
         public GameState State => (GameState)_gameState.Value;
+        public float DisconnectWaitTime => _disconnectWaitTime.Value;
         public bool DiceThrown => _hasThrownDice.Value;
         public int Seed => _seed.Value;
         public ulong ActivePlayer => _playerIds[_playerTurn.Value];
@@ -71,11 +73,13 @@ namespace GamePlay
         private readonly NetworkVariable<int> _seed = new();
         private readonly NetworkTradeInfoVariable _playerTrades = new();
         private readonly NetworkList<byte> _cardsToDiscard = new();
+        private readonly NetworkVariable<float> _disconnectWaitTime = new();
 
         private void Update()
         {
             HandleFreeBuildingSelection();
             if (!NetworkManager.IsHost) return;
+            HandlePlayerDisconnectWaiting();
             if (State == GameState.Preparing)
             {
                 if (!Player.GetPlayerById(ActivePlayer).HasFreeBuildings())
@@ -754,6 +758,32 @@ namespace GamePlay
             }
         }
 
+        private void HandlePlayerDisconnectWaiting()
+        {
+            if (State != GameState.Playing) return;
+            if (PlayerConnected(ActivePlayer))
+            {
+                _disconnectWaitTime.Value = DisconnectWaitDelay;
+                return;
+            }
+
+            _disconnectWaitTime.Value -= Time.deltaTime;
+            if (_disconnectWaitTime.Value > 0) return;
+
+            _disconnectWaitTime.Value = DisconnectWaitDelay;
+            byte cardsToRemove = _cardsToDiscard[_playerIds.IndexOf(ActivePlayer)];
+            var player = Player.GetPlayerById(ActivePlayer);
+            for (var i = 0; i < cardsToRemove; i++)
+            {
+                player.RemoveResources(player.GetRandomResource(), 1);
+            }
+
+            _cardsToDiscard[_playerIds.IndexOf(ActivePlayer)] = 0;
+            if (!CardLimitActive)
+                _specialActionState.Value = 0;
+            NextTurn();
+        }
+
         private void PlayerIdsChange(NetworkListEvent<ulong> changeEvent)
         {
             if (changeEvent.Type == NetworkListEvent<ulong>.EventType.Add)
@@ -842,22 +872,7 @@ namespace GamePlay
                         }
                     case ConnectionNotificationManager.ConnectionStatus.Disconnected:
                         if (!_playerIds.Contains(clientId)) break;
-                        if (State == GameState.Playing)
-                        {
-                            byte cardsToRemove = _cardsToDiscard[_playerIds.IndexOf(clientId)];
-                            var player = Player.GetPlayerById(clientId);
-                            for (var i = 0; i < cardsToRemove; i++)
-                            {
-                                player.RemoveResources(player.GetRandomResource(), 1);
-                            }
-
-                            _cardsToDiscard[_playerIds.IndexOf(clientId)] = 0;
-                            if (!CardLimitActive)
-                                _specialActionState.Value = 0;
-                            if (ActivePlayer == clientId)
-                                NextTurn();
-                        }
-                        else
+                        if (State == GameState.Waiting)
                         {
                             var player = Player.GetPlayerById(clientId);
                             _playerIds.Remove(clientId);

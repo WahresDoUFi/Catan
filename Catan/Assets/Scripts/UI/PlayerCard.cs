@@ -25,6 +25,7 @@ namespace UI
         [SerializeField] private Transform diceTwo;
         [SerializeField] private ResourceCardsTooltip resourceCardsTooltip;
         [SerializeField] private GameObject disconnectIcon;
+        [SerializeField] private TextMeshProUGUI reconnectTimerText;
 
         [Header("Profile Picture")] [SerializeField]
         private Image profileImage;
@@ -50,6 +51,8 @@ namespace UI
             victoryPointsText.text = $"{_player.VictoryPoints}";
             settlementsText.text = $"{Settlement.AllSettlements.Count(s => s.Owner == _player.OwnerClientId)}";
             streetsText.text = $"{_player.LongestStreet}";
+            reconnectTimerText.text = Mathf.CeilToInt(GameManager.Instance.DisconnectWaitTime) + "s";
+            reconnectTimerText.gameObject.SetActive(!_player.IsConnected && GameManager.Instance.ActivePlayer == PlayerId);
             disconnectIcon.SetActive(_player.IsConnected == false);
             if (_rolling)
             {
