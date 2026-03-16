@@ -147,6 +147,7 @@ namespace GamePlay
 
         public static bool PlayerConnected(ulong clientId)
         {
+            if (Instance && !Instance._playerIds.Contains(clientId)) return false;
             return Player.GetPlayerById(clientId)?.IsConnected == true;
         }
 
@@ -661,11 +662,6 @@ namespace GamePlay
 
         private void NextTurn()
         {
-            if (!PlayerConnected(ActivePlayer))
-            {
-                _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
-                NextTurn();   
-            }
             int victoryPoints = VictoryPoints.CalculateVictoryPoints(ActivePlayer);
             if (victoryPoints >= VictoryPointsTarget)
             {

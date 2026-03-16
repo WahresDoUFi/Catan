@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using GamePlay;
@@ -69,6 +70,7 @@ namespace User
         public override void OnNetworkSpawn()
         {
             PlayerId = OwnerClientId;
+            StartCoroutine(AddPlayerCard());
             if (IsHost)
             {
                 Guid = GameManager.GetPlayerUserId(OwnerClientId);
@@ -299,7 +301,7 @@ namespace User
 
         public bool HasFreeBuildings()
         {
-            return _freeBuildings.Count > 0;
+            return IsSpawned && _freeBuildings.Count > 0;
         }
 
         public BuildManager.BuildType[] AvailableBuildings()
@@ -322,6 +324,13 @@ namespace User
                         yield return settlement.GetHarbor();
                 }
             }
+        }
+
+        private IEnumerator AddPlayerCard()
+        {
+            while (GameManager.PlayerConnected(PlayerId))
+                yield return null;
+            PlayerCardList.AddPlayerCard(this);
         }
 
         [Rpc(SendTo.Everyone, InvokePermission = RpcInvokePermission.Server)]
