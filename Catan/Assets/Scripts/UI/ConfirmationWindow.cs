@@ -23,6 +23,7 @@ namespace UI
         [SerializeField] private Button confirmButton;
         [SerializeField] private Button cancelButton;
         [SerializeField] private Toggle dontShowAgainToggle;
+        [SerializeField] private float animationScale;
 
         private bool _isOpen;
         private CanvasGroup _canvasGroup;
@@ -36,8 +37,12 @@ namespace UI
 
         private void Update()
         {
+            float targetAlpha = _isOpen ? 1f : 0f;
+            var targetSize = Vector3.one * (_isOpen ? 1f : animationScale);
+            
             _canvasGroup.interactable = _canvasGroup.blocksRaycasts = _isOpen;
-            _canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha, _isOpen ? 1f : 0f, Time.deltaTime * fadeSpeed);
+            _canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha, targetAlpha, Time.deltaTime * fadeSpeed);
+            transform.localScale = Vector3.Lerp(transform.localScale, targetSize, Time.deltaTime * fadeSpeed);
         }
 
         public static void Show(string title, string text, UnityAction confirmAction = null, UnityAction<bool> dontShowAgainAction = null)
@@ -57,7 +62,7 @@ namespace UI
             _instance.text.text = text;
             
             _instance.RecalculateSize();
-            _instance._isOpen = true;
+            _instance.Open();
         }
 
         private void RecalculateSize()
@@ -80,6 +85,13 @@ namespace UI
             dontShowAgainToggle.onValueChanged.RemoveAllListeners();
             confirmButton.onClick.RemoveAllListeners();
             _isOpen = false;
+        }
+
+        private void Open()
+        {
+            transform.localScale = Vector3.one * animationScale;
+            _canvasGroup.alpha = 0f;
+            _isOpen = true;
         }
     }
 }

@@ -1347,6 +1347,7 @@ MonoBehaviour:
   confirmButton: {fileID: 1884017356986991549}
   cancelButton: {fileID: 8510263088180931993}
   dontShowAgainToggle: {fileID: 7573000841027836313}
+  animationScale: 1.2
 --- !u!1 &6907149377203230344
 GameObject:
   m_ObjectHideFlags: 0
