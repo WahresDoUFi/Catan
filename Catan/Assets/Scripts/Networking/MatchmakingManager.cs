@@ -7,7 +7,6 @@ using TMPro;
 using UI;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
-using Unity.Networking.Transport.Relay;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Relay;
@@ -45,7 +44,13 @@ namespace Networking
             _guid = PlayerPrefs.GetString("Guid", Guid.NewGuid().ToString());
             PlayerPrefs.SetString("Guid", _guid);
         }
-        
+
+        private void OnDisable()
+        {
+            if (NetworkManager.Singleton != null)
+                NetworkManager.Singleton.OnClientDisconnectCallback -= OnDisconnect;
+        }
+
         private void HostButtonPressed()
         {
             _ = Host();
@@ -91,7 +96,6 @@ namespace Networking
             }
             if (!await StartClientWithRelay(code, "dtls"))
                 Debug.LogWarning("Could not start client");
-            SetButtonsActive(true);
         }
 
         private void SetButtonsActive(bool active)
@@ -141,13 +145,24 @@ namespace Networking
             catch (Exception e)
             {
                 Debug.Log("Could not find allocation: " + e.Message);
+                ConfirmationWindow.Show("No!", "Could not find room");
+                SetButtonsActive(true);
                 return false;
             }
             Debug.Log(allocation);
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(allocation.ToRelayServerData(connectionType));
             Debug.Log("Starting client");
             NetworkManager.Singleton.NetworkConfig.ConnectionData = Encoding.UTF8.GetBytes(_guid);
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnDisconnect;
             return !string.IsNullOrEmpty(joinCode) && NetworkManager.Singleton.StartClient();
+        }
+
+        private void OnDisconnect(ulong clientId)
+        {
+            string reason = NetworkManager.Singleton.DisconnectReason;
+            if (string.IsNullOrEmpty(reason)) return;
+            ConfirmationWindow.Show("No!", reason);
+            SetButtonsActive(true);
         }
     }
 }
