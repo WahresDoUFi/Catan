@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Helpers;
@@ -18,14 +19,18 @@ namespace GamePlay
     {
         public static GameManager Instance;
         public const int MaxPlayers = 4;
-        public const int MaxCardsOnBandit = 6;
+        public const int MaxCardsOnBandit = 7;
         private const int VictoryPointsTarget = 7;
+        private const float DisconnectWaitDelay = 10f;
 
         private const byte RepositionBanditBit = 0b1;
         private const byte StealResourcesBit = 0b10;
         private const byte MonopolyActiveBit = 0b100;
         private const byte YearOfPlentyActiveBit = 0b1000;
 
+        //  only on host - used for reconnecting players
+        private static readonly Dictionary<string, ulong> PlayerGuidsToClientId = new();
+        
         /// <summary>
         /// <list type="bullet">
         ///<item>Waiting = waiting for players to connect</item>
@@ -42,7 +47,7 @@ namespace GamePlay
         }
 
         public GameState State => (GameState)_gameState.Value;
-        public int PlayerCount => _playerIds.Count;
+        public float DisconnectWaitTime => _disconnectWaitTime.Value;
         public bool DiceThrown => _hasThrownDice.Value;
         public int Seed => _seed.Value;
         public ulong ActivePlayer => _playerIds[_playerTurn.Value];
@@ -52,6 +57,7 @@ namespace GamePlay
         public bool SpecialActionActive => _specialActionState.Value != 0;
         public bool RepositionBandit => _specialActionState.Value == RepositionBanditBit;
         public bool CanStealResource => _specialActionState.Value == StealResourcesBit && !CardLimitActive;
+        private int PlayerCount => _playerIds.Count;
         private int LocalPlayerIndex => Mathf.Max(0, _playerIds.IndexOf(NetworkManager.LocalClientId));
         public event Action TurnChanged;
 
@@ -67,19 +73,17 @@ namespace GamePlay
         private readonly NetworkVariable<int> _seed = new();
         private readonly NetworkTradeInfoVariable _playerTrades = new();
         private readonly NetworkList<byte> _cardsToDiscard = new();
-
-        private void Awake()
-        {
-            Instance = this;
-        }
+        private readonly NetworkVariable<float> _disconnectWaitTime = new();
 
         private void Update()
         {
+            if (!IsSpawned) return;
             HandleFreeBuildingSelection();
             if (!NetworkManager.IsHost) return;
+            HandlePlayerDisconnectWaiting();
             if (State == GameState.Preparing)
             {
-                if (!Player.GetPlayerById(ActivePlayer).HasFreeBuildings())
+                if (Player.GetPlayerById(ActivePlayer)?.HasFreeBuildings() == false)
                 {
                     NextTurn();
                     if (_roundNumber.Value > 2)
@@ -92,6 +96,7 @@ namespace GamePlay
 
         public override void OnNetworkSpawn()
         {
+            Instance = this;
             Street.AllStreets.Sort((s1, s2) =>
                 s1.transform.GetSiblingIndex().CompareTo(s2.transform.GetSiblingIndex()));
             Settlement.AllSettlements.Sort((s1, s2) =>
@@ -106,23 +111,29 @@ namespace GamePlay
                 }
                 SetupHarbors();
             }
+            
             ConnectionNotificationManager.Instance.OnClientConnectionNotification += OnClientConnectionStatusChange;
             NetworkManager.Singleton.OnClientStopped += OnClientStopped;
-            _playerIds.OnListChanged += PlayerIdsChange;
             _gameState.OnValueChanged += (_, _) => GameStateChange();
+            if (State != GameState.Waiting)
+            {
+                GameStateChange();
+            }
             _playerTurn.OnValueChanged += (_, _) => PlayerTurnChange();
             _hasThrownDice.OnValueChanged += HasThrownDiceChange;
             _playerTrades.TradeUpdated += TradeUpdated;
             _playerTrades.TradeCleared += AvailableTradesMenu.UpdateAvailableTrades;
             _specialActionState.OnValueChanged += SpecialActionStateChange;
+            _playerIds.OnListChanged += PlayerIdsChange;
+            
+            StartCoroutine(LateNetworkSpawn());
         }
 
-        private void Start()
+        private IEnumerator LateNetworkSpawn()
         {
-            foreach (ulong playerId in _playerIds)
-            {
-                PlayerCardList.AddPlayerCard(Player.GetPlayerById(playerId));
-            }
+            yield return null;
+            Street.UpdateAll();
+            Settlement.UpdateAll();
         }
 
         public override void OnNetworkDespawn()
@@ -130,18 +141,66 @@ namespace GamePlay
             ConnectionNotificationManager.Instance.OnClientConnectionNotification -= OnClientConnectionStatusChange;
         }
 
+        public static bool PlayerConnected(ulong clientId)
+        {
+            if (!Instance || !Instance._playerIds.Contains(clientId)) return false;
+            return Player.GetPlayerById(clientId)?.IsConnected == true;
+        }
+
+        public static void SetPlayerGuid(ulong clientId, string guid)
+        {
+            if (PlayerGuidsToClientId.TryAdd(guid, clientId)) return;
+            
+            if (Instance)
+            {
+                ulong oldClientId = PlayerGuidsToClientId[guid];
+                Instance._playerIds.Set(Instance._playerIds.IndexOf(PlayerGuidsToClientId[guid]), clientId, true);
+                Street.ReplaceClientId(oldClientId, clientId);
+                Settlement.ReplaceClientId(oldClientId, clientId);
+                PlayerGuidsToClientId[guid] = clientId;   
+            }
+        }
+
+        public static void InitializeUserData(string guid)
+        {
+            PlayerGuidsToClientId.Clear();
+            PlayerGuidsToClientId.Add(guid, NetworkManager.Singleton.LocalClientId);
+        }
+
+        public static string GetPlayerUserId(ulong clientId)
+        {
+            foreach (var (userId, networkId) in PlayerGuidsToClientId)
+            {
+                if (networkId == clientId) return userId;
+            }
+
+            return string.Empty;
+        }
+
+        public bool PlayerGuidExists(string guid)
+        {
+            return PlayerGuidsToClientId.ContainsKey(guid);
+        }
+
+        public int GetPlayerIndex(ulong clientId)
+        {
+            return _playerIds.IndexOf(clientId);
+        }
+
         public bool IsMyTurn()
         {
             if (State == GameState.Waiting || !NetworkManager.Singleton)
                 return false;
-            return LocalPlayerIndex == _playerTurn.Value;
+            
+            return _playerIds.Contains(NetworkManager.LocalClientId) && LocalPlayerIndex == _playerTurn.Value;
         }
 
-        public IEnumerable<ulong> GetPlayerIds()
+        public IEnumerable<ulong> GetConnectedPlayerIds()
         {
             foreach (ulong clientId in _playerIds)
             {
-                yield return clientId;
+                if (PlayerConnected(clientId))
+                    yield return clientId;
             }
         }
 
@@ -262,7 +321,7 @@ namespace GamePlay
         {
             if (!NetworkManager.IsHost) return;
 
-            if (PlayersInBanditRange().Count() > 0)
+            if (PlayersInBanditRange().Any())
                 _specialActionState.Value = StealResourcesBit;
         }
 
@@ -426,21 +485,11 @@ namespace GamePlay
             if (!PlayersInBanditRange().Contains(playerId)) return;
 
             var player = Player.GetPlayerById(playerId);
-            var resourceToSteal = new Random().Next(1, player.ResourceCount);
-            var count = 0;
-            foreach (var tile in (Tile[])Enum.GetValues(typeof(Tile)))
-            {
-                count += player.GetResources(tile);
-                if (resourceToSteal <= count)
-                {
-                    player.RemoveResources(tile, 1);
-                    Player.GetPlayerById(ActivePlayer).AddResources(tile, 1);
-
-                    _specialActionState.Value = 0;
-                    ResourceCardsStolenRpc(ActivePlayer, tile, 1, RpcTarget.Single(playerId, RpcTargetUse.Temp));
-                    return;
-                }
-            }
+            var resource = player.GetRandomResource();
+            player.RemoveResources(resource, 1);
+            Player.GetPlayerById(ActivePlayer).AddResources(resource, 1);
+            ResourceCardsStolenRpc(ActivePlayer, resource, 1, RpcTarget.Single(playerId, RpcTargetUse.Temp));
+            _specialActionState.Value = 0;
         }
 
         [Rpc(SendTo.SpecifiedInParams, InvokePermission = RpcInvokePermission.Server)]
@@ -615,7 +664,7 @@ namespace GamePlay
         private void NextTurn()
         {
             int victoryPoints = VictoryPoints.CalculateVictoryPoints(ActivePlayer);
-            if (victoryPoints >= 7)
+            if (victoryPoints >= VictoryPointsTarget)
             {
                 _gameState.Value = (byte)GameState.GameOver;
                 ShowGameOverClientRpc(ActivePlayer);
@@ -624,6 +673,11 @@ namespace GamePlay
             _hasThrownDice.Value = false;
             _playerTrades.Clear();
             _playerTurn.Value = (byte)((_playerTurn.Value + 1) % PlayerCount);
+            if (!PlayerConnected(ActivePlayer))
+            {
+                NextTurn();
+                return;
+            }
             if (_playerTurn.Value == 0)
                 _roundNumber.Value += 1;
 
@@ -656,8 +710,8 @@ namespace GamePlay
         private void HandleFreeBuildingSelection()
         {
             if (!IsMyTurn()) return;
-            if (!Player.LocalPlayer.HasFreeBuildings()) return;
-            BuildManager.SelectBuildingType(Player.LocalPlayer.AvailableBuildings()[0]);
+            if (Player.LocalPlayer?.HasFreeBuildings() == true)
+                BuildManager.SelectBuildingType(Player.LocalPlayer.AvailableBuildings()[0]);
         }
 
         private void HasThrownDiceChange(bool previous, bool current)
@@ -702,14 +756,37 @@ namespace GamePlay
             }
         }
 
+        private void HandlePlayerDisconnectWaiting()
+        {
+            if (State != GameState.Playing) return;
+            if (PlayerConnected(ActivePlayer))
+            {
+                _disconnectWaitTime.Value = DisconnectWaitDelay;
+                return;
+            }
+
+            _disconnectWaitTime.Value -= Time.deltaTime;
+            if (_disconnectWaitTime.Value > 0) return;
+
+            _disconnectWaitTime.Value = DisconnectWaitDelay;
+            byte cardsToRemove = _cardsToDiscard[_playerIds.IndexOf(ActivePlayer)];
+            var player = Player.GetPlayerById(ActivePlayer);
+            for (var i = 0; i < cardsToRemove; i++)
+            {
+                player.RemoveResources(player.GetRandomResource(), 1);
+            }
+
+            _cardsToDiscard[_playerIds.IndexOf(ActivePlayer)] = 0;
+            if (!CardLimitActive)
+                _specialActionState.Value = 0;
+            NextTurn();
+        }
+
         private void PlayerIdsChange(NetworkListEvent<ulong> changeEvent)
         {
             if (changeEvent.Type == NetworkListEvent<ulong>.EventType.Add)
             {
                 PlayerCardList.AddPlayerCard(Player.GetPlayerById(changeEvent.Value));
-            } else if (changeEvent.Type == NetworkListEvent<ulong>.EventType.Remove)
-            {
-                PlayerCardList.RemovePlayerCard(changeEvent.Value);
             }
         }
 
@@ -768,6 +845,7 @@ namespace GamePlay
         private void OnClientConnectionStatusChange(ulong clientId,
             ConnectionNotificationManager.ConnectionStatus connectionStatus)
         {
+            PlayerCardList.RefreshPlayerCards();
             if (NetworkManager.Singleton.IsHost)
             {
                 switch (connectionStatus)
@@ -775,24 +853,30 @@ namespace GamePlay
                     case ConnectionNotificationManager.ConnectionStatus.Connected:
                         {
                             _cardsToDiscard.Add(0);
-                            _playerIds.Add(clientId);
-                            if (State == (byte)GameState.Waiting)
+                            if (State == GameState.Waiting)
                             {
+                                _playerIds.Add(clientId);
                                 if (NetworkManager.Singleton.ConnectedClientsIds.Count == 4)
                                 {
                                     StartGame();
                                 }
                             }
+                            else
+                            {
+                                Player.GetPlayerByGuid(GetPlayerUserId(clientId)).NetworkObject.ChangeOwnership(clientId);
+                            }
 
                             break;
                         }
                     case ConnectionNotificationManager.ConnectionStatus.Disconnected:
-                        _cardsToDiscard.Clear();
-                        _specialActionState.Value = 0;
-                        NextTurn();
-                        //  fix required: when player leaves, there is no check in place for who is supposed to be the next player etc.
-                        _cardsToDiscard.RemoveAt(_playerIds.IndexOf(clientId));
-                        _playerIds.Remove(clientId);
+                        if (!_playerIds.Contains(clientId)) break;
+                        if (State == GameState.Waiting)
+                        {
+                            var player = Player.GetPlayerById(clientId);
+                            _playerIds.Remove(clientId);
+                            PlayerGuidsToClientId.Remove(player.Guid);
+                            player.NetworkObject.Despawn();
+                        }
                         break;
                 }
             }

@@ -42,11 +42,6 @@ public class Settlement : NetworkBehaviour
     private MapIcon _mapIcon;
     private MapIcon _buildPreviewIcon;
 
-    private void OnEnable()
-    {
-        AllSettlements.Add(this);
-    }
-
     private void OnDisable()
     {
         AllSettlements.Remove(this);
@@ -54,13 +49,15 @@ public class Settlement : NetworkBehaviour
 
     private void Awake()
     {
+        AllSettlements.Add(this);
         _settlementPreviewMaterials = settlementPreview.GetComponent<Renderer>().materials;
     }
 
     private void Start()
     {
         _level.OnValueChanged += LevelUpdated;
-        LevelUpdated(0, 0);
+        settlement.SetActive(false);
+        city.SetActive(false);
         _buildPreviewIcon = MapIconManager.AddIcon(transform, IconType.BuildPreview, Color.white);
     }
 
@@ -69,6 +66,23 @@ public class Settlement : NetworkBehaviour
         settlementPreview.SetActive(ShowSettlementPreview());
         UpdateCityPreview();
         UpdateBuildPreviewIcon();
+    }
+
+    public static void ReplaceClientId(ulong oldClientId, ulong newClientId)
+    {
+        foreach (var settlement in AllSettlements)
+        {
+            if (settlement.Owner == oldClientId)
+                settlement._owner.Value = newClientId;
+        }
+    }
+
+    public static void UpdateAll()
+    {
+        foreach (var settlement in AllSettlements)
+        {
+            settlement.LevelUpdated(0, settlement.Level);
+        }
     }
 
     public bool HasHarbor()

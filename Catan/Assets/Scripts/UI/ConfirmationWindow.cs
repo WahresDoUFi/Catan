@@ -40,7 +40,7 @@ namespace UI
             _canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha, _isOpen ? 1f : 0f, Time.deltaTime * fadeSpeed);
         }
 
-        public static void Show(string title, string text, UnityAction confirmAction, UnityAction<bool> dontShowAgainAction)
+        public static void Show(string title, string text, UnityAction confirmAction = null, UnityAction<bool> dontShowAgainAction = null)
         {
             //  close any window that might still be open
             _instance.Close();

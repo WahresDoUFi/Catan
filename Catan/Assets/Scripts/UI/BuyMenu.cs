@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using GamePlay;
 using UI.DevelopmentCards;
 using UnityEngine;
@@ -30,10 +32,10 @@ namespace UI
             _rectTransform.anchoredPosition = _targetPosition;
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
-            AddButtonCallbacks();
             DevelopmentCardsDisplay.CardRevealed += DevelopmentCardRevealed;
+            yield return AddButtonCallbacks();
         }
 
         private void OnDestroy()
@@ -48,12 +50,13 @@ namespace UI
             UpdateButtonState();
         }
 
-        private void AddButtonCallbacks()
+        private IEnumerator AddButtonCallbacks()
         {
             buyStreetButton.onClick.AddListener(() => BuildManager.SelectBuildingType(BuildManager.BuildType.Street));
             buySettlementButton.onClick.AddListener(() => BuildManager.SelectBuildingType(BuildManager.BuildType.Settlement));
             buyCityButton.onClick.AddListener(() => BuildManager.SelectBuildingType(BuildManager.BuildType.City));
             buyDevelopmentCardButton.onClick.AddListener(GameManager.Instance.BuyDevelopmentCard);
+            yield return new WaitUntil(() => Player.LocalPlayer);
             Player.LocalPlayer.DevelopmentCardBought += _ => _canBuyDevelopmentCard = false;
         }
 

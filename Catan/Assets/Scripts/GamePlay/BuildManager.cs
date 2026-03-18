@@ -119,7 +119,7 @@ namespace GamePlay
 
         public static void SetActive(bool active)
         {
-            _instance.cancelButton.gameObject.SetActive(!Player.LocalPlayer.HasFreeBuildings());
+            _instance.cancelButton.gameObject.SetActive(Player.LocalPlayer && !Player.LocalPlayer.HasFreeBuildings());
             _instance._buildModeActive = active;
             _instance.buildModeDisplay.gameObject.SetActive(active);
             if (active)

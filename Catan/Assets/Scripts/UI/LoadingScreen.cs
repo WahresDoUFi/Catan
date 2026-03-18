@@ -43,7 +43,15 @@ namespace UI
 
         private void Start()
         {
-            NetworkManager.Singleton.OnClientStarted += ClientConnected;
+            NetworkManager.Singleton.OnConnectionEvent += OnConnectEvent;
+        }
+
+        private void OnConnectEvent(NetworkManager networkManager, ConnectionEventData eventData)
+        {
+            if (eventData.EventType == ConnectionEvent.ClientConnected)
+            {
+                ClientConnected();
+            }
         }
 
         private static Task Show(AsyncOperation operation = null)

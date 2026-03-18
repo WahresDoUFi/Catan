@@ -52,8 +52,9 @@ namespace UI.DevelopmentCards
             _canvasGroup.blocksRaycasts = false;
         }
 
-        private void Start()
+        private IEnumerator Start()
         {
+            yield return new WaitUntil(() => Player.LocalPlayer);
             Player.LocalPlayer.DevelopmentCardBought += CardBought;
             GameManager.Instance.TurnChanged += TurnChanged;
         }

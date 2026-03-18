@@ -48,6 +48,7 @@ namespace User
         {
             _input.Player.Enable();
             _input.Player.Pause.performed += _ => PauseMenu.Toggle();
+            _input.Player.Copy.performed += _ => LobbyCodeDisplay.CopyCodeToClipboard();
         }
     }
 }

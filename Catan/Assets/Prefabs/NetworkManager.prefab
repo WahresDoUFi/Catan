@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4479287371655654793}
   - component: {fileID: 5861092183908670748}
   - component: {fileID: 1346345325338123140}
+  - component: {fileID: -3622971945333418212}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -117,3 +118,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e7b2df524c42629eeb44be121fca94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ConnectionNotificationManager
+--- !u!114 &-3622971945333418212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386794183630426823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 181ff3224334486b9a0108f27f106d78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Networking.ConnectionApprovalManager

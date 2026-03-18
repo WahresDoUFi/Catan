@@ -208,7 +208,8 @@ namespace UI
         private void UpdatePlayer()
         {
             if (_player) return;
-            _player = NetworkManager.Singleton.LocalClient.PlayerObject.gameObject.GetComponent<Player>();
+            _player = Player.LocalPlayer;
+            if (!_player) return;
             _player.ResourcesUpdated += UpdateResourceCards;
             UpdateResourceCards();
         }

@@ -34,7 +34,7 @@ namespace UI
             if (GameManager.Instance.CanStealResource && GameManager.Instance.IsMyTurn())
             {
                 byte cardsDisplayed = 0;
-                int localPlayerIndex = GameManager.Instance.GetPlayerIds().ToList().IndexOf(NetworkManager.Singleton.LocalClientId);
+                int localPlayerIndex = GameManager.Instance.GetConnectedPlayerIds().ToList().IndexOf(NetworkManager.Singleton.LocalClientId);
                 ulong[] playersInRange = GameManager.Instance.PlayersInBanditRange().ToArray();
                 for (var index = 0; index < _playerCards.Count; index++)
                 {
@@ -60,9 +60,12 @@ namespace UI
 
         public static void AddPlayerCard(Player player)
         {
+            if (player == null) return;
+            if (_instance._playerCards.Any(card => card.PlayerId == player.PlayerId)) return;
             var card = Instantiate(_instance.playerCardPrefab, _instance.transform).GetComponent<PlayerCard>();
             card.SetPlayer(player);
             _instance._playerCards.Add(card);
+            _instance.RefreshListOrder();
         }
 
         public static void RollDice(ulong playerId)
@@ -88,6 +91,23 @@ namespace UI
             {
                 _instance._playerCards.Remove(card);
                 Destroy(card.gameObject);
+            }
+        }
+
+        public static void RefreshPlayerCards()
+        {
+            foreach (var card in _instance._playerCards)
+            {
+                card.Refresh();
+            }
+            _instance.RefreshListOrder();
+        }
+
+        private void RefreshListOrder()
+        {
+            foreach (var card in _playerCards)
+            {
+                card.gameObject.transform.SetSiblingIndex(GameManager.Instance.GetPlayerIndex(card.PlayerId));
             }
         }
 

@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
+using System.Text;
 using System.Threading.Tasks;
 using GamePlay;
 using TMPro;
 using UI;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
-using Unity.Networking.Transport.Relay;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Relay;
@@ -34,13 +34,23 @@ namespace Networking
         [SerializeField] private Button hostButton;
         [SerializeField] private Button joinButton;
         [SerializeField] private TMP_InputField joinCodeInput;
+
+        private string _guid;
         
         private void Awake()
         {
             hostButton.onClick.AddListener(HostButtonPressed);
             joinButton.onClick.AddListener(JoinButtonPressed);
+            _guid = PlayerPrefs.GetString("Guid", Guid.NewGuid().ToString());
+            PlayerPrefs.SetString("Guid", _guid);
         }
-        
+
+        private void OnDisable()
+        {
+            if (NetworkManager.Singleton != null)
+                NetworkManager.Singleton.OnClientDisconnectCallback -= OnDisconnect;
+        }
+
         private void HostButtonPressed()
         {
             _ = Host();
@@ -86,7 +96,6 @@ namespace Networking
             }
             if (!await StartClientWithRelay(code, "dtls"))
                 Debug.LogWarning("Could not start client");
-            SetButtonsActive(true);
         }
 
         private void SetButtonsActive(bool active)
@@ -116,6 +125,7 @@ namespace Networking
         {
             if (NetworkManager.Singleton.StartHost())
             {
+                GameManager.InitializeUserData(PlayerPrefs.GetString("Guid", Guid.NewGuid().ToString()));
                 NetworkManager.Singleton.SceneManager.SetClientSynchronizationMode(LoadSceneMode.Additive);
                 NetworkManager.Singleton.SceneManager.LoadScene(boardSceneName, LoadSceneMode.Additive);
                 return true;
@@ -135,13 +145,24 @@ namespace Networking
             catch (Exception e)
             {
                 Debug.Log("Could not find allocation: " + e.Message);
+                ConfirmationWindow.Show("No!", "Could not find room");
+                SetButtonsActive(true);
                 return false;
             }
             Debug.Log(allocation);
             NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(allocation.ToRelayServerData(connectionType));
             Debug.Log("Starting client");
-            if (string.IsNullOrEmpty(joinCode)) return false;
-            return NetworkManager.Singleton.StartClient();
+            NetworkManager.Singleton.NetworkConfig.ConnectionData = Encoding.UTF8.GetBytes(_guid);
+            NetworkManager.Singleton.OnClientDisconnectCallback += OnDisconnect;
+            return !string.IsNullOrEmpty(joinCode) && NetworkManager.Singleton.StartClient();
+        }
+
+        private void OnDisconnect(ulong clientId)
+        {
+            string reason = NetworkManager.Singleton.DisconnectReason;
+            if (string.IsNullOrEmpty(reason)) return;
+            ConfirmationWindow.Show("No!", reason);
+            SetButtonsActive(true);
         }
     }
 }

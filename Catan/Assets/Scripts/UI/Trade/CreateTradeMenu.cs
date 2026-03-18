@@ -62,7 +62,7 @@ namespace UI.Trade
 
             if (GameManager.Instance.IsMyTurn())
             {
-                foreach (ulong clientId in GameManager.Instance.GetPlayerIds())
+                foreach (ulong clientId in GameManager.Instance.GetConnectedPlayerIds())
                 {
                     if (NetworkManager.Singleton.LocalClientId == clientId) continue;
                     var tabButton = Instantiate(tabButtonPrefab, tabButtonsParent).GetComponent<TabButton>();

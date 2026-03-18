@@ -43,27 +43,26 @@ namespace UI
 
         public void ShowGameOverScreen(Player winner)
         {
-            if (gameOverScreen != null)
+            if (!gameOverScreen) return;
+            
+            if (winner.IsOwner)
             {
-                if (winner.IsOwner)
-                {
-                    gameOverText.text = "You won! \nCongratulations!";
-                    gameOverImage.sprite = winSprite;
-                    sparkles.gameObject.SetActive(true);
-                    gameOverImage.rectTransform.sizeDelta = (new Vector2(500, 500));
-                    AudioSource.PlayClipAtPoint(winSound, Camera.main.transform.position, 0.15f);
-                }
-                else
-                {
-                    gameOverText.text = "You lost! Player " + winner.PlayerName + " won the game!";
-                    gameOverImage.rectTransform.sizeDelta = (new Vector2(768, 552));
-                    gameOverImage.sprite = loseSprite;
-                }
-
-                gameOverScreen.gameObject.SetActive(true);
-                _canvasGroup.blocksRaycasts = true;
-                _shouldShow = true;
+                gameOverText.text = "You won! \nCongratulations!";
+                gameOverImage.sprite = winSprite;
+                sparkles.gameObject.SetActive(true);
+                gameOverImage.rectTransform.sizeDelta = (new Vector2(500, 500));
+                AudioSource.PlayClipAtPoint(winSound, Camera.main.transform.position, 0.15f);
             }
+            else
+            {
+                gameOverText.text = "You lost! Player " + winner.PlayerName + " won the game!";
+                gameOverImage.rectTransform.sizeDelta = (new Vector2(768, 552));
+                gameOverImage.sprite = loseSprite;
+            }
+
+            gameOverScreen.gameObject.SetActive(true);
+            _canvasGroup.blocksRaycasts = true;
+            _shouldShow = true;
         }
     }
 }
