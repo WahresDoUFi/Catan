@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: DoUFiGames
   productName: Catan
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -939,11 +939,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 5beb767a-0e06-4002-b731-75d5d85926a7
+  cloudProjectId: 72fd37bc-8322-4854-8004-f481b91d80ec
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Catan
-  organizationId: ruszdominik
+  organizationId: doufistudios
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
