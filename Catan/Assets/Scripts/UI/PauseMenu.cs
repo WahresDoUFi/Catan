@@ -13,7 +13,7 @@ namespace UI
         private static PauseMenu _instance;
         public static bool IsOpen => _instance._open;
 
-        [SerializeField] private float fadeSpeed;
+        [SerializeField] private float fadeTime;
         [SerializeField] private Slider masterVolumeSlider;
         [SerializeField] private Slider musicVolumeSlider;
         [SerializeField] private Slider soundEffectsVolumeSlider;
@@ -33,6 +33,7 @@ namespace UI
         {
             _open = false;
             _canvasGroup.alpha = 0f;
+            _canvasGroup.interactable = _canvasGroup.blocksRaycasts = false;
             LoadInitialValues();
             SetupBindings();
         }
@@ -53,15 +54,16 @@ namespace UI
             quitButton.onClick.AddListener(() => NetworkManager.Singleton.Shutdown());
         }
 
-        private void Update()
-        {
-            _canvasGroup.blocksRaycasts = _open;
-            _canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha, _open ? 1f : 0f, Time.deltaTime * fadeSpeed);
-        }
-
         public static void Toggle()
         {
-            _instance._open = !_instance._open;
+            _instance.SetOpen(!_instance._open);
+        }
+
+        private void SetOpen(bool open)
+        {
+            _open = open;
+            _instance._canvasGroup.blocksRaycasts = _instance._canvasGroup.interactable = open;
+            UITween.AnimateAlpha(_canvasGroup, open ? 0f : 1f, open ? 1f : 0f, fadeTime);
         }
     }
 }

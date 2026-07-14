@@ -15,7 +15,7 @@ namespace UI
 
         [SerializeField] private RectTransform windowFrameRectTransform;
         [SerializeField] private RectTransform contentRectTransform;
-        [SerializeField] private float fadeSpeed;
+        [SerializeField] private float fadeTime;
         [SerializeField] private float minWidth;
         [SerializeField] private float maxWidth;
         [SerializeField] private TextMeshProUGUI title;
@@ -33,16 +33,8 @@ namespace UI
             _instance = this;
             cancelButton.onClick.AddListener(Close);
             _canvasGroup = GetComponent<CanvasGroup>();
-        }
-
-        private void Update()
-        {
-            float targetAlpha = _isOpen ? 1f : 0f;
-            var targetSize = Vector3.one * (_isOpen ? 1f : animationScale);
-            
-            _canvasGroup.interactable = _canvasGroup.blocksRaycasts = _isOpen;
-            _canvasGroup.alpha = Mathf.Lerp(_canvasGroup.alpha, targetAlpha, Time.deltaTime * fadeSpeed);
-            transform.localScale = Vector3.Lerp(transform.localScale, targetSize, Time.deltaTime * fadeSpeed);
+            _canvasGroup.interactable = _canvasGroup.blocksRaycasts = false;
+            _canvasGroup.alpha = 0f;
         }
 
         public static void Show(string title, string text, UnityAction confirmAction = null, UnityAction<bool> dontShowAgainAction = null)
@@ -85,6 +77,9 @@ namespace UI
             dontShowAgainToggle.onValueChanged.RemoveAllListeners();
             confirmButton.onClick.RemoveAllListeners();
             _isOpen = false;
+            UITween.AnimateScale(this, 1f, animationScale, fadeTime);
+            UITween.AnimateAlpha(_canvasGroup, 1f, 0f, fadeTime);
+            _canvasGroup.interactable = _canvasGroup.blocksRaycasts = false;
         }
 
         private void Open()
@@ -92,6 +87,9 @@ namespace UI
             transform.localScale = Vector3.one * animationScale;
             _canvasGroup.alpha = 0f;
             _isOpen = true;
+            UITween.AnimateScale(this, animationScale, 1f, fadeTime);
+            UITween.AnimateAlpha(_canvasGroup, 0f, 1f, fadeTime);
+            UITween.DelayAction(this, fadeTime, () => _canvasGroup.interactable = _canvasGroup.blocksRaycasts = true);
         }
     }
 }

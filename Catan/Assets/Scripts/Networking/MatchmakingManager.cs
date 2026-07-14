@@ -94,6 +94,7 @@ namespace Networking
                 SetButtonsActive(true);
                 return;
             }
+            LobbyCode = code;
             if (!await StartClientWithRelay(code, "dtls"))
                 Debug.LogWarning("Could not start client");
         }

@@ -169,7 +169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.000091552734}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &621515433789698074
@@ -2198,8 +2198,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3173455908662120117}
   m_HandleRect: {fileID: 94480039125816660}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 0.3478261
+  m_Value: 1
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2608,6 +2608,7 @@ GameObject:
   - component: {fileID: 5707754723927817941}
   - component: {fileID: 6004042822885802034}
   - component: {fileID: 5154490723342135698}
+  - component: {fileID: 7805287279733084194}
   m_Layer: 5
   m_Name: TradeWindow
   m_TagString: Untagged
@@ -2660,6 +2661,21 @@ MonoBehaviour:
   closeButton: {fileID: 5181749308430105648}
   menuSelectionButton: {fileID: 139402508265074644}
   menuSelectionDropdown: {fileID: 8715066187537402809}
+  fadeTime: 0.3
+  animationScale: 1.2
+  content: {fileID: 8520986209363641561}
+--- !u!225 &7805287279733084194
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5721122136990899049}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &5723204185354975652
 GameObject:
   m_ObjectHideFlags: 0

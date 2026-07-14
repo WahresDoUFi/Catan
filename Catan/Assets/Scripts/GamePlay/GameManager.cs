@@ -260,11 +260,17 @@ namespace GamePlay
             BuyDevelopmentCardRpc();
         }
 
+        public bool CanBanditMoveTo(MapTile tile)
+        {
+            if (tile.Discovered == false) return false;
+            if (tile.Blocked) return false;
+            return true;
+        }
+
         public void SetBanditTile(MapTile tile)
         {
-            if (tile.Discovered == false) return;
-            if (tile.Blocked) return;   // can't place bandit on the same tile again
-            SetBanditTileRpc(tile);
+            if (CanBanditMoveTo(tile))
+                SetBanditTileRpc(tile);
         }
 
         [Rpc(SendTo.Authority)]

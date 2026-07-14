@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UI.ConfirmationWindow
   windowFrameRectTransform: {fileID: 1113950274670045059}
   contentRectTransform: {fileID: 5079911772564450667}
-  fadeSpeed: 12
+  fadeTime: 0.25
   minWidth: 325
   maxWidth: 700
   title: {fileID: 4391087212279658703}

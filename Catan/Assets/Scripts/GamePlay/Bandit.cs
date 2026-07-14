@@ -52,6 +52,7 @@ namespace GamePlay
             var go = CameraController.Instance.Raycast(tileLayer);
             if (go == null) return;
             if (!go.TryGetComponent<MapTile>(out var tile)) return;
+            if (!GameManager.Instance.CanBanditMoveTo(tile)) return;
             if (!_dontShowConfirmationWindow)
             {
                 ConfirmationWindow.Show("Bandit", "Are you sure that you want to place the bandit on this tile?", () =>
