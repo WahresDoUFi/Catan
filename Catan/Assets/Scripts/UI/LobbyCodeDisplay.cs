@@ -2,6 +2,7 @@ using GamePlay;
 using Networking;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace UI
@@ -45,7 +46,8 @@ namespace UI
         {
             CopyCodeToClipboard();
             var copyText = Instantiate(copyConfirmTextPrefab, transform.parent);
-            Vector2 spawnPosition = copyTextSpawnOffset;
+            var mousePos = transform.parent.InverseTransformPoint(Mouse.current.position.value);
+            Vector2 spawnPosition = copyTextSpawnOffset + new Vector2(mousePos.x, mousePos.y);
             UITween.AnimateAlpha(copyText.GetComponent<CanvasGroup>(), 0f, 1f, copyTextMoveTime, _alphaEase.GetValue);
             UITween.AnimatePosition(copyText, spawnPosition, spawnPosition + copyTextMoveDirection, copyTextMoveTime, (start, end, progress) => Vector2.Lerp(start, end, progress));
             UITween.AnimateScale(copyText.GetComponent<MonoBehaviour>(), .8f, 1f, copyTextMoveTime, _alphaEase.GetValue);

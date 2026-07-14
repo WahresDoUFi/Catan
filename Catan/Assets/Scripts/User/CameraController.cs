@@ -13,6 +13,7 @@ namespace User
     {
         public static CameraController Instance;
 
+        public bool Locked;
         public static bool IsOverview => Mathf.Approximately(Instance._targetPosition.y, Instance.heightLimit.y);
         private float ZoomPercentage => Mathf.InverseLerp(heightLimit.x, heightLimit.y, _targetPosition.y);
         private float Speed => Mathf.Lerp(cameraSpeed.x, cameraSpeed.y, ZoomPercentage);
@@ -141,6 +142,7 @@ namespace User
 
         private bool CanMove()
         {
+            if (Locked) return false;
             var localTurn = GameManager.Instance.IsMyTurn();
             if (localTurn && !(DiceController.Instance.HasThrown || GameManager.Instance.DiceThrown)) return false;
             if (localTurn && GameManager.Instance.RepositionBandit) return false;

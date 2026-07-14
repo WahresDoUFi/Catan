@@ -19,8 +19,8 @@ namespace GamePlay
     {
         public static GameManager Instance;
         public const int MaxPlayers = 4;
-        public const int MaxCardsOnBandit = 7;
-        private const int VictoryPointsTarget = 7;
+        public static int MaxCardsOnBandit => Instance == null ? 7 : Instance.maxCardsOnBandit.Value;
+        private int VictoryPointsTarget => victoryPointsTarget.Value;
         private const float DisconnectWaitDelay = 10f;
 
         private const byte RepositionBanditBit = 0b1;
@@ -74,6 +74,10 @@ namespace GamePlay
         private readonly NetworkTradeInfoVariable _playerTrades = new();
         private readonly NetworkList<byte> _cardsToDiscard = new();
         private readonly NetworkVariable<float> _disconnectWaitTime = new();
+
+        //  game settings
+        public readonly NetworkVariable<int> victoryPointsTarget = new();
+        public readonly NetworkVariable<int> maxCardsOnBandit = new();
 
         private void Update()
         {
@@ -741,7 +745,7 @@ namespace GamePlay
                 for (var i = 0; i < _playerIds.Count; i++)
                 {
                     int cardCount = Player.GetPlayerById(_playerIds[i]).ResourceCount;
-                    if (cardCount > MaxCardsOnBandit)
+                    if (cardCount > maxCardsOnBandit.Value)
                     {
                         _cardsToDiscard[i] = (byte)Mathf.FloorToInt(cardCount / 2f);
                     }
