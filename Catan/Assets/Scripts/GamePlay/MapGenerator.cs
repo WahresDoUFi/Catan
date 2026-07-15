@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using static Unity.Netcode.NetworkSceneManager;
 using Random = System.Random;
 
 public enum Tile
@@ -15,6 +16,10 @@ public enum Tile
 
 public class MapGenerator : MonoBehaviour
 {
+    public static MapGenerator Instance;
+
+    public List<MapTile> Tiles => mapTiles;
+
     private static readonly (int q, int r, int s)[] Directions =
     {
         (-1, 0, 1), (0, -1, 1), (1, -1, 0), (1, 0, -1), (0, 1, -1), (-1, 1, 0)
@@ -30,6 +35,13 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] private float tileWidth = 20f;
     [SerializeField] private float tileHeight = 17.32051f;
+
+    private readonly List<MapTile> mapTiles = new List<MapTile>();
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
@@ -90,6 +102,7 @@ public class MapGenerator : MonoBehaviour
                 Quaternion.Euler(0f, new Random().Next(0, 6) * 60f, 0f), tileParent);
             tileObject.GetComponent<NetworkObject>().Spawn();
             var tile = tileObject.GetComponent<MapTile>();
+            mapTiles.Add(tile);
             var type = tiles[i];
             tile.SetType(type);
             if (type != Tile.Desert)

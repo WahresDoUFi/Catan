@@ -78,6 +78,7 @@ namespace GamePlay
         //  game settings
         public readonly NetworkVariable<int> victoryPointsTarget = new();
         public readonly NetworkVariable<int> maxCardsOnBandit = new();
+        public readonly NetworkVariable<bool> revealTilesOnStart = new();
 
         private void Update()
         {
@@ -637,6 +638,14 @@ namespace GamePlay
         {
             _gameState.Value = (byte)GameState.Preparing;
             _roundNumber.Value = 1;
+
+            if (revealTilesOnStart.Value)
+            {
+                foreach (var tile in MapGenerator.Instance.Tiles)
+                {
+                    tile.Discover();
+                }
+            }
 
             GrantFreeBuildings();
         }

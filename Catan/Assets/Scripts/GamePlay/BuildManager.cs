@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Linq;
 using TMPro;
+using UI;
 using UI.DevelopmentCards;
 using Unity.Netcode;
 using UnityEngine;
@@ -159,6 +160,8 @@ namespace GamePlay
         public static void ConfirmPosition()
         {
             if (!BuildModeActive) return;
+            if (PauseMenu.IsOpen) return;
+            if (ConfirmationWindow.IsOpen) return;
             if (_instance._buildType == BuildType.Street)
                 _instance.PlaceStreet();
             else if (_instance._buildType == BuildType.Settlement)

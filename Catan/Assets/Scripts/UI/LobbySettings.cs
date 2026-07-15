@@ -11,17 +11,21 @@ public class LobbySettings : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private SettingsIntSlider victoryPointSlider;
     [SerializeField]
     private SettingsIntSlider maxCardsOnBanditSlider;
+    [SerializeField]
+    private SettingsCheckbox revealTilesOnStartCheckbox;
 
     IEnumerator Start()
     {
         yield return new WaitUntil(() => GameManager.Instance != null);
         GameManager.Instance.victoryPointsTarget.OnValueChanged += victoryPointSlider.SetValue;
         GameManager.Instance.maxCardsOnBandit.OnValueChanged += maxCardsOnBanditSlider.SetValue;
+        GameManager.Instance.revealTilesOnStart.OnValueChanged += revealTilesOnStartCheckbox.SetValue;
 
         if (!NetworkManager.Singleton.IsHost)
         {
             victoryPointSlider.SetEnabled(false);
             maxCardsOnBanditSlider.SetEnabled(false);
+            revealTilesOnStartCheckbox.SetEnabled(false);
             yield break;
         }
 
@@ -30,6 +34,9 @@ public class LobbySettings : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         GameManager.Instance.maxCardsOnBandit.Value = maxCardsOnBanditSlider.Value;
         maxCardsOnBanditSlider.ValueChanged += (value) => GameManager.Instance.maxCardsOnBandit.Value = value;
+
+        GameManager.Instance.revealTilesOnStart.Value = revealTilesOnStartCheckbox.Value;
+        revealTilesOnStartCheckbox.ValueChanged += (value) => GameManager.Instance.revealTilesOnStart.Value = value;
     }
 
     private void Update()
