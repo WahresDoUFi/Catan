@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Linq;
+using GamePlay;
 using Unity.Netcode;
 using UnityEngine;
 using static Unity.Netcode.NetworkSceneManager;
@@ -26,6 +28,7 @@ public class MapGenerator : MonoBehaviour
     };
 
     private readonly List<int> _tileNumbers = new() { 2, 3, 3, 4, 4, 5, 5, 6, 6, 8, 8, 9, 9, 10, 10, 11, 11, 12 };
+    private readonly Tile[] _defaultMapConfiguration = new Tile[] { Tile.Desert, Tile.Forest, Tile.Brick, Tile.Grass, Tile.Forest, Tile.Field, Tile.Stone, Tile.Forest, Tile.Field, Tile.Field, Tile.Stone, Tile.Grass, Tile.Forest, Tile.Brick, Tile.Stone, Tile.Grass, Tile.Grass, Tile.Field, Tile.Brick };
 
     [SerializeField] private GameObject tilePrefab;
 
@@ -78,6 +81,17 @@ public class MapGenerator : MonoBehaviour
         };
         Shuffle(tiles);
         GenerateMap(tiles);
+    }
+
+    public void SetDefaultMap()
+    {
+        for (int i = 0; i < Tiles.Count; i++)
+        {
+            var tile = Tiles[i];
+            if (tile.TileType == Tile.Desert) tile.SetNumber(Tiles[0].Number);
+            tile.SetType(_defaultMapConfiguration[i]);
+        }
+        Bandit.Instance.SetTargetTile(Tiles[0]);
     }
 
     private static void Shuffle<T>(IList<T> list)

@@ -33,8 +33,8 @@ namespace GamePlay
 
         public void SetInitialTile(MapTile desert)
         {
-            if (_tileId.Value.TryGet(out _)) return;
             if (NetworkManager.IsHost == false) return;
+            if (_tileId.Value.TryGet(out _)) return;
 
             _tileId.Value = desert;
         }

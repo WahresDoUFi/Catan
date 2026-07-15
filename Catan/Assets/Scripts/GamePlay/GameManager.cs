@@ -79,6 +79,13 @@ namespace GamePlay
         public readonly NetworkVariable<int> victoryPointsTarget = new();
         public readonly NetworkVariable<int> maxCardsOnBandit = new();
         public readonly NetworkVariable<bool> revealTilesOnStart = new();
+        public readonly NetworkVariable<int> mapLayoutType = new();
+
+        private enum MapLayoutType
+        {
+            BeginnerLayout,
+            Random
+        }
 
         private void Update()
         {
@@ -639,6 +646,10 @@ namespace GamePlay
             _gameState.Value = (byte)GameState.Preparing;
             _roundNumber.Value = 1;
 
+            if (mapLayoutType.Value == (int)MapLayoutType.BeginnerLayout)
+            {
+                MapGenerator.Instance.SetDefaultMap();
+            }
             if (revealTilesOnStart.Value)
             {
                 foreach (var tile in MapGenerator.Instance.Tiles)

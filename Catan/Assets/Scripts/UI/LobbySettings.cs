@@ -13,6 +13,8 @@ public class LobbySettings : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     private SettingsIntSlider maxCardsOnBanditSlider;
     [SerializeField]
     private SettingsCheckbox revealTilesOnStartCheckbox;
+    [SerializeField]
+    private SettingsDropdown mapLayoutDropdown;
 
     IEnumerator Start()
     {
@@ -20,12 +22,14 @@ public class LobbySettings : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         GameManager.Instance.victoryPointsTarget.OnValueChanged += victoryPointSlider.SetValue;
         GameManager.Instance.maxCardsOnBandit.OnValueChanged += maxCardsOnBanditSlider.SetValue;
         GameManager.Instance.revealTilesOnStart.OnValueChanged += revealTilesOnStartCheckbox.SetValue;
+        GameManager.Instance.mapLayoutType.OnValueChanged += mapLayoutDropdown.SetValue;
 
         if (!NetworkManager.Singleton.IsHost)
         {
             victoryPointSlider.SetEnabled(false);
             maxCardsOnBanditSlider.SetEnabled(false);
             revealTilesOnStartCheckbox.SetEnabled(false);
+            mapLayoutDropdown.SetEnabled(false);
             yield break;
         }
 
@@ -37,6 +41,9 @@ public class LobbySettings : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
 
         GameManager.Instance.revealTilesOnStart.Value = revealTilesOnStartCheckbox.Value;
         revealTilesOnStartCheckbox.ValueChanged += (value) => GameManager.Instance.revealTilesOnStart.Value = value;
+
+        GameManager.Instance.mapLayoutType.Value = mapLayoutDropdown.Value;
+        mapLayoutDropdown.ValueChanged += (value) => GameManager.Instance.mapLayoutType.Value = value;
     }
 
     private void Update()
