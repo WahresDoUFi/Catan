@@ -44,6 +44,7 @@ namespace UI
         private void Update()
         {
             if (!_player) return;
+            playerColorImage.color = nameTextImage.color = GameManager.Instance.GetPlayerColor(PlayerId);
             nameText.text = _player.PlayerName;
             profileImage.sprite = profileSprites[_player.PictureId];
             cardAmountText.text = $"{_player.ResourceCount}";
@@ -69,14 +70,6 @@ namespace UI
         {
             _player = player;
             resourceCardsTooltip.SetPlayer(player);
-            StartCoroutine(UpdateColor());
-        }
-
-        private IEnumerator UpdateColor()
-        {
-            while (!GameManager.PlayerConnected(PlayerId))
-                yield return null;
-            playerColorImage.color = nameTextImage.color = GameManager.Instance.GetPlayerColor(PlayerId);
         }
 
         public void HideDice()

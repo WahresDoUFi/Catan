@@ -31,11 +31,12 @@ namespace User
         public byte Sheep => _sheep.Value;
         public string PlayerName => _playerName;
         public int PictureId => _pictureId;
+        public byte ColorId => _colorId.Value;
         public byte KnightCardsPlayed => _knightCards.Value;
         public byte AdditionalVictoryPoints => _victoryPoints.Value;
 
         public int VictoryPoints =>
-            global::GamePlay.VictoryPoints.CalculateVictoryPoints(OwnerClientId);
+            GamePlay.VictoryPoints.CalculateVictoryPoints(OwnerClientId);
 
         public int LongestStreet { get; private set; }
 
@@ -52,6 +53,15 @@ namespace User
         private readonly List<DevelopmentCard.Type> _boughtCards = new();
         private string _playerName;
         private int _pictureId;
+        private readonly NetworkVariable<byte> _colorId = new();
+        public static IEnumerable<byte> GetUsedColorIds(Player excluding = null)
+        {
+            foreach (var player in AllPlayers)
+            {
+                if (player == excluding) continue;
+                yield return player.ColorId;
+            }
+        }
 
         private void Awake()
         {
@@ -74,6 +84,11 @@ namespace User
             if (IsHost)
             {
                 Guid = GameManager.GetPlayerUserId(OwnerClientId);
+                var usedColors = GetUsedColorIds(this);
+                while (usedColors.Contains(_colorId.Value))
+                {
+                    _colorId.Value++;
+                }
             }
             
             if (IsOwner)
@@ -324,6 +339,18 @@ namespace User
                         yield return settlement.GetHarbor();
                 }
             }
+        }
+
+        public void TrySetColorId(byte newColorId)
+        {
+            RequestColorChangeRpc(newColorId);
+        }
+
+        [Rpc(SendTo.Server, InvokePermission = RpcInvokePermission.Owner)]
+        private void RequestColorChangeRpc(byte newColorId)
+        {
+            if (GetUsedColorIds(this).Contains(newColorId)) return;
+            _colorId.Value = newColorId;
         }
 
         private IEnumerator AddPlayerCard()

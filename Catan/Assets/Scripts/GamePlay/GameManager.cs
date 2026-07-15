@@ -58,6 +58,7 @@ namespace GamePlay
         public bool RepositionBandit => _specialActionState.Value == RepositionBanditBit;
         public bool CanStealResource => _specialActionState.Value == StealResourcesBit && !CardLimitActive;
         private int PlayerCount => _playerIds.Count;
+        public Color[] PlayerColors => playerColors;
         private int LocalPlayerIndex => Mathf.Max(0, _playerIds.IndexOf(NetworkManager.LocalClientId));
         public event Action TurnChanged;
 
@@ -233,7 +234,11 @@ namespace GamePlay
 
         public Color GetPlayerColor(ulong playerId)
         {
-            return playerColors[_playerIds.IndexOf(playerId)];
+            return playerColors[Player.GetPlayerById(playerId).ColorId];
+        }
+        public Color GetColorById(int colorId)
+        {
+            return playerColors[colorId];
         }
 
         public bool PlaceSettlement(Settlement settlement)

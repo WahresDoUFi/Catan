@@ -24,7 +24,6 @@ namespace UI
         private AsyncOperation _status;
         private bool _setup;
         private bool _loadingDone;
-        private bool _isSyncing;
         
         private void Awake()
         {
@@ -43,15 +42,7 @@ namespace UI
 
         private void Start()
         {
-            NetworkManager.Singleton.OnConnectionEvent += OnConnectEvent;
-        }
-
-        private void OnConnectEvent(NetworkManager networkManager, ConnectionEventData eventData)
-        {
-            if (eventData.EventType == ConnectionEvent.ClientConnected)
-            {
-                ClientConnected();
-            }
+            NetworkManager.Singleton.OnClientStarted += ClientConnected;
         }
 
         private static Task Show(AsyncOperation operation = null)
@@ -82,9 +73,9 @@ namespace UI
 
         private void OnConnect(NetworkManager networkManager)
         {
+            StartCoroutine(UnloadScene());
             networkManager.SceneManager.OnLoad += StartLoadScene;
             networkManager.SceneManager.OnLoadComplete += SceneLoadComplete;
-            StartCoroutine(UnloadScene());
         }
 
         private void Update()
@@ -106,7 +97,7 @@ namespace UI
 
         private void StartLoadScene(ulong clientid, string scenename, LoadSceneMode loadscenemode, AsyncOperation asyncoperation)
         {
-            if (_isSyncing || clientid != NetworkManager.Singleton.LocalClientId) return;
+            if (clientid != NetworkManager.Singleton.LocalClientId) return;
             asyncoperation.allowSceneActivation = false;
             _loadingDone = false;
             _status = asyncoperation;
@@ -127,7 +118,6 @@ namespace UI
         
         private void SceneLoadComplete(ulong clientid, string scenename, LoadSceneMode loadscenemode)
         {
-            if (_isSyncing) return;
             if (clientid != NetworkManager.Singleton.LocalClientId) return;
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(scenename));
             camObject.SetActive(false);
